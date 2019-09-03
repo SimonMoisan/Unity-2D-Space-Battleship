@@ -1,0 +1,352 @@
+fileFormatVersion: 2
+guid: 0c2453d2c20cd8c4bb4060a648fa6ca4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8521474865154745647
+    second: Reaper-scout-idle_0
+  - first:
+      213: -4824929311429355064
+    second: Reaper-scout-idle_1
+  - first:
+      213: 5281634187708371670
+    second: Reaper-scout-idle_2
+  - first:
+      213: -1267113556094745836
+    second: Reaper-scout-idle_3
+  - first:
+      213: 5100578967499206379
+    second: Reaper-scout-idle_4
+  - first:
+      213: 3400570731850501081
+    second: Reaper-scout-idle_5
+  - first:
+      213: -1227550015991820790
+    second: Reaper-scout-idle_6
+  - first:
+      213: -3548246891941482478
+    second: Reaper-scout-idle_7
+  - first:
+      213: 267943348093605516
+    second: Reaper-scout-idle_8
+  - first:
+      213: -984386935563643229
+    second: Reaper-scout-idle_9
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 150
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Reaper-scout-idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 174
+        width: 210
+        height: 111
+      alignment: 9
+      pivot: {x: 0.025, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b65007d8bdb9f4ba303d214258a351
+      internalID: 8521474865154745647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-scout-idle_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 51
+        width: 210
+        height: 111
+      alignment: 9
+      pivot: {x: 0.025, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d7eb20aa0bf9c84aae470e14f5ff5de
+      internalID: -4824929311429355064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-scout-idle_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 210
+        height: 111
+      alignment: 9
+      pivot: {x: 0.025, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ec61fa21286d354692cc1c64bc88a1d
+      internalID: 5281634187708371670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-scout-idle_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 426
+        width: 210
+        height: 111
+      alignment: 9
+      pivot: {x: 0.025, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be79d811e55f0f42ad785502de0d804
+      internalID: -1267113556094745836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-scout-idle_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 549
+        width: 210
+        height: 111
+      alignment: 9
+      pivot: {x: 0.025, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f54b839f893b184297ede2547b6ba85
+      internalID: 5100578967499206379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-scout-idle_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 669
+        width: 210
+        height: 111
+      alignment: 9
+      pivot: {x: 0.025, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd370461f24f13045abb691ff42d2a10
+      internalID: 3400570731850501081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-scout-idle_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 792
+        width: 210
+        height: 111
+      alignment: 9
+      pivot: {x: 0.025, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d181b8d0a8fe92a43a190ff3e3d70e34
+      internalID: -1227550015991820790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-scout-idle_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 912
+        width: 210
+        height: 111
+      alignment: 9
+      pivot: {x: 0.025, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26bfeecd22269cc4e9a0c65ef6c40409
+      internalID: -3548246891941482478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-scout-idle_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1032
+        width: 210
+        height: 111
+      alignment: 9
+      pivot: {x: 0.025, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3273cec89d31449ac19e8e7587bf26
+      internalID: 267943348093605516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-scout-idle_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1149
+        width: 210
+        height: 111
+      alignment: 9
+      pivot: {x: 0.025, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae08be8c5a482841866dde2d7ea6d88
+      internalID: -984386935563643229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a786fe7be8b71ee439c833d42fe7449f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

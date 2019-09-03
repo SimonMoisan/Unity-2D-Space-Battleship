@@ -1,0 +1,256 @@
+fileFormatVersion: 2
+guid: ac3f9be8a5d530b44ab162fab2fad104
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4163636983345143271
+    second: Ennemy_Pink_Laser_Impact_0
+  - first:
+      213: -5101300166537968672
+    second: Ennemy_Pink_Laser_Impact_1
+  - first:
+      213: -6201752124106026304
+    second: Ennemy_Pink_Laser_Impact_2
+  - first:
+      213: -2448546925264426547
+    second: Ennemy_Pink_Laser_Impact_3
+  - first:
+      213: 1750752509829375836
+    second: Ennemy_Pink_Laser_Impact_4
+  - first:
+      213: -4244438344059870901
+    second: Ennemy_Pink_Laser_Impact_5
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ennemy_Pink_Laser_Impact_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 235
+        width: 59
+        height: 101
+      alignment: 9
+      pivot: {x: 0.51, y: 0.73}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dc7fab3701669246b2a484b4783713f
+      internalID: 4163636983345143271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_Pink_Laser_Impact_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 235
+        width: 59
+        height: 101
+      alignment: 9
+      pivot: {x: 0.51, y: 0.73}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bb59b248a87954478af822424b70740
+      internalID: -5101300166537968672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_Pink_Laser_Impact_2
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 235
+        width: 59
+        height: 101
+      alignment: 9
+      pivot: {x: 0.51, y: 0.73}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50142c52554fa3940a10f8e7c6c2d215
+      internalID: -6201752124106026304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_Pink_Laser_Impact_3
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 235
+        width: 59
+        height: 101
+      alignment: 9
+      pivot: {x: 0.51, y: 0.73}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3aac5ecd93c28847826f452b1464e24
+      internalID: -2448546925264426547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_Pink_Laser_Impact_4
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 235
+        width: 59
+        height: 101
+      alignment: 9
+      pivot: {x: 0.51, y: 0.73}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 910a24764204e1440aace163ea89a19c
+      internalID: 1750752509829375836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_Pink_Laser_Impact_5
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 235
+        width: 59
+        height: 101
+      alignment: 9
+      pivot: {x: 0.51, y: 0.73}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c43499c0dd3743d409fc65212904e156
+      internalID: -4244438344059870901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: e68edd66e24dd9848af30b3c31fffa85
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

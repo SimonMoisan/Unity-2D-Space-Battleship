@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: bebe5a3f955c6e14ebed3fb6403055e1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4906618998519816848
+    second: Simple_Laser_animation_idle-Green_0
+  - first:
+      213: 7715972584249140888
+    second: Simple_Laser_animation_idle-Green_1
+  - first:
+      213: 833015665174794068
+    second: Simple_Laser_animation_idle-Green_2
+  - first:
+      213: -2059058825198619064
+    second: Simple_Laser_animation_idle-Green_3
+  - first:
+      213: -9067869742131763575
+    second: Simple_Laser_animation_idle-Green_4
+  - first:
+      213: 1088773443168159953
+    second: Simple_Laser_animation_idle-Green_5
+  - first:
+      213: 342106790144415136
+    second: Simple_Laser_animation_idle-Green_6
+  - first:
+      213: 2759331258816937763
+    second: Simple_Laser_animation_idle-Green_7
+  - first:
+      213: -5827393489939277630
+    second: Simple_Laser_animation_idle-Green_8
+  - first:
+      213: 641471181931420895
+    second: Simple_Laser_animation_idle-Green_9
+  - first:
+      213: 4888916142395333200
+    second: Simple_Laser_animation_idle-Green_10
+  - first:
+      213: 5474464324862732528
+    second: Simple_Laser_animation_idle-Green_11
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Simple_Laser_animation_idle-Green_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 108
+        width: 30
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cdcd6b8b52792d47afa4419e14d1b50
+      internalID: -4906618998519816848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple_Laser_animation_idle-Green_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 108
+        width: 30
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7127131ca7c5b1f42b0f718a3f30fc2b
+      internalID: 7715972584249140888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple_Laser_animation_idle-Green_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 108
+        width: 30
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d55852b80cae8534897fd81b0f19e408
+      internalID: 833015665174794068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple_Laser_animation_idle-Green_3
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 108
+        width: 30
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6a40107136c8cd4daad3410ee95de74
+      internalID: -2059058825198619064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple_Laser_animation_idle-Green_4
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 108
+        width: 30
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc0358352380dd44a85d2ce2cd44da21
+      internalID: -9067869742131763575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple_Laser_animation_idle-Green_5
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 108
+        width: 30
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c38b481741730124d958a89a81f87cfe
+      internalID: 1088773443168159953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple_Laser_animation_idle-Green_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 30
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 868365ce6bf96324ab0c0e4a3b1dd20d
+      internalID: 342106790144415136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple_Laser_animation_idle-Green_7
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 0
+        width: 30
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64c8fc2fe26bc1a4f961022a5649bf9f
+      internalID: 2759331258816937763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple_Laser_animation_idle-Green_8
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 30
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a6fa6f1f91e404dba79ad2e5aa54f1
+      internalID: -5827393489939277630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple_Laser_animation_idle-Green_9
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 0
+        width: 30
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 267a73ddac4b5324a8af9467a9cf5966
+      internalID: 641471181931420895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple_Laser_animation_idle-Green_10
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 0
+        width: 30
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b81bfe7d247254a45859df04f7fc7c86
+      internalID: 4888916142395333200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple_Laser_animation_idle-Green_11
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 0
+        width: 30
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd5b74e5208f59141a90e8a6e3f57aea
+      internalID: 5474464324862732528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 928d5283833e0ff4eaa3366f482bbcfe
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
