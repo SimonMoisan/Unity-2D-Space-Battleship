@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public bool isDestroyed = false;
     [SerializeField] public float bulletSpeed;
+    public float damage;
 
     //Animator
     public Animator animator;
@@ -17,13 +18,19 @@ public class Projectile : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collider) 
     {
-        if (collision.tag.Equals("Ennemy"))
+        if (collider.tag.Equals("Ennemy"))
         {
+            Ennemy ennemyGO = collider.GetComponent<Ennemy>();
+            if(ennemyGO != null)
+            {
+                ennemyGO.TakingDamage(damage);
+            }
+
             StartCoroutine(Destruction());
         }
-        else if (collision.name.Equals("BulletDestroyer"))
+        else if (collider.name.Equals("BulletDestroyer"))
         {
             Destroy(gameObject);
         }
@@ -47,5 +54,10 @@ public class Projectile : MonoBehaviour
     public float GetBulletSpeed()
     {
         return bulletSpeed;
+    }
+
+    public void SetProjectileDamage(float amount)
+    {
+        damage = amount;
     }
 }

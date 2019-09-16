@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Turret : MonoBehaviour
 {
     //Configuration parameters
     [SerializeField] public string idTurret;               //id de la tourelle
+    [SerializeField] public float damage;
     [SerializeField] public float angleMouse;              //angle de visé de la tourelle par rapport à la sourie
     [SerializeField] public float angleViseur;             //angle de visé de la tourelle par rapport à son viseur
     [SerializeField] public float fireRate;                //cadence de tir de le tourelle
@@ -30,6 +32,7 @@ public class Turret : MonoBehaviour
     //Associated gameobjects
     public GameObject Bullet;                              //type de balle tiré par la tourelle
     public Viseur viseur;
+    public Image cooldownImage;
 
     //Animator
     public Animator animator;
@@ -42,7 +45,8 @@ public class Turret : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    { 
+    {
+        cooldownImage.fillAmount = cooldownTimer / cooldown;
         Fire();
     }
 
@@ -97,7 +101,7 @@ public class Turret : MonoBehaviour
                 (Bullet,
                 bulletPosition,
                 Quaternion.Euler(new Vector3(0, 0, (angleViseur - 90) + Random.Range(-precisionFactor, precisionFactor))));
-
+            bullet.GetComponent<Salve>().SetSalveDamage(damage);
             yield return new WaitForSeconds(fireRate); // wait till the next round
         }
         animator.SetBool("Firing", false);

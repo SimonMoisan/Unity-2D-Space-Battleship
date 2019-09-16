@@ -50,24 +50,4 @@ public class ReaperScout : Ennemy
             Destroy(gameObject);
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag.Equals("FriendlyProjectile"))
-        {
-            TakingDamage(40);
-        }
-        if (collision.tag.Equals("ConstantDamageFriendlyProjectile"))
-        {
-            takingConstantDamages = StartCoroutine(TakingConstantDamages(0.5f,10));
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag.Equals("ConstantDamageFriendlyProjectile") && takingConstantDamages != null)
-        {
-            StopCoroutine(takingConstantDamages);
-        }
-    }
 }

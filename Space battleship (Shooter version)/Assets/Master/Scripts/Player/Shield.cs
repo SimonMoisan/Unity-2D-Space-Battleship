@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shield : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class Shield : MonoBehaviour
     [SerializeField] public float cooldownTimer;
     [SerializeField] public bool shieldGenerationActive;
 
-    //Associated gameobjects
+    //Associated objects
     [SerializeField] public Collider2D collider;
     [SerializeField] public Battleship battleship;
 

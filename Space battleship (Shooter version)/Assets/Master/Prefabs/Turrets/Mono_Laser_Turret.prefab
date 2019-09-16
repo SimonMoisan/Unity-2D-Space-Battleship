@@ -58,6 +58,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -113,15 +114,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idTurret: 2
+  damage: 20
   angleMouse: 0
   angleViseur: 0
-  bulletSpeed: 0
   fireRate: 0
+  nbrBullet: 0
+  precisionFactor: 0
   cooldown: 0
   cooldownTimer: 0
   isActive: 0
   isFiring: 0
   lockMode: 0
+  widthUnits: 42.6667
+  minX: 0
+  maxX: 42.6667
+  minY: 0
+  maxY: 24
   Bullet: {fileID: 6886897925697682500, guid: e7c6fbb7fc45c924fa4dd0d2c2a6fb0e, type: 3}
   viseur: {fileID: 0}
   animator: {fileID: 8871501819961066166}

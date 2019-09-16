@@ -15,7 +15,7 @@ public class Ennemy : MonoBehaviour
     [SerializeField] public float cooldownTimer;
     [SerializeField] public float bulletSpeed;           //vitesse des projectiles tirés par l'ennemi
     [SerializeField] public float fireRate;              //cadence de tir de l'ennemi
-    [SerializeField] public int nbrShots;              //nombre de tir par rafale
+    [SerializeField] public int nbrShots;                //nombre de tir par rafale
     [SerializeField] public float angleViseur;           //angle de visé par rapport à la cible
 
     [SerializeField] public bool isTakingConstantDamages = false;
@@ -70,7 +70,7 @@ public class Ennemy : MonoBehaviour
         }
     }
 
-    protected void TakingDamage(int damageTaken)
+    public void TakingDamage(float damageTaken)
     {
         if (shieldPoints > 0)
         {
@@ -136,11 +136,5 @@ public class Ennemy : MonoBehaviour
         
         isFiring = false;
         cooldownTimer = cooldown;
-    }
-
-    public IEnumerator TakingConstantDamages(float damageRate, int damage)
-    {
-        yield return new WaitForSeconds(damageRate);
-        TakingDamage(damage);
     }
 }

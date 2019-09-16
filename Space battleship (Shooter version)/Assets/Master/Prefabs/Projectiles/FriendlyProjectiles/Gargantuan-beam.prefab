@@ -59,6 +59,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -97,6 +98,7 @@ MonoBehaviour:
   animator: {fileID: 8467568959364428808}
   collider: {fileID: 0}
   beamState: 0
+  damagesOverTime: 20
 --- !u!95 &8467568959364428808
 Animator:
   serializedVersion: 3

@@ -5,10 +5,6 @@ using UnityEngine.UI;
 
 public class Battleship : MonoBehaviour
 {
-    //Health bars
-    public Image hullBar;
-    public Image plateBar;
-
     //Battleship caracteristics
     [SerializeField] public float MaxHullPoints = 2000f;
     [SerializeField] public float MaxPlatePoints = 500f;
@@ -101,11 +97,11 @@ public class Battleship : MonoBehaviour
         hasTakenDamagesRecently = true;
         shield.cooldownTimer += 0.5f;
 
-        if (platePoints > 0)
+        if (platePoints > 0 && shield.shieldPoints <= 0)
         {
             platePoints -= damageInput;
         }
-        else
+        else if(platePoints <= 0 && shield.shieldPoints <= 0)
         {
             hullPoints -= damageInput;
         }

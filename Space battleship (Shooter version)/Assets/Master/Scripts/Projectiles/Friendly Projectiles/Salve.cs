@@ -5,12 +5,14 @@ using UnityEngine;
 public class Salve : MonoBehaviour
 {
     public Projectile[] projectiles;
+    public float damage;
 
     // Start is called before the first frame update
     void Start()
     {
         for(int i=0;i<projectiles.Length;i++)
         {
+            projectiles[i].SetProjectileDamage(damage);
             projectiles[i].transform.GetComponent<Rigidbody2D>().AddForce(projectiles[i].transform.up * projectiles[i].GetBulletSpeed());
         }
     }
@@ -39,5 +41,10 @@ public class Salve : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void SetSalveDamage(float amount)
+    {
+        damage = amount;
     }
 }
