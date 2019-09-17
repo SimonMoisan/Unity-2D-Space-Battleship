@@ -148,7 +148,7 @@ Animator:
   m_GameObject: {fileID: 8963341222779796251}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7fabded617121bc4299edc1028c436ec, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -171,6 +171,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDestroyed: 0
   bulletSpeed: 1000
-  damages: 10
+  damage: 0
   animator: {fileID: 6716927086715488123}
   rb2D: {fileID: 8963341222779796255}

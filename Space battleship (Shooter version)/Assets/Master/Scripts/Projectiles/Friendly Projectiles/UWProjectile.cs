@@ -6,7 +6,8 @@ public class UWProjectile : MonoBehaviour
 {
     public Animator animator;
     public BoxCollider2D collider;
-    private List<Transform> ennemies;
+    private Ennemy[] ennemies;
+    private int ennemyIndex = 0;
     [SerializeField] public int beamState = 0;     //Define the current state of the laser beam (0 = invisible, 1 = init, 2 = idle, 3 = end)
     [SerializeField] public float damagesOverTime;
 
@@ -27,10 +28,12 @@ public class UWProjectile : MonoBehaviour
             //Inflict damage over time for every ennemy touched in the raybeam
             if(ennemies != null)
             {
-                foreach(Transform ennemy in ennemies)
+                for(int i = 0;i < ennemyIndex; i++)
                 {
-                    Ennemy ennemyGO = ennemy.GetComponent<Ennemy>();
-                    ennemyGO.TakingDamage(damagesOverTime * Time.deltaTime);
+                    if(ennemies[i] != null)
+                    {
+                        ennemies[i].TakingDamage(damagesOverTime * Time.deltaTime);
+                    }
                 }
             }
         }
@@ -47,11 +50,25 @@ public class UWProjectile : MonoBehaviour
         beamState = newState;
     }
 
+    public void removeSpecificEnnemy(Ennemy ennemyToCheck)
+    {
+        for(int i = 0;i < ennemyIndex; i++)
+        {
+            if(ennemies[i] == ennemyToCheck)
+            {
+                ennemies = null;
+            }
+        }
+        ennemyIndex--;
+    }
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.tag == "Ennemy")
         {
-            ennemies.Add(collider.GetComponent<Transform>());
+            Ennemy ennemyGO = collider.GetComponent<Ennemy>();
+            ennemies[ennemyIndex] = ennemyGO;
+            ennemyIndex++;
         }
     }
 
@@ -59,7 +76,8 @@ public class UWProjectile : MonoBehaviour
     {
         if (collider.tag == "Ennemy")
         {
-            ennemies.Remove(collider.GetComponent<Transform>());
+            Ennemy ennemyGO = collider.GetComponent<Ennemy>();
+            removeSpecificEnnemy(ennemyGO);
         }
     }
 }

@@ -243,10 +243,10 @@ RectTransform:
   m_Father: {fileID: 1322863716}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 295.25, y: 21}
-  m_SizeDelta: {x: 88.84, y: 615}
+  m_SizeDelta: {x: -633.048, y: 615}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &75948703
 MonoBehaviour:
@@ -384,10 +384,10 @@ RectTransform:
   m_Father: {fileID: 1322863716}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 212.86, y: 21.126}
-  m_SizeDelta: {x: 85.69, y: 615}
+  m_SizeDelta: {x: -636.198, y: 615}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &202878639
 MonoBehaviour:
@@ -1073,6 +1073,9 @@ MonoBehaviour:
   shield: {fileID: 1995454860}
   shieldBar: {fileID: 1169821186}
   hullBar: {fileID: 330312061}
+  cooldownImage1: {fileID: 1447808912}
+  cooldownImage2: {fileID: 202878639}
+  cooldownImage3: {fileID: 75948703}
 --- !u!4 &963725360
 Transform:
   m_ObjectHideFlags: 0
@@ -1434,10 +1437,10 @@ RectTransform:
   m_Father: {fileID: 1322863716}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 130.2, y: 20.989}
-  m_SizeDelta: {x: 86.66, y: 610.2}
+  m_SizeDelta: {x: -635.228, y: 610.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1447808912
 MonoBehaviour:
@@ -2224,11 +2227,6 @@ PrefabInstance:
       propertyPath: cooldownImage
       value: 
       objectReference: {fileID: 1447808912}
-    - target: {fileID: 4845748538651012508, guid: 38768349c991bff488fe8cd1ebfd4e37,
-        type: 3}
-      propertyPath: viseur
-      value: 
-      objectReference: {fileID: 1580067307}
     - target: {fileID: 8903132161083227967, guid: 38768349c991bff488fe8cd1ebfd4e37,
         type: 3}
       propertyPath: battleship
@@ -2254,6 +2252,11 @@ PrefabInstance:
       propertyPath: shieldBar
       value: 
       objectReference: {fileID: 1169821186}
+    - target: {fileID: 4845748538651012508, guid: 38768349c991bff488fe8cd1ebfd4e37,
+        type: 3}
+      propertyPath: viseur
+      value: 
+      objectReference: {fileID: 1580067307}
     - target: {fileID: 432878129110338877, guid: 38768349c991bff488fe8cd1ebfd4e37,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[16].x

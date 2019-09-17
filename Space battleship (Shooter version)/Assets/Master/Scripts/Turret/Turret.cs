@@ -32,7 +32,6 @@ public class Turret : MonoBehaviour
     //Associated gameobjects
     public GameObject Bullet;                              //type de balle tiré par la tourelle
     public Viseur viseur;
-    public Image cooldownImage;
 
     //Animator
     public Animator animator;
@@ -46,7 +45,6 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cooldownImage.fillAmount = cooldownTimer / cooldown;
         Fire();
     }
 
@@ -131,6 +129,11 @@ public class Turret : MonoBehaviour
     public bool GetTurretState()
     {
         return isActive;
+    }
+
+    public float GetCooldownFactor()
+    {
+        return cooldownTimer / cooldown;
     }
 
     public void SetViseurLocation()

@@ -41,7 +41,7 @@ public class Projectile : MonoBehaviour
         rb2D.velocity = Vector2.zero;
         rb2D.angularVelocity = 0f;
         animator.SetBool("BeingDestroyed", true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         isDestroyed = true;
         Destroy(gameObject);
     }
