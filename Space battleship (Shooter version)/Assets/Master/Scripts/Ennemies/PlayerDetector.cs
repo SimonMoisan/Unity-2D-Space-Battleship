@@ -8,12 +8,6 @@ public class PlayerDetector : MonoBehaviour
     public Transform target;        //emplacement de la cible (le joueur)
     public Ennemy ennemy;       //tourelle associé à ce viseur laser
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -28,8 +22,11 @@ public class PlayerDetector : MonoBehaviour
         }
     }
 
-    public Transform GetTarget()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        return target;
+        if (collision.name.Equals("Vaisseau"))
+        {
+            target = null;
+        }
     }
 }

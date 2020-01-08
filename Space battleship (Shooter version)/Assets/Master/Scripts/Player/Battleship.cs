@@ -15,18 +15,18 @@ public class Battleship : MonoBehaviour
     public bool uwIsRunning = false;
 
     //Parameters used for movement
-    [SerializeField] float velocity = 0f;        // Current Travelling Velocity
-    [SerializeField] float maxVelocity = 0f;     // Maxima Velocity
-    [SerializeField] float acc = 0f;             // Current Acceleration
-    [SerializeField] float accSpeed = 0f;        // Amount to increase Acceleration with.
-    [SerializeField] float maxAcc = 0f;          // Max Acceleration
-    [SerializeField] float minAcc = 0f;          // Min Acceleration
-    [SerializeField] float accRate = 0f;         // Acceleration and Decceleration rate
-    [SerializeField] string actualDirection;     // Indique dans quelle direction se dirige le vaisseau (permt d'éviter d'appuyer sur deux touches en même temps)
-    [SerializeField] float minY;                 // Minimum height the battleship can reach
-    [SerializeField] float maxY;                 // Maximum height the battleship can reach
-    [SerializeField] float defaultX;             // Default X position
-    [SerializeField] float maxX;                 // Maximum X position the ship can reach when he decelerate
+    [SerializeField] public float velocity = 0f;        // Current Travelling Velocity
+    [SerializeField] public float maxVelocity = 0f;     // Maxima Velocity
+    [SerializeField] public float acc = 0f;             // Current Acceleration
+    [SerializeField] public float accSpeed = 0f;        // Amount to increase Acceleration with.
+    [SerializeField] public float maxAcc = 0f;          // Max Acceleration
+    [SerializeField] public float minAcc = 0f;          // Min Acceleration
+    [SerializeField] public float accRate = 0f;         // Acceleration and Decceleration rate
+    [SerializeField] public string actualDirection;     // Indique dans quelle direction se dirige le vaisseau (permt d'éviter d'appuyer sur deux touches en même temps)
+    [SerializeField] public float minY;                 // Minimum height the battleship can reach
+    [SerializeField] public float maxY;                 // Maximum height the battleship can reach
+    [SerializeField] public float defaultX;             // Default X position
+    [SerializeField] public float maxX;                 // Maximum X position the ship can reach when he decelerate
 
     //Coroutines
     Coroutine accelerationCoroutine;             // Coroutine d'accélération du vaisseau
@@ -49,6 +49,12 @@ public class Battleship : MonoBehaviour
         hullPoints = MaxHullPoints;
         platePoints = MaxPlatePoints;
         hasTakenDamagesRecently = false;
+        arsenal = GetComponentsInChildren<Turret>();
+
+        //Attribute turret id
+        arsenal[0].idTurret = "1";
+        arsenal[1].idTurret = "2";
+        arsenal[2].idTurret = "3";
     }
 
     // Update is called once per frame
@@ -82,6 +88,7 @@ public class Battleship : MonoBehaviour
     }
 
     //Fonction de déploiement de l'UW
+    //NEED TO BE FIXED, ENNEMY DETECTION PROBLEMS
     public void UWdeployer()
     {
         if (Input.GetKeyDown("u") && !uwIsRunning)

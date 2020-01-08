@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1216820814492240319}
   - component: {fileID: 1216820814492240317}
   - component: {fileID: 1216820814492240316}
-  - component: {fileID: 6836197479480929868}
+  - component: {fileID: 3223711800173324205}
   m_Layer: 0
   m_Name: Mono_Machingun_Turret
   m_TagString: Untagged
@@ -101,7 +101,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6836197479480929868
+--- !u!114 &3223711800173324205
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,17 +110,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1216820814492240318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83abea86381b6a4459ac28ac469eca7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 16ee4ff2c0558f74c8d23a32b046796a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idTurret: 0
+  idTurret: 
   damage: 10
   angleMouse: 0
   angleViseur: 0
-  fireRate: 0
-  nbrBullet: 0
-  precisionFactor: 0
-  cooldown: 0
+  fireRate: 0.01
+  nbrBullet: 30
+  precisionFactor: 5
+  cooldown: 4
   cooldownTimer: 0
   isActive: 0
   isFiring: 0
@@ -132,4 +132,4 @@ MonoBehaviour:
   maxY: 24
   Bullet: {fileID: 6733838204962038761, guid: 03fec6ca17930bc4e90a27b2670b1e64, type: 3}
   viseur: {fileID: 0}
-  animator: {fileID: 1216820814492240316}
+  animator: {fileID: 0}

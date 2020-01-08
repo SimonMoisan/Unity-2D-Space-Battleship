@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2519677343480930744}
   - component: {fileID: 2519677343480930741}
   - component: {fileID: 2519677343480930740}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Reaper scout
   m_TagString: Ennemy
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   m_LocalPosition: {x: 27.52, y: 16.71, z: -2.6835938}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2519677342880622266}
+  - {fileID: 7544743917057778987}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -60,6 +60,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -113,7 +114,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -189,27 +190,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 039f88fb8b3e5b148b68692d50680e4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHullPoints: 0
+  MaxHullPoints: 100
   MaxPlatePoints: 0
   MaxShieldPoints: 0
-  hullPoints: 0
+  hullPoints: 100
   platePoints: 0
   shieldPoints: 0
-  cooldown: 0
+  cooldown: 4
   cooldownTimer: 0
-  bulletSpeed: 0
-  fireRate: 0
+  bulletSpeed: 400
+  fireRate: 0.2
+  nbrShots: 1
   angleViseur: 0
+  isTakingConstantDamages: 0
   isActive: 0
   isFiring: 0
   Bullet: {fileID: 3544657312594927205, guid: 411ba42a00f826e47a8de8f5c9ba848e, type: 3}
-  playerDetector: {fileID: 2519677342880622261}
+  playerDetector: {fileID: 7544743917057778980}
   waveConfig: {fileID: 11400000, guid: f9c8a3b48d8f9dc42a3955bc99f643fa, type: 2}
+  squad: {fileID: 0}
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
   moveSpeed: 2
---- !u!1001 &7291702255120685481
+--- !u!1001 &3418994347286813240
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -219,7 +223,7 @@ PrefabInstance:
     - target: {fileID: 5172073701442453266, guid: 5c1f75fbb50be394e8da91949b1ee612,
         type: 3}
       propertyPath: m_Name
-      value: Player Detector
+      value: Player Detector Circle
       objectReference: {fileID: 0}
     - target: {fileID: 5172073701442453276, guid: 5c1f75fbb50be394e8da91949b1ee612,
         type: 3}
@@ -283,17 +287,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c1f75fbb50be394e8da91949b1ee612, type: 3}
---- !u!4 &2519677342880622266 stripped
+--- !u!4 &7544743917057778987 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5172073701442453267, guid: 5c1f75fbb50be394e8da91949b1ee612,
     type: 3}
-  m_PrefabInstance: {fileID: 7291702255120685481}
+  m_PrefabInstance: {fileID: 3418994347286813240}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2519677342880622261 stripped
+--- !u!114 &7544743917057778980 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5172073701442453276, guid: 5c1f75fbb50be394e8da91949b1ee612,
     type: 3}
-  m_PrefabInstance: {fileID: 7291702255120685481}
+  m_PrefabInstance: {fileID: 3418994347286813240}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1

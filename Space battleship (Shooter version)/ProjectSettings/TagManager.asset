@@ -17,8 +17,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Ennemy
+  - Sector
   - 
   - 
   - 
@@ -44,4 +44,28 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UW Projectile
+    uniqueID: 899254249
+    locked: 0
+  - name: UW
+    uniqueID: 4260135581
+    locked: 0
+  - name: Battleship
+    uniqueID: 2690821929
+    locked: 0
+  - name: Projectile
+    uniqueID: 2193405
+    locked: 0
+  - name: Turret
+    uniqueID: 2949013157
+    locked: 0
+  - name: Door
+    uniqueID: 1583063083
+    locked: 0
+  - name: Shield
+    uniqueID: 3702327757
+    locked: 0
+  - name: Background
+    uniqueID: 1193171323
     locked: 0

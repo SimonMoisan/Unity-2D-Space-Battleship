@@ -5,22 +5,21 @@ using UnityEngine;
 public class ReaperSlicer : Ennemy
 {
     //Configuration parameters
-    [SerializeField] WaveConfig waveConfig;
-    [SerializeField] List<Transform> waypoints;
-    [SerializeField] float moveSpeed = 2f;
+    public List<Transform> waypoints;
+    public float moveSpeed;
     int waypointIndex = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        MaxHullPoints = 200;
-        hullPoints = 200;
-        bulletSpeed = 400f;
-        fireRate = 0.2f;
-        nbrShots = 3;
-        cooldown = 5.0f;
         waypoints = waveConfig.GetWaypoints();
-        transform.position = waypoints[waypointIndex].transform.position;
+        squad = GetComponentInParent<EnnemySquad>();
+
+        //Move on its own if an ennemy doesn't have a squad
+        if (squad == null)
+        {
+            transform.position = waypoints[waypointIndex].transform.position;
+        }
     }
 
     // Update is called once per frame
@@ -28,7 +27,12 @@ public class ReaperSlicer : Ennemy
     {
         Targeter();
         Fire("Static");
-        MoveCible();
+
+        //Move on its own if an ennemy doesn't have a squad
+        if(squad == null)
+        {
+            MoveCible();
+        }
     }
 
     private void MoveCible()
@@ -45,27 +49,12 @@ public class ReaperSlicer : Ennemy
         }
         else
         {
-            Destroy(gameObject);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag.Equals("FriendlyProjectile"))
-        {
-            TakingDamage(40);
-        }
-        if (collision.tag.Equals("ConstantDamageFriendlyProjectile"))
-        {
-            isTakingConstantDamages = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag.Equals("ConstantDamageFriendlyProjectile"))
-        {
-            isTakingConstantDamages = false;
+            if(waveConfig.dieAtEnd)
+            {
+                EnnemySpawner ennemySpawner = FindObjectOfType<EnnemySpawner>(); //Send to the ennemy spawn that he has been destroyed
+                ennemySpawner.ennemDestroyed++;
+                Destroy(gameObject);
+            }
         }
     }
 }

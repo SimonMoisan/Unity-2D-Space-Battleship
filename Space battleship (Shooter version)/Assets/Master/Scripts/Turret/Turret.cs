@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Turret : MonoBehaviour
 {
     //Configuration parameters
+    [Header("Turret parameters :")]
     [SerializeField] public string idTurret;               //id de la tourelle
     [SerializeField] public float damage;
     [SerializeField] public float angleMouse;              //angle de visé de la tourelle par rapport à la sourie
@@ -14,17 +15,18 @@ public class Turret : MonoBehaviour
     [SerializeField] public float nbrBullet;               //indique le nombre de tir par rafale
     [SerializeField] public float precisionFactor;         //valeur qui indique l'amplitude de la disperion aléatoire des tirs
     [SerializeField] public float cooldown;                //time to wait between two burst
-    [SerializeField] public float cooldownTimer;      
+    [SerializeField] private float cooldownTimer;      
     [SerializeField] public bool isActive = false;         //indique si la tourelle est active (contrôlé par le joueur) ou non
     [SerializeField] public bool isFiring = false;         //indique si la tourelle est en train de tirer ou non
     [SerializeField] public bool lockMode = false;         //indique si la tourelle est en mode vérouillage ou 
 
     //Screen parameters
-    [SerializeField] float widthUnits = 42.6667f;
-    [SerializeField] float minX = 0f;
-    [SerializeField] float maxX = 42.6667f;
-    [SerializeField] float minY = 0f;
-    [SerializeField] float maxY = 24f;
+    [Header("Screen parameters :")]
+    [SerializeField] public float widthUnits = 42.6667f;
+    [SerializeField] public float minX = 0f;
+    [SerializeField] public float maxX = 42.6667f;
+    [SerializeField] public float minY = 0f;
+    [SerializeField] public float maxY = 24f;
 
     //Coroutines
     public Coroutine manualFiringCoroutine;                //coroutine de tir manuel de la tourelle 

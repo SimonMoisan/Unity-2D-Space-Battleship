@@ -5,21 +5,27 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Ennemy Wave Config")]
 public class WaveConfig : ScriptableObject
 {
-    [SerializeField] GameObject ennemyPrefab;
-    [SerializeField] GameObject pathPrefab;
-    [SerializeField] float spawnRate = 0.5f;
-    [SerializeField] float spawnRadomFactor = 0.3f;
-    [SerializeField] int numberOfEnnemies = 20;
-    [SerializeField] float moveSpeed = 2f;
+    [Header("Ennemies to spawn parameters :")]
+    public GameObject[] ennemyPrefabs;
+    public int[] ennemiesNumberToSpawn;
 
-    public GameObject GetEnnemyPrefab()
-    {
-        return ennemyPrefab;
-    }
+    [Header("Wave parameters :")]
+    public float spawnRate;
+    public float spawnRadomFactor;
+    public GameObject pathPrefab;
+    public bool dieAtEnd; //Indicate if ennemies died when rush end of the waypath
+    public bool pathReversed; //Indicate if the path is inversed or not
 
     public List<Transform> GetWaypoints()
     {
         List<Transform> waveWayPoints = new List<Transform>();
+
+        if (pathReversed)
+        {
+            waveWayPoints.Reverse();
+        }
+
+        
         foreach(Transform child in pathPrefab.transform)
         {
             waveWayPoints.Add(child);
@@ -27,25 +33,4 @@ public class WaveConfig : ScriptableObject
 
         return waveWayPoints;
     }
-
-    public float GetSpawnRate()
-    {
-        return spawnRate;
-    }
-
-    public float GetSpawnRadomFactor()
-    {
-        return spawnRadomFactor;
-    }
-
-    public int GetNumberOfEnnemies()
-    {
-        return numberOfEnnemies;
-    }
-
-    public float GetMoveSpeed()
-    {
-        return moveSpeed;
-    }
-
 }

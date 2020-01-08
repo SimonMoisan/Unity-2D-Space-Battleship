@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8871501819961066165}
   - component: {fileID: 8871501819961066167}
   - component: {fileID: 8871501819961066166}
-  - component: {fileID: 8871501819961066160}
+  - component: {fileID: 7711804710909962681}
   m_Layer: 0
   m_Name: Mono_Laser_Turret
   m_TagString: Untagged
@@ -101,7 +101,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8871501819961066160
+--- !u!114 &7711804710909962681
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,17 +110,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8871501819961066164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62a9b07a3799f2e4080fb6a85864c88d, type: 3}
+  m_Script: {fileID: 11500000, guid: 16ee4ff2c0558f74c8d23a32b046796a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idTurret: 2
+  idTurret: 
   damage: 20
   angleMouse: 0
   angleViseur: 0
-  fireRate: 0
-  nbrBullet: 0
+  fireRate: 0.1
+  nbrBullet: 10
   precisionFactor: 0
-  cooldown: 0
+  cooldown: 4
   cooldownTimer: 0
   isActive: 0
   isFiring: 0
@@ -132,4 +132,4 @@ MonoBehaviour:
   maxY: 24
   Bullet: {fileID: 6886897925697682500, guid: e7c6fbb7fc45c924fa4dd0d2c2a6fb0e, type: 3}
   viseur: {fileID: 0}
-  animator: {fileID: 8871501819961066166}
+  animator: {fileID: 0}

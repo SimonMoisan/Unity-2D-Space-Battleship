@@ -5,9 +5,8 @@ using UnityEngine;
 public class ReaperScout : Ennemy
 {
     //Configuration parameters
-    [SerializeField] WaveConfig waveConfig;
-    [SerializeField] List<Transform> waypoints;
-    [SerializeField] float moveSpeed = 2f;
+    public List<Transform> waypoints;
+    public float moveSpeed;
     int waypointIndex = 0;
 
     public Coroutine takingConstantDamages;
@@ -15,14 +14,15 @@ public class ReaperScout : Ennemy
     // Start is called before the first frame update
     void Start()
     {
-        MaxHullPoints = 100;
-        hullPoints = 100;
-        bulletSpeed = 400f;
-        fireRate = 0.2f;
-        nbrShots = 1;
-        cooldown = 4.0f;
         waypoints = waveConfig.GetWaypoints();
-        transform.position = waypoints[waypointIndex].transform.position;
+        squad = GetComponentInParent<EnnemySquad>();
+
+        //Move on its own if an ennemy doesn't have a squad
+        if (squad == null)
+        {
+            transform.position = waypoints[waypointIndex].transform.position;
+        }
+        squad = GetComponentInParent<EnnemySquad>();
     }
 
     // Update is called once per frame
@@ -30,7 +30,12 @@ public class ReaperScout : Ennemy
     {
         Targeter();
         Fire("Normal");
-        MoveCible();
+
+        //Move on its own if an ennemy doesn't have a squad
+        if (squad == null)
+        {
+            MoveCible();
+        }
     }
 
     private void MoveCible()
@@ -47,7 +52,12 @@ public class ReaperScout : Ennemy
         }
         else
         {
-            Destroy(gameObject);
+            if (waveConfig.dieAtEnd)
+            {
+                EnnemySpawner ennemySpawner = FindObjectOfType<EnnemySpawner>(); //Send to the ennemy spawn that he has been destroyed
+                ennemySpawner.ennemDestroyed++;
+                Destroy(gameObject);
+            }
         }
     }
 }
