@@ -47,4 +47,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f9c8a3b48d8f9dc42a3955bc99f643fa, type: 2}
   - {fileID: 11400000, guid: ff7e769d0cb386a44a9af0cc9afb1dce, type: 2}
   - {fileID: 11400000, guid: 7aacce7c3d6c39940baf3953a8b312aa, type: 2}
-  totalEnnemies: 0
+  totalEnnemies: 11
+  level: 0

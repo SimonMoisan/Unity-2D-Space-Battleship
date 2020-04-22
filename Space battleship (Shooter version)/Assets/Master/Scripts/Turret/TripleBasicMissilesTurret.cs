@@ -27,12 +27,12 @@ public class TripleBasicMissilesTurret : Turret
     // Update is called once per frame
     void Update()
     {
-        if (isActive) //quand la tourelle est active et que l'autofire est désactivé
+        /*if (isActive) //quand la tourelle est active et que l'autofire est désactivé
         {
             FollowMouse();
             viseurLaser.RotateViseur(angleMouse);
             FireMissile();
-        }
+        }*/
     }
 
     //Fonction qui permet de tirer des missiles et d'afficher le viseur laser

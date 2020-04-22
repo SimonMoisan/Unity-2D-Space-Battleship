@@ -7,7 +7,7 @@ public class BasicHommingMissile : MonoBehaviour
 {
     //Configuration parameters
     public Transform target;
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D rb;
     public float speed;
     public float rotateSpeed;
     public bool isDestroyed = false;
@@ -15,7 +15,7 @@ public class BasicHommingMissile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -23,11 +23,11 @@ public class BasicHommingMissile : MonoBehaviour
     {
         if(target != null)
         { 
-            Vector2 direction = (Vector2)target.position - rigidbody.position;
+            Vector2 direction = (Vector2)target.position - rb.position;
             direction.Normalize();
             float roatateAmount = Vector3.Cross(direction, transform.up).z;
-            rigidbody.angularVelocity = -roatateAmount * rotateSpeed;
-            rigidbody.velocity = transform.up * speed;
+            rb.angularVelocity = -roatateAmount * rotateSpeed;
+            rb.velocity = transform.up * speed;
         }
     }
 

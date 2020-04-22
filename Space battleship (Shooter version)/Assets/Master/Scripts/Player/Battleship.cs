@@ -1,66 +1,92 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Battleship : MonoBehaviour
 {
+    [Header("Battleship caracteristics : ")]
     //Battleship caracteristics
-    [SerializeField] public float MaxHullPoints = 2000f;
-    [SerializeField] public float MaxPlatePoints = 500f;
-    [SerializeField] public float hullPoints;
-    [SerializeField] public float platePoints;
-    [SerializeField] public bool hasTakenDamagesRecently;
-
-    public bool uwIsRunning = false;
-
+    public float MaxHullPoints;
+    public float MaxPlatePoints;
+    [ReadOnly] public float hullPoints;
+    [ReadOnly] public float platePoints;
+    [ReadOnly] public bool hasTakenDamagesRecently;
+    [Space]
+    [Header("UW weapons informations : ")]
+    [ReadOnly] public bool uwIsRunning = false;
+    public float ultimateWeaponChargeLimite; //Charge to reach to use UW
+    [ReadOnly] public float ultimateWeaponCharge; //Start to 0, need to reach the limit to be used
+    [Space]
+    [Header("Movement parameters : ")]
     //Parameters used for movement
-    [SerializeField] public float velocity = 0f;        // Current Travelling Velocity
-    [SerializeField] public float maxVelocity = 0f;     // Maxima Velocity
-    [SerializeField] public float acc = 0f;             // Current Acceleration
-    [SerializeField] public float accSpeed = 0f;        // Amount to increase Acceleration with.
-    [SerializeField] public float maxAcc = 0f;          // Max Acceleration
-    [SerializeField] public float minAcc = 0f;          // Min Acceleration
-    [SerializeField] public float accRate = 0f;         // Acceleration and Decceleration rate
-    [SerializeField] public string actualDirection;     // Indique dans quelle direction se dirige le vaisseau (permt d'éviter d'appuyer sur deux touches en même temps)
-    [SerializeField] public float minY;                 // Minimum height the battleship can reach
-    [SerializeField] public float maxY;                 // Maximum height the battleship can reach
-    [SerializeField] public float defaultX;             // Default X position
-    [SerializeField] public float maxX;                 // Maximum X position the ship can reach when he decelerate
+    [ReadOnly] public float velocity;        // Current Travelling Velocity
+    public float maxVelocity;     // Maxima Velocity
+    public float acc;             // Current Acceleration
+    public float accSpeed;        // Amount to increase Acceleration with.
+    public float maxAcc;          // Max Acceleration
+    public float minAcc;          // Min Acceleration
+    public float accRate;         // Acceleration and Decceleration rate
+    [ReadOnly] public string actualDirection;     //Indicate in which direction the ship is actually going
+    [ReadOnly] public float minY;                 // Minimum height the battleship can reach
+    [ReadOnly] public float maxY;                 // Maximum height the battleship can reach
+    public float defaultX;             // Default X position
+    public float maxX;                 // Maximum X position the ship can reach when he decelerate
 
     //Coroutines
-    Coroutine accelerationCoroutine;             // Coroutine d'accélération du vaisseau
-    Coroutine deccelerationCoroutine;            // Coroutine de décélération du vaisseau
+    Coroutine accelerationCoroutine;             //Acceleration coroutine
+    Coroutine deccelerationCoroutine;            //Decceleration coroutine
 
-    //Animations
-    Animator animator;
-
+    [Space]
+    [Header("Associated objects : ")]
     //Associated objects
-    [SerializeField] public Turret[] arsenal;    // Tableau contenant les tourelles du vaisseau
-    [SerializeField] public Shield shield;
-    [SerializeField] public Gate gate;
-    [SerializeField] public UltimateWeapon ultimateWeapon;
-    [SerializeField] public UWProjectile uwProjectile;
+    public PlayerStats stats;
+    [Header("Turrets parents : ")]
+    public Transform arsenalStandardTurret;
+    public Transform arsenalFrontalTurret;
+    [Header("Turrets : ")]
+    public Turret[] standardTurrets;    //Array containing turrets gameobjects
+    public Turret[] spinalTurrets;      //Spinal turrets are special turrets with unique effects
+    [Header("Standard turrets associated objects : ")]
+    public Viseur[] viseurs;
+    public Transform[] turretPositions; //Positions where turrets will be created
+    [Header("Ultimate weapons associated objects : ")]
+    public Gate gate;
+    public UltimateWeapon ultimateWeapon;
+    public UWProjectile uwProjectile;
+    public Shield shield;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
+        stats = FindObjectOfType<PlayerStats>();
         animator = gameObject.GetComponent<Animator>();
         hullPoints = MaxHullPoints;
         platePoints = MaxPlatePoints;
         hasTakenDamagesRecently = false;
-        arsenal = GetComponentsInChildren<Turret>();
+        standardTurrets = arsenalStandardTurret.GetComponentsInChildren<Turret>(); //Find turret already installed on battlship
+        spinalTurrets = arsenalFrontalTurret.GetComponentsInChildren<Turret>();
+        viseurs = FindObjectsOfType<Viseur>();
 
-        //Attribute turret id
-        arsenal[0].idTurret = "1";
-        arsenal[1].idTurret = "2";
-        arsenal[2].idTurret = "3";
+        //Attribute turret id and viseur
+        if(standardTurrets.Length > 0) 
+        {
+            for (int i = 0; i < standardTurrets.Length; i++)
+            {
+                standardTurrets[i].idTurret = i;
+                standardTurrets[i].viseur = viseurs[i];
+            }
+        }
+        else
+        {
+            standardTurrets = new Turret[turretPositions.Length];
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        SwitchTurret();
         NewMoveBattleshipAcc();
         StaticAnimation();
         UWdeployer();
@@ -70,25 +96,7 @@ public class Battleship : MonoBehaviour
         transform.position = shipPos;
     }
 
-    //Fonction de gestion de l'activation des tourelles
-    public void SwitchTurret()
-    {
-        if (Input.GetKeyDown("1"))
-        {
-            arsenal[0].isActive = true;
-        }
-        else if (Input.GetKeyDown("2"))
-        {
-            arsenal[1].isActive = true;
-        }
-        else if (Input.GetKeyDown("3"))
-        {
-            arsenal[2].isActive = true;
-        }
-    }
-
-    //Fonction de déploiement de l'UW
-    //NEED TO BE FIXED, ENNEMY DETECTION PROBLEMS
+    //Function when the player wants to use the UW device
     public void UWdeployer()
     {
         if (Input.GetKeyDown("u") && !uwIsRunning)
@@ -98,7 +106,7 @@ public class Battleship : MonoBehaviour
     }
 
     //Fonction qui gère les dégats subis par le vaisseau
-    public void TakingDamages(int damageInput)
+    public void TakingDamages(float damageInput)
     {
         //Add shield regeneration cooldown if the battleship taken damages
         hasTakenDamagesRecently = true;
@@ -372,7 +380,18 @@ public class Battleship : MonoBehaviour
     {
         if (collision.tag.Equals("EnnemyProjectile"))
         {
-            TakingDamages(50);
+            TakingDamages(collision.GetComponent<EnnemyProjectile>().damage);
         }
+    }
+
+    public void getEnnemyReward(int scrap, float uwCharge)
+    {
+        ultimateWeaponCharge += uwCharge;
+        if (ultimateWeaponCharge > ultimateWeaponChargeLimite)
+        {
+            ultimateWeaponCharge = ultimateWeaponChargeLimite;
+        }
+
+        stats.updateScrapValue(stats.scraps + scrap);
     }
 }

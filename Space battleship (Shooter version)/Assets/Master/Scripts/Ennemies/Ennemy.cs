@@ -1,71 +1,112 @@
 ﻿using System.Collections;
+using Unity.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ennemy : MonoBehaviour
 {
+    [Header("Ennemy stats : ")]
     //Attributs d'un ennemy
     public float MaxHullPoints;
     public float MaxPlatePoints;
     public float MaxShieldPoints;
-    public float hullPoints;
-    public float platePoints;
-    public float shieldPoints;
-    public float cooldown;              //time to wait between two burst
-    public float cooldownTimer;
-    public float bulletSpeed;           //vitesse des projectiles tirés par l'ennemi
-    public float fireRate;              //cadence de tir de l'ennemi
-    public int nbrShots;                //nombre de tir par rafale
-    public float angleViseur;           //angle de visé par rapport à la cible
+    [ReadOnly] public float hullPoints;
+    [ReadOnly] public float platePoints;
+    [ReadOnly] public float shieldPoints;
 
-    public bool isTakingConstantDamages = false;
-    public bool isActive = false;          //indique si la tourelle est active (contrôlé par le joueur) ou non
-    public bool isFiring = false;          //indique si la tourelle est en train de tirer ou non
+    public int scrapValue;  //Scrap given when destroyed
+    public float uwChargeValue; //Charge given to the ultimate weapon when destroyed
+    public bool isDestroyed = false;
 
+    [Header("Attack management : ")]
+    public int nbrSimAttack; //Number attack launch simultaneously
+    public EnnemyAttack[] attacks;
+    public int[] attackPaterns; //Indicate which attack belong to which coolDownUnits ([1,1,2] : two first attacks belong to the first cooldownUnit))
+    public LinkedList<EnnemyAttack>[] coolDownUnits;
+
+    [Header("Associated objects : ")]
     //Associated objects
-    public GameObject Bullet;              //type de balle tiré par la tourelle
-    public PlayerDetector playerDetector;
     public WaveConfig waveConfig;
     public EnnemySquad squad;
+    public Animator animator;
+    public PolygonCollider2D collider;
 
-    //Coroutines
-    public Coroutine firingCoroutine;     //coroutine de tir 
+    //Movement parameters
+    [ReadOnly] public Transform[] waypoints;
+    public float moveSpeed;
+    [ReadOnly] int waypointIndex = 0;
 
+    //Image
+    public Image hullBar;
+    public Image shieldBar;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        collider = GetComponent<PolygonCollider2D>();
+        animator = GetComponent<Animator>();
+
+        //Initiate attack management
+        attacks = GetComponentsInChildren<EnnemyAttack>();
+        coolDownUnits = new LinkedList<EnnemyAttack>[nbrSimAttack];
+        for (int i = 0; i < coolDownUnits.Length; i++)
+        {
+            coolDownUnits[i] = new LinkedList<EnnemyAttack>();
+        }
+
+        //Enqueue every attacks
+        for (int i = 0; i < attacks.Length; i++)
+        {
+            enqueuAttack(attacks[i]);
+        }
+        
         hullPoints = MaxHullPoints;
         shieldPoints = MaxShieldPoints;
         platePoints = MaxPlatePoints;
 
-        playerDetector = GetComponent<PlayerDetector>();
+        
+        squad = GetComponentInParent<EnnemySquad>();
+
+        //Move on its own if an ennemy doesn't have a squad
+        if (squad == null)
+        {
+            waypoints = waveConfig.GetWaypoints();
+            transform.position = waypoints[waypointIndex].transform.position;
+        }
+
+        //Can't have less than one attack
+        if(nbrSimAttack <= 0)
+        {
+            nbrSimAttack = 1;
+        }
     }
 
-    //Fonction qui gère le cooldown minimum entre deux rafales
-    protected void CoolDownManager()
+    // Update is called once per frame
+    void Update()
     {
-        if (cooldownTimer > 0)
+        for (int i = 0; i < attacks.Length; i++)
         {
-            cooldownTimer -= Time.deltaTime;
+            attacks[i].Targeter();
         }
-        if (cooldownTimer < 0)
+
+        AttackManagement();
+
+        //Move on its own if an ennemy doesn't have a squad
+        if (squad == null)
         {
-            cooldownTimer = 0;
+            MoveCible();
         }
     }
 
-    //Fonction qui gère l'intégralité de la routine de tir de la tourelle
-    protected void Fire(string fireMode)
+    private void enqueuAttack(EnnemyAttack attack)
     {
-        CoolDownManager();
-        if (cooldownTimer == 0 && playerDetector.target != null) //quand le cooldown est écoulé et que l'ennemie à identifier le joueur
+        for (int i = 0; i < attacks.Length; i++)
         {
-            if (!isFiring) //on lance le burst de tir
+            if(attack == attacks[i])
             {
-                isActive = false;
-                isFiring = true;
-                firingCoroutine = StartCoroutine(BurstFire(fireMode));
+                int coolDownUnitIndex = attackPaterns[i]; //Identify to which cooldownUnit this attack belongs to
+                coolDownUnits[coolDownUnitIndex].AddFirst(attack);
             }
         }
     }
@@ -86,61 +127,96 @@ public class Ennemy : MonoBehaviour
         }
         if (hullPoints <= 0)
         {
-            if(squad != null)
+            if(!isDestroyed) //To avoid multiple destructions
             {
-                squad.imDestroyed(); //Send to his squad that he has been destroyed
+                StartCoroutine(destruction());
             }
-            EnnemySpawner ennemySpawner = FindObjectOfType<EnnemySpawner>(); //Send to the ennemy spawn that he has been destroyed
-            ennemySpawner.ennemDestroyed++;
-            Destroy(gameObject);
+        }
+
+        //Update bars
+        hullBar.fillAmount = hullPoints / MaxHullPoints;
+        if(shieldBar != null && MaxShieldPoints > 0) shieldBar.fillAmount = shieldPoints / MaxShieldPoints;
+    }
+
+    //Function used to manage attacks
+    protected void AttackManagement()
+    {
+        //Fire attacks ready to fire
+        for (int i = 0; i < attacks.Length; i++)
+        {
+            if(attacks[i].isReadyToFire && attacks[i].playerDetector.target != null && !attacks[i].isFiring)
+            {
+                attacks[i].Fire();
+                //Add the cooldownmanager to a random queue
+                enqueuAttack(attacks[i]);
+
+                for (int j = 0; j < coolDownUnits.Length; j++)
+                {
+                    if(coolDownUnits[j].Last != null && attacks[i] == coolDownUnits[j].Last.Value)
+                    {
+                        coolDownUnits[j].RemoveLast();
+                    }
+                }
+            }
+        }
+
+        //Active cooldows in queues
+        for (int i = 0; i < coolDownUnits.Length; i++)
+        {
+            if(coolDownUnits[i].Last != null)
+            {
+                coolDownUnits[i].Last.Value.CoolDownManager();
+            }
         }
     }
 
-    //Fonction qui donne l'angle de visé
-    public void Targeter()
+    private void MoveCible()
     {
-        if (playerDetector.target != null)
+        if (waypointIndex <= waypoints.Length - 1)
         {
-            Vector3 dif = playerDetector.target.transform.position - transform.position;
-            angleViseur = Mathf.Atan2(dif.y, dif.x) * Mathf.Rad2Deg;
-        }   
+            var targetPosition = waypoints[waypointIndex].transform.position;
+            var movementThisFrame = moveSpeed * Time.deltaTime;
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, movementThisFrame);
+            if (transform.position == targetPosition)
+            {
+                waypointIndex++;
+            }
+        }
+        else
+        {
+            if (waveConfig.dieAtEnd)
+            {
+                EnnemySpawner ennemySpawner = FindObjectOfType<EnnemySpawner>(); //Send to the ennemy spawn that he has been destroyed
+                ennemySpawner.ennemyDestroyed++;
+                ennemySpawner.ennemyDestroyedInWave++;
+                Destroy(gameObject);
+            }
+        }
     }
 
-
-
-    public IEnumerator BurstFire(string firemode)
+    public IEnumerator destruction()
     {
-        yield return new WaitForSeconds(0.1f);
-        // rate of fire in weapons is in rounds per minute (RPM), therefore we should calculate how much time passes before firing a new round in the same burst.
+        //Disable collision with other projectiles
+        collider.enabled = false;
 
-        if(firemode == "Normal")
+        //Say to the ennemyspawner it was destroyed
+        EnnemySpawner ennemySpawner = FindObjectOfType<EnnemySpawner>(); //Send to the ennemy spawn that he has been destroyed
+        ennemySpawner.EnnemyDestroyed();
+        isDestroyed = true;
+
+        //Give scrap and uwCharge to the player as reward
+        Battleship battleship = FindObjectOfType<Battleship>();
+        battleship.getEnnemyReward(scrapValue, uwChargeValue);
+
+        if(squad != null)
         {
-            for (int i = 0; i < nbrShots; i++)
-            {
-                Vector3 bulletPosition = new Vector3(transform.position.x, transform.position.y, 1);
-                GameObject bullet = Instantiate
-                    (Bullet,
-                    bulletPosition,
-                    Quaternion.Euler(new Vector3(0, 0, angleViseur - 90)));
-
-                yield return new WaitForSeconds(fireRate); // wait till the next round
-            }
+            StartCoroutine(squad.imDestroyed());
         }
-        else if(firemode == "Static")
-        {
-            for (int i = 0; i < nbrShots; i++)
-            {
-                Vector3 bulletPosition = new Vector3(transform.position.x, transform.position.y, 1);
-                GameObject bullet = Instantiate
-                    (Bullet,
-                    bulletPosition,
-                    Quaternion.Euler(new Vector3(0, 0, 90)));
 
-                yield return new WaitForSeconds(fireRate); // wait till the next round
-            }
-        }
-        
-        isFiring = false;
-        cooldownTimer = cooldown;
+        animator.SetBool("isDead", true);
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 }
+
+

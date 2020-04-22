@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(menuName = "Ennemy Wave Config")]
 public class WaveConfig : ScriptableObject
@@ -8,27 +6,32 @@ public class WaveConfig : ScriptableObject
     [Header("Ennemies to spawn parameters :")]
     public GameObject[] ennemyPrefabs;
     public int[] ennemiesNumberToSpawn;
+    public int totalNbrEnnemy = 0;
 
     [Header("Wave parameters :")]
     public float spawnRate;
     public float spawnRadomFactor;
-    public GameObject pathPrefab;
+    public WavePath[] wavePath;
     public bool dieAtEnd; //Indicate if ennemies died when rush end of the waypath
     public bool pathReversed; //Indicate if the path is inversed or not
 
-    public List<Transform> GetWaypoints()
+    public Transform[] GetWaypoints()
     {
-        List<Transform> waveWayPoints = new List<Transform>();
+        int randomWavepath = Random.Range(0, wavePath.Length - 1);
+        Transform[] waveWayPoints = wavePath[randomWavepath].points;
+
+        if (wavePath[randomWavepath].dieAtEnd)
+        {
+            dieAtEnd = true;
+        }
+        else
+        {
+            dieAtEnd = false;
+        }
 
         if (pathReversed)
         {
-            waveWayPoints.Reverse();
-        }
-
-        
-        foreach(Transform child in pathPrefab.transform)
-        {
-            waveWayPoints.Add(child);
+            System.Array.Reverse(waveWayPoints);
         }
 
         return waveWayPoints;

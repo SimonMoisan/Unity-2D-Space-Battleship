@@ -1,30 +1,72 @@
 fileFormatVersion: 2
 guid: 80244bd0de45a104bb462085ad03aadc
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Gate-opening-animations-_0
-    21300002: Gate-opening-animations-_1
-    21300004: Gate-opening-animations-_2
-    21300006: Gate-opening-animations-_3
-    21300008: Gate-opening-animations-_4
-    21300010: Gate-opening-animations-_5
-    21300012: Gate-opening-animations-_6
-    21300014: Gate-opening-animations-_7
-    21300016: Gate-opening-animations-_8
-    21300018: Gate-opening-animations-_9
-    21300020: Gate-opening-animations-_10
-    21300022: Gate-opening-animations-_11
-    21300024: Gate-opening-animations-_12
-    21300026: Gate-opening-animations-_13
-    21300028: Gate-opening-animations-_14
-    21300030: Gate-opening-animations-_15
-    21300032: Gate-opening-animations-_16
-    21300034: Gate-opening-animations-_17
-    21300036: Gate-opening-animations-_18
-    21300038: Gate-opening-animations-_19
-    21300040: Gate-opening-animations-_20
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Gate-opening-animations-_0
+  - first:
+      213: 21300002
+    second: Gate-opening-animations-_1
+  - first:
+      213: 21300004
+    second: Gate-opening-animations-_2
+  - first:
+      213: 21300006
+    second: Gate-opening-animations-_3
+  - first:
+      213: 21300008
+    second: Gate-opening-animations-_4
+  - first:
+      213: 21300010
+    second: Gate-opening-animations-_5
+  - first:
+      213: 21300012
+    second: Gate-opening-animations-_6
+  - first:
+      213: 21300014
+    second: Gate-opening-animations-_7
+  - first:
+      213: 21300016
+    second: Gate-opening-animations-_8
+  - first:
+      213: 21300018
+    second: Gate-opening-animations-_9
+  - first:
+      213: 21300020
+    second: Gate-opening-animations-_10
+  - first:
+      213: 21300022
+    second: Gate-opening-animations-_11
+  - first:
+      213: 21300024
+    second: Gate-opening-animations-_12
+  - first:
+      213: 21300026
+    second: Gate-opening-animations-_13
+  - first:
+      213: 21300028
+    second: Gate-opening-animations-_14
+  - first:
+      213: 21300030
+    second: Gate-opening-animations-_15
+  - first:
+      213: 21300032
+    second: Gate-opening-animations-_16
+  - first:
+      213: 21300034
+    second: Gate-opening-animations-_17
+  - first:
+      213: 21300036
+    second: Gate-opening-animations-_18
+  - first:
+      213: 21300038
+    second: Gate-opening-animations-_19
+  - first:
+      213: 21300040
+    second: Gate-opening-animations-_20
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -78,8 +120,9 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  applyGammaDecoding: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -90,7 +133,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -101,6 +145,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -120,6 +165,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 8eaa597b7597cd94f8b92eb7cf793719
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -140,6 +186,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 1e7cd1165e711834d8d76611d7757179
+      internalID: 21300022
       vertices: []
       indices: 
       edges: []
@@ -160,6 +207,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 5b939f6685de5204c925a0b257822022
+      internalID: 21300024
       vertices: []
       indices: 
       edges: []
@@ -180,6 +228,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d980041cbd1256d4dad6bacd6b3d278e
+      internalID: 21300026
       vertices: []
       indices: 
       edges: []
@@ -200,6 +249,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ea3159560a25b4a44bc505480ed29feb
+      internalID: 21300028
       vertices: []
       indices: 
       edges: []
@@ -220,6 +270,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 810d417ae2af98149bd152d19066d19e
+      internalID: 21300030
       vertices: []
       indices: 
       edges: []
@@ -240,6 +291,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 7d1fa4e7f9ec00d478156545044fe987
+      internalID: 21300032
       vertices: []
       indices: 
       edges: []
@@ -260,6 +312,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a6540d2e778f5a94fba042f904179dbb
+      internalID: 21300034
       vertices: []
       indices: 
       edges: []
@@ -280,6 +333,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b089d4b2e2247ee46b952c4a9427824a
+      internalID: 21300036
       vertices: []
       indices: 
       edges: []
@@ -300,6 +354,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 0a9c52028c528d042b1468980f8da0f8
+      internalID: 21300038
       vertices: []
       indices: 
       edges: []
@@ -320,6 +375,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f66d12572d45cd34189e3efa6e026a43
+      internalID: 21300040
       vertices: []
       indices: 
       edges: []
@@ -328,10 +384,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: bf2542e1412712141ba3e5ec3cb3c74a
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

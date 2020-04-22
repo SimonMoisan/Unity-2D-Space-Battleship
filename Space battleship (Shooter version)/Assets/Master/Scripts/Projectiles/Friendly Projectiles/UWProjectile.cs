@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class UWProjectile : MonoBehaviour
 {
-    public Animator animator;
-    [SerializeField] public int beamState = 0;     //Define the current state of the laser beam (0 = invisible, 1 = init, 2 = idle, 3 = end)
-    [SerializeField] public float damagesOverTime;
-
-    [SerializeField] public float attackRangeX;
-    [SerializeField] public float attackRangeY;
-    [SerializeField] public Transform beamPos;
+    [Header("UW projectile stats :")]
+    public int beamState = 0;     //Define the current state of the laser beam (0 = invisible, 1 = init, 2 = idle, 3 = end)
+    public float damagesOverTime;
     public LayerMask whatIsEnnemy;
+
+    [Header("Associated objects :")]
+    public Transform beamPos;
+    public Animator animator;
+    public BoxCollider2D collider;
+    public List<Collider2D> ennemiesToDamage;
 
     // Start is called before the first frame update
     void Start()
     {
+        collider = GetComponent<BoxCollider2D>();
         animator = gameObject.GetComponent<Animator>();
     }
 
@@ -24,8 +27,13 @@ public class UWProjectile : MonoBehaviour
     {
         if(beamState == 1 || beamState == 2 || beamState == 3)
         {
+            collider.enabled = true;
             //Inflict damage over time for every ennemy touched in the raybeam
             Invoke("DealDamages", 0.1f);
+        }
+        else
+        {
+            collider.enabled = false;
         }
         animator.SetInteger("currentState", beamState);
     }
@@ -37,21 +45,26 @@ public class UWProjectile : MonoBehaviour
 
     private void DealDamages()
     {
-        Vector2 attackRange = new Vector2(attackRangeX, attackRangeY);
-        Collider2D[] ennemiesToDamage = Physics2D.OverlapBoxAll(beamPos.position, attackRange, whatIsEnnemy);
-        for (int i = 0; i < ennemiesToDamage.Length; i++)
+        for (int i = 0; i < ennemiesToDamage.Count; i++)
         {
-            if(ennemiesToDamage[i].GetComponent<Ennemy>() != null)
-            {
-                ennemiesToDamage[i].GetComponent<Ennemy>().TakingDamage(damagesOverTime);
-            }
+            ennemiesToDamage[i].GetComponent<Ennemy>().TakingDamage(damagesOverTime);
         }
     }
 
-    private void OnDrawGizmosSelected()
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        Vector3 attackRange = new Vector3(attackRangeX, attackRangeY, 0);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(beamPos.position, attackRange);
+        if(collision.GetComponent<Ennemy>() != null)
+        {
+            ennemiesToDamage.Add(collision);
+        }
+        
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Ennemy>() != null)
+        {
+            ennemiesToDamage.Remove(collision);
+        }
     }
 }

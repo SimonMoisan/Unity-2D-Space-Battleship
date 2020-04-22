@@ -1,50 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Unity.Collections;
 using UnityEngine;
 
 public class Salve : MonoBehaviour
 {
     public Projectile[] projectiles;
-    public float damage;
+    [ReadOnly] public float globalDamage;
+    [ReadOnly] public float globalHealth;
+    [ReadOnly] public float globalbulletSpeed;
+
+    [ReadOnly] int nbrProjectile;
+    [ReadOnly] int nbrProjectileDestroyed = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        nbrProjectile = projectiles.Length;
         for(int i=0;i<projectiles.Length;i++)
         {
-            projectiles[i].SetProjectileDamage(damage);
-            projectiles[i].transform.GetComponent<Rigidbody2D>().AddForce(projectiles[i].transform.up * projectiles[i].GetBulletSpeed());
+            projectiles[i].damage = globalDamage;
+            projectiles[i].health = globalHealth;
+            projectiles[i].bulletSpeed = globalbulletSpeed;
+            
+            projectiles[i].transform.GetComponent<Rigidbody2D>().AddForce(projectiles[i].transform.up * projectiles[i].bulletSpeed);
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    //Function called by projectile when its destroyed, destroy salve object if all projectiles are destroyed
+    public void ImDestroyed()
     {
-        if(IsProjectilesAllDestroyed())
+        nbrProjectileDestroyed++;
+        if (nbrProjectile == nbrProjectileDestroyed)
         {
             Destroy(gameObject);
         }
-    }
-
-    public bool IsProjectilesAllDestroyed()
-    {
-        int nbrProjectileDestroyed = 0;
-        for(int i=0;i<projectiles.Length;i++)
-        {
-            if (projectiles[i].isDestroyed)
-            {
-                nbrProjectileDestroyed++;
-            }
-            if(projectiles.Length == nbrProjectileDestroyed)
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public void SetSalveDamage(float amount)
-    {
-        damage = amount;
     }
 }

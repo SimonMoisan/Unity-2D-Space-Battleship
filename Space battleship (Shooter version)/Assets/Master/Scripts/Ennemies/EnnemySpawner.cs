@@ -2,30 +2,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Collections;
 
 public class EnnemySpawner : MonoBehaviour
 {
-    public float timeBtwWaves;
-    public String sectorState;
-    public int waveRunning;
+    [Header("Sector infos")]
+    [ReadOnly] public String sectorState;
+    [ReadOnly] public int wavePlayingIndex;
 
     //Spawn variables 
-    public int ennemyCount = 0; //Total ennemy to spawn in the whole sector
-    public int ennemySpawned = 0; //Number of ennemy actually spawned
-    public int ennemDestroyed = 0; //Total ennemy destroyed by the player
+    [Header("Sector variables")]
+    [ReadOnly] public int ennemyCount; //Total ennemy to spawn in the whole sector
+    [ReadOnly] public int ennemySpawned; //Number of ennemy actually spawned
+    [ReadOnly] public int ennemyDestroyed; //Total ennemy destroyed
+    [ReadOnly] public int ennemyAlive; //Total number of ennemy alive on the map
 
+    [Header("Actual wave variables")]
+    [ReadOnly] public int ennemyToSpawnInWave;
+    [ReadOnly] public int ennemyDestroyedInWave;
+    [ReadOnly] public int ennemyAliveInWave; //Number of ennemy remains alive in the actual wave
+    
     //Associated objects
-    public WaveConfig[] waveConfigs;
-    public Wave[] waves;
-    public GameManagerScript gameManager;
+    [Header("Associated objects")]
+    [ReadOnly] public List<Wave> wavesToPlay;
+    [ReadOnly] private Wave wavePlaying;
+    [ReadOnly] public bool waveIsRunning; //Actual wave is running
+    [ReadOnly] public GameManagerScript gameManager;
+
+    //Timers
+    [Header("Timers")]
+    [ReadOnly] public float timerEndSector;
+    [ReadOnly] public float timerStartSector;
+    [ReadOnly] public float timeBtwWaves;
 
     // Start is called before the first frame update
     void Start()
     {
-        sectorState = "In Progress";
-        waveRunning = 0;
-        Debug.Log("Sector Battle Phase Started");
-
         gameManager = FindObjectOfType<GameManagerScript>();
 
         /*
@@ -48,45 +60,87 @@ public class EnnemySpawner : MonoBehaviour
         }
         */
 
-        StartBattle();
+        //StartBattle();
         //StartCoroutine(SpawnLoopWave(1));
         //StartCoroutine(SpawnAllWaves());
     }
 
-    private void StartBattle()
+    public void Update()
     {
-        if (waves != null)
+        if((ennemyCount > 0 && ennemyCount <= ennemyDestroyed) || (waveIsRunning && wavesToPlay.Count == 0))
         {
-            for (int i = 0; i < waves.Length; i++)
+            if(timerEndSector <= 0)
             {
-                for (int j = 0; j < waves[i].waveConfigs.Length; j++)
+                gameManager.EndBattleSector();
+            }
+            timerEndSector -= Time.deltaTime; 
+        }
+        
+        //Play next wave if the actual one is finished = every ennemies have been destroyed
+        if(wavePlaying != null && wavePlaying.numberOfEnnmy == ennemyDestroyedInWave && wavePlayingIndex < wavesToPlay.Count)
+        {
+            wavePlayingIndex++;
+
+            //Reset actual wave variable
+            if(wavePlayingIndex <= wavesToPlay.Count)
+            {
+                wavePlaying = wavesToPlay[wavePlayingIndex];
+            }
+            ennemyToSpawnInWave = wavePlaying.numberOfEnnmy;
+            ennemyAliveInWave = ennemyToSpawnInWave;
+            ennemyDestroyedInWave = 0;
+
+            //Start next wave
+            StartCoroutine(SpawnWave(wavePlayingIndex));
+        }
+    }
+
+    public void StartBattle()
+    {
+        sectorState = "In Progress";
+
+        //Initialise first wave variables
+        wavePlayingIndex = 0;
+        wavePlaying = wavesToPlay[wavePlayingIndex];
+        ennemyToSpawnInWave = wavePlaying.numberOfEnnmy;
+        ennemyAliveInWave = ennemyToSpawnInWave;
+        ennemyDestroyedInWave = 0;
+
+        //Debug.Log("Sector Battle Phase Started");
+
+        //Attribute waveconfigs to ennemy/squad prefabs and count total number of ennmies in this battle sector
+        if (wavesToPlay != null)
+        {
+            for (int i = 0; i < wavesToPlay.Count; i++)
+            {
+                for (int j = 0; j < wavesToPlay[i].waveConfigs.Length; j++)
                 {
-                    for (int k = 0; k < waves[i].waveConfigs[j].ennemiesNumberToSpawn.Length; k++)
+                    for (int k = 0; k < wavesToPlay[i].waveConfigs[j].ennemiesNumberToSpawn.Length; k++)
                     {
-                        if (waves[i].waveConfigs[j].ennemyPrefabs[k].GetComponent<Ennemy>() != null)
+                        if (wavesToPlay[i].waveConfigs[j].ennemyPrefabs[k].GetComponent<Ennemy>() != null)
                         {
-                            waves[i].waveConfigs[j].ennemyPrefabs[k].GetComponent<Ennemy>().waveConfig = waves[i].waveConfigs[j];
+                            wavesToPlay[i].waveConfigs[j].ennemyPrefabs[k].GetComponent<Ennemy>().waveConfig = wavesToPlay[i].waveConfigs[j];
                         }
-                        else if (waves[i].waveConfigs[j].ennemyPrefabs[k].GetComponent<EnnemySquad>() != null)
+                        else if (wavesToPlay[i].waveConfigs[j].ennemyPrefabs[k].GetComponent<EnnemySquad>() != null)
                         {
-                            waves[i].waveConfigs[j].ennemyPrefabs[k].GetComponent<EnnemySquad>().waveConfig = waves[i].waveConfigs[j];
+                            wavesToPlay[i].waveConfigs[j].ennemyPrefabs[k].GetComponent<EnnemySquad>().waveConfig = wavesToPlay[i].waveConfigs[j];
                         }
                     }
-                    //ennemyCount += waves[i].countNumberOfEnnemy();
                 }
+                ennemyCount += wavesToPlay[i].numberOfEnnmy;
             }
         }
 
-        StartCoroutine(SpawnWaves());
+        //StartCoroutine(SpawnWaves());
+        StartCoroutine(SpawnWave(wavePlayingIndex));
     }
 
-    //Coroutines used to repeate WaveConfig spawn in a loop
-    private IEnumerator SpawnLoopWave(int loopNumber)
+    //Function called when an ennemy is destroyed
+    public void EnnemyDestroyed()
     {
-        for(int i=0;i<loopNumber;i++)
-        {
-            yield return StartCoroutine(SpawnWavesConfigs(waveConfigs));
-        }
+        ennemyDestroyed++;
+        ennemyDestroyedInWave++;
+        ennemyAliveInWave--;
     }
 
     //Coroutine used to spawn all WaveConfig one by one
@@ -99,21 +153,43 @@ public class EnnemySpawner : MonoBehaviour
         }
     }
 
-    //Coroutine used to spawn all Waves one by one
+    //Coroutine used to spawn all Waves one by one with a fixed time between waves
     private IEnumerator SpawnWaves()
     {
-        for (int i = 0; i < waves.Length; i++)
+        ennemyAliveInWave = 0;
+        for (int i = 0; i < wavesToPlay.Count; i++)
         {
-            waveRunning++;
-            Debug.Log("Wave " + waveRunning + " running");
+            waveIsRunning = true;
+            for (int j = 0; j < wavesToPlay[i].waveConfigs.Length; j++)
+            {
+                ennemyAliveInWave += wavesToPlay[i].waveConfigs[j].totalNbrEnnemy;
+            }
+            //Debug.Log("Wave " + waveRunning + " running");
 
-            WaveConfig[] currentWaveConfigs = waves[i].waveConfigs;
+            WaveConfig[] currentWaveConfigs = wavesToPlay[i].waveConfigs;
             yield return StartCoroutine(SpawnAllWavesConfigs(currentWaveConfigs));
 
-            Debug.Log("Wave " + waveRunning + " Finished");
             yield return new WaitForSeconds(timeBtwWaves);
         }
-        Debug.Log("Sector Battle Phase Finished");
+        //Debug.Log("Sector Battle Phase Finished");
+    }
+
+    //Spawn on wave, the next wave will spawn when all ennemies are destroyed
+    private IEnumerator SpawnWave(int waveIndex)
+    {
+        //Small time before wave spawn
+        yield return new WaitForSeconds(timeBtwWaves);
+
+        waveIsRunning = true;
+        for (int j = 0; j < wavePlaying.waveConfigs.Length; j++)
+        {
+            ennemyAliveInWave += wavePlaying.waveConfigs[j].totalNbrEnnemy;
+        }
+
+        //Debug.Log("Wave " + waveRunning + " running");
+
+        WaveConfig[] currentWaveConfigs = wavePlaying.waveConfigs;
+        yield return StartCoroutine(SpawnAllWavesConfigs(currentWaveConfigs));
     }
 
     //Function used to spawn all waves at the same time
@@ -137,9 +213,9 @@ public class EnnemySpawner : MonoBehaviour
                 GameObject go = Instantiate(waveConfig.ennemyPrefabs[i], waveConfig.GetWaypoints()[0].transform.position, Quaternion.identity);
                 if(go.GetComponent<EnnemySquad>() != null)
                 {
-                    ennemySpawned += go.GetComponent<EnnemySquad>().ennemyAlive;
+                    ennemySpawned += go.GetComponent<EnnemySquad>().ennemies.Length;
                 }
-                else
+                else if(go.GetComponent<Ennemy>() != null)
                 {
                     ennemySpawned++;
                 }

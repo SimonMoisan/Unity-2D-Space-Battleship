@@ -5,10 +5,10 @@ using UnityEngine;
 public class Gate : MonoBehaviour
 {
     //Caracteristics
-    [SerializeField] public bool gateState;     // The gate is open (True) or close (False)
+    public bool gateState;     // The gate is open (True) or close (False)
 
     //Animator
-    Animator animator;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()

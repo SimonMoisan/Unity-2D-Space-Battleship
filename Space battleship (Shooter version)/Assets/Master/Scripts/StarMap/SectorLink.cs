@@ -8,8 +8,6 @@ public class SectorLink : MonoBehaviour
     public Sector startSector;
     public Sector destinationSector;
 
-    // Start is called before the first frame update
-
     public void initiateLink(Sector start, Sector destination)
     {
         startSector = start;

@@ -60,6 +60,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -99,7 +100,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 569101bd1fb351c48b65acb5efb25fe2, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -168,8 +169,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b98d002a7ba70742b75f168a31a405a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDestroyed: 0
   bulletSpeed: 400
+  damage: 20
   animator: {fileID: 8541458841813673239}
   rb2D: {fileID: 6330413239543503219}
+  ennemySalve: {fileID: 0}
   ennemy: {fileID: 1816476511454174833, guid: 0fbe71a197e77644aa7646cfb3c298f7, type: 3}

@@ -5,11 +5,10 @@ using UnityEngine;
 public class UltimateWeapon : MonoBehaviour
 {
     //Caracteristics
-    [SerializeField] public bool uwState;     // The gate is open (True) or close (False)
-
+    public bool uwState;     // The gate is open (True) or close (False)
 
     //Animator
-    Animator animator;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()

@@ -22,27 +22,32 @@ public class StarMapManagement : MonoBehaviour
     public float minDistanceBtwSectorsLink;
     public LayerMask whatIsSector;
 
+    [Header("Waves parameters")]
+    public Wave[] waves; //Every possible waves in this system
+    public int minNbrWave;
+    public int maxNbrWave;
+ 
     // Start is called before the first frame update
     void Start()
     {
+        InitializeStarMap();
+    }
+
+    public void InitializeStarMap()
+    {
         index = 2;
         sectorNumber = Random.Range(minSectorNumber, maxSectorNumber);
-        sectors = new Sector[sectorNumber+2];
+        sectors = new Sector[sectorNumber + 2];
 
         sectors[0] = startSector;
         sectors[1] = endSector;
 
+        //Attribute waves to start and end sector
+        //attributeWaveToSector(startSector);
+        attributeWaveToSector(endSector);
+
         //generateSectorsFullRandom();
         generateSectorRecursively(startSector, 0);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            List<Sector> a = sectors[1].findClosestSectors(false);
-        }
     }
 
     public void generateSectorRecursively(Sector startingSector, int compteur)
@@ -74,13 +79,18 @@ public class StarMapManagement : MonoBehaviour
                         float newSectorX = startingSector.transform.position.x + randomDistance * Mathf.Cos(randomAngleDegree * Mathf.Deg2Rad);
                         float newSectorY = startingSector.transform.position.y + randomDistance * Mathf.Sin(randomAngleDegree * Mathf.Deg2Rad);
 
-                        //
-                        Vector2 newSectorPosition = new Vector2(newSectorX, newSectorY);
+                        
+                        Vector3 newSectorPosition = new Vector3(newSectorX, newSectorY, 0);
                         Sector newSectorGO = Instantiate(sectorPrefab, newSectorPosition, Quaternion.identity);
+                        //newSectorGO.transform.parent = gameObject.transform;
                         SectorLink linkGO = startingSector.createLink(newSectorGO);
+                        //linkGO.transform.parent = gameObject.transform;
+
+                        //Attribute waves to this new Sector
+                        attributeWaveToSector(newSectorGO);
 
                         //Fill lists of sector and links
-                        if(!newSectorGO.linkedSectors.Contains(startingSector))
+                        if (!newSectorGO.linkedSectors.Contains(startingSector))
                         {
                             newSectorGO.linkedSectors.Add(startingSector);
                         }
@@ -105,10 +115,42 @@ public class StarMapManagement : MonoBehaviour
         }
         else
         {
-            Debug.Log("end");
-            startingSector.createLink(endSector);
+            SectorLink lastLinkGO = startingSector.createLink(endSector);
+            //Fill lists of sector and links for the two lasts sectors
+            if (!endSector.linkedSectors.Contains(startingSector))
+            {
+                endSector.linkedSectors.Add(startingSector);
+            }
+            if (!endSector.inputLinks.Contains(lastLinkGO))
+            {
+                endSector.inputLinks.Add(lastLinkGO);
+            }
+            if (!startingSector.linkedSectors.Contains(endSector))
+            {
+                startingSector.linkedSectors.Add(endSector);
+            }
+            if (!startingSector.inputLinks.Contains(lastLinkGO))
+            {
+                startingSector.inputLinks.Add(lastLinkGO);
+            }
         }
-        
+    }
+
+    //Function used to attribute waves to a sector
+    public void attributeWaveToSector(Sector sector)
+    {
+        int nbrWave = Random.Range(minNbrWave, maxNbrWave);
+        List<Wave> wavesToAttribute = new List<Wave>();
+
+        for(int i = 0; i < nbrWave; i++)
+        {
+            int randomIndex = Random.Range(0, waves.Length - 1);
+            if(waves.Length > 0 && !wavesToAttribute.Contains(waves[randomIndex]))
+            {
+                wavesToAttribute.Add(waves[randomIndex]);
+            }
+        }
+        sector.waves = wavesToAttribute;
     }
 
     bool sectorCanBeCreated(Transform positionToTest, float rangeBtwSectors)

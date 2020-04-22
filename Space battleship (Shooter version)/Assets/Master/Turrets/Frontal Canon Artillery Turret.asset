@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Frontal Canon Artillery Turret
+  m_EditorClassIdentifier: Assembly-CSharp::TurretDescritpion
+  ItemName: Frontal Canon Artillery Turret
+  cargoIcone: {fileID: 0}
+  turretType: 0
+  turretSize: 2
+  projectileType: 0
+  modifierType: 0
+  cargoId: 0
+  arsenalId: 0
+  slotName: 0
+  turretPrefab: {fileID: 0}
+  actualDamage: 200
+  actualProjectileHealth: 1
+  actualShotsPerSalve: 1
+  actualNbrOfSalve: 1
+  actualFirerate: 0
+  actualCooldown: 60
+  actualSpeed: 2000
+  actualPrecisionFactor: 0
+  minDamage: 0
+  minProjectileHealth: 0
+  minNbrOfSalve: 0
+  minFirerate: 0
+  minCooldown: 0
+  minSpeed: 0
+  minPrecisionFactor: 0
+  maxDamage: 0
+  maxProjectileHealth: 0
+  maxNbrOfSalve: 0
+  maxFirerate: 0
+  maxCooldown: 0
+  maxSpeed: 0
+  maxPrecisionFactor: 0
+  upgradeRateDamage: 0
+  upgradeRateNbrOfSalve: 0
+  upgradeRateFirerate: 0
+  upgradeRateCooldown: 0
+  upgradeRateSpeed: 0
+  upgradeRatePrecisionFactor: 0
+  upgradeRateProjectileHealth: 0
+  startingDamage: 200
+  startingProjectileHealth: 1
+  startingShotsPerSalve: 1
+  startingNbrOfSalve: 1
+  startingFirerate: 0
+  startingCooldown: 60
+  startingSpeed: 2000
+  startingPrecisionFactor: 0

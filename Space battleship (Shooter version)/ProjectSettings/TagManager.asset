@@ -51,6 +51,9 @@ TagManager:
   - name: UW
     uniqueID: 4260135581
     locked: 0
+  - name: Door
+    uniqueID: 1583063083
+    locked: 0
   - name: Battleship
     uniqueID: 2690821929
     locked: 0
@@ -60,12 +63,18 @@ TagManager:
   - name: Turret
     uniqueID: 2949013157
     locked: 0
-  - name: Door
-    uniqueID: 1583063083
-    locked: 0
   - name: Shield
     uniqueID: 3702327757
     locked: 0
   - name: Background
     uniqueID: 1193171323
+    locked: 0
+  - name: StarMap Background
+    uniqueID: 2667578307
+    locked: 0
+  - name: Sector
+    uniqueID: 3567373865
+    locked: 0
+  - name: SectorLink
+    uniqueID: 787962975
     locked: 0

@@ -1,36 +1,34 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Shield : MonoBehaviour
 {
+    [Header("Shields stats :")]
     //Caracteristics
-    [Range(0, 1000)]
-    [SerializeField] public float shieldPoints;
-    [SerializeField] public float maxShieldPoints;
-    [SerializeField] public float shieldGenerationRate;
-    [SerializeField] public float cooldown;                //time to wait between two burst
-    [SerializeField] public float cooldownTimer;
-    [SerializeField] public bool shieldGenerationActive;
+    public float shieldPoints;
+    public float maxShieldPoints;
+    public float shieldGenerationRate;
+    public float cooldown;                //time to wait between two burst
+    public float cooldownTimer;
+    public bool shieldGenerationActive;
 
+    [Header("Associated objects :")]
     //Associated objects
-    [SerializeField] public Collider2D collider;
-    [SerializeField] public Battleship battleship;
-
-    //Animator
-    [SerializeField] public Animator animator;
+    public Collider2D col;
+    public Battleship battleship;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
+        //Find associated objects
+        battleship = FindObjectOfType<Battleship>();
         animator = gameObject.GetComponent<Animator>();
-        collider = GetComponent<Collider2D>();
-        maxShieldPoints = 1000;
-        shieldPoints = 1000;
-        shieldGenerationRate = 50;
-        cooldown = 5.0f;
-        shieldGenerationActive = false;
+        col = GetComponent<Collider2D>();
+
+        shieldPoints = maxShieldPoints;
     }
 
     // Update is called once per frame
@@ -40,18 +38,29 @@ public class Shield : MonoBehaviour
         ShieldRegeneration();
     }
 
-    //Fonction qui gère les dégats subis par le vaisseau
-    public void TakingDamages(int damageInput)
+    //Function used to manage damages taken by the shield
+    public void TakingDamages(float damageInput)
     {
         if (shieldPoints > 0)
         {
             shieldPoints -= damageInput;
+
+            //Activate shield regeneration cooldown
+            if(cooldownTimer > 0)
+            {
+                cooldownTimer += 0.5f;
+            }
+            else
+            {
+                cooldownTimer = cooldown;
+            }
         }
         else if(shieldPoints <= 0)
         {
             shieldPoints = 0;
             cooldownTimer = cooldown;
             StartCoroutine(ShieldDestruction());
+            col.enabled = false;
         }
     }
 
@@ -72,7 +81,6 @@ public class Shield : MonoBehaviour
 
     public void ShieldRegeneration()
     {
-
         if(shieldGenerationActive && shieldPoints < maxShieldPoints && !battleship.hasTakenDamagesRecently)
         {
             shieldPoints += Time.deltaTime * shieldGenerationRate;
@@ -83,7 +91,7 @@ public class Shield : MonoBehaviour
     {
         if (collision.tag.Equals("EnnemyProjectile"))
         {
-            TakingDamages(50);
+            TakingDamages(collision.GetComponent<EnnemyProjectile>().damage);
         }
     }
 
@@ -92,7 +100,6 @@ public class Shield : MonoBehaviour
         animator.SetBool("Destroyed", true);
         yield return new WaitForSeconds(0.5f);
         shieldGenerationActive = false;
-        collider.enabled = false;
     }
 
     IEnumerator ShieldGeneration()
@@ -100,6 +107,6 @@ public class Shield : MonoBehaviour
         animator.SetBool("Destroyed", false);
         yield return new WaitForSeconds(0.5f);
         shieldGenerationActive = true;
-        collider.enabled = true;
+        col.enabled = true;
     }
 }

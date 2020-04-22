@@ -6,23 +6,15 @@ public class Wave : MonoBehaviour
 {
     //A wave is composed of several waveConfigs which are launch at the same time
     public WaveConfig[] waveConfigs;
-    public int totalEnnemies;
+    public int level; //Indicator of the difficulty of this wave
+    public int numberOfEnnmy;
 
-    // Update is called once per frame
-    void Start()
+    private void OnValidate()
     {
-
-    }
-
-    public int countNumberOfEnnemy()
-    {
+        numberOfEnnmy = 0;
         for (int i = 0; i < waveConfigs.Length; i++)
         {
-            for (int j = 0; j < waveConfigs.Length; j++)
-            {
-                totalEnnemies += waveConfigs[i].ennemiesNumberToSpawn[j];
-            }
+            numberOfEnnmy += waveConfigs[i].totalNbrEnnemy;
         }
-        return totalEnnemies;
     }
 }

@@ -1,0 +1,395 @@
+fileFormatVersion: 2
+guid: 4480187baed762c4ca9bf7c9e1d97df5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3527999336309119782
+    second: Brawler-Idle_0
+  - first:
+      213: -2393522568944652211
+    second: Brawler-Idle_1
+  - first:
+      213: -5128735706456020717
+    second: Brawler-Idle_2
+  - first:
+      213: -6390740476766051759
+    second: Brawler-Idle_3
+  - first:
+      213: -3150075677884811701
+    second: Brawler-Idle_4
+  - first:
+      213: -7927993490531773230
+    second: Brawler-Idle_5
+  - first:
+      213: 3156133265024572081
+    second: Brawler-Idle_6
+  - first:
+      213: -3794034146735086512
+    second: Brawler-Idle_7
+  - first:
+      213: 609918021471319719
+    second: Brawler-Idle_8
+  - first:
+      213: 3650064565452310051
+    second: Brawler-Idle_9
+  - first:
+      213: -4168633509758572807
+    second: Brawler-Idle_10
+  - first:
+      213: -1575594524427267275
+    second: Brawler-Idle_11
+  - first:
+      213: 8425200670485424560
+    second: Brawler-Idle_12
+  - first:
+      213: -1397772156898773752
+    second: Brawler-Idle_13
+  - first:
+      213: 4434687990586672844
+    second: Brawler-Idle_14
+  - first:
+      213: -1332637445563463420
+    second: Brawler-Idle_15
+  - first:
+      213: 4097611296051967303
+    second: Brawler-Idle_16
+  - first:
+      213: -8090226404636986132
+    second: Brawler-Idle_17
+  - first:
+      213: -4665352240771143481
+    second: Brawler-Idle_18
+  - first:
+      213: -4365089558227085083
+    second: Brawler-Idle_19
+  - first:
+      213: 5944377086892394377
+    second: Brawler-Idle_20
+  - first:
+      213: -5460205616793177159
+    second: Brawler-Idle_21
+  - first:
+      213: -4842275289726257630
+    second: Brawler-Idle_22
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Brawler-Idle_0
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 2154
+        width: 347
+        height: 196
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62bd48844b8f5f030800000000000000
+      internalID: 3527999336309119782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brawler-Idle_1
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 1956
+        width: 347
+        height: 196
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d407c2ca7ef78ced0800000000000000
+      internalID: -2393522568944652211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brawler-Idle_2
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 1758
+        width: 347
+        height: 196
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5075304}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 319a3d55c0213d8b0800000000000000
+      internalID: -5128735706456020717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brawler-Idle_3
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 1559
+        width: 347
+        height: 196
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15226ae55678f47a0800000000000000
+      internalID: -6390740476766051759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brawler-Idle_4
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 1361
+        width: 347
+        height: 196
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b46f31c5cdea844d0800000000000000
+      internalID: -3150075677884811701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brawler-Idle_5
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 1163
+        width: 347
+        height: 196
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d49e37bceb1af190800000000000000
+      internalID: -7927993490531773230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brawler-Idle_6
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 965
+        width: 347
+        height: 196
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ba559d8b76dccb20800000000000000
+      internalID: 3156133265024572081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brawler-Idle_7
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 767
+        width: 347
+        height: 196
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05427229b02e85bc0800000000000000
+      internalID: -3794034146735086512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brawler-Idle_8
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 569
+        width: 347
+        height: 196
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a638e3853dd67800800000000000000
+      internalID: 609918021471319719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brawler-Idle_9
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 371
+        width: 347
+        height: 196
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32686072262a7a230800000000000000
+      internalID: 3650064565452310051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

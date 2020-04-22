@@ -5,8 +5,8 @@ using UnityEngine;
 public class TrainingCible : Ennemy
 {
     //Configuration parameters
-    [SerializeField] WaveConfig waveConfig;
-    [SerializeField] List<Transform> waypoints;
+    [SerializeField] WaveConfig waveconfig;
+    [SerializeField] Transform[] waypoints;
     [SerializeField] float moveSpeed = 2f;
     int waypointIndex = 0;
 
@@ -27,7 +27,7 @@ public class TrainingCible : Ennemy
 
     private void MoveCible()
     {
-        if (waypointIndex <= waypoints.Count - 1)
+        if (waypointIndex <= waypoints.Length - 1)
         {
             var targetPosition = waypoints[waypointIndex].transform.position;
             var movementThisFrame = moveSpeed * Time.deltaTime;

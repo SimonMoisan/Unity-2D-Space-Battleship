@@ -20,7 +20,11 @@ public class Sector : MonoBehaviour
     public bool sectorIsExplored;
     public SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
-    public Wave waves; //Waves presents in this sectors
+    public List<Wave> waves; //Waves presents in this sectors
+
+    //Associated objects
+    public GameManagerScript gameManager;
+    public EnnemySpawner ennemySpawner;
 
     // Start is called before the first frame update
     void Start()
@@ -30,14 +34,17 @@ public class Sector : MonoBehaviour
         maxRange = mapManager.maxDistanceBtwSectorsLink;
         minRange = mapManager.minDistanceBtwSectorsLink;
         whatIsSector = mapManager.whatIsSector;
+
+        gameManager = FindObjectOfType<GameManagerScript>();
+        ennemySpawner = FindObjectOfType<EnnemySpawner>();
     }
 
     void OnMouseDown()
     {
-        if(playerIsPresent) //The player is already in this sector
+        if(playerIsPresent && !sectorIsExplored) //The player is already in this sector and wants to start this sector if not already explored
         {
-            sectorIsExplored = true;
-            SwitchSprite("Explored player");
+            //Start battle phase
+            gameManager.StartBattleSector();
         }
         else
         {
@@ -48,28 +55,36 @@ public class Sector : MonoBehaviour
 
             for (int i = 0; i < linkedSectors.Count; i++)
             {
-                if (linkedSectors[i].playerIsPresent && linkedSectors[i].sectorIsExplored) //If is next to the sector the player is already present and this sector has been explored
+                if (linkedSectors[i].playerIsPresent && (linkedSectors[i].sectorIsExplored || sectorIsExplored)) //If is next to the sector the player is already present and this sector has been explored
                 {
+                    //Change sprite of the next sector
                     if(!sectorIsExplored) //if the next sector is unexplored
                     {
                         SwitchSprite("Unexplored player");
+                        gameManager.sectorPlayer = this;
+                        playerIsPresent = true;
+                        linkedSectors[i].playerIsPresent = false;
                     }
                     else //The next sector is already explored
                     {
                         SwitchSprite("Explored player");
+                        gameManager.sectorPlayer = this;
+                        playerIsPresent = true;
+                        linkedSectors[i].playerIsPresent = false;
                     }
-                    playerIsPresent = true;
-                    linkedSectors[i].playerIsPresent = false;
-                    linkedSectors[i].SwitchSprite("Explored");
+
+                    //Change sprite of previous sector
+                    if(linkedSectors[i].sectorIsExplored)
+                    {
+                        linkedSectors[i].SwitchSprite("Explored");
+                    }
+                    else
+                    {
+                        linkedSectors[i].SwitchSprite("Unexplored");
+                    }
                 }
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     //Return a list of closest sectors, can be used to create links to those closest sectors
@@ -113,16 +128,16 @@ public class Sector : MonoBehaviour
         return null;
     }
 
-    public bool linkAlreadyPresent(Sector otherSector)
+    public SectorLink linkAlreadyPresent(Sector otherSector)
     {
         for (int i = 0; i < outputLinks.Count; i++)
         {
-            if(this.outputLinks[i].destinationSector == otherSector)
+            if(outputLinks[i].destinationSector == otherSector)
             {
-                return true;
+                return outputLinks[i];
             }
         }
-        return false;
+        return null;
     }
 
     private void OnDrawGizmosSelected()

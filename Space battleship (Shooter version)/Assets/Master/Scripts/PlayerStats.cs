@@ -5,28 +5,44 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    public Battleship ship;
+    [Header("Player related main objetcts : ")]
+    public Battleship battleship;
     public Shield shield;
 
+    [Header("Indicators : ")]
     public Image shieldBar;
     public Image hullBar;
-    public Image cooldownImage1;
-    public Image cooldownImage2;
-    public Image cooldownImage3;
+    public Image[] cooldownImages;
+    public Text scrapTextIndicator;
+
+    //Scraps
+    public int scraps;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        battleship = FindObjectOfType<Battleship>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         shieldBar.fillAmount = shield.shieldPoints / shield.maxShieldPoints;
-        hullBar.fillAmount = ship.hullPoints / ship.MaxHullPoints;
-        cooldownImage1.fillAmount = ship.arsenal[0].GetCooldownFactor();
-        cooldownImage2.fillAmount = ship.arsenal[1].GetCooldownFactor();
-        cooldownImage3.fillAmount = ship.arsenal[2].GetCooldownFactor();
+        hullBar.fillAmount = battleship.hullPoints / battleship.MaxHullPoints;
+
+        for (int i = 0; i < battleship.standardTurrets.Length; i++)
+        {
+            if(battleship.standardTurrets[i] != null)
+            {
+                cooldownImages[i].fillAmount = battleship.standardTurrets[i].GetCooldownFactor();
+            }
+        }
+    }
+
+    public void updateScrapValue(int newValue)
+    {
+        scraps = newValue;
+        scrapTextIndicator.text = "Scraps : " + scraps;
     }
 }

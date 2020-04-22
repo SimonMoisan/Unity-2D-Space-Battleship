@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Ion Turret
+  m_EditorClassIdentifier: Assembly-CSharp::TurretDescritpion
+  ItemName: Ion Turret
+  cargoIcone: {fileID: 21300000, guid: edd1875f867a0644c8f4a5caef113d97, type: 3}
+  turretType: 0
+  projectileType: 4
+  modifierType: 0
+  cargoId: 2
+  arsenalId: -1
+  slotName: 1
+  turretPrefab: {fileID: 7711804710909962681, guid: b7686a6e8c51c9648841293637bf2431,
+    type: 3}
+  actualDamage: 20
+  actualProjectileHealth: 1
+  actualShotsPerSalve: 1
+  actualNbrOfSalve: 5
+  actualFirerate: 0.5
+  actualCooldown: 5
+  actualSpeed: 800
+  actualPrecisionFactor: 0
+  minDamage: 0
+  minProjectileHealth: 0
+  minNbrOfSalve: 0
+  minFirerate: 0
+  minCooldown: 0
+  minSpeed: 0
+  minPrecisionFactor: 0
+  maxDamage: 0
+  maxProjectileHealth: 0
+  maxNbrOfSalve: 0
+  maxFirerate: 0
+  maxCooldown: 0
+  maxSpeed: 0
+  maxPrecisionFactor: 0
+  upgradeRateDamage: 0
+  upgradeRateNbrOfSalve: 0
+  upgradeRateFirerate: 0
+  upgradeRateCooldown: 0
+  upgradeRateSpeed: 0
+  upgradeRatePrecisionFactor: 0
+  upgradeRateProjectileHealth: 0
+  startingDamage: 20
+  startingProjectileHealth: 1
+  startingShotsPerSalve: 1
+  startingNbrOfSalve: 5
+  startingFirerate: 0.5
+  startingCooldown: 5
+  startingSpeed: 800
+  startingPrecisionFactor: 0
