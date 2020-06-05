@@ -7,4 +7,5 @@ public class CargoItem : ScriptableObject
 {
     public string ItemName;
     public Sprite cargoIcone;
+    public Sprite arsenalIcon;
 }

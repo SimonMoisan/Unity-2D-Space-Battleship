@@ -12,7 +12,7 @@ public class UWProjectile : MonoBehaviour
     [Header("Associated objects :")]
     public Transform beamPos;
     public Animator animator;
-    public BoxCollider2D collider;
+    public new BoxCollider2D collider;
     public List<Collider2D> ennemiesToDamage;
 
     // Start is called before the first frame update

@@ -4,6 +4,10 @@ using UnityEngine.UI;
 
 public class MenuManagerScript : MonoBehaviour
 {
+    public bool sectorClickable;
+
+    [Header("Asspotiated objects :")]
+    //Associated objects
     public Cargo cargo;
     public ArsenalPanel arsenalPanel;
     public UpgraderPanel upgraderPanel;
@@ -11,10 +15,10 @@ public class MenuManagerScript : MonoBehaviour
 
     public GameObject menuBattleshipCanvas; //This menu can be open in the starmap to change turrets of the battleship
     public GameObject startMapCanvas;
+    public GameObject informationCanvas;
 
+    public GameManagerScript gameManager;
     private CargoItemSlot draggedSlot;
-
-    //Associated objects
     private Battleship battleship;
 
     //Sprites to display
@@ -46,6 +50,7 @@ public class MenuManagerScript : MonoBehaviour
     void Start()
     {
         battleship = FindObjectOfType<Battleship>();
+        gameManager = FindObjectOfType<GameManagerScript>();
     }
 
     private void equipTurretToUpgrader(CargoItemSlot cargoItemSlot)
@@ -63,7 +68,7 @@ public class MenuManagerScript : MonoBehaviour
 
         upgraderPanel.turretName.text = turret.name;
         upgraderPanel.damageValue.text = "" + turret.actualDamage;
-        upgraderPanel.healthValue.text = "" + turret.actualProjectileHealth;
+        upgraderPanel.healthValue.text = "" + turret.actualHealth;
         upgraderPanel.shotBySalveValue.text = turret.actualShotsPerSalve + " x " + turret.actualNbrOfSalve;
         upgraderPanel.cooldownValue.text = "" + turret.actualCooldown;
         upgraderPanel.speedValue.text = "" + turret.actualSpeed;
@@ -264,13 +269,21 @@ public class MenuManagerScript : MonoBehaviour
 
     public void closeBattleshipMenu()
     {
+        sectorClickable = true;
         menuBattleshipCanvas.SetActive(false);
         startMapCanvas.SetActive(true);
     }
 
     public void openBattleshipMenu()
     {
+        sectorClickable = false;
         menuBattleshipCanvas.SetActive(true);
         startMapCanvas.SetActive(false);
+    }
+
+    public void closeInformationPanel()
+    {
+        gameManager.restObjectsStates();
+        informationCanvas.SetActive(false);
     }
 }

@@ -9,12 +9,16 @@ public class EnnemySalve : MonoBehaviour
     public int nbrProjectileDestroyed = 0;
 
     // Start is called before the first frame update
-    void Start()
+    void OnValidate()
     {
         nbrProjectile = ennemyProjectiles.Length;
+    }
+
+    private void Update()
+    {
         for (int i = 0; i < ennemyProjectiles.Length; i++)
         {
-            ennemyProjectiles[i].transform.GetComponent<Rigidbody2D>().AddForce(ennemyProjectiles[i].transform.up * ennemyProjectiles[i].bulletSpeed);
+            ennemyProjectiles[i].transform.position += -1 * ennemyProjectiles[i].transform.up * Time.deltaTime * (ennemyProjectiles[i].bulletSpeed / 50);
         }
     }
 

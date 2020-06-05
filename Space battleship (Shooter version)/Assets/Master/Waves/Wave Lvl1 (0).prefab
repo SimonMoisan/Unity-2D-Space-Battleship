@@ -45,4 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveConfigs:
   - {fileID: 11400000, guid: ff7e769d0cb386a44a9af0cc9afb1dce, type: 2}
+  - {fileID: 11400000, guid: fd480ff059393b0428ce129f97dd9233, type: 2}
   level: 1
+  numberOfEnnmy: 7

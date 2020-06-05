@@ -60,11 +60,12 @@ public class Turret : MonoBehaviour
         if(descritpion != null)
         {
             damage = descritpion.actualDamage;
-            bulletHealth = descritpion.actualProjectileHealth;
+            bulletHealth = descritpion.actualHealth;
             nbrBullet = descritpion.actualNbrOfSalve;
             fireRate = descritpion.actualFirerate;
             cooldown = descritpion.actualCooldown;
             bulletSpeed = descritpion.actualSpeed;
+            precisionFactor = descritpion.actualPrecision;
 
             if (descritpion.modifierPrimaryType == ModifierPrimaryType.Beam) //Beam turret
             {
@@ -92,7 +93,7 @@ public class Turret : MonoBehaviour
         Fire();
     }
 
-    //Fonction qui gère l'intégralité de la routine de tir de la tourelle
+    //Fire routine
     public void Fire()
     {
         CoolDownManager();

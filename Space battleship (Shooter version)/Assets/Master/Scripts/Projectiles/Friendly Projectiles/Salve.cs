@@ -21,7 +21,18 @@ public class Salve : MonoBehaviour
             projectiles[i].health = globalHealth;
             projectiles[i].bulletSpeed = globalbulletSpeed;
             
-            projectiles[i].transform.GetComponent<Rigidbody2D>().AddForce(projectiles[i].transform.up * projectiles[i].bulletSpeed);
+            //projectiles[i].transform.GetComponent<Rigidbody2D>().AddForce(projectiles[i].transform.up * projectiles[i].bulletSpeed);
+        }
+    }
+
+    private void Update()
+    {
+        for (int i = 0; i < projectiles.Length; i++)
+        {
+            if (projectiles[i] != null)
+            {
+                projectiles[i].transform.position += projectiles[i].transform.up * Time.deltaTime * (projectiles[i].bulletSpeed / 50);
+            }
         }
     }
 

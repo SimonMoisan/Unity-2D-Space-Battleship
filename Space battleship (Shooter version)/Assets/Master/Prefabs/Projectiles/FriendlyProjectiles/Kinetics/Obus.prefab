@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4253668984798282850}
   - component: {fileID: -9030072079999648474}
   - component: {fileID: 4253668984798282863}
-  - component: {fileID: 4253668984798282848}
   - component: {fileID: 4831171707279117516}
+  - component: {fileID: 6500824660129035438}
   m_Layer: 0
   m_Name: Obus
   m_TagString: FriendlyProjectile
@@ -125,47 +125,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &4253668984798282848
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4253668984798282851}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.45, y: 2.25}
-    newSize: {x: 2.25, y: 0.45}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.225, y: 0.805}
-      - {x: 0.175, y: 0.97499996}
-      - {x: 0.105, y: 1.125}
-      - {x: -0.095, y: 1.125}
-      - {x: -0.145, y: 1.105}
-      - {x: -0.225, y: 0.885}
-      - {x: -0.225, y: -0.085}
-      - {x: -0.21499999, y: -0.185}
-      - {x: -0.16499999, y: -0.205}
-      - {x: -0.16499999, y: -0.49499997}
-      - {x: -0.125, y: -0.85499996}
-      - {x: -0.085, y: -1.125}
-      - {x: 0.065, y: -1.125}
-      - {x: 0.065, y: -1.115}
-      - {x: 0.155, y: -0.48499998}
-      - {x: 0.225, y: 0.085}
 --- !u!114 &4831171707279117516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,5 +158,21 @@ MonoBehaviour:
   accelerationSpeed: 0
   animator: {fileID: 0}
   rb2D: {fileID: 4253668984798282863}
-  col: {fileID: 4253668984798282848}
+  col: {fileID: 0}
   salve: {fileID: 0}
+--- !u!70 &6500824660129035438
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4253668984798282851}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.45, y: 2.25}
+  m_Direction: 0

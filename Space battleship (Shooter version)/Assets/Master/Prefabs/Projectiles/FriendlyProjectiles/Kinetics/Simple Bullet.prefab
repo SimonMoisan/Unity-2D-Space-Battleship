@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8963341222779796253}
   - component: {fileID: 8963341222779796252}
   - component: {fileID: 8963341222779796255}
-  - component: {fileID: 114193555478100192}
   - component: {fileID: 6716927086715488123}
   - component: {fileID: 4011781130109145840}
+  - component: {fileID: 4026928522974207931}
   m_Layer: 0
   m_Name: Simple Bullet
   m_TagString: FriendlyProjectile
@@ -106,39 +106,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &114193555478100192
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8963341222779796251}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.3, y: 0.6}
-    newSize: {x: 0.4, y: 0.2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.03564056, y: 0.26797876}
-      - {x: -0.08796752, y: 0.17139597}
-      - {x: -0.07245947, y: -0.14376324}
-      - {x: -0.07, y: -0.17}
-      - {x: 0.049999997, y: -0.17}
-      - {x: 0.07970544, y: -0.15550531}
-      - {x: 0.0852135, y: 0.17916243}
-      - {x: 0.036656857, y: 0.2734841}
 --- !u!95 &6716927086715488123
 Animator:
   serializedVersion: 3
@@ -191,5 +158,21 @@ MonoBehaviour:
   accelerationSpeed: 0
   animator: {fileID: 6716927086715488123}
   rb2D: {fileID: 8963341222779796255}
-  col: {fileID: 0}
+  col: {fileID: 4026928522974207931}
   salve: {fileID: 0}
+--- !u!70 &4026928522974207931
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8963341222779796251}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.3, y: 0.6}
+  m_Direction: 0

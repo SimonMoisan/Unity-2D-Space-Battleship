@@ -9,15 +9,8 @@ public enum ModifierSecondaryType { None, Dispersion, Absorption, Bouncing, Chai
 
 public enum SlotName { None, Cargo, Arsenal }
 
-[CreateAssetMenu]
-public class TurretDescritpion : CargoItem
+public class TurretDescritpion : TurretScheme
 {
-    public TurretType turretType;
-    public TurretSize turretSize;
-    public ProjectileType projectileType;   
-    public ModifierPrimaryType modifierPrimaryType;
-    public ModifierSecondaryType modifierSecondaryType;
-    [Space]
     [Header("When in cargo : ")]
     [ReadOnly] public int cargoId;      //-1 when not in cargo
     [Space]
@@ -27,68 +20,56 @@ public class TurretDescritpion : CargoItem
     public Turret turretPrefab;
     [Space]
     //Turret stats
-    [Header("Turret actual stats")]
+    [Header("Turret actual stats :")]
     public int actualDamage;
-    public int actualProjectileHealth;
+    public int actualHealth;
     public int actualShotsPerSalve;
     public int actualNbrOfSalve;
-    public int actualAmmo;          //if 0, no ammunitions and reload
+    public int actualAmmo;          //if 0, no ammunitions and no reload
     public float actualFirerate;
     public float actualCooldown;
     public int actualSpeed;
-    public int actualPrecisionFactor;
-    [Space]
-    //Turret max stats
-    [Header("Turret min stats")]
-    public int minDamage;
-    public int minProjectileHealth;
-    public int minNbrOfSalve;
-    public int minAmmo;
-    public float minFirerate;
-    public float minCooldown;
-    public int minSpeed;
-    public int minPrecisionFactor;
-    [Space]
-    //Turret min stats
-    [Header("Turret max stats")]
-    public int maxDamage;
-    public int maxProjectileHealth;
-    public int maxNbrOfSalve;
-    public int maxAmmo;
-    public float maxFirerate;
-    public float maxCooldown;
-    public int maxSpeed;
-    public int maxPrecisionFactor;
+    public int actualPrecision;
     [Space]
     //Turret upgrade rates
-    [Header("Turret upgrade rate")]
-    public int upgradeRateDamage;
-    public int upgradeRateNbrOfSalve;
-    public int upgradeRateAmmo;
-    public float upgradeRateFirerate;
-    public float upgradeRateCooldown;
-    public int upgradeRateSpeed;
-    public int upgradeRatePrecisionFactor;
-    public int upgradeRateProjectileHealth;
-    [Space]
-    //Turret starting stats (stats by default on this turret)
-    [Header("Turret starting stats")]
-    public int startingDamage;
-    public int startingProjectileHealth;
-    public int startingShotsPerSalve;
-    public int startingNbrOfSalve;
-    public int startingRateAmmo;
-    public float startingFirerate;
-    public float startingCooldown;
-    public int startingSpeed;
-    public int startingPrecisionFactor;
-
+    [Header("Associated objects :")]
     private Battleship battleship;
+    public TurretScheme schemeOrigin;
+
+    private void OnValidate()
+    {
+        /*
+        //Turret Scheme caracteritics
+        turretType = schemeOrigin.turretType;
+        turretSize = schemeOrigin.turretSize;
+        projectileType = schemeOrigin.projectileType;
+        modifierPrimaryType = schemeOrigin.modifierPrimaryType;
+        modifierSecondaryType = schemeOrigin.modifierSecondaryType;
+        //Turret upgrades stats values
+        upgradeRateIndexes = schemeOrigin.upgradeRateIndexes; //0: Damage, 1: Health, 2: NbrOfSalve, 3: Ammo, 4: Firerate, 5: Cooldown, 6: Speed, 7: Precision 
+        valuesDamage = schemeOrigin.valuesDamage;
+        valuesHealth = schemeOrigin.valuesHealth;
+        valuesNbrOfSalve = schemeOrigin.valuesNbrOfSalve;
+        valuesAmmo = schemeOrigin.valuesAmmo;
+        valuesFirerate = schemeOrigin.valuesFirerate;
+        valuesCooldown = schemeOrigin.valuesCooldown;
+        valuesSpeed = schemeOrigin.valuesSpeed;
+        valuesPrecision = schemeOrigin.valuesPrecision;
+        //Turret starting stats
+        startingDamage = schemeOrigin.startingDamage;
+        startingHealth = schemeOrigin.startingHealth;
+        startingShotsPerSalve = schemeOrigin.startingShotsPerSalve;
+        startingNbrOfSalve = schemeOrigin.startingNbrOfSalve;
+        startingAmmo = schemeOrigin.startingAmmo;
+        startingFirerate = schemeOrigin.startingAmmo;
+        startingCooldown = schemeOrigin.startingCooldown;
+        startingSpeed = schemeOrigin.startingSpeed;
+        startingPrecision = schemeOrigin.startingPrecision;*/
+    }
 
     //Function used to equip turret to battleship object
     public void equipTurret(MenuManagerScript menuManagerScript, int id)
     {
-        Debug.Log("Equip : " + id);
         arsenalId = id;
         cargoId = -1;
         slotName = SlotName.Arsenal;
@@ -111,7 +92,6 @@ public class TurretDescritpion : CargoItem
     //Function used to unequip turret from battleship object
     public void unequipTurret(MenuManagerScript menuManagerScript, int id)
     {
-        Debug.Log("Unequip : "+ id);
         arsenalId = -1;
         cargoId = id;
         slotName = SlotName.Cargo;

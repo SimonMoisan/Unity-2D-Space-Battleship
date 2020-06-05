@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: WaveConfig Lvl1 (1)
   m_EditorClassIdentifier: 
   ennemyPrefabs:
-  - {fileID: 6660469780984191765, guid: 99452e3ba1bfcf542963810c4ad8bb5a, type: 3}
-  ennemiesNumberToSpawn: 01000000
-  totalNbrEnnemy: 1
+  - {fileID: 2519677343480930745, guid: 2c69a2da477a388429349e06f1e32d8e, type: 3}
+  ennemiesNumberToSpawn: 05000000
+  totalNbrEnnemy: 5
   spawnRate: 2
   spawnRadomFactor: 0.3
   wavePath:
-  - {fileID: 6690601649432564272, guid: ad480ebe1e0c47249b3664617649fffb, type: 3}
-  - {fileID: 7436884910484592413, guid: 2dc05fd0929369b4ca48dca7f448b737, type: 3}
+  - {fileID: 5563184499801621023, guid: 9a5b7d09496b5dd45aa244c36374a3c8, type: 3}
   dieAtEnd: 1
   pathReversed: 0

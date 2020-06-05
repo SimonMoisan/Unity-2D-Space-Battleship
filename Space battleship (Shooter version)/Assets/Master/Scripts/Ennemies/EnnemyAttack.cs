@@ -12,6 +12,7 @@ public enum attackType
 public class EnnemyAttack : MonoBehaviour
 {
     //Ennemy attack stats
+    [Header("Attack stats")]
     public string targetingType;           //Targeting type of the attack : Normal, Static
     public string attackType;
 
@@ -24,15 +25,27 @@ public class EnnemyAttack : MonoBehaviour
     public float cooldown;              //time to wait between two burst
     public float cooldownTimer;
     public bool cooldownIsActive;       //indicate if the cooldown is running or not
+    public bool stopMovement;
+
+    [Header("Turret Beam :")]
+    public bool isTurretBeam;
+    public float beamDuration;            //duration of the beam 
+    public EnnemyBeam beam;
+    public Transform impactDirection;
+    public Transform impact;
+    private int layerMask = 1 << 10;
 
     //Attack states
+    [Header("Attack states")]
     public bool isFiring;          
     public bool isReadyToFire;
 
     //Associated objects
+    [Header("Associated objects")]
     public Ennemy ennemy;
     public GameObject bulletPrefab;
     public PlayerDetector playerDetector;
+    
 
     //Coroutines
     public Coroutine firingCoroutine;     //coroutine de tir 
@@ -43,6 +56,44 @@ public class EnnemyAttack : MonoBehaviour
         cooldownTimer = cooldown;
         ennemy = GetComponentInParent<Ennemy>();
         playerDetector = GetComponentInChildren<PlayerDetector>();
+
+        if(isTurretBeam && beam != null)
+        {
+            beam.damage = damage;
+        }
+    }
+
+    private void Update()
+    {
+        if (isTurretBeam)
+        {
+            // Cast a ray straight down.
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, impactDirection.localPosition, Mathf.Infinity, layerMask); 
+            if(hit.collider != null)
+            {
+                Vector3 local_point = transform.worldToLocalMatrix.MultiplyPoint3x4(hit.point);
+                impact.localPosition = local_point;
+                if (hit.collider.GetComponent<Shield>() != null)
+                {
+                    beam.shieldToDamage = hit.collider.GetComponent<Shield>();
+                    beam.battleshipToDamage = null;
+                }
+                else if (hit.collider.GetComponent<Battleship>() != null)
+                {
+                    beam.battleshipToDamage = hit.collider.GetComponent<Battleship>();
+                    beam.shieldToDamage = null;
+                }
+                else
+                {
+                    beam.shieldToDamage = null;
+                    beam.battleshipToDamage = null;
+                }
+            }
+            else
+            {
+                impact.localPosition = impactDirection.localPosition;
+            }
+        }
     }
 
     //Fonction qui donne l'angle de visé
@@ -72,16 +123,30 @@ public class EnnemyAttack : MonoBehaviour
     //Fonction qui gère l'intégralité de la routine de tir de la tourelle
     public void Fire()
     {
-        isFiring = true;
-        firingCoroutine = StartCoroutine(BurstFire());
+        Debug.Log("Fire");
+        if (isTurretBeam && beam != null) //Beam turret
+        {
+            beam.beamLine.enabled = true;
+            beam.beamLine.SetPosition(1, impact.position);
+            beam.isActive = true;
+        }
+        else //Projectile turret
+        {
+            firingCoroutine = StartCoroutine(BurstFire());
+        }
 
+        isFiring = true;
         cooldownTimer = cooldown; //Cooldown is launch
-        
         isReadyToFire = false;
     }
 
     public IEnumerator BurstFire()
     {
+        if (stopMovement)
+        {
+            ennemy.isMoving = false;
+        }
+
         yield return new WaitForSeconds(0.1f);
         // rate of fire in weapons is in rounds per minute (RPM), therefore we should calculate how much time passes before firing a new round in the same burst.
 
@@ -93,7 +158,7 @@ public class EnnemyAttack : MonoBehaviour
                 GameObject bullet = Instantiate
                     (bulletPrefab,
                     bulletPosition,
-                    Quaternion.Euler(new Vector3(0, 0, angleViseur - 90)));
+                    Quaternion.Euler(new Vector3(0, 0, angleViseur + 90)));
 
                 yield return new WaitForSeconds(fireRate); // wait till the next round
             }
@@ -106,16 +171,17 @@ public class EnnemyAttack : MonoBehaviour
                 GameObject bullet = Instantiate
                     (bulletPrefab,
                     bulletPosition,
-                    Quaternion.Euler(new Vector3(0, 0, 90)));
+                    Quaternion.Euler(new Vector3(0, 0, -90)));
 
                 yield return new WaitForSeconds(fireRate); // wait till the next round
             }
         }
         else
         {
-            Debug.Log("Attacj type invalid");
+            Debug.Log("Attack type invalid");
         }
-
+        
+        ennemy.isMoving = true;
         isFiring = false;
         cooldownTimer = cooldown;
     }

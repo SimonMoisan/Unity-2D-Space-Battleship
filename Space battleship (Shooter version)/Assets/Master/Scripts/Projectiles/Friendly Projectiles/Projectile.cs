@@ -47,7 +47,7 @@ public class Projectile : MonoBehaviour
     [Header("Associated objects")]
     public Animator animator;
     public Rigidbody2D rb2D;
-    public PolygonCollider2D col;
+    public CapsuleCollider2D col;
     public Salve salve;
 
     //Coroutines
@@ -58,7 +58,7 @@ public class Projectile : MonoBehaviour
         salve = GetComponentInParent<Salve>();
         animator = gameObject.GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
-        col = GetComponent<PolygonCollider2D>();
+        col = GetComponent<CapsuleCollider2D>();
 
         if (isAccelerating && !isDeccelerating)
         {
@@ -168,6 +168,10 @@ public class Projectile : MonoBehaviour
 
     IEnumerator Destruction()
     {
+        bulletSpeed = 0;
+        rb2D.isKinematic = false;
+        rb2D.WakeUp();
+        col.enabled = false;
         rb2D.velocity = Vector2.zero;
         rb2D.angularVelocity = 0f;
         animator.SetBool("BeingDestroyed", true);

@@ -45,13 +45,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetingType: Normal
+  attackType: 
   damage: 0
-  cooldown: 4
   bulletSpeed: 400
   fireRate: 0
   nbrShots: 1
+  cooldown: 4
+  cooldownTimer: 0
+  cooldownIsActive: 0
   isFiring: 0
-  isActive: 0
+  isReadyToFire: 0
+  ennemy: {fileID: 0}
   bulletPrefab: {fileID: 3544657312594927205, guid: 9b3e72d3ae8e2c74784545c1a6d39be1,
     type: 3}
   playerDetector: {fileID: 0}

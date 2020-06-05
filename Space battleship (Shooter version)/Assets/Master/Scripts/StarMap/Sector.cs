@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum SectorType { Battle, Shop, Event }
+
 public class Sector : MonoBehaviour
 {
     [Header("Sector Parameters :")]
@@ -20,11 +22,13 @@ public class Sector : MonoBehaviour
     public bool sectorIsExplored;
     public SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
-    public List<Wave> waves; //Waves presents in this sectors
 
+    [Header("Associated objects :")]
     //Associated objects
+    public MenuManagerScript menuManager;
     public GameManagerScript gameManager;
     public EnnemySpawner ennemySpawner;
+    public List<Wave> waves; //Waves presents in this sectors
 
     // Start is called before the first frame update
     void Start()
@@ -37,11 +41,12 @@ public class Sector : MonoBehaviour
 
         gameManager = FindObjectOfType<GameManagerScript>();
         ennemySpawner = FindObjectOfType<EnnemySpawner>();
+        menuManager = FindObjectOfType<MenuManagerScript>();
     }
 
     void OnMouseDown()
     {
-        if(playerIsPresent && !sectorIsExplored) //The player is already in this sector and wants to start this sector if not already explored
+        if(playerIsPresent && !sectorIsExplored && menuManager.sectorClickable) //The player is already in this sector and wants to start this sector if not already explored
         {
             //Start battle phase
             gameManager.StartBattleSector();
@@ -144,7 +149,6 @@ public class Sector : MonoBehaviour
     {
         Gizmos.color = Color.red;
         
-
         if (sectorType == "End")
         {
             Gizmos.DrawWireSphere(transform.position, (minRange - 0.001f) * 1.5f);

@@ -69,11 +69,14 @@ public class EnnemyProjectile : MonoBehaviour
 
     IEnumerator Destruction()
     {
+        bulletSpeed = 0;
+        rb2D.isKinematic = false;
+        rb2D.WakeUp();
         col.isTrigger = false;
         rb2D.velocity = Vector2.zero;
         rb2D.angularVelocity = 0f;
         animator.SetBool("BeingDestroyed", true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         ennemySalve.ImDestroyed();
         yield return new WaitForSeconds(0.01f);
         Destroy(gameObject);

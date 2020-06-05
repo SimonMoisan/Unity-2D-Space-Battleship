@@ -17,7 +17,8 @@ public class Ennemy : MonoBehaviour
 
     public int scrapValue;  //Scrap given when destroyed
     public float uwChargeValue; //Charge given to the ultimate weapon when destroyed
-    public bool isDestroyed = false;
+    public bool isDestroyed;
+    public bool isMoving;
 
     [Header("Attack management : ")]
     public int nbrSimAttack; //Number attack launch simultaneously
@@ -30,7 +31,8 @@ public class Ennemy : MonoBehaviour
     public WaveConfig waveConfig;
     public EnnemySquad squad;
     public Animator animator;
-    public PolygonCollider2D collider;
+    public CapsuleCollider2D collider;
+    public EnnemySpawner ennemySpawner;
 
     //Movement parameters
     [ReadOnly] public Transform[] waypoints;
@@ -44,8 +46,9 @@ public class Ennemy : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        collider = GetComponent<PolygonCollider2D>();
+        collider = GetComponent<CapsuleCollider2D>();
         animator = GetComponent<Animator>();
+        ennemySpawner = FindObjectOfType<EnnemySpawner>(); //Send to the ennemy spawn that he has been destroyed
 
         //Initiate attack management
         attacks = GetComponentsInChildren<EnnemyAttack>();
@@ -65,7 +68,7 @@ public class Ennemy : MonoBehaviour
         shieldPoints = MaxShieldPoints;
         platePoints = MaxPlatePoints;
 
-        
+        isMoving = true;
         squad = GetComponentInParent<EnnemySquad>();
 
         //Move on its own if an ennemy doesn't have a squad
@@ -93,13 +96,13 @@ public class Ennemy : MonoBehaviour
         AttackManagement();
 
         //Move on its own if an ennemy doesn't have a squad
-        if (squad == null)
+        if (squad == null && isMoving)
         {
             MoveCible();
         }
     }
 
-    private void enqueuAttack(EnnemyAttack attack)
+    protected void enqueuAttack(EnnemyAttack attack)
     {
         for (int i = 0; i < attacks.Length; i++)
         {
@@ -129,7 +132,7 @@ public class Ennemy : MonoBehaviour
         {
             if(!isDestroyed) //To avoid multiple destructions
             {
-                StartCoroutine(destruction());
+                StartCoroutine(destruction(true));
             }
         }
 
@@ -170,7 +173,7 @@ public class Ennemy : MonoBehaviour
         }
     }
 
-    private void MoveCible()
+    protected void MoveCible()
     {
         if (waypointIndex <= waypoints.Length - 1)
         {
@@ -184,30 +187,33 @@ public class Ennemy : MonoBehaviour
         }
         else
         {
+            //Destroyed at the end of waypoints
             if (waveConfig.dieAtEnd)
             {
-                EnnemySpawner ennemySpawner = FindObjectOfType<EnnemySpawner>(); //Send to the ennemy spawn that he has been destroyed
-                ennemySpawner.ennemyDestroyed++;
-                ennemySpawner.ennemyDestroyedInWave++;
+                ennemySpawner.EnnemyDestroyed();
                 Destroy(gameObject);
             }
         }
     }
 
-    public IEnumerator destruction()
+    public IEnumerator destruction(bool destroyedByPlayer)
     {
         //Disable collision with other projectiles
         collider.enabled = false;
 
         //Say to the ennemyspawner it was destroyed
-        EnnemySpawner ennemySpawner = FindObjectOfType<EnnemySpawner>(); //Send to the ennemy spawn that he has been destroyed
         ennemySpawner.EnnemyDestroyed();
         isDestroyed = true;
 
         //Give scrap and uwCharge to the player as reward
-        Battleship battleship = FindObjectOfType<Battleship>();
-        battleship.getEnnemyReward(scrapValue, uwChargeValue);
+        if(destroyedByPlayer)
+        {
+            Battleship battleship = FindObjectOfType<Battleship>();
+            battleship.chargeUW(uwChargeValue);
 
+            ennemySpawner.scrapsToWin += scrapValue;
+        }
+        
         if(squad != null)
         {
             StartCoroutine(squad.imDestroyed());

@@ -15,11 +15,12 @@ public class Battleship : MonoBehaviour
     [Space]
     [Header("UW weapons informations : ")]
     [ReadOnly] public bool uwIsRunning = false;
-    public float ultimateWeaponChargeLimite; //Charge to reach to use UW
-    [ReadOnly] public float ultimateWeaponCharge; //Start to 0, need to reach the limit to be used
+    public float uwChargeMax; //Charge to reach to use UW
+    [ReadOnly] public float uwCharge; //Start to 0, need to reach the limit to be used
     [Space]
     [Header("Movement parameters : ")]
     //Parameters used for movement
+    private Transform initialPosition;       // Start position for every battl phases
     [ReadOnly] public float velocity;        // Current Travelling Velocity
     public float maxVelocity;     // Maxima Velocity
     public float acc;             // Current Acceleration
@@ -60,6 +61,7 @@ public class Battleship : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        initialPosition = transform;
         stats = FindObjectOfType<PlayerStats>();
         animator = gameObject.GetComponent<Animator>();
         hullPoints = MaxHullPoints;
@@ -122,11 +124,11 @@ public class Battleship : MonoBehaviour
         }
     }
 
-    //Fonction qui gère le déplacement du vaisseau
+    //Function for battleship movement
     public void NewMoveBattleshipAcc()
     {
         ////////////////////////////////////////////////////////////////////////////
-        //Gère le déplacement vers le haut du vaisseau
+        //Upward movement
         if (Input.GetKeyDown("z") && actualDirection != "DOWN")
         {
             actualDirection = "UP";
@@ -145,7 +147,7 @@ public class Battleship : MonoBehaviour
         ////////////////////////////////////////////////////////////////////////////
 
         ////////////////////////////////////////////////////////////////////////////
-        //Gère le déplacement vers le bas du vaisseau
+        //Downward movement
         if (Input.GetKeyDown("s") && actualDirection != "UP")
         {
             actualDirection = "DOWN";
@@ -190,7 +192,7 @@ public class Battleship : MonoBehaviour
         ////////////////////////////////////////////////////////////////////////////
     }
 
-    //Fonction qui ajoute une petite animation lorsque le vaisseau est statique
+    //Animation when static
     public void StaticAnimation()
     {
         if(actualDirection == "NONE")
@@ -384,14 +386,37 @@ public class Battleship : MonoBehaviour
         }
     }
 
-    public void getEnnemyReward(int scrap, float uwCharge)
+    public void chargeUW(float ammount)
     {
-        ultimateWeaponCharge += uwCharge;
-        if (ultimateWeaponCharge > ultimateWeaponChargeLimite)
+        uwCharge += ammount;
+        if (uwCharge > uwChargeMax)
         {
-            ultimateWeaponCharge = ultimateWeaponChargeLimite;
+            uwCharge = uwChargeMax;
         }
+    }
 
-        stats.updateScrapValue(stats.scraps + scrap);
+    //Function called at the end of a battle phase to reset shield and cooldowns
+    public void reset()
+    {
+        Debug.Log("Reset");
+
+        shield.shieldPoints = shield.maxShieldPoints;
+        for (int i = 0; i < standardTurrets.Length; i++)
+        {
+            if(standardTurrets[i] != null)
+            {
+                standardTurrets[i].cooldownTimer = 0;
+                standardTurrets[i].actualAmmo = standardTurrets[i].maxAmmo;
+            }
+        }
+        for (int i = 0; i < spinalTurrets.Length; i++)
+        {
+            if(spinalTurrets[i] != null)
+            {
+                spinalTurrets[i].cooldownTimer = 0;
+                spinalTurrets[i].actualAmmo = spinalTurrets[i].maxAmmo;
+            }
+        }
+        
     }
 }

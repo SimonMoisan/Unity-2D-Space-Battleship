@@ -5,19 +5,24 @@ using UnityEngine;
 public class StarMapManagement : MonoBehaviour
 {
     [Header("Level parameters")]
-    public float xSize;
-    public float ySize;
-    public int minSectorNumber;
-    public int maxSectorNumber;
-    private int sectorNumber;
-    public Sector[] sectors;
+    public float xMin;
+    public float xMax;
+    public float yMin;
+    public float yMax;
+    public float xOffset;
+    public float yOffset;
+    public List<Sector> sectors;
     public Sector startSector;
     public Sector endSector;
     private int index;
 
-    public Sector sectorPrefab;
-    public SectorLink linkPrefab;
+    [Header("Sectors spawn parameters")]
+    public int sectorNumber;
+    public int minSectorNumber;
+    public int maxSectorNumber;
+    public int numberOfShop;
 
+    [Header("WaveLinks parameters")]
     public float maxDistanceBtwSectorsLink;
     public float minDistanceBtwSectorsLink;
     public LayerMask whatIsSector;
@@ -26,7 +31,14 @@ public class StarMapManagement : MonoBehaviour
     public Wave[] waves; //Every possible waves in this system
     public int minNbrWave;
     public int maxNbrWave;
- 
+
+    [Header("Prefabs")]
+    public Sector sectorPrefab;
+    public BattleEvent battleEventPrefab;
+    public ContextualEvent contextualEventPrefab;
+    public ShopEvent shopEventPrefab;
+    public SectorLink linkPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,18 +48,18 @@ public class StarMapManagement : MonoBehaviour
     public void InitializeStarMap()
     {
         index = 2;
-        sectorNumber = Random.Range(minSectorNumber, maxSectorNumber);
-        sectors = new Sector[sectorNumber + 2];
+        sectorNumber = Random.Range(minSectorNumber, maxSectorNumber);;
 
-        sectors[0] = startSector;
-        sectors[1] = endSector;
+        sectors.Add(startSector);
+        sectors.Add(endSector);
 
         //Attribute waves to start and end sector
-        //attributeWaveToSector(startSector);
-        attributeWaveToSector(endSector);
+        //attributeEventToSector(startSector);
+        //attributeEventToSector(endSector);
 
-        //generateSectorsFullRandom();
-        generateSectorRecursively(startSector, 0);
+        generateSectorsRandomly();
+        createLinksBtwSectors();
+        //generateSectorRecursively(startSector, 0);
     }
 
     public void generateSectorRecursively(Sector startingSector, int compteur)
@@ -87,7 +99,7 @@ public class StarMapManagement : MonoBehaviour
                         //linkGO.transform.parent = gameObject.transform;
 
                         //Attribute waves to this new Sector
-                        attributeWaveToSector(newSectorGO);
+                        attributeEventToSector(newSectorGO);
 
                         //Fill lists of sector and links
                         if (!newSectorGO.linkedSectors.Contains(startingSector))
@@ -137,7 +149,7 @@ public class StarMapManagement : MonoBehaviour
     }
 
     //Function used to attribute waves to a sector
-    public void attributeWaveToSector(Sector sector)
+    public void attributeEventToSector(Sector sector)
     {
         int nbrWave = Random.Range(minNbrWave, maxNbrWave);
         List<Wave> wavesToAttribute = new List<Wave>();
@@ -153,42 +165,62 @@ public class StarMapManagement : MonoBehaviour
         sector.waves = wavesToAttribute;
     }
 
-    bool sectorCanBeCreated(Transform positionToTest, float rangeBtwSectors)
+    private bool sectorCanBeCreated(Vector2 testPosition)
     {
-        //Check if this position is out of bound
-        if(positionToTest.position.x >= xSize / 2 || positionToTest.position.x <= -xSize / 2 ||
-           positionToTest.position.y >= ySize / 2 || positionToTest.position.y >= -ySize / 2)
+        for (int i = 0; i < sectors.Count; i++)
         {
-            return false;
+            if(Mathf.Abs(Vector2.Distance(testPosition, sectors[i].transform.position)) < minDistanceBtwSectorsLink)
+            {
+                return false;
+            }
         }
-
-        //Check if an other is too close from the given position
-        Collider2D[] closestSectors = Physics2D.OverlapCircleAll(positionToTest.position, rangeBtwSectors, whatIsSector);
-        if(closestSectors.Length > 1) //1 because the sector is counting himself
-        {
-            return false;
-        }
-
         return true;
     }
 
-    void generateSectorsFullRandom()
+    private void generateSectorsRandomly()
     {
         for(int i=0; i<sectorNumber; i++)
         {
-            Vector2 sectorPosition = new Vector2(Random.Range((-xSize / 2) +2, (xSize / 2) -2), Random.Range((-ySize / 2)+1, (ySize / 2)-1));
-            Sector sectorGO = Instantiate(sectorPrefab, sectorPosition, Quaternion.identity);
-            sectorGO.transform.parent = gameObject.transform;
+            int failedSpawn = 0;
+            while(failedSpawn < 10)
+            {
+                Vector2 sectorPosition = new Vector2(Random.Range(xMin + 2, xMax - 2) + xOffset, Random.Range(yMin + 1, yMax - 1) + yOffset);
+                if (sectorCanBeCreated(sectorPosition))
+                {
+                    Sector sectorGO = Instantiate(sectorPrefab, sectorPosition, Quaternion.identity);
+                    sectorGO.transform.parent = gameObject.transform;
 
-            sectors[index] = sectorGO;
-            index++;
+                    attributeEventToSector(sectorGO);
+                    sectors.Add(sectorGO);
+                    index++;
+                    break;
+                }
+                else
+                {
+                    failedSpawn++;
+                }
+            }
+        }
+    }
+
+    private void createLinksBtwSectors()
+    {
+        for (int i = 0; i < sectors.Count; i++)
+        {
+            for (int j = 0; j < sectors.Count; j++)
+            {
+                if(sectors[i] != sectors[j] && Vector2.Distance(sectors[i].transform.position, sectors[j].transform.position) < maxDistanceBtwSectorsLink)
+                {
+                    sectors[i].createLink(sectors[j]);
+                }
+            }
         }
     }
 
     //Create links between closest sectors
     void generateLinksBetweenSectors()
     {
-        for (int i = 0; i < sectors.Length; i++)
+        for (int i = 0; i < sectors.Count; i++)
         {
             sectors[i].findClosestSectors(true);
         }
@@ -196,7 +228,7 @@ public class StarMapManagement : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Vector3 mapRange = new Vector3(xSize, ySize, 0);
+        Vector3 mapRange = new Vector3(xMax - xMin, yMax - yMin, 0);
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, mapRange);
     }

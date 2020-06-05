@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2519677343480930746}
   - component: {fileID: 2519677343480930747}
   - component: {fileID: 2519677343480930744}
-  - component: {fileID: 2519677343480930741}
   - component: {fileID: -4134933537491887500}
+  - component: {fileID: 5534218807903296848}
   m_Layer: 8
   m_Name: Reaper Scout
   m_TagString: Ennemy
@@ -106,80 +106,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!60 &2519677343480930741
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2519677343480930745}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.3, y: 0.5}
-    oldSize: {x: 1.4, y: 0.74}
-    newSize: {x: 0.64, y: 0.37}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.6383333, y: -0.10933329}
-      - {x: 0.69166666, y: -0.089333296}
-      - {x: 0.75166667, y: -0.049333293}
-      - {x: 0.81166667, y: -0.029333293}
-      - {x: 0.83833337, y: -0.0026666261}
-      - {x: 0.85833335, y: 0.024000041}
-      - {x: 0.88500005, y: 0.017333375}
-      - {x: 0.9583334, y: -0.05599996}
-      - {x: 1.0183333, y: -0.049333293}
-      - {x: 1.0183333, y: 0.017333375}
-      - {x: 1.0116667, y: 0.037333377}
-      - {x: 0.97833335, y: 0.07066671}
-      - {x: 0.9583334, y: 0.13066672}
-      - {x: 0.9316667, y: 0.15733337}
-      - {x: 0.90500003, y: 0.17733338}
-      - {x: 0.785, y: 0.17733338}
-      - {x: 0.7716667, y: 0.16400005}
-      - {x: 0.725, y: 0.12400004}
-      - {x: 0.6116667, y: 0.23733339}
-      - {x: 0.61833334, y: 0.27733338}
-      - {x: 0.6983333, y: 0.39733338}
-      - {x: 0.6983333, y: 0.44400007}
-      - {x: 0.51166666, y: 0.44400007}
-      - {x: 0.35833335, y: 0.36400005}
-      - {x: 0.23166667, y: 0.23066671}
-      - {x: 0.085, y: 0.21733338}
-      - {x: 0.065000005, y: 0.21066672}
-      - {x: -0.008333334, y: 0.13066672}
-      - {x: -0.008333334, y: -0.08266663}
-      - {x: 0.018333334, y: -0.10933329}
-      - {x: 0.09833334, y: -0.1693333}
-      - {x: 0.13833334, y: -0.18933329}
-      - {x: 0.4116667, y: -0.19599997}
-      - {x: 0.43833333, y: -0.2293333}
-      - {x: 0.49833333, y: -0.2693333}
-      - {x: 0.55833334, y: -0.29599997}
-      - {x: 0.7583333, y: -0.29599997}
-      - {x: 0.7583333, y: -0.25599995}
-      - {x: 0.745, y: -0.24266663}
-      - {x: 0.67833334, y: -0.18933329}
-    - - {x: 0.205, y: -0.13599996}
-      - {x: 0.205, y: -0.13599996}
-    - - {x: 0.9916667, y: 0.19733338}
-      - {x: 0.9916667, y: 0.15066671}
-      - {x: 1.0316666, y: 0.11066671}
-      - {x: 1.065, y: 0.11066671}
-      - {x: 1.0783334, y: 0.117333375}
-      - {x: 1.0783334, y: 0.17066671}
-      - {x: 1.065, y: 0.19733338}
 --- !u!114 &-4134933537491887500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +131,7 @@ MonoBehaviour:
   attacks:
   - {fileID: 3240078155578524410}
   attackPaterns: 00000000
-  waveConfig: {fileID: 0}
+  waveConfig: {fileID: 11400000, guid: fd480ff059393b0428ce129f97dd9233, type: 2}
   squad: {fileID: 0}
   animator: {fileID: 0}
   collider: {fileID: 0}
@@ -213,6 +139,22 @@ MonoBehaviour:
   moveSpeed: 2
   hullBar: {fileID: 3707293872429854525}
   shieldBar: {fileID: 0}
+--- !u!70 &5534218807903296848
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2519677343480930745}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0027695948, y: -0.042855237}
+  m_Size: {x: 0.8344685, y: 0.44858897}
+  m_Direction: 1
 --- !u!1001 &5036485912564598707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -278,12 +220,12 @@ PrefabInstance:
     - target: {fileID: 2773439875107716335, guid: 037a01ea1c95eff4b82ca8f6ee747739,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.515
+      value: 0.087
       objectReference: {fileID: 0}
     - target: {fileID: 2773439875107716335, guid: 037a01ea1c95eff4b82ca8f6ee747739,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.065
+      value: -0.134
       objectReference: {fileID: 0}
     - target: {fileID: 2773439875107716335, guid: 037a01ea1c95eff4b82ca8f6ee747739,
         type: 3}

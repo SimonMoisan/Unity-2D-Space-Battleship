@@ -5,7 +5,7 @@ using System;
 
 public class CargoItemSlot : MonoBehaviour, IPointerClickHandler, IDragHandler, IBeginDragHandler, IEndDragHandler, IDropHandler
 {
-    [SerializeField] Image image;
+    [SerializeField] protected Image image;
     [SerializeField] protected CargoItem _item;
     public int slotId;
 
@@ -18,8 +18,8 @@ public class CargoItemSlot : MonoBehaviour, IPointerClickHandler, IDragHandler, 
     public event Action<CargoItemSlot> OnDragEvent;
     public event Action<CargoItemSlot> OnDropEvent;
 
-    private Color normalColor = Color.white;
-    private Color disableColor = new Color(1,1,1,0);
+    protected Color normalColor = Color.white;
+    protected Color disableColor = new Color(1,1,1,0);
 
     public CargoItem CargoItem
     {
@@ -33,7 +33,14 @@ public class CargoItemSlot : MonoBehaviour, IPointerClickHandler, IDragHandler, 
             }
             else
             {
-                image.sprite = _item.cargoIcone;
+                if(this is TurretSlot)
+                {
+                    image.sprite = _item.arsenalIcon;
+                }
+                else
+                {
+                    image.sprite = _item.cargoIcone;
+                }
                 image.color = normalColor;
             }
         }

@@ -21,13 +21,15 @@ public class EnnemySpawner : MonoBehaviour
     [ReadOnly] public int ennemyToSpawnInWave;
     [ReadOnly] public int ennemyDestroyedInWave;
     [ReadOnly] public int ennemyAliveInWave; //Number of ennemy remains alive in the actual wave
-    
+    [ReadOnly] public int scrapsToWin; //Quantity of scrap to give to the player at sector's end
+
     //Associated objects
     [Header("Associated objects")]
     [ReadOnly] public List<Wave> wavesToPlay;
     [ReadOnly] private Wave wavePlaying;
     [ReadOnly] public bool waveIsRunning; //Actual wave is running
     [ReadOnly] public GameManagerScript gameManager;
+    [ReadOnly] public PlayerStats playerStats;
 
     //Timers
     [Header("Timers")]
@@ -35,10 +37,14 @@ public class EnnemySpawner : MonoBehaviour
     [ReadOnly] public float timerStartSector;
     [ReadOnly] public float timeBtwWaves;
 
+    public static EnnemySpawner current;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         gameManager = FindObjectOfType<GameManagerScript>();
+        playerStats = FindObjectOfType<PlayerStats>();
+        current = this;
 
         /*
         //Count number of ennemy to spawn and Give waypoints to ennemyPrefabs in waveConfigs
@@ -67,11 +73,17 @@ public class EnnemySpawner : MonoBehaviour
 
     public void Update()
     {
+        //Check if battle phase is finished
         if((ennemyCount > 0 && ennemyCount <= ennemyDestroyed) || (waveIsRunning && wavesToPlay.Count == 0))
         {
             if(timerEndSector <= 0)
             {
+                //Give scraps to player
+                playerStats.scraps += scrapsToWin;
+                
+                gameManager.scrapRewardDisplayer.text = "Scraps won : " + scrapsToWin;
                 gameManager.EndBattleSector();
+                scrapsToWin = 0;
             }
             timerEndSector -= Time.deltaTime; 
         }
@@ -82,16 +94,16 @@ public class EnnemySpawner : MonoBehaviour
             wavePlayingIndex++;
 
             //Reset actual wave variable
-            if(wavePlayingIndex <= wavesToPlay.Count)
+            if(wavePlayingIndex < wavesToPlay.Count)
             {
                 wavePlaying = wavesToPlay[wavePlayingIndex];
-            }
-            ennemyToSpawnInWave = wavePlaying.numberOfEnnmy;
-            ennemyAliveInWave = ennemyToSpawnInWave;
-            ennemyDestroyedInWave = 0;
+                ennemyToSpawnInWave = wavePlaying.numberOfEnnmy;
+                ennemyAliveInWave = ennemyToSpawnInWave;
+                ennemyDestroyedInWave = 0;
 
-            //Start next wave
-            StartCoroutine(SpawnWave(wavePlayingIndex));
+                //Start next wave
+                StartCoroutine(SpawnWave(wavePlayingIndex));
+            }  
         }
     }
 
@@ -135,9 +147,16 @@ public class EnnemySpawner : MonoBehaviour
         StartCoroutine(SpawnWave(wavePlayingIndex));
     }
 
+    public event Action onEnnemyDestroyed;
     //Function called when an ennemy is destroyed
     public void EnnemyDestroyed()
     {
+        /*if(onEnnemyDestroyed != null)
+        {
+            ennemyDestroyed++;
+            ennemyDestroyedInWave++;
+            ennemyAliveInWave--;
+        }*/
         ennemyDestroyed++;
         ennemyDestroyedInWave++;
         ennemyAliveInWave--;

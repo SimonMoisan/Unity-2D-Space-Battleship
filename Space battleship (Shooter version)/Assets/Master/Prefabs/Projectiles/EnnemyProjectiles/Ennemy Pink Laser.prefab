@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6330413239543503217}
   - component: {fileID: 6330413239543503216}
-  - component: {fileID: 6330413239543503219}
   - component: {fileID: 3038725199628671628}
   - component: {fileID: 8541458841813673239}
   - component: {fileID: 6330413239543503220}
+  - component: {fileID: -8374664892506505022}
   m_Layer: 0
   m_Name: Ennemy Pink Laser
   m_TagString: EnnemyProjectile
@@ -28,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6330413239543503223}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
   m_LocalPosition: {x: 20.177021, y: 5.557277, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
 --- !u!212 &6330413239543503216
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -49,6 +49,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -70,13 +71,13 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2193405
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 794c002bf313a9344b5fa8d6e932e25d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 0.4, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
@@ -84,27 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &6330413239543503219
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6330413239543503223}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: 569101bd1fb351c48b65acb5efb25fe2, type: 2}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!60 &3038725199628671628
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -171,7 +151,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 400
   damage: 20
+  damageType: 0
   animator: {fileID: 8541458841813673239}
-  rb2D: {fileID: 6330413239543503219}
+  rb2D: {fileID: 0}
+  col: {fileID: 3038725199628671628}
   ennemySalve: {fileID: 0}
-  ennemy: {fileID: 1816476511454174833, guid: 0fbe71a197e77644aa7646cfb3c298f7, type: 3}
+  isDestroyable: 0
+  health: 0
+  canExplode: 0
+  explosionRadius: 0
+  canScatter: 0
+--- !u!50 &-8374664892506505022
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6330413239543503223}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 2
+  m_CollisionDetection: 0
+  m_Constraints: 4

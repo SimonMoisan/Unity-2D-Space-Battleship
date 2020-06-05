@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6bd71817be2b10429fcff4c11a3d9de, type: 3}
+  m_Name: Scheme Ion Turret
+  m_EditorClassIdentifier: 
+  ItemName: 
+  cargoIcone: {fileID: 0}
+  arsenalIcon: {fileID: 0}
+  turretType: 0
+  turretSize: 0
+  projectileType: 0
+  modifierPrimaryType: 0
+  modifierSecondaryType: 0
+  upgradeRateIndexes: 
+  valuesDamage: 
+  valuesHealth: 
+  valuesNbrOfSalve: 
+  valuesAmmo: 
+  valuesFirerate: []
+  valuesCooldown: []
+  valuesSpeed: 
+  valuesPrecision: 
+  startingDamage: 0
+  startingHealth: 0
+  startingShotsPerSalve: 0
+  startingNbrOfSalve: 0
+  startingAmmo: 0
+  startingFirerate: 0
+  startingCooldown: 0
+  startingSpeed: 0
+  startingPrecision: 0
