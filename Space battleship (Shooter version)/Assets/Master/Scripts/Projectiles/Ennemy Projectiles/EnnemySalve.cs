@@ -18,7 +18,10 @@ public class EnnemySalve : MonoBehaviour
     {
         for (int i = 0; i < ennemyProjectiles.Length; i++)
         {
-            ennemyProjectiles[i].transform.position += -1 * ennemyProjectiles[i].transform.up * Time.deltaTime * (ennemyProjectiles[i].bulletSpeed / 50);
+            if(ennemyProjectiles[i] != null)
+            {
+                ennemyProjectiles[i].transform.position += -1 * ennemyProjectiles[i].transform.up * Time.deltaTime * (ennemyProjectiles[i].bulletSpeed / 50);
+            }
         }
     }
 

@@ -1,0 +1,620 @@
+fileFormatVersion: 2
+guid: da3fd440f7372434b819b5d3c14c251a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5782705809845782791
+    second: Simple-Laser-Red-Sprites_0
+  - first:
+      213: -4863523865284840347
+    second: Simple-Laser-Red-Sprites_1
+  - first:
+      213: -3856012856772828895
+    second: Simple-Laser-Red-Sprites_2
+  - first:
+      213: 3052258066611692671
+    second: Simple-Laser-Red-Sprites_3
+  - first:
+      213: 9033601256639085571
+    second: Simple-Laser-Red-Sprites_4
+  - first:
+      213: 1350666732358809081
+    second: Simple-Laser-Red-Sprites_5
+  - first:
+      213: 8780655059716348764
+    second: Simple-Laser-Red-Sprites_6
+  - first:
+      213: -8940982333621641397
+    second: Simple-Laser-Red-Sprites_7
+  - first:
+      213: -2860685859788634785
+    second: Simple-Laser-Red-Sprites_8
+  - first:
+      213: -6583473863822124721
+    second: Simple-Laser-Red-Sprites_9
+  - first:
+      213: 1506569107028027179
+    second: Simple-Laser-Red-Sprites_10
+  - first:
+      213: 3966181607696722951
+    second: Simple-Laser-Red-Sprites_11
+  - first:
+      213: -4552176711301594196
+    second: Simple-Laser-Red-Sprites_12
+  - first:
+      213: -5790494451550774956
+    second: Simple-Laser-Red-Sprites_13
+  - first:
+      213: -4226485131958665188
+    second: Simple-Laser-Red-Sprites_14
+  - first:
+      213: -7847127749321845631
+    second: Simple-Laser-Red-Sprites_15
+  - first:
+      213: 4022421638373887808
+    second: Simple-Laser-Red-Sprites_16
+  - first:
+      213: 2558416799656697400
+    second: Simple-Laser-Red-Sprites_17
+  - first:
+      213: -288031490086853250
+    second: Simple-Laser-Red-Sprites_18
+  - first:
+      213: -1309278030642708276
+    second: Simple-Laser-Red-Sprites_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Simple-Laser-Red-Sprites_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 94
+        width: 10
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7090274cb4c404050800000000000000
+      internalID: 5782705809845782791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple-Laser-Red-Sprites_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 94
+        width: 10
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 564ff0500da418cb0800000000000000
+      internalID: -4863523865284840347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple-Laser-Red-Sprites_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 94
+        width: 10
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12167be9cb0bc7ac0800000000000000
+      internalID: -3856012856772828895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple-Laser-Red-Sprites_3
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 94
+        width: 10
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f74e53f3a8ccb5a20800000000000000
+      internalID: 3052258066611692671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple-Laser-Red-Sprites_4
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 94
+        width: 10
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30cbe781b7ccd5d70800000000000000
+      internalID: 9033601256639085571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple-Laser-Red-Sprites_5
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 94
+        width: 10
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f53f28ac388eb210800000000000000
+      internalID: 1350666732358809081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple-Laser-Red-Sprites_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 55
+        width: 10
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5b11a141472bd970800000000000000
+      internalID: 8780655059716348764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple-Laser-Red-Sprites_7
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 55
+        width: 10
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f507d50ff3be380800000000000000
+      internalID: -8940982333621641397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple-Laser-Red-Sprites_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 55
+        width: 10
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f55c059fd5dcc48d0800000000000000
+      internalID: -2860685859788634785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple-Laser-Red-Sprites_9
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 55
+        width: 10
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4950dec66dc2a4a0800000000000000
+      internalID: -6583473863822124721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple-Laser-Red-Sprites_10
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 55
+        width: 10
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27abf5ee9868e410800000000000000
+      internalID: 1506569107028027179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple-Laser-Red-Sprites_11
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 55
+        width: 10
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70c63719825ba0730800000000000000
+      internalID: 3966181607696722951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple-Laser-Red-Sprites_12
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 7
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca30018466b63d0c0800000000000000
+      internalID: -4552176711301594196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple-Laser-Red-Sprites_13
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 7
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4591275c9f704afa0800000000000000
+      internalID: -5790494451550774956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple-Laser-Red-Sprites_14
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 7
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1042255a228855c0800000000000000
+      internalID: -4226485131958665188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple-Laser-Red-Sprites_15
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 7
+        width: 17
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1849f8a43e6691390800000000000000
+      internalID: -7847127749321845631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple-Laser-Red-Sprites_16
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 7
+        width: 17
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04fce1c1b2382d730800000000000000
+      internalID: 4022421638373887808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple-Laser-Red-Sprites_17
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 7
+        width: 17
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83edde23682518320800000000000000
+      internalID: 2558416799656697400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple-Laser-Red-Sprites_18
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 7
+        width: 17
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e752f35c2e4b00cf0800000000000000
+      internalID: -288031490086853250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple-Laser-Red-Sprites_19
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 7
+        width: 17
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc08157619284dde0800000000000000
+      internalID: -1309278030642708276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

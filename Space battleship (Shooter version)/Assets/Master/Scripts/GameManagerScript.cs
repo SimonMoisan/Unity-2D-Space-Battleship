@@ -5,30 +5,38 @@ using UnityEngine.UI;
 
 public class GameManagerScript : MonoBehaviour
 {
-    //Associated object
+    [Header("Associated objects :")]
     public StarMapManagement starMapManager;
     public EnnemySpawner ennemySpawner;
     public MenuManagerScript menuManager;
     public Battleship battleship;
+    public PlayerStats playerStats;
     public Camera battleCamera;
     public Camera starmapCamera;
-    public Text scrapRewardDisplayer;
+    public Animator crossfaderAnimator;
+    public StoryReader storyReader;
     [Space]
-
-    //Game stats
+    [Header("Game states :")]
     public Sector sectorPlayer; //Sector where the player actually is
-    public int scraps;
+    public bool isInBattle;
+    [Space]
+    [Header("Game stats :")]
+    public bool isInBattlezone;
     public int nbrSectorExplored;
+
+    public static GameManagerScript current;
 
     private void OnValidate()
     {
+        current = this;
+
         //Find associated objects in the game environment
         starMapManager = FindObjectOfType<StarMapManagement>();
         ennemySpawner = FindObjectOfType<EnnemySpawner>();
         menuManager = FindObjectOfType<MenuManagerScript>();
         battleship = FindObjectOfType<Battleship>();
-
-        sectorPlayer = starMapManager.startSector;
+        playerStats = FindObjectOfType<PlayerStats>();
+        storyReader = FindObjectOfType<StoryReader>();
     }
 
     // Start is called before the first frame update
@@ -38,27 +46,65 @@ public class GameManagerScript : MonoBehaviour
         battleCamera.enabled = false;
         starmapCamera.enabled = true;
 
+        sectorPlayer = starMapManager.startSector;
         //Launch starMap
         //starMapManager.InitializeStarMap();
     }
 
-    public void StartBattleSector()
+    public void playNextStepEvent()
     {
-        //Set objects states
-        ennemySpawner.wavesToPlay = sectorPlayer.waves;
-        battleCamera.enabled = true;
-        starmapCamera.enabled = false;
-        menuManager.startMapCanvas.SetActive(false);
+        int eventStepIndex = sectorPlayer.sectorEvent.actualEventStepIndex;
+        menuManager.contextualCanvas.enabled = false;
+
+        if (eventStepIndex < sectorPlayer.sectorEvent.eventSteps.Length)
+        {
+            EventStep eventStepToPlay = sectorPlayer.sectorEvent.eventSteps[sectorPlayer.sectorEvent.actualEventStepIndex];
+
+            switch (eventStepToPlay.eventStepType) //Play first step of the sector event
+            {
+                case EventStepType.battleEventStep:
+                    startBattleEvent(eventStepToPlay);
+                    break;
+
+                case EventStepType.contextualEventStep:
+                    StartCoroutine(startContextualEvent(eventStepToPlay));
+                    break;
+
+                case EventStepType.stationEventStep:
+                    startStationEvent(eventStepToPlay);
+                    break;
+            }
+
+            sectorPlayer.sectorEvent.actualEventStepIndex++;
+        }
+        else //No more step to play, go back to starmap
+        {
+            sectorPlayer.sectorIsExplored = true;
+            StartCoroutine(fadeBattlezoneToStarmap());
+        }
+    }
+
+    ///////// Battle step event /////////
+
+    public void startBattleEvent(EventStep eventStepToPlay)
+    {
+        isInBattle = true;
+        playerStats.isPlaying = true;
+
+        Debug.Log(eventStepToPlay.waves.Count);
+        ennemySpawner.wavesToPlay = eventStepToPlay.waves;
+
+        StartCoroutine(fadeStarmapToBattlezone());
+
         ennemySpawner.StartBattle();
     }
 
-    public void EndBattleSector()
+    public void endBattleEvent()
     {
-        Debug.Log("End");
-
         //Display information panel
-        menuManager.informationCanvas.SetActive(true);
-        //restObjectsStates();
+        menuManager.informationWindowEndBattle.SetActive(true);
+        isInBattle = false;
+        playerStats.isPlaying = false;
 
         //Reset timers
         ennemySpawner.timerEndSector = 4;
@@ -74,12 +120,59 @@ public class GameManagerScript : MonoBehaviour
         battleship.reset();
     }
 
+    ///////// Contextual step event /////////
+
+    IEnumerator startContextualEvent(EventStep eventStepToPlay)
+    {
+        if(!isInBattlezone)
+        {
+            StartCoroutine(fadeStarmapToBattlezone());
+            isInBattlezone = true;
+        }
+        yield return new WaitForSeconds(1.2f);
+
+        menuManager.contextualCanvas.enabled = true;
+        storyReader.inkJSONAsset = eventStepToPlay.storyJson;
+        storyReader.StartStory();
+    }
+
+    ///////// Station step event /////////
+
+    public void startStationEvent(EventStep eventStepToPlay)
+    {
+        menuManager.enterStationButton.SetActive(true);
+    }
+
     public void restObjectsStates()
     {
-        sectorPlayer.SwitchSprite("Explored player");
+        Debug.Log("reset");
+        sectorPlayer.SwitchSprite(SectorStatus.ExploredPlayer);
         sectorPlayer.sectorIsExplored = true;
+
+        StartCoroutine(fadeBattlezoneToStarmap());
+
+        menuManager.startMapCanvas.SetActive(true);
+    }
+
+    IEnumerator fadeStarmapToBattlezone()
+    {
+        crossfaderAnimator.Play("Crossfade-Anim-Appear");
+        yield return new WaitForSeconds(1.2f);
+        crossfaderAnimator.Play("Crossfade-Anim-Disappear");
+        battleCamera.enabled = true;
+        starmapCamera.enabled = false;
+        menuManager.starmapToBattleZone();
+        isInBattlezone = true;
+    }
+
+    IEnumerator fadeBattlezoneToStarmap()
+    {
+        crossfaderAnimator.Play("Crossfade-Anim-Appear");
+        yield return new WaitForSeconds(1.2f);
+        crossfaderAnimator.Play("Crossfade-Anim-Disappear");
         battleCamera.enabled = false;
         starmapCamera.enabled = true;
-        menuManager.startMapCanvas.SetActive(true);
+        menuManager.battlezoneToStarmap();
+        isInBattlezone = false;
     }
 }

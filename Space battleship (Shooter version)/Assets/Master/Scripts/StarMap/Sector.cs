@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum SectorType { Battle, Shop, Event }
+public enum SectorType { Normal, Start, End }
+public enum SectorStatus { Explored, Unexplored, ExploredPlayer, UnexploredPlayer }
 
 public class Sector : MonoBehaviour
 {
     [Header("Sector Parameters :")]
-    public string sectorType; //start, end, battle, store, event, empty
+    public SectorType sectorType; //start, end, battle, store, event, empty
+    public SectorStatus sectorStatus;
     public Collider2D[] closestSectors;
     public List<Sector> linkedSectors;
     public List<SectorLink> inputLinks;
     public List<SectorLink> outputLinks;
-    public StarMapManagement mapManager;
     public SectorLink linkPrefab;
     public float maxRange;
     public float minRange;
@@ -22,57 +23,59 @@ public class Sector : MonoBehaviour
     public bool sectorIsExplored;
     public SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
+    public SpriteRenderer shipLogo;
+    public SpriteRenderer dangerIndicator;
+    public SpriteRenderer stationIndicator;
 
     [Header("Associated objects :")]
     //Associated objects
     public MenuManagerScript menuManager;
     public GameManagerScript gameManager;
     public EnnemySpawner ennemySpawner;
-    public List<Wave> waves; //Waves presents in this sectors
+    public StarMapManagement starMapManager;
+    public StarmapEvent sectorEvent;
 
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        mapManager = FindObjectOfType<StarMapManagement>();
-        maxRange = mapManager.maxDistanceBtwSectorsLink;
-        minRange = mapManager.minDistanceBtwSectorsLink;
-        whatIsSector = mapManager.whatIsSector;
-
         gameManager = FindObjectOfType<GameManagerScript>();
         ennemySpawner = FindObjectOfType<EnnemySpawner>();
+        starMapManager = FindObjectOfType<StarMapManagement>();
         menuManager = FindObjectOfType<MenuManagerScript>();
+
+        maxRange = starMapManager.maxDistanceBtwSectorsLink;
+        minRange = starMapManager.minDistanceBtwSectorsLink;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        starMapManager = FindObjectOfType<StarMapManagement>();
+        whatIsSector = starMapManager.whatIsSector;
     }
 
     void OnMouseDown()
     {
         if(playerIsPresent && !sectorIsExplored && menuManager.sectorClickable) //The player is already in this sector and wants to start this sector if not already explored
         {
-            //Start battle phase
-            gameManager.StartBattleSector();
+            menuManager.enterStationButton.SetActive(false); //Reset before starting event
+
+            gameManager.playNextStepEvent(); //Play first step event
         }
         else
         {
-            if(linkedSectors.Count == 0)
-            {
-                Debug.Log("No linked sectors");
-            }
-
             for (int i = 0; i < linkedSectors.Count; i++)
             {
                 if (linkedSectors[i].playerIsPresent && (linkedSectors[i].sectorIsExplored || sectorIsExplored)) //If is next to the sector the player is already present and this sector has been explored
                 {
                     //Change sprite of the next sector
-                    if(!sectorIsExplored) //if the next sector is unexplored
+                    if (!sectorIsExplored) //if the next sector is unexplored
                     {
-                        SwitchSprite("Unexplored player");
+                        SwitchSprite(SectorStatus.UnexploredPlayer);
                         gameManager.sectorPlayer = this;
                         playerIsPresent = true;
                         linkedSectors[i].playerIsPresent = false;
                     }
                     else //The next sector is already explored
                     {
-                        SwitchSprite("Explored player");
+                        SwitchSprite(SectorStatus.ExploredPlayer);
                         gameManager.sectorPlayer = this;
                         playerIsPresent = true;
                         linkedSectors[i].playerIsPresent = false;
@@ -81,11 +84,11 @@ public class Sector : MonoBehaviour
                     //Change sprite of previous sector
                     if(linkedSectors[i].sectorIsExplored)
                     {
-                        linkedSectors[i].SwitchSprite("Explored");
+                        linkedSectors[i].SwitchSprite(SectorStatus.Explored);
                     }
                     else
                     {
-                        linkedSectors[i].SwitchSprite("Unexplored");
+                        linkedSectors[i].SwitchSprite(SectorStatus.Unexplored);
                     }
                 }
             }
@@ -95,7 +98,7 @@ public class Sector : MonoBehaviour
     //Return a list of closest sectors, can be used to create links to those closest sectors
     public List<Sector> findClosestSectors(bool linkSectors)
     {
-        if(sectorType == "End")
+        if(sectorType == SectorType.End)
         {
             closestSectors = Physics2D.OverlapCircleAll(transform.position, (minRange - 0.001f) * 1.5f, whatIsSector);
         }
@@ -125,9 +128,13 @@ public class Sector : MonoBehaviour
             Vector3 linkPosition = new Vector3(Mathf.Abs(sector.transform.position.x - transform.position.x), Mathf.Abs(sector.transform.position.y - transform.position.y), 0);
             SectorLink linkGO = Instantiate(linkPrefab, linkPosition, Quaternion.identity);
             linkGO.initiateLink(this, sector.GetComponent<Sector>());
-
+            //Add in associated objects of this sector
             outputLinks.Add(linkGO);
             linkedSectors.Add(sector);
+            //Add in associated objects of the other sector
+            sector.outputLinks.Add(linkGO);
+            sector.linkedSectors.Add(this);
+
             return linkGO;
         }
         return null;
@@ -149,7 +156,7 @@ public class Sector : MonoBehaviour
     {
         Gizmos.color = Color.red;
         
-        if (sectorType == "End")
+        if (sectorType == SectorType.End)
         {
             Gizmos.DrawWireSphere(transform.position, (minRange - 0.001f) * 1.5f);
         }
@@ -160,22 +167,28 @@ public class Sector : MonoBehaviour
     }
 
     //Function used to switch sprite of a sector, 0 : explored, 1 : explored player, 2 : unexplored, 3 : unexplored player
-    public void SwitchSprite(string type)
+    public void SwitchSprite(SectorStatus newSectorStatus)
     {
         int index = 0;
-        switch (type)
+
+        sectorStatus = newSectorStatus;
+        switch (newSectorStatus)
         {
-            case "Explored":
+            case SectorStatus.Explored:
+                shipLogo.enabled = false;
                 index = 0;
                 break;
-            case "Explored player":
+            case SectorStatus.ExploredPlayer:
+                shipLogo.enabled = true;
+                index = 0;
+                break;
+            case SectorStatus.Unexplored:
+                shipLogo.enabled = false;
                 index = 1;
                 break;
-            case "Unexplored":
-                index = 2;
-                break;
-            case "Unexplored player":
-                index = 3;
+            case SectorStatus.UnexploredPlayer:
+                shipLogo.enabled = true;
+                index = 1;
                 break;
         }
         spriteRenderer.sprite = sprites[index];

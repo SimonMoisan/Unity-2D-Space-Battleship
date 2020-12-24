@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnnemySquad : MonoBehaviour
 {
     public Ennemy[] ennemies;
+    public int dangerIndicator;
     public int ennemyAlive;
     public WaveConfig waveConfig;
     public bool isDestroyed;
@@ -17,11 +18,19 @@ public class EnnemySquad : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ennemies = GetComponentsInChildren<Ennemy>();
-        ennemyAlive = ennemies.Length;
-
         waypoints = waveConfig.GetWaypoints();
         transform.position = waypoints[waypointIndex].transform.position;
+    }
+
+    private void OnValidate()
+    {
+        dangerIndicator = 0;
+        ennemies = GetComponentsInChildren<Ennemy>();
+        ennemyAlive = ennemies.Length;
+        for (int i = 0; i < ennemies.Length; i++)
+        {
+            dangerIndicator += ennemies[i].dangerIndicator;
+        }
     }
 
     private void Update()

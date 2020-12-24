@@ -9,7 +9,7 @@ public class PlayerDetector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name.Equals("Vaisseau"))
+        if (collision.tag.Equals("Player"))
         {
             target = collision.GetComponent<Transform>();
         }
@@ -17,7 +17,7 @@ public class PlayerDetector : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.name.Equals("Vaisseau"))
+        if (collision.tag.Equals("Player"))
         {
             target = null;
         }

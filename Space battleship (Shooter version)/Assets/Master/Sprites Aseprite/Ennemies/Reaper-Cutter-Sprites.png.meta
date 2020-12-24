@@ -1,0 +1,646 @@
+fileFormatVersion: 2
+guid: b2e08d548852aa144a3f3ce3f9435ed3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7842675092776547539
+    second: Reaper-Cutter-Sprites_0
+  - first:
+      213: -3465182594163534902
+    second: Reaper-Cutter-Sprites_1
+  - first:
+      213: -1740629020949597338
+    second: Reaper-Cutter-Sprites_2
+  - first:
+      213: -4152102167551340544
+    second: Reaper-Cutter-Sprites_3
+  - first:
+      213: 9203601497887244668
+    second: Reaper-Cutter-Sprites_4
+  - first:
+      213: -6234395011118956697
+    second: Reaper-Cutter-Sprites_5
+  - first:
+      213: 6870459676351636753
+    second: Reaper-Cutter-Sprites_6
+  - first:
+      213: -8072821585437266642
+    second: Reaper-Cutter-Sprites_7
+  - first:
+      213: -5282618576831155557
+    second: Reaper-Cutter-Sprites_8
+  - first:
+      213: -4667097836973289839
+    second: Reaper-Cutter-Sprites_9
+  - first:
+      213: 2057704292018980514
+    second: Reaper-Cutter-Sprites_10
+  - first:
+      213: -2496838480627460091
+    second: Reaper-Cutter-Sprites_11
+  - first:
+      213: -8772268060945648856
+    second: Reaper-Cutter-Sprites_12
+  - first:
+      213: -2619362046028662237
+    second: Reaper-Cutter-Sprites_13
+  - first:
+      213: -2370212586875664549
+    second: Reaper-Cutter-Sprites_14
+  - first:
+      213: 1510209783948075702
+    second: Reaper-Cutter-Sprites_15
+  - first:
+      213: -4163862993462068044
+    second: Reaper-Cutter-Sprites_16
+  - first:
+      213: -3699439165403870437
+    second: Reaper-Cutter-Sprites_17
+  - first:
+      213: 7054782864666460079
+    second: Reaper-Cutter-Sprites_18
+  - first:
+      213: 1965247224283891621
+    second: Reaper-Cutter-Sprites_19
+  - first:
+      213: -7365669574531021459
+    second: Reaper-Cutter-Sprites_20
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 450
+        width: 57
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d4ffb1d177c6dc60800000000000000
+      internalID: 7842675092776547539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 409
+        width: 57
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac314093ac239efc0800000000000000
+      internalID: -3465182594163534902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_2
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 368
+        width: 57
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6633090b02b08d7e0800000000000000
+      internalID: -1740629020949597338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_3
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 327
+        width: 57
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00019ffc315c066c0800000000000000
+      internalID: -4152102167551340544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_4
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 286
+        width: 57
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7182dfacc2c9bf70800000000000000
+      internalID: 9203601497887244668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_5
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 244
+        width: 57
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f79c4c4cafa79a0800000000000000
+      internalID: -6234395011118956697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_6
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 203
+        width: 57
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 115a594aca6c85f50800000000000000
+      internalID: 6870459676351636753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_7
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 161
+        width: 57
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2de7e82a8397ff80800000000000000
+      internalID: -8072821585437266642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_8
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 120
+        width: 57
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b927914946e50b6b0800000000000000
+      internalID: -5282618576831155557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_9
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 79
+        width: 57
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e863f9e332b3fb0800000000000000
+      internalID: -4667097836973289839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_10
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 30
+        width: 57
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a68692c62f6e8c10800000000000000
+      internalID: 2057704292018980514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_11
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 457
+        width: 20
+        height: 24
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5089ca471a2795dd0800000000000000
+      internalID: -2496838480627460091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_12
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 416
+        width: 20
+        height: 24
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82374d01da4a24680800000000000000
+      internalID: -8772268060945648856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_13
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 375
+        width: 20
+        height: 24
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32a325cd81826abd0800000000000000
+      internalID: -2619362046028662237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_14
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 334
+        width: 20
+        height: 24
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57cd1dc5305b1fd0800000000000000
+      internalID: -2370212586875664549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_15
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 293
+        width: 20
+        height: 24
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b26b8c0cc755f410800000000000000
+      internalID: 1510209783948075702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_16
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 251
+        width: 20
+        height: 24
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bc7c452bacf636c0800000000000000
+      internalID: -4163862993462068044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_17
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 210
+        width: 20
+        height: 24
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1b4fe5fda3f8acc0800000000000000
+      internalID: -3699439165403870437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_18
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 168
+        width: 20
+        height: 24
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faff4f733af97e160800000000000000
+      internalID: 7054782864666460079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_19
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 127
+        width: 20
+        height: 24
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a7834b20f5f54b10800000000000000
+      internalID: 1965247224283891621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Cutter-Sprites_20
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 86
+        width: 20
+        height: 24
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d650d250c82e7c990800000000000000
+      internalID: -7365669574531021459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

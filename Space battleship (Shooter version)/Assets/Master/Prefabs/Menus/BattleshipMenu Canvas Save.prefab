@@ -60,6 +60,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -133,6 +135,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -206,6 +210,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -279,6 +285,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -356,6 +364,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -433,6 +443,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -510,6 +522,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -587,6 +601,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -664,6 +680,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -741,6 +759,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -818,6 +838,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -964,6 +986,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1083,6 +1107,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1160,6 +1186,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1237,6 +1265,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1314,6 +1344,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.32156864, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1391,6 +1423,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1464,6 +1498,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1537,6 +1573,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1614,6 +1652,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1691,6 +1731,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1839,6 +1881,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8980393, g: 0.70980394, b: 0.34901962, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1911,19 +1955,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48c52ca64f4b5d14296d450a3c96f4b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cargo: {fileID: 6932552228256710284}
-  upgradeSlot: {fileID: 8874239428037890931}
-  turretImage: {fileID: 0}
-  turretName: {fileID: 1101365961127176032}
-  damageValue: {fileID: 4519138734609179264}
-  healthValue: {fileID: 4519138735191572801}
-  shotBySalveValue: {fileID: 4519138735085547263}
-  firerateValue: {fileID: 4519138734516036787}
-  cooldownValue: {fileID: 4519138734847506124}
-  speedValue: {fileID: 4519138734131794422}
-  turretType: {fileID: 4519138733725694624}
-  projectileType: {fileID: 4519138733725694624}
-  modifierType: {fileID: 4519138734917283714}
 --- !u!1 &3737927160611405213
 GameObject:
   m_ObjectHideFlags: 0
@@ -1984,6 +2015,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2057,6 +2090,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2134,6 +2169,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2212,6 +2249,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.6901961, g: 0.6901961, b: 0.6901961, a: 0}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2237,9 +2276,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c727873384a24f40be08bb3b3820655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 2640925177444452772}
+  unlockEnergyCorePrice: 0
+  upgradPriceScraps: 0
+  upgradPriceEnergyCore: 0
+  isUsed: 0
+  isLocked: 0
+  turretName: {fileID: 0}
+  turretLevelValue: {fileID: 0}
+  damageText: {fileID: 0}
+  healthText: {fileID: 0}
+  damageValue: {fileID: 0}
+  healthValue: {fileID: 0}
+  shotBySalveValue: {fileID: 0}
+  cooldownValue: {fileID: 0}
+  deviationValue: {fileID: 0}
+  speedValue: {fileID: 0}
+  energyCoreToUnlockValue: {fileID: 0}
+  hidderLocked: {fileID: 0}
+  hidderUsed: {fileID: 0}
+  hidderCommingSoon: {fileID: 0}
+  turretTypeImage: {fileID: 0}
+  turretTypeSprites: []
+  globalImage: {fileID: 2640925177444452772}
+  turretImage: {fileID: 0}
   _item: {fileID: 0}
   slotId: 1
+  cargoId: 0
+  hidderEmpty: {fileID: 0}
+  upgradeSlot: {fileID: 0}
+  scrapPriceValue: {fileID: 0}
+  energyCorePriceValue: {fileID: 0}
 --- !u!1 &4519138733267958250
 GameObject:
   m_ObjectHideFlags: 0
@@ -2300,6 +2366,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8980393, g: 0.70980394, b: 0.34901962, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2330,7 +2398,7 @@ GameObject:
   - component: {fileID: 4519138733283102387}
   - component: {fileID: 4519138733283102396}
   m_Layer: 0
-  m_Name: Cargo slot (13)
+  m_Name: Cargo slot 13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2378,6 +2446,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2403,9 +2473,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6783ac68f40fc24488b4e1265cb548c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 4519138733283102387}
+  unlockEnergyCorePrice: 0
+  upgradPriceScraps: 0
+  upgradPriceEnergyCore: 0
+  isUsed: 0
+  isLocked: 0
+  turretName: {fileID: 0}
+  turretLevelValue: {fileID: 0}
+  damageText: {fileID: 0}
+  healthText: {fileID: 0}
+  damageValue: {fileID: 0}
+  healthValue: {fileID: 0}
+  shotBySalveValue: {fileID: 0}
+  cooldownValue: {fileID: 0}
+  deviationValue: {fileID: 0}
+  speedValue: {fileID: 0}
+  energyCoreToUnlockValue: {fileID: 0}
+  hidderLocked: {fileID: 0}
+  hidderUsed: {fileID: 0}
+  hidderCommingSoon: {fileID: 0}
+  turretTypeImage: {fileID: 0}
+  turretTypeSprites: []
+  globalImage: {fileID: 4519138733283102387}
+  turretImage: {fileID: 0}
   _item: {fileID: 0}
-  slotId: 14
+  slotId: 13
 --- !u!1 &4519138733337848389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2466,6 +2558,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8980393, g: 0.70980394, b: 0.34901962, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2575,6 +2669,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8980393, g: 0.70980394, b: 0.34901962, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2605,7 +2701,7 @@ GameObject:
   - component: {fileID: 4519138733592080748}
   - component: {fileID: 4519138733592080749}
   m_Layer: 0
-  m_Name: Cargo slot (2)
+  m_Name: Cargo slot 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2653,6 +2749,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2678,9 +2776,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6783ac68f40fc24488b4e1265cb548c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 4519138733592080748}
+  unlockEnergyCorePrice: 0
+  upgradPriceScraps: 0
+  upgradPriceEnergyCore: 0
+  isUsed: 0
+  isLocked: 0
+  turretName: {fileID: 0}
+  turretLevelValue: {fileID: 0}
+  damageText: {fileID: 0}
+  healthText: {fileID: 0}
+  damageValue: {fileID: 0}
+  healthValue: {fileID: 0}
+  shotBySalveValue: {fileID: 0}
+  cooldownValue: {fileID: 0}
+  deviationValue: {fileID: 0}
+  speedValue: {fileID: 0}
+  energyCoreToUnlockValue: {fileID: 0}
+  hidderLocked: {fileID: 0}
+  hidderUsed: {fileID: 0}
+  hidderCommingSoon: {fileID: 0}
+  turretTypeImage: {fileID: 0}
+  turretTypeSprites: []
+  globalImage: {fileID: 4519138733592080748}
+  turretImage: {fileID: 0}
   _item: {fileID: 11400000, guid: 3f7f40b75a6d77d40bd37981288b5791, type: 2}
-  slotId: 3
+  slotId: 2
 --- !u!1 &4519138733639671791
 GameObject:
   m_ObjectHideFlags: 0
@@ -2741,6 +2861,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8980393, g: 0.70980394, b: 0.34901962, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2818,6 +2940,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8980393, g: 0.70980394, b: 0.34901962, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2895,6 +3019,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8980393, g: 0.70980394, b: 0.34901962, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2925,7 +3051,7 @@ GameObject:
   - component: {fileID: 4519138733766206493}
   - component: {fileID: 4519138733766206494}
   m_Layer: 0
-  m_Name: Cargo slot (4)
+  m_Name: Cargo slot 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2973,6 +3099,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2998,9 +3126,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6783ac68f40fc24488b4e1265cb548c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 4519138733766206493}
+  unlockEnergyCorePrice: 0
+  upgradPriceScraps: 0
+  upgradPriceEnergyCore: 0
+  isUsed: 0
+  isLocked: 0
+  turretName: {fileID: 0}
+  turretLevelValue: {fileID: 0}
+  damageText: {fileID: 0}
+  healthText: {fileID: 0}
+  damageValue: {fileID: 0}
+  healthValue: {fileID: 0}
+  shotBySalveValue: {fileID: 0}
+  cooldownValue: {fileID: 0}
+  deviationValue: {fileID: 0}
+  speedValue: {fileID: 0}
+  energyCoreToUnlockValue: {fileID: 0}
+  hidderLocked: {fileID: 0}
+  hidderUsed: {fileID: 0}
+  hidderCommingSoon: {fileID: 0}
+  turretTypeImage: {fileID: 0}
+  turretTypeSprites: []
+  globalImage: {fileID: 4519138733766206493}
+  turretImage: {fileID: 0}
   _item: {fileID: 11400000, guid: a3ea4dd98b7948f4db07524520fda112, type: 2}
-  slotId: 5
+  slotId: 4
 --- !u!1 &4519138733812396530
 GameObject:
   m_ObjectHideFlags: 0
@@ -3110,7 +3260,7 @@ GameObject:
   - component: {fileID: 4519138733988014989}
   - component: {fileID: 4519138733988014990}
   m_Layer: 0
-  m_Name: Cargo slot (5)
+  m_Name: Cargo slot 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3158,6 +3308,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3183,9 +3335,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6783ac68f40fc24488b4e1265cb548c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 4519138733988014989}
+  unlockEnergyCorePrice: 0
+  upgradPriceScraps: 0
+  upgradPriceEnergyCore: 0
+  isUsed: 0
+  isLocked: 0
+  turretName: {fileID: 0}
+  turretLevelValue: {fileID: 0}
+  damageText: {fileID: 0}
+  healthText: {fileID: 0}
+  damageValue: {fileID: 0}
+  healthValue: {fileID: 0}
+  shotBySalveValue: {fileID: 0}
+  cooldownValue: {fileID: 0}
+  deviationValue: {fileID: 0}
+  speedValue: {fileID: 0}
+  energyCoreToUnlockValue: {fileID: 0}
+  hidderLocked: {fileID: 0}
+  hidderUsed: {fileID: 0}
+  hidderCommingSoon: {fileID: 0}
+  turretTypeImage: {fileID: 0}
+  turretTypeSprites: []
+  globalImage: {fileID: 4519138733988014989}
+  turretImage: {fileID: 0}
   _item: {fileID: 0}
-  slotId: 6
+  slotId: 5
 --- !u!1 &4519138734113870698
 GameObject:
   m_ObjectHideFlags: 0
@@ -3199,7 +3373,7 @@ GameObject:
   - component: {fileID: 4519138734113870703}
   - component: {fileID: 4519138734113870696}
   m_Layer: 0
-  m_Name: Cargo slot (1)
+  m_Name: Cargo slot 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3247,6 +3421,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3272,9 +3448,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6783ac68f40fc24488b4e1265cb548c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 4519138734113870703}
+  unlockEnergyCorePrice: 0
+  upgradPriceScraps: 0
+  upgradPriceEnergyCore: 0
+  isUsed: 0
+  isLocked: 0
+  turretName: {fileID: 0}
+  turretLevelValue: {fileID: 0}
+  damageText: {fileID: 0}
+  healthText: {fileID: 0}
+  damageValue: {fileID: 0}
+  healthValue: {fileID: 0}
+  shotBySalveValue: {fileID: 0}
+  cooldownValue: {fileID: 0}
+  deviationValue: {fileID: 0}
+  speedValue: {fileID: 0}
+  energyCoreToUnlockValue: {fileID: 0}
+  hidderLocked: {fileID: 0}
+  hidderUsed: {fileID: 0}
+  hidderCommingSoon: {fileID: 0}
+  turretTypeImage: {fileID: 0}
+  turretTypeSprites: []
+  globalImage: {fileID: 4519138734113870703}
+  turretImage: {fileID: 0}
   _item: {fileID: 11400000, guid: 341b59a876c7fb1449a3a2f80643c3da, type: 2}
-  slotId: 2
+  slotId: 1
 --- !u!1 &4519138734131794416
 GameObject:
   m_ObjectHideFlags: 0
@@ -3335,6 +3533,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8980393, g: 0.70980394, b: 0.34901962, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3365,7 +3565,7 @@ GameObject:
   - component: {fileID: 4519138734148115761}
   - component: {fileID: 4519138734148115762}
   m_Layer: 0
-  m_Name: Cargo slot (14)
+  m_Name: Cargo slot 14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3413,6 +3613,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3438,9 +3640,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6783ac68f40fc24488b4e1265cb548c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 4519138734148115761}
+  unlockEnergyCorePrice: 0
+  upgradPriceScraps: 0
+  upgradPriceEnergyCore: 0
+  isUsed: 0
+  isLocked: 0
+  turretName: {fileID: 0}
+  turretLevelValue: {fileID: 0}
+  damageText: {fileID: 0}
+  healthText: {fileID: 0}
+  damageValue: {fileID: 0}
+  healthValue: {fileID: 0}
+  shotBySalveValue: {fileID: 0}
+  cooldownValue: {fileID: 0}
+  deviationValue: {fileID: 0}
+  speedValue: {fileID: 0}
+  energyCoreToUnlockValue: {fileID: 0}
+  hidderLocked: {fileID: 0}
+  hidderUsed: {fileID: 0}
+  hidderCommingSoon: {fileID: 0}
+  turretTypeImage: {fileID: 0}
+  turretTypeSprites: []
+  globalImage: {fileID: 4519138734148115761}
+  turretImage: {fileID: 0}
   _item: {fileID: 0}
-  slotId: 15
+  slotId: 14
 --- !u!1 &4519138734178501562
 GameObject:
   m_ObjectHideFlags: 0
@@ -3454,7 +3678,7 @@ GameObject:
   - component: {fileID: 4519138734178501567}
   - component: {fileID: 4519138734178501560}
   m_Layer: 0
-  m_Name: Cargo slot
+  m_Name: Cargo slot 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3502,6 +3726,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3527,9 +3753,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6783ac68f40fc24488b4e1265cb548c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 4519138734178501567}
+  unlockEnergyCorePrice: 0
+  upgradPriceScraps: 0
+  upgradPriceEnergyCore: 0
+  isUsed: 0
+  isLocked: 0
+  turretName: {fileID: 0}
+  turretLevelValue: {fileID: 0}
+  damageText: {fileID: 0}
+  healthText: {fileID: 0}
+  damageValue: {fileID: 0}
+  healthValue: {fileID: 0}
+  shotBySalveValue: {fileID: 0}
+  cooldownValue: {fileID: 0}
+  deviationValue: {fileID: 0}
+  speedValue: {fileID: 0}
+  energyCoreToUnlockValue: {fileID: 0}
+  hidderLocked: {fileID: 0}
+  hidderUsed: {fileID: 0}
+  hidderCommingSoon: {fileID: 0}
+  turretTypeImage: {fileID: 0}
+  turretTypeSprites: []
+  globalImage: {fileID: 4519138734178501567}
+  turretImage: {fileID: 0}
   _item: {fileID: 11400000, guid: 499317e4759d6984da9011f7171b0cf5, type: 2}
-  slotId: 1
+  slotId: 0
 --- !u!1 &4519138734219941583
 GameObject:
   m_ObjectHideFlags: 0
@@ -3543,7 +3791,7 @@ GameObject:
   - component: {fileID: 4519138734219941580}
   - component: {fileID: 4519138734219941581}
   m_Layer: 0
-  m_Name: Cargo slot (3)
+  m_Name: Cargo slot 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3591,6 +3839,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3616,9 +3866,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6783ac68f40fc24488b4e1265cb548c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 4519138734219941580}
+  unlockEnergyCorePrice: 0
+  upgradPriceScraps: 0
+  upgradPriceEnergyCore: 0
+  isUsed: 0
+  isLocked: 0
+  turretName: {fileID: 0}
+  turretLevelValue: {fileID: 0}
+  damageText: {fileID: 0}
+  healthText: {fileID: 0}
+  damageValue: {fileID: 0}
+  healthValue: {fileID: 0}
+  shotBySalveValue: {fileID: 0}
+  cooldownValue: {fileID: 0}
+  deviationValue: {fileID: 0}
+  speedValue: {fileID: 0}
+  energyCoreToUnlockValue: {fileID: 0}
+  hidderLocked: {fileID: 0}
+  hidderUsed: {fileID: 0}
+  hidderCommingSoon: {fileID: 0}
+  turretTypeImage: {fileID: 0}
+  turretTypeSprites: []
+  globalImage: {fileID: 4519138734219941580}
+  turretImage: {fileID: 0}
   _item: {fileID: 11400000, guid: e70d25833aeb21142abda336cd49257f, type: 2}
-  slotId: 4
+  slotId: 3
 --- !u!1 &4519138734346329698
 GameObject:
   m_ObjectHideFlags: 0
@@ -3681,6 +3953,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3738,6 +4012,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
         m_MethodName: closeBattleshipMenu
         m_Mode: 1
         m_Arguments:
@@ -3808,6 +4083,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3834,7 +4111,7 @@ GameObject:
   - component: {fileID: 4519138734447582475}
   - component: {fileID: 4519138734447582516}
   m_Layer: 0
-  m_Name: Cargo slot (6)
+  m_Name: Cargo slot 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3882,6 +4159,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3907,9 +4186,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6783ac68f40fc24488b4e1265cb548c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 4519138734447582475}
+  unlockEnergyCorePrice: 0
+  upgradPriceScraps: 0
+  upgradPriceEnergyCore: 0
+  isUsed: 0
+  isLocked: 0
+  turretName: {fileID: 0}
+  turretLevelValue: {fileID: 0}
+  damageText: {fileID: 0}
+  healthText: {fileID: 0}
+  damageValue: {fileID: 0}
+  healthValue: {fileID: 0}
+  shotBySalveValue: {fileID: 0}
+  cooldownValue: {fileID: 0}
+  deviationValue: {fileID: 0}
+  speedValue: {fileID: 0}
+  energyCoreToUnlockValue: {fileID: 0}
+  hidderLocked: {fileID: 0}
+  hidderUsed: {fileID: 0}
+  hidderCommingSoon: {fileID: 0}
+  turretTypeImage: {fileID: 0}
+  turretTypeSprites: []
+  globalImage: {fileID: 4519138734447582475}
+  turretImage: {fileID: 0}
   _item: {fileID: 0}
-  slotId: 7
+  slotId: 6
 --- !u!1 &4519138734485965712
 GameObject:
   m_ObjectHideFlags: 0
@@ -3970,6 +4271,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8980393, g: 0.70980394, b: 0.34901962, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4047,6 +4350,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8980393, g: 0.70980394, b: 0.34901962, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4124,6 +4429,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8980393, g: 0.70980394, b: 0.34901962, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4201,6 +4508,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8980393, g: 0.70980394, b: 0.34901962, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4310,6 +4619,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8980393, g: 0.70980394, b: 0.34901962, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4340,7 +4651,7 @@ GameObject:
   - component: {fileID: 4519138734621521542}
   - component: {fileID: 4519138734621521543}
   m_Layer: 0
-  m_Name: Cargo slot (12)
+  m_Name: Cargo slot 12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4388,6 +4699,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4413,9 +4726,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6783ac68f40fc24488b4e1265cb548c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 4519138734621521542}
+  unlockEnergyCorePrice: 0
+  upgradPriceScraps: 0
+  upgradPriceEnergyCore: 0
+  isUsed: 0
+  isLocked: 0
+  turretName: {fileID: 0}
+  turretLevelValue: {fileID: 0}
+  damageText: {fileID: 0}
+  healthText: {fileID: 0}
+  damageValue: {fileID: 0}
+  healthValue: {fileID: 0}
+  shotBySalveValue: {fileID: 0}
+  cooldownValue: {fileID: 0}
+  deviationValue: {fileID: 0}
+  speedValue: {fileID: 0}
+  energyCoreToUnlockValue: {fileID: 0}
+  hidderLocked: {fileID: 0}
+  hidderUsed: {fileID: 0}
+  hidderCommingSoon: {fileID: 0}
+  turretTypeImage: {fileID: 0}
+  turretTypeSprites: []
+  globalImage: {fileID: 4519138734621521542}
+  turretImage: {fileID: 0}
   _item: {fileID: 0}
-  slotId: 13
+  slotId: 12
 --- !u!1 &4519138734678842397
 GameObject:
   m_ObjectHideFlags: 0
@@ -4429,7 +4764,7 @@ GameObject:
   - component: {fileID: 4519138734678842386}
   - component: {fileID: 4519138734678842387}
   m_Layer: 0
-  m_Name: Cargo slot (7)
+  m_Name: Cargo slot 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4477,6 +4812,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4502,9 +4839,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6783ac68f40fc24488b4e1265cb548c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 4519138734678842386}
+  unlockEnergyCorePrice: 0
+  upgradPriceScraps: 0
+  upgradPriceEnergyCore: 0
+  isUsed: 0
+  isLocked: 0
+  turretName: {fileID: 0}
+  turretLevelValue: {fileID: 0}
+  damageText: {fileID: 0}
+  healthText: {fileID: 0}
+  damageValue: {fileID: 0}
+  healthValue: {fileID: 0}
+  shotBySalveValue: {fileID: 0}
+  cooldownValue: {fileID: 0}
+  deviationValue: {fileID: 0}
+  speedValue: {fileID: 0}
+  energyCoreToUnlockValue: {fileID: 0}
+  hidderLocked: {fileID: 0}
+  hidderUsed: {fileID: 0}
+  hidderCommingSoon: {fileID: 0}
+  turretTypeImage: {fileID: 0}
+  turretTypeSprites: []
+  globalImage: {fileID: 4519138734678842386}
+  turretImage: {fileID: 0}
   _item: {fileID: 0}
-  slotId: 8
+  slotId: 7
 --- !u!1 &4519138734735069125
 GameObject:
   m_ObjectHideFlags: 0
@@ -4597,6 +4956,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8980393, g: 0.70980394, b: 0.34901962, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4674,6 +5035,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4751,6 +5114,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8980393, g: 0.70980394, b: 0.34901962, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4828,6 +5193,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8980393, g: 0.70980394, b: 0.34901962, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4905,6 +5272,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8980393, g: 0.70980394, b: 0.34901962, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4975,6 +5344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb7a7f09de500348a6f96c2cff5e140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingCargoTurrets: []
   turretSlots:
   - {fileID: 4485455909081119759}
   - {fileID: 4907955367608372250}
@@ -5040,6 +5410,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 0}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5097,6 +5469,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -5167,6 +5540,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8980393, g: 0.70980394, b: 0.34901962, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5197,7 +5572,7 @@ GameObject:
   - component: {fileID: 4519138735156152265}
   - component: {fileID: 4519138735156152266}
   m_Layer: 0
-  m_Name: Cargo slot (9)
+  m_Name: Cargo slot 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5245,6 +5620,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5270,9 +5647,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6783ac68f40fc24488b4e1265cb548c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 4519138735156152265}
+  unlockEnergyCorePrice: 0
+  upgradPriceScraps: 0
+  upgradPriceEnergyCore: 0
+  isUsed: 0
+  isLocked: 0
+  turretName: {fileID: 0}
+  turretLevelValue: {fileID: 0}
+  damageText: {fileID: 0}
+  healthText: {fileID: 0}
+  damageValue: {fileID: 0}
+  healthValue: {fileID: 0}
+  shotBySalveValue: {fileID: 0}
+  cooldownValue: {fileID: 0}
+  deviationValue: {fileID: 0}
+  speedValue: {fileID: 0}
+  energyCoreToUnlockValue: {fileID: 0}
+  hidderLocked: {fileID: 0}
+  hidderUsed: {fileID: 0}
+  hidderCommingSoon: {fileID: 0}
+  turretTypeImage: {fileID: 0}
+  turretTypeSprites: []
+  globalImage: {fileID: 4519138735156152265}
+  turretImage: {fileID: 0}
   _item: {fileID: 0}
-  slotId: 10
+  slotId: 9
 --- !u!1 &4519138735189271018
 GameObject:
   m_ObjectHideFlags: 0
@@ -5365,6 +5764,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8980393, g: 0.70980394, b: 0.34901962, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5427,7 +5828,7 @@ GameObject:
   - component: {fileID: 4519138735204068584}
   - component: {fileID: 4519138735204068585}
   m_Layer: 0
-  m_Name: Cargo slot (10)
+  m_Name: Cargo slot 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5475,6 +5876,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5500,9 +5903,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6783ac68f40fc24488b4e1265cb548c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 4519138735204068584}
+  unlockEnergyCorePrice: 0
+  upgradPriceScraps: 0
+  upgradPriceEnergyCore: 0
+  isUsed: 0
+  isLocked: 0
+  turretName: {fileID: 0}
+  turretLevelValue: {fileID: 0}
+  damageText: {fileID: 0}
+  healthText: {fileID: 0}
+  damageValue: {fileID: 0}
+  healthValue: {fileID: 0}
+  shotBySalveValue: {fileID: 0}
+  cooldownValue: {fileID: 0}
+  deviationValue: {fileID: 0}
+  speedValue: {fileID: 0}
+  energyCoreToUnlockValue: {fileID: 0}
+  hidderLocked: {fileID: 0}
+  hidderUsed: {fileID: 0}
+  hidderCommingSoon: {fileID: 0}
+  turretTypeImage: {fileID: 0}
+  turretTypeSprites: []
+  globalImage: {fileID: 4519138735204068584}
+  turretImage: {fileID: 0}
   _item: {fileID: 0}
-  slotId: 11
+  slotId: 10
 --- !u!1 &4519138735210219714
 GameObject:
   m_ObjectHideFlags: 0
@@ -5516,7 +5941,7 @@ GameObject:
   - component: {fileID: 4519138735210219719}
   - component: {fileID: 4519138735210219712}
   m_Layer: 0
-  m_Name: Cargo slot (8)
+  m_Name: Cargo slot 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5564,6 +5989,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5589,9 +6016,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6783ac68f40fc24488b4e1265cb548c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 4519138735210219719}
+  unlockEnergyCorePrice: 0
+  upgradPriceScraps: 0
+  upgradPriceEnergyCore: 0
+  isUsed: 0
+  isLocked: 0
+  turretName: {fileID: 0}
+  turretLevelValue: {fileID: 0}
+  damageText: {fileID: 0}
+  healthText: {fileID: 0}
+  damageValue: {fileID: 0}
+  healthValue: {fileID: 0}
+  shotBySalveValue: {fileID: 0}
+  cooldownValue: {fileID: 0}
+  deviationValue: {fileID: 0}
+  speedValue: {fileID: 0}
+  energyCoreToUnlockValue: {fileID: 0}
+  hidderLocked: {fileID: 0}
+  hidderUsed: {fileID: 0}
+  hidderCommingSoon: {fileID: 0}
+  turretTypeImage: {fileID: 0}
+  turretTypeSprites: []
+  globalImage: {fileID: 4519138735210219719}
+  turretImage: {fileID: 0}
   _item: {fileID: 0}
-  slotId: 9
+  slotId: 8
 --- !u!1 &4519138735219853867
 GameObject:
   m_ObjectHideFlags: 0
@@ -5652,6 +6101,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5714,7 +6165,7 @@ GameObject:
   - component: {fileID: 4519138735243110049}
   - component: {fileID: 4519138735243110050}
   m_Layer: 0
-  m_Name: Cargo slot (11)
+  m_Name: Cargo slot 11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5762,6 +6213,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5787,9 +6240,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6783ac68f40fc24488b4e1265cb548c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 4519138735243110049}
+  unlockEnergyCorePrice: 0
+  upgradPriceScraps: 0
+  upgradPriceEnergyCore: 0
+  isUsed: 0
+  isLocked: 0
+  turretName: {fileID: 0}
+  turretLevelValue: {fileID: 0}
+  damageText: {fileID: 0}
+  healthText: {fileID: 0}
+  damageValue: {fileID: 0}
+  healthValue: {fileID: 0}
+  shotBySalveValue: {fileID: 0}
+  cooldownValue: {fileID: 0}
+  deviationValue: {fileID: 0}
+  speedValue: {fileID: 0}
+  energyCoreToUnlockValue: {fileID: 0}
+  hidderLocked: {fileID: 0}
+  hidderUsed: {fileID: 0}
+  hidderCommingSoon: {fileID: 0}
+  turretTypeImage: {fileID: 0}
+  turretTypeSprites: []
+  globalImage: {fileID: 4519138735243110049}
+  turretImage: {fileID: 0}
   _item: {fileID: 0}
-  slotId: 12
+  slotId: 11
 --- !u!1 &4629363527992023056
 GameObject:
   m_ObjectHideFlags: 0
@@ -5850,6 +6325,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5923,6 +6400,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6000,6 +6479,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6075,6 +6556,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.6901961, g: 0.6901961, b: 0.6901961, a: 0}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6100,9 +6583,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c727873384a24f40be08bb3b3820655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 5382919178323550819}
+  unlockEnergyCorePrice: 0
+  upgradPriceScraps: 0
+  upgradPriceEnergyCore: 0
+  isUsed: 0
+  isLocked: 0
+  turretName: {fileID: 0}
+  turretLevelValue: {fileID: 0}
+  damageText: {fileID: 0}
+  healthText: {fileID: 0}
+  damageValue: {fileID: 0}
+  healthValue: {fileID: 0}
+  shotBySalveValue: {fileID: 0}
+  cooldownValue: {fileID: 0}
+  deviationValue: {fileID: 0}
+  speedValue: {fileID: 0}
+  energyCoreToUnlockValue: {fileID: 0}
+  hidderLocked: {fileID: 0}
+  hidderUsed: {fileID: 0}
+  hidderCommingSoon: {fileID: 0}
+  turretTypeImage: {fileID: 0}
+  turretTypeSprites: []
+  globalImage: {fileID: 5382919178323550819}
+  turretImage: {fileID: 0}
   _item: {fileID: 0}
   slotId: 2
+  cargoId: 0
+  hidderEmpty: {fileID: 0}
+  upgradeSlot: {fileID: 0}
+  scrapPriceValue: {fileID: 0}
+  energyCorePriceValue: {fileID: 0}
 --- !u!1 &5021585232982323485
 GameObject:
   m_ObjectHideFlags: 0
@@ -6163,6 +6673,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6240,6 +6752,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6317,6 +6831,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6394,6 +6910,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6467,6 +6985,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6544,6 +7064,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6621,6 +7143,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6805,6 +7329,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6882,6 +7408,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6959,6 +7487,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7032,6 +7562,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7109,6 +7641,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7262,6 +7796,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7339,6 +7875,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7418,6 +7956,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7491,6 +8031,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9058824, g: 0.7137255, b: 0.34509805, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7569,6 +8111,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.6901961, g: 0.6901961, b: 0.6901961, a: 0}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7594,9 +8138,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c727873384a24f40be08bb3b3820655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 5261579035961143271}
+  unlockEnergyCorePrice: 0
+  upgradPriceScraps: 0
+  upgradPriceEnergyCore: 0
+  isUsed: 0
+  isLocked: 0
+  turretName: {fileID: 0}
+  turretLevelValue: {fileID: 0}
+  damageText: {fileID: 0}
+  healthText: {fileID: 0}
+  damageValue: {fileID: 0}
+  healthValue: {fileID: 0}
+  shotBySalveValue: {fileID: 0}
+  cooldownValue: {fileID: 0}
+  deviationValue: {fileID: 0}
+  speedValue: {fileID: 0}
+  energyCoreToUnlockValue: {fileID: 0}
+  hidderLocked: {fileID: 0}
+  hidderUsed: {fileID: 0}
+  hidderCommingSoon: {fileID: 0}
+  turretTypeImage: {fileID: 0}
+  turretTypeSprites: []
+  globalImage: {fileID: 5261579035961143271}
+  turretImage: {fileID: 0}
   _item: {fileID: 0}
   slotId: 3
+  cargoId: 0
+  hidderEmpty: {fileID: 0}
+  upgradeSlot: {fileID: 0}
+  scrapPriceValue: {fileID: 0}
+  energyCorePriceValue: {fileID: 0}
 --- !u!1 &8793994477070762434
 GameObject:
   m_ObjectHideFlags: 0
@@ -7652,7 +8223,7 @@ GameObject:
   - component: {fileID: 2818848877519972596}
   - component: {fileID: 8874239428037890931}
   m_Layer: 0
-  m_Name: 'Upgrade : Double Laser Turret'
+  m_Name: Cargo slot 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7700,6 +8271,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7725,7 +8298,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a627a52a0355c7e459c5bf85493d4d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 2818848877519972596}
+  unlockEnergyCorePrice: 0
+  upgradPriceScraps: 0
+  upgradPriceEnergyCore: 0
+  isUsed: 0
+  isLocked: 0
+  turretName: {fileID: 0}
+  turretLevelValue: {fileID: 0}
+  damageText: {fileID: 0}
+  healthText: {fileID: 0}
+  damageValue: {fileID: 0}
+  healthValue: {fileID: 0}
+  shotBySalveValue: {fileID: 0}
+  cooldownValue: {fileID: 0}
+  deviationValue: {fileID: 0}
+  speedValue: {fileID: 0}
+  energyCoreToUnlockValue: {fileID: 0}
+  hidderLocked: {fileID: 0}
+  hidderUsed: {fileID: 0}
+  hidderCommingSoon: {fileID: 0}
+  turretTypeImage: {fileID: 0}
+  turretTypeSprites: []
+  globalImage: {fileID: 2818848877519972596}
+  turretImage: {fileID: 0}
   _item: {fileID: 0}
   slotId: 0
 --- !u!1 &8975612940916399674
@@ -7789,6 +8384,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 0}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7846,6 +8443,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -7917,6 +8515,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 0}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7974,6 +8574,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:

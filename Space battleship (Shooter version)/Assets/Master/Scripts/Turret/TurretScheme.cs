@@ -1,10 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [CreateAssetMenu]
 public class TurretScheme : CargoItem
 {
+    [Serializable]
+    public class TurretTier
+    {
+        public int upgradeTier; // 2 to 10
+        public int scrapPrice;
+        public int energyCorePrice;
+
+        public float upgradedDamageValue;
+        public float upgradedHealthValue;
+        public int upgradedShotPerSalveValue;
+        public int upgradedNbrOfSalveValue;
+        public int upgradedAmmoValue;
+        public float upgradedFirerateValue;
+        public float upgradedCooldownValue;
+        public float upgradedSpeedValue;
+        public float upgradedDeviationValue;
+    }
+
     [Header("Turret Scheme caracteritics :")]
     public TurretType turretType;
     public TurretSize turretSize;
@@ -12,26 +31,9 @@ public class TurretScheme : CargoItem
     public ModifierPrimaryType modifierPrimaryType;
     public ModifierSecondaryType modifierSecondaryType;
     [Space]
-    [Header("Turret upgrades stats values :")]
-    public int[] upgradeRateIndexes; //0: Damage, 1: Health, 2: NbrOfSalve, 3: Ammo, 4: Firerate, 5: Cooldown, 6: Speed, 7: Precision 
-    public int[] valuesDamage;
-    public int[] valuesHealth;
-    public int[] valuesNbrOfSalve;
-    public int[] valuesAmmo;
-    public float[] valuesFirerate;
-    public float[] valuesCooldown;
-    public int[] valuesSpeed;
-    public int[] valuesPrecision;
-    [Space]
-    //Turret starting stats (stats by default on this turret)
-    [Header("Turret starting stats")]
-    public int startingDamage;
-    public int startingHealth;
-    public int startingShotsPerSalve;
-    public int startingNbrOfSalve;
-    public int startingAmmo;
-    public float startingFirerate;
-    public float startingCooldown;
-    public int startingSpeed;
-    public int startingPrecision;
+    [Header("Turret upgrades tiers :")] //0: Damage, 1: Health, 2: NbrOfSalve, 3: Ammo, 4: Firerate, 5: Cooldown, 6: Speed, 7: Deviation 
+    public int maxTier;
+    public TurretTier[] turretTiersArray;
 }
+
+

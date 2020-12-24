@@ -44,14 +44,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cad58a583e7c3d4c9cc59cd2b2ebc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetingType: Normal
+  targetingType: 1
+  attackType: 0
   damage: 0
-  cooldown: 5
   bulletSpeed: 300
-  fireRate: 0.1
+  fireRate: 0.2
   nbrShots: 3
+  cooldown: 5
+  cooldownTimer: 0
+  cooldownIsActive: 0
+  stopMovement: 0
+  precisionFactor: 0
+  isTurretBeam: 0
+  beamDuration: 0
+  beam: {fileID: 0}
+  impactDirection: {fileID: 0}
+  impact: {fileID: 0}
   isFiring: 0
-  isActive: 0
+  isReadyToFire: 0
+  ennemy: {fileID: 0}
   bulletPrefab: {fileID: 3544657312594927205, guid: 411ba42a00f826e47a8de8f5c9ba848e,
     type: 3}
   playerDetector: {fileID: 1191471364346012603}

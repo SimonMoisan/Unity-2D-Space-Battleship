@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Mono Machingun Turret
+  m_EditorClassIdentifier: Assembly-CSharp::TurretDescritpion
+  ItemName: Mono Machingun
+  cargoIcone: {fileID: 4771349909885690881, guid: fb0533414f0c35f4facfd7933cf7cced,
+    type: 3}
+  arsenalIcon: {fileID: 4771349909885690881, guid: fb0533414f0c35f4facfd7933cf7cced,
+    type: 3}
+  turretType: 0
+  turretSize: 0
+  projectileType: 0
+  modifierPrimaryType: 0
+  modifierSecondaryType: 0
+  maxTier: 0
+  turretTiersArray: []
+  startingDamage: 10
+  startingHealth: 0
+  startingShotsPerSalve: 1
+  startingNbrOfSalve: 30
+  startingAmmo: 0
+  startingFirerate: 0.01
+  startingCooldown: 4
+  startingSpeed: 400
+  startingDeviation: 10
+  cargoId: 1
+  arsenalId: -1
+  slotName: 1
+  turretPrefab: {fileID: 3223711800173324205, guid: f0a850bec67d28b49b5c2245a2d2500c,
+    type: 3}
+  priceToUnlock: 1
+  level: 0
+  actualDamage: 10
+  actualHealth: 0
+  actualShotsPerSalve: 1
+  actualNbrOfSalve: 30
+  actualAmmo: 60
+  actualFirerate: 0.01
+  actualCooldown: 4
+  actualSpeed: 800
+  actualDeviation: 10
+  actualTier: 0
+  actualUpgradePriceScraps: 0
+  actualUpgradePriceEnergyCore: 0
+  schemeOrigin: {fileID: 11400000, guid: 93116d303c9c8104ba98ae521ade1516, type: 2}

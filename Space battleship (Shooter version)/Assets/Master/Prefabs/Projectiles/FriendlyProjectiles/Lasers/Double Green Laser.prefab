@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4262214083608719123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.898743, y: 9.878604, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8782649731762435646}
@@ -48,7 +48,9 @@ MonoBehaviour:
   projectiles:
   - {fileID: 3614885898585628627}
   - {fileID: 2586868628920409833}
-  damage: 0
+  globalDamage: 0
+  globalHealth: 0
+  globalbulletSpeed: 0
 --- !u!1001 &8025955741291048688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61,15 +63,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green Laser 2
       objectReference: {fileID: 0}
-    - target: {fileID: 5514529610979602457, guid: 656bd7cd905748347aa779020372c547,
-        type: 3}
-      propertyPath: salve
-      value: 
-      objectReference: {fileID: 2854441598168692691}
     - target: {fileID: 526658932768053748, guid: 656bd7cd905748347aa779020372c547,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.2
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 526658932768053748, guid: 656bd7cd905748347aa779020372c547,
         type: 3}
@@ -121,6 +118,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5514529610979602457, guid: 656bd7cd905748347aa779020372c547,
+        type: 3}
+      propertyPath: salve
+      value: 
+      objectReference: {fileID: 2854441598168692691}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 656bd7cd905748347aa779020372c547, type: 3}
 --- !u!4 &7507216610147825412 stripped
@@ -153,15 +155,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green Laser 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5514529610979602457, guid: 656bd7cd905748347aa779020372c547,
-        type: 3}
-      propertyPath: salve
-      value: 
-      objectReference: {fileID: 2854441598168692691}
     - target: {fileID: 526658932768053748, guid: 656bd7cd905748347aa779020372c547,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 526658932768053748, guid: 656bd7cd905748347aa779020372c547,
         type: 3}
@@ -213,6 +210,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5514529610979602457, guid: 656bd7cd905748347aa779020372c547,
+        type: 3}
+      propertyPath: salve
+      value: 
+      objectReference: {fileID: 2854441598168692691}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 656bd7cd905748347aa779020372c547, type: 3}
 --- !u!4 &8782649731762435646 stripped

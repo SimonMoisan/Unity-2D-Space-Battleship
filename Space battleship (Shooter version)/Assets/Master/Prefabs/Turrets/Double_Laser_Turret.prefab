@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: -1345954139
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3716487882463615626, guid: 9945807184823c14fac8c325cba04bbc,
+  m_Sprite: {fileID: 8053142811999283774, guid: ada1cf55dad6cb6458aca28a52bfaa1f,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -121,21 +121,22 @@ MonoBehaviour:
   fireRate: 0.2
   nbrBullet: 10
   cooldown: 5
+  cooldownTimer: 0
   bulletSpeed: 0
   precisionFactor: 0
-  cooldownTimer: 0
   angleMouse: 0
   angleViseur: 0
   isTurretBeam: 0
   beamDuration: 0
-  isActive: 0
+  actualAmmo: 0
+  maxAmmo: 0
   isFiring: 0
   lockMode: 0
-  widthUnits: 42.6667
+  widthUnits: 19.816889
   minX: 0
-  maxX: 42.6667
+  maxX: 19.816889
   minY: 0
-  maxY: 24
+  maxY: 11.147
   descritpion: {fileID: 11400000, guid: 499317e4759d6984da9011f7171b0cf5, type: 2}
   beam: {fileID: 0}
   Bullet: {fileID: 4262214083608719123, guid: 2320ec67e3b38004f9c12cbc01fc56cf, type: 3}

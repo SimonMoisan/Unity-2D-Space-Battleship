@@ -14,7 +14,7 @@ public class Turret : MonoBehaviour
     public float cooldown;                //time to wait between two burst
     [ReadOnly] public float cooldownTimer;
     public float bulletSpeed;
-    public float precisionFactor;         //factor of bullet dispersion
+    public float deviationFactor;         //factor of bullet dispersion
     
     [HideInInspector] public float angleMouse;              //angle de visé de la tourelle par rapport à la sourie
     [HideInInspector] public float angleViseur;             //angle de visé de la tourelle par rapport à son viseur
@@ -42,6 +42,7 @@ public class Turret : MonoBehaviour
     [Header("Associated objects :")]
     public TurretDescritpion descritpion;
     public Beam beam;                     //Only here if its a beam turret
+    private PlayerStats playerStats;
 
     //Coroutines
     public Coroutine manualFiringCoroutine;                //coroutine de tir manuel de la tourelle 
@@ -53,26 +54,25 @@ public class Turret : MonoBehaviour
     //Animator
     public Animator animator;
 
+    private void OnValidate()
+    {
+        playerStats = FindObjectOfType<PlayerStats>();
+    }
+
     // Start is called before the first frame update
     void Awake()
     {
         //Initiate turrets stats from its description
         if(descritpion != null)
         {
-            damage = descritpion.actualDamage;
-            bulletHealth = descritpion.actualHealth;
-            nbrBullet = descritpion.actualNbrOfSalve;
-            fireRate = descritpion.actualFirerate;
-            cooldown = descritpion.actualCooldown;
-            bulletSpeed = descritpion.actualSpeed;
-            precisionFactor = descritpion.actualPrecision;
+            updateTurretStats();
 
             if (descritpion.modifierPrimaryType == ModifierPrimaryType.Beam) //Beam turret
             {
                 isTurretBeam = true;
             }
 
-            if(descritpion.actualAmmo > 0) //Turret with ammunitions
+            if (descritpion.actualAmmo > 0) //Turret with ammunitions
             {
                 maxAmmo = descritpion.actualAmmo;
                 actualAmmo = maxAmmo;
@@ -87,10 +87,34 @@ public class Turret : MonoBehaviour
         }
     }
 
+    public void updateTurretStats()
+    {
+        damage = descritpion.actualDamage;
+        bulletHealth = descritpion.actualHealth;
+        nbrBullet = descritpion.actualNbrOfSalve;
+        fireRate = descritpion.actualFirerate;
+        cooldown = descritpion.actualCooldown;
+        bulletSpeed = descritpion.actualSpeed;
+        deviationFactor = descritpion.actualDeviation;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        Fire();
+        if(playerStats.isPlaying)
+        {
+            Fire();
+        }
+
+        if(isFiring && playerStats.turretActualySelected == this)
+        {
+            SetViseurLocation();
+        }
+        else if(viseur != null && isFiring && !viseur.isLocked)
+        {
+            viseur.isLocked = true;
+            viseur.GetComponent<Animator>().Play("Locked");
+        }
     }
 
     //Fire routine
@@ -103,8 +127,6 @@ public class Turret : MonoBehaviour
             int key = idTurret + 1;
             if (descritpion.turretSize == TurretSize.Standard && Input.GetKeyDown(key.ToString()) && !isFiring) //on lance le burst de tir
             {
-                animator.SetBool("Firing", true);
-                animator.SetBool("ReadyToFire", true);
                 isFiring = true;
                 SetViseurLocation();
 
@@ -119,12 +141,14 @@ public class Turret : MonoBehaviour
                 {
                     manualFiringCoroutine = StartCoroutine(BurstFire());
                 }
+
+                playerStats.turretActualySelected = this;
+                lockMode = true;
             }
+
             //Frontal turret
             if(descritpion.turretSize == TurretSize.Frontal && Input.GetKeyDown("space"))
             {
-                animator.SetBool("Firing", true);
-                animator.SetBool("ReadyToFire", true);
                 isFiring = true;
 
                 if (isTurretBeam && beam != null) //Beam turret
@@ -141,8 +165,8 @@ public class Turret : MonoBehaviour
             }
         }
 
-        //le vérouillage est activé
-        else if (isFiring && lockMode)
+        //Lockmode management
+        if (isFiring && lockMode)
         {
             FollowViseur();
         }
@@ -177,8 +201,7 @@ public class Turret : MonoBehaviour
                 cooldownTimer = 0;
             }
 
-            animator.SetBool("Firing", false);
-            animator.SetBool("ReadyToFire", true);
+            animator.Play("ReadyToFire");
         }
     }
 
@@ -188,6 +211,8 @@ public class Turret : MonoBehaviour
 
         for (int i = 0; i < nbrBullet; i++)
         {
+            animator.Play("Firing");
+
             Vector3 bulletPosition = new Vector3(transform.position.x, transform.position.y, 0);
 
             GameObject bullet;
@@ -207,8 +232,7 @@ public class Turret : MonoBehaviour
             bullet.GetComponent<Salve>().globalbulletSpeed = bulletSpeed;
             yield return new WaitForSeconds(fireRate); // wait till the next round
         }
-        animator.SetBool("Firing", false);
-        animator.SetBool("ReadyToFire", false);
+        animator.Play("OnCD");
         isFiring = false;
         cooldownTimer = cooldown;
     }
@@ -216,9 +240,12 @@ public class Turret : MonoBehaviour
     IEnumerator BurstFire()
     {
         yield return new WaitForSeconds(0.1f);
+
         // rate of fire in weapons is in rounds per minute (RPM), therefore we should calculate how much time passes before firing a new round in the same burst.
         for (int i = 0; i < nbrBullet; i++)
         {
+            animator.Play("Firing");
+
             //Set bullet position and turret rotation according to its angle
             Vector3 bulletPosition = new Vector3(transform.position.x, transform.position.y, 0);
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angleViseur - 90));
@@ -227,7 +254,7 @@ public class Turret : MonoBehaviour
             GameObject bullet;
             if (descritpion.turretSize == TurretSize.Standard)
             {
-                bullet = Instantiate(Bullet, bulletPosition, Quaternion.Euler(new Vector3(0, 0, (angleViseur - 90) + Random.Range(-precisionFactor, precisionFactor))));
+                bullet = Instantiate(Bullet, bulletPosition, Quaternion.Euler(new Vector3(0, 0, (angleViseur - 90) + Random.Range(-deviationFactor, deviationFactor))));
             }
             else
             {
@@ -245,20 +272,22 @@ public class Turret : MonoBehaviour
         if(maxAmmo > 0) //Turret with ammunitions
         {
             actualAmmo -= nbrBullet;
-            animator.SetBool("Firing", false);
-            animator.SetBool("ReadyToFire", false);
+            animator.Play("OnCD");
 
-            if(cooldownTimer == 0)
+            if (cooldownTimer == 0)
             {
                 cooldownTimer = cooldown;
             }
         }
         else //Normal turret
         {
-            animator.SetBool("Firing", false);
-            animator.SetBool("ReadyToFire", false);
+            animator.Play("OnCD");
             cooldownTimer = cooldown;
         }
+
+        //Reset viseur
+        viseur.GetComponent<Animator>().Play("Idle");
+        viseur.isLocked = false;
         
         isFiring = false;
     }
@@ -292,8 +321,12 @@ public class Turret : MonoBehaviour
         Vector2 viseurPos = new Vector2(transform.position.x, transform.position.y);
         viseurPos.x = Mathf.Clamp(mousePosInUnitX, minX, maxX);
         viseurPos.y = Mathf.Clamp(mousePosInUnitY, minY, maxY);
-        viseur.transform.position = viseurPos;
 
-        FollowViseur();
+        if(viseur != null)
+        {
+            viseur.transform.position = viseurPos;
+
+            FollowViseur();
+        }
     }
 }

@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  ennemy: {fileID: 0}
 --- !u!61 &8313599544075313586
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59,7 +58,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -15, y: 0}
+  m_Offset: {x: -20, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -70,5 +69,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 30, y: 1}
+  m_Size: {x: 40, y: 1}
   m_EdgeRadius: 0

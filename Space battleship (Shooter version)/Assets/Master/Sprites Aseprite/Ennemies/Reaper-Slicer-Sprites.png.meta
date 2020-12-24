@@ -1,0 +1,646 @@
+fileFormatVersion: 2
+guid: 2768282628cdd29409b3556c0e96d784
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1717106525382755055
+    second: Reaper-Slicer-Sprites_0
+  - first:
+      213: 9082786369635293852
+    second: Reaper-Slicer-Sprites_1
+  - first:
+      213: -7670027905336932576
+    second: Reaper-Slicer-Sprites_2
+  - first:
+      213: 7239942920283143366
+    second: Reaper-Slicer-Sprites_3
+  - first:
+      213: -2061779974004271694
+    second: Reaper-Slicer-Sprites_4
+  - first:
+      213: -4679750041974984069
+    second: Reaper-Slicer-Sprites_5
+  - first:
+      213: -485950936753208336
+    second: Reaper-Slicer-Sprites_6
+  - first:
+      213: 3133118317776833429
+    second: Reaper-Slicer-Sprites_7
+  - first:
+      213: 5504781836533716052
+    second: Reaper-Slicer-Sprites_8
+  - first:
+      213: 7258254534465296190
+    second: Reaper-Slicer-Sprites_9
+  - first:
+      213: 2259650566091717393
+    second: Reaper-Slicer-Sprites_10
+  - first:
+      213: -5350358506216168701
+    second: Reaper-Slicer-Sprites_11
+  - first:
+      213: 9144110973393895323
+    second: Reaper-Slicer-Sprites_12
+  - first:
+      213: -8648680319199054091
+    second: Reaper-Slicer-Sprites_13
+  - first:
+      213: 3012565415375364390
+    second: Reaper-Slicer-Sprites_14
+  - first:
+      213: -279904142652491642
+    second: Reaper-Slicer-Sprites_15
+  - first:
+      213: -5551228112166978999
+    second: Reaper-Slicer-Sprites_16
+  - first:
+      213: 9141802410369149974
+    second: Reaper-Slicer-Sprites_17
+  - first:
+      213: 8302022548869056856
+    second: Reaper-Slicer-Sprites_18
+  - first:
+      213: -5502704080154295848
+    second: Reaper-Slicer-Sprites_19
+  - first:
+      213: 7930651691060016757
+    second: Reaper-Slicer-Sprites_20
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 447
+        width: 74
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe2c1f6894364d710800000000000000
+      internalID: 1717106525382755055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 411
+        width: 74
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9a1fdc941a8c0e70800000000000000
+      internalID: 9082786369635293852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 375
+        width: 74
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0270f05f1469e8590800000000000000
+      internalID: -7670027905336932576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 338
+        width: 74
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ccb4952ab1797460800000000000000
+      internalID: 7239942920283143366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 302
+        width: 74
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b5167499061363e0800000000000000
+      internalID: -2061779974004271694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 266
+        width: 74
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b72367691203e0fb0800000000000000
+      internalID: -4679750041974984069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 229
+        width: 74
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f38e8c923e8149f0800000000000000
+      internalID: -485950936753208336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_7
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 193
+        width: 74
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59b8b5292821b7b20800000000000000
+      internalID: 3133118317776833429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 157
+        width: 74
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4545d9c2ae9e46c40800000000000000
+      internalID: 5504781836533716052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_9
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 119
+        width: 74
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e371c201b008ab460800000000000000
+      internalID: 7258254534465296190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 77
+        width: 74
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11b386cb734eb5f10800000000000000
+      internalID: 2259650566091717393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_11
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 451
+        width: 28
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 303eef73945bfb5b0800000000000000
+      internalID: -5350358506216168701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_12
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 415
+        width: 28
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ff4e39b7866ee70800000000000000
+      internalID: 9144110973393895323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_13
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 379
+        width: 28
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f67a368217b9f780800000000000000
+      internalID: -8648680319199054091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_14
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 342
+        width: 28
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6216316b848cec920800000000000000
+      internalID: 3012565415375364390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_15
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 306
+        width: 28
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 688b90e4aa49d1cf0800000000000000
+      internalID: -279904142652491642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_16
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 270
+        width: 28
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94aff13917316f2b0800000000000000
+      internalID: -5551228112166978999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_17
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 233
+        width: 28
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61cecdc5bd43ede70800000000000000
+      internalID: 9141802410369149974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_18
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 161
+        width: 28
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8598f9ea585b63370800000000000000
+      internalID: 8302022548869056856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_19
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 197
+        width: 28
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d18f4e2bc772a3b0800000000000000
+      internalID: -5502704080154295848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Slicer-Sprites_20
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 123
+        width: 28
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 576bbf2d1b55f0e60800000000000000
+      internalID: 7930651691060016757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

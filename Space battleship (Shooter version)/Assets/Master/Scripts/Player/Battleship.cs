@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Battleship : MonoBehaviour
 {
-    [Header("Battleship caracteristics : ")]
+    [Header("Battleship caracteristics :")]
     //Battleship caracteristics
     public float MaxHullPoints;
     public float MaxPlatePoints;
@@ -13,12 +13,12 @@ public class Battleship : MonoBehaviour
     [ReadOnly] public float platePoints;
     [ReadOnly] public bool hasTakenDamagesRecently;
     [Space]
-    [Header("UW weapons informations : ")]
+    [Header("UW weapons informations :")]
     [ReadOnly] public bool uwIsRunning = false;
-    public float uwChargeMax; //Charge to reach to use UW
-    [ReadOnly] public float uwCharge; //Start to 0, need to reach the limit to be used
+    public float actualOverdrive;
+    public float maxOverdrive;
     [Space]
-    [Header("Movement parameters : ")]
+    [Header("Movement parameters :")]
     //Parameters used for movement
     private Transform initialPosition;       // Start position for every battl phases
     [ReadOnly] public float velocity;        // Current Travelling Velocity
@@ -40,8 +40,8 @@ public class Battleship : MonoBehaviour
 
     [Space]
     [Header("Associated objects : ")]
-    //Associated objects
-    public PlayerStats stats;
+    public PlayerStats playerStats;
+    public Animator animator;
     [Header("Turrets parents : ")]
     public Transform arsenalStandardTurret;
     public Transform arsenalFrontalTurret;
@@ -56,13 +56,11 @@ public class Battleship : MonoBehaviour
     public UltimateWeapon ultimateWeapon;
     public UWProjectile uwProjectile;
     public Shield shield;
-    public Animator animator;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnValidate()
     {
         initialPosition = transform;
-        stats = FindObjectOfType<PlayerStats>();
+        playerStats = FindObjectOfType<PlayerStats>();
         animator = gameObject.GetComponent<Animator>();
         hullPoints = MaxHullPoints;
         platePoints = MaxPlatePoints;
@@ -72,7 +70,7 @@ public class Battleship : MonoBehaviour
         viseurs = FindObjectsOfType<Viseur>();
 
         //Attribute turret id and viseur
-        if(standardTurrets.Length > 0) 
+        if (standardTurrets.Length > 0)
         {
             for (int i = 0; i < standardTurrets.Length; i++)
             {
@@ -89,10 +87,13 @@ public class Battleship : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        NewMoveBattleshipAcc();
-        StaticAnimation();
-        UWdeployer();
-
+        if(playerStats.isPlaying)
+        {
+            NewMoveBattleshipAcc();
+            StaticAnimation();
+            UWdeployer();
+        }
+        
         Vector3 shipPos = new Vector3(transform.position.x, transform.position.y, 2);
         shipPos.y = Mathf.Clamp(shipPos.y, minY, maxY);
         transform.position = shipPos;
@@ -121,7 +122,21 @@ public class Battleship : MonoBehaviour
         else if(platePoints <= 0 && shield.shieldPoints <= 0)
         {
             hullPoints -= damageInput;
+            playerStats.updateHullIndicators();
+
+            animator.Play("Damaged");
         }
+    }
+
+    public void repairHull(int healAmount)
+    {
+        hullPoints += healAmount;
+        if(hullPoints > MaxHullPoints)
+        {
+            hullPoints = MaxHullPoints;
+        }
+
+        playerStats.updateHullIndicators();
     }
 
     //Function for battleship movement
@@ -197,7 +212,7 @@ public class Battleship : MonoBehaviour
     {
         if(actualDirection == "NONE")
         { 
-            transform.position = transform.position + new Vector3(0, Mathf.Sin(Time.time * 2.0f) * 0.002f, 2);
+            transform.position = transform.position + new Vector3(0, Mathf.Sin(Time.time * 1.0f) * 0.002f, 2);
         }
     }
 
@@ -386,13 +401,15 @@ public class Battleship : MonoBehaviour
         }
     }
 
-    public void chargeUW(float ammount)
+    public void chargeOverdrive(float ammount)
     {
-        uwCharge += ammount;
-        if (uwCharge > uwChargeMax)
+        actualOverdrive += ammount;
+        if (actualOverdrive > maxOverdrive)
         {
-            uwCharge = uwChargeMax;
+            actualOverdrive = maxOverdrive;
         }
+
+        playerStats.updateOverdriveIndicator();
     }
 
     //Function called at the end of a battle phase to reset shield and cooldowns

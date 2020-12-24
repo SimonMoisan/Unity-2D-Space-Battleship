@@ -46,17 +46,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198a1ae234beda24a827541d49aa4051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSize: 8
-  ySize: 10
-  minSectorNumber: 40
-  maxSectorNumber: 40
+  xMin: 0
+  xMax: 0
+  yMin: 0
+  yMax: 0
+  xOffset: 0
+  yOffset: 0
   sectors: []
   startSector: {fileID: 1243410303049027945}
   endSector: {fileID: 8644709918158009408}
-  sectorPrefab: {fileID: 7402042894281743516, guid: 69f0b3b9cb91ba1409f1d683311b7f12,
-    type: 3}
-  linkPrefab: {fileID: 7045460768209299756, guid: 920593a3559a87b4fa304cf25682cbb1,
-    type: 3}
+  sectorNumber: 0
+  minSectorNumber: 40
+  maxSectorNumber: 40
+  shopCounter: 0
+  actualNumberOfShop: 0
   maxDistanceBtwSectorsLink: 2
   minDistanceBtwSectorsLink: 1.5
   whatIsSector:
@@ -70,6 +73,11 @@ MonoBehaviour:
   - {fileID: 2653644504522309905, guid: f500ea52037936144adb4aaae49d6f3f, type: 3}
   minNbrWave: 4
   maxNbrWave: 6
+  sectorPrefab: {fileID: 7402042894281743516, guid: 69f0b3b9cb91ba1409f1d683311b7f12,
+    type: 3}
+  linkPrefab: {fileID: 7045460768209299756, guid: 920593a3559a87b4fa304cf25682cbb1,
+    type: 3}
+  eventGenerator: {fileID: 0}
 --- !u!1001 &1243410302788479196
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,6 +139,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7402042894281743516, guid: 69f0b3b9cb91ba1409f1d683311b7f12,
+        type: 3}
+      propertyPath: sectorType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7402042894281743517, guid: 69f0b3b9cb91ba1409f1d683311b7f12,
         type: 3}
@@ -254,10 +267,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1243410303081784076}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7402042894281743515, guid: 69f0b3b9cb91ba1409f1d683311b7f12,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -312,6 +321,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7402042894281743516, guid: 69f0b3b9cb91ba1409f1d683311b7f12,
+        type: 3}
+      propertyPath: sectorType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7402042894281743516, guid: 69f0b3b9cb91ba1409f1d683311b7f12,
+        type: 3}
+      propertyPath: eventType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7402042894281743517, guid: 69f0b3b9cb91ba1409f1d683311b7f12,
         type: 3}

@@ -6,7 +6,8 @@ public class WaveConfig : ScriptableObject
     [Header("Ennemies to spawn parameters :")]
     public GameObject[] ennemyPrefabs;
     public int[] ennemiesNumberToSpawn;
-    public int totalNbrEnnemy = 0;
+    public int totalNbrEnnemy;
+    public int dangerIndicator;
 
     [Header("Wave parameters :")]
     public float spawnRate;
@@ -14,6 +15,22 @@ public class WaveConfig : ScriptableObject
     public WavePath[] wavePath;
     public bool dieAtEnd; //Indicate if ennemies died when rush end of the waypath
     public bool pathReversed; //Indicate if the path is inversed or not
+
+    private void OnValidate()
+    {
+        dangerIndicator = 0;
+        for (int i = 0; i < ennemyPrefabs.Length; i++)
+        {
+            if(ennemyPrefabs[i].GetComponent<Ennemy>() != null)
+            {
+                dangerIndicator += ennemyPrefabs[i].GetComponent<Ennemy>().dangerIndicator * ennemiesNumberToSpawn[i];
+            }
+            else if(ennemyPrefabs[i].GetComponent<EnnemySquad>() != null)
+            {
+                dangerIndicator += ennemyPrefabs[i].GetComponent<EnnemySquad>().dangerIndicator * ennemiesNumberToSpawn[i];
+            }
+        }
+    }
 
     public Transform[] GetWaypoints()
     {
@@ -36,4 +53,11 @@ public class WaveConfig : ScriptableObject
 
         return waveWayPoints;
     }
+
+}
+
+[System.Serializable]
+public class EnnemyList
+{
+    public GameObject[] ennmies;
 }

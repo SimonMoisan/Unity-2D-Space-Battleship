@@ -76,8 +76,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cad58a583e7c3d4c9cc59cd2b2ebc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetingType: Normal
-  attackType: 
+  targetingType: 1
+  attackType: 0
   damage: 10
   bulletSpeed: 0
   fireRate: 0
@@ -85,14 +85,13 @@ MonoBehaviour:
   cooldown: 8
   cooldownTimer: 0
   cooldownIsActive: 0
+  stopMovement: 0
+  precisionFactor: 0
   isTurretBeam: 1
   beamDuration: 3
   beam: {fileID: 8581610032207824348}
   impactDirection: {fileID: 7630418693397512482}
   impact: {fileID: 6601547263407222714}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 1024
   isFiring: 0
   isReadyToFire: 0
   ennemy: {fileID: 0}
@@ -203,6 +202,21 @@ PrefabInstance:
       propertyPath: beamLine
       value: 
       objectReference: {fileID: 4604816987527567143}
+    - target: {fileID: 5544605004655196136, guid: 1e73520b2e88eff40910ae5def5b12f2,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2193405
+      objectReference: {fileID: 0}
+    - target: {fileID: 5544605004655196136, guid: 1e73520b2e88eff40910ae5def5b12f2,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5544605004655196136, guid: 1e73520b2e88eff40910ae5def5b12f2,
+        type: 3}
+      propertyPath: m_Positions.Array.data[1].x
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5544605004655196137, guid: 1e73520b2e88eff40910ae5def5b12f2,
         type: 3}
       propertyPath: m_Name

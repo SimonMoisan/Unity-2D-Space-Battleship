@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4724592676981436569}
   - component: {fileID: 4463363928946669668}
   - component: {fileID: 4647343191341173350}
-  m_Layer: 0
+  - component: {fileID: 8516520963180662629}
+  m_Layer: 10
   m_Name: Completed-Shield
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,3 +162,22 @@ MonoBehaviour:
   col: {fileID: 0}
   battleship: {fileID: 0}
   animator: {fileID: 0}
+--- !u!95 &8516520963180662629
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724592676981436575}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: acff5cc0f3b4e5f43a48cb196f43a293, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

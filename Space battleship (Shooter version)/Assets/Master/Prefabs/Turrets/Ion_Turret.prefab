@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8871501819961066164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -72,7 +72,8 @@ SpriteRenderer:
   m_SortingLayerID: -1345954139
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: caa0e3bc440132548a66f70dd9a4b9e4, type: 3}
+  m_Sprite: {fileID: 8747549010421476331, guid: f838d24ba4b9d144fb46796118a5de31,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,21 +121,22 @@ MonoBehaviour:
   fireRate: 0.1
   nbrBullet: 4
   cooldown: 4
+  cooldownTimer: 0
   bulletSpeed: 0
   precisionFactor: 0
-  cooldownTimer: 0
   angleMouse: 0
   angleViseur: 0
   isTurretBeam: 0
   beamDuration: 0
-  isActive: 0
+  actualAmmo: 0
+  maxAmmo: 0
   isFiring: 0
   lockMode: 0
-  widthUnits: 42.6667
+  widthUnits: 19.816889
   minX: 0
-  maxX: 42.6667
+  maxX: 19.816889
   minY: 0
-  maxY: 24
+  maxY: 11.147
   descritpion: {fileID: 11400000, guid: 3f7f40b75a6d77d40bd37981288b5791, type: 2}
   beam: {fileID: 0}
   Bullet: {fileID: 6886897925697682500, guid: 8f88083faebf3b04da504c7376d53fa8, type: 3}

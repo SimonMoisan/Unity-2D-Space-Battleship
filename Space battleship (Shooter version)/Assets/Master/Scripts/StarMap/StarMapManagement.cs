@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StarMapManagement : MonoBehaviour
 {
-    [Header("Level parameters")]
+    [Header("Starmap parameters")]
     public float xMin;
     public float xMax;
     public float yMin;
@@ -15,33 +15,42 @@ public class StarMapManagement : MonoBehaviour
     public Sector startSector;
     public Sector endSector;
     private int index;
-
     [Header("Sectors spawn parameters")]
     public int sectorNumber;
     public int minSectorNumber;
     public int maxSectorNumber;
-    public int numberOfShop;
-
     [Header("WaveLinks parameters")]
     public float maxDistanceBtwSectorsLink;
     public float minDistanceBtwSectorsLink;
     public LayerMask whatIsSector;
-
     [Header("Waves parameters")]
     public Wave[] waves; //Every possible waves in this system
     public int minNbrWave;
     public int maxNbrWave;
-
+    [Header("Battle events caracteritics :")]
+    public BattleEventList[] battleEventsList;
+    [Header("Contextual events caracteritics :")]
+    public List<StarmapEvent> contextualEvents;
+    [Header("Station events caracteritics :")]
+    public List<StarmapEvent> stationEvents;
+    public int actualNbrStation;
+    public int minNbrStation;
+    public int maxNbrStation;
     [Header("Prefabs")]
     public Sector sectorPrefab;
-    public BattleEvent battleEventPrefab;
-    public ContextualEvent contextualEventPrefab;
-    public ShopEvent shopEventPrefab;
     public SectorLink linkPrefab;
+    //public EventGenerator eventGenerator;
+
+    private void OnValidate()
+    {
+        //eventGenerator = FindObjectOfType<EventGenerator>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        //eventGenerator.multiBattleEventGeneration();
+        //eventGenerator.generateShops();
         InitializeStarMap();
     }
 
@@ -55,7 +64,7 @@ public class StarMapManagement : MonoBehaviour
 
         //Attribute waves to start and end sector
         //attributeEventToSector(startSector);
-        //attributeEventToSector(endSector);
+        attributeEventToSector(endSector);
 
         generateSectorsRandomly();
         createLinksBtwSectors();
@@ -151,18 +160,51 @@ public class StarMapManagement : MonoBehaviour
     //Function used to attribute waves to a sector
     public void attributeEventToSector(Sector sector)
     {
-        int nbrWave = Random.Range(minNbrWave, maxNbrWave);
-        List<Wave> wavesToAttribute = new List<Wave>();
-
-        for(int i = 0; i < nbrWave; i++)
+        /*if(sector.sectorType == SectorType.Start)
         {
-            int randomIndex = Random.Range(0, waves.Length - 1);
-            if(waves.Length > 0 && !wavesToAttribute.Contains(waves[randomIndex]))
-            {
-                wavesToAttribute.Add(waves[randomIndex]);
-            }
+            sector.sectorEvent = chooseRandomBattleEvent();
+            sector.eventType = EventType.battleEvent;
+            return;
+        }*/
+
+        //int randomIndex = Random.Range(0, 3);
+        int randomIndex = 0;
+        switch (randomIndex)
+        {
+            //BattleEvent
+            case 0:
+                sector.sectorEvent = chooseRandomBattleEvent();
+                //sector.dangerIndicator.enabled = true;
+                break;
+            //ContextualEvent
+            case 1:
+                break;
+            //ShopEvent
+            case 2:
+                if(actualNbrStation < maxNbrStation)
+                {
+                    sector.sectorEvent = stationEvents[actualNbrStation];
+                    actualNbrStation++;
+
+                    sector.stationIndicator.enabled = true;
+                }
+                else //BattleEvent
+                {
+                    sector.sectorEvent = chooseRandomBattleEvent();
+                    //sector.dangerIndicator.enabled = true;
+                }
+                break;
         }
-        sector.waves = wavesToAttribute;
+    }
+
+    private StarmapEvent chooseRandomBattleEvent()
+    {
+        int randomTier = Random.Range(0, battleEventsList.Length - 1);
+        int numberBattleEvent = battleEventsList[randomTier].battleEvents.Count;
+        int randomEvent = Random.Range(0, numberBattleEvent);
+        StarmapEvent eventToAttribute = battleEventsList[randomTier].battleEvents[randomEvent];
+        
+        return eventToAttribute;
     }
 
     private bool sectorCanBeCreated(Vector2 testPosition)
@@ -211,7 +253,11 @@ public class StarMapManagement : MonoBehaviour
             {
                 if(sectors[i] != sectors[j] && Vector2.Distance(sectors[i].transform.position, sectors[j].transform.position) < maxDistanceBtwSectorsLink)
                 {
-                    sectors[i].createLink(sectors[j]);
+                    SectorLink sectorLinkGO = sectors[i].createLink(sectors[j]);
+                    if(sectorLinkGO != null)
+                    {
+                        sectorLinkGO.transform.parent = transform;
+                    }
                 }
             }
         }
@@ -230,6 +276,20 @@ public class StarMapManagement : MonoBehaviour
     {
         Vector3 mapRange = new Vector3(xMax - xMin, yMax - yMin, 0);
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, mapRange);
+        Vector2 mapPosition = new Vector2(xOffset, yOffset);
+        Gizmos.DrawWireCube(mapPosition, mapRange);
+    }
+
+    [System.Serializable]
+    public class BattleEventList
+    {
+        public int battleEventTier; // [1] : 2 à 3 waves et dangerIndicator > 100, [2] : 2 à 5 waves, et 100 < dangerIndicator < 250
+        public List<StarmapEvent> battleEvents;
+
+        public BattleEventList(int tier)
+        {
+            battleEventTier = tier;
+            battleEvents = new List<StarmapEvent>();
+        }
     }
 }

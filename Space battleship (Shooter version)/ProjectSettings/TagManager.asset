@@ -8,6 +8,8 @@ TagManager:
   - Ennemy
   - EnnemyProjectile
   - ConstantDamageFriendlyProjectile
+  - ParentPassiveWP
+  - ParentAggroWP
   layers:
   - Default
   - TransparentFX

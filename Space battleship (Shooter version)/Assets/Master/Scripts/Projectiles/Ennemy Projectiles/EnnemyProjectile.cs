@@ -11,7 +11,7 @@ public class EnnemyProjectile : MonoBehaviour
     [Header("Associated objects")]
     public Animator animator;
     public Rigidbody2D rb2D;
-    public PolygonCollider2D col;
+    public Collider2D col;
     public EnnemySalve ennemySalve;
 
     //Projectile can be destroyed by ennemy projectile (case of shields)
@@ -28,19 +28,23 @@ public class EnnemyProjectile : MonoBehaviour
 
     private bool hasJoint;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         ennemySalve = GetComponentInParent<EnnemySalve>();
+    }
+
+    // Start is called before the first frame update
+    void OnValidate()
+    {
         animator = gameObject.GetComponent<Animator>();
         animator.SetBool("Firing", false);
         rb2D = GetComponent<Rigidbody2D>();
-        col = GetComponent<PolygonCollider2D>();
+        col = GetComponent<Collider2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name.Equals("Completed-Shield") || collision.name.Equals("Vaisseau"))
+        if (collision.tag.Equals("Player"))
         {
             StartCoroutine(Destruction());
         }

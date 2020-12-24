@@ -72,7 +72,8 @@ SpriteRenderer:
   m_SortingLayerID: -1345954139
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6fcb0ea665de38c4ab0b56ea85572632, type: 3}
+  m_Sprite: {fileID: 7997641132678262270, guid: fc786c145cae59441ad282d5794e6c9a,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -131,11 +132,11 @@ MonoBehaviour:
   maxAmmo: 0
   isFiring: 0
   lockMode: 0
-  widthUnits: 42.6667
+  widthUnits: 19.816889
   minX: 0
-  maxX: 42.6667
+  maxX: 19.816889
   minY: 0
-  maxY: 24
+  maxY: 11.147
   descritpion: {fileID: 11400000, guid: e70d25833aeb21142abda336cd49257f, type: 2}
   beam: {fileID: 0}
   Bullet: {fileID: 4802881849080385626, guid: e104c13399aad364183b7b247ec73e00, type: 3}

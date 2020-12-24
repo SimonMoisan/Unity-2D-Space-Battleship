@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 2193405
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4906618998519816848, guid: bebe5a3f955c6e14ebed3fb6403055e1,
+  m_Sprite: {fileID: 6138690691452300394, guid: ed319e4c0b9afcb45ab0c20aa5501b4d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c36ecac286db4a4c91123eaaadb71c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 0
+  bulletSpeed: 600
   maxSpeed: 0
   damageType: 0
   damage: 0
@@ -174,6 +174,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.010474086}
-  m_Size: {x: 0.3, y: 0.63005185}
+  m_Offset: {x: 0, y: 0.07819365}
+  m_Size: {x: 0.15625, y: 0.3436127}
   m_Direction: 0

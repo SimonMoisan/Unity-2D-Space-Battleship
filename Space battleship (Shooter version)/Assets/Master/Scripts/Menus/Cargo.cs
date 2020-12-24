@@ -8,8 +8,8 @@ public class Cargo : MonoBehaviour
     [SerializeField] Transform itemsParent;
     public CargoItemSlot[] itemSlots;
 
-    public event Action<CargoItemSlot> OnRightClickEvent;
-    public event Action<CargoItemSlot> OnLeftClickEvent;
+    //public event Action<CargoItemSlot> OnRightClickEvent;
+    //public event Action<CargoItemSlot> OnLeftClickEvent;
     public event Action<CargoItemSlot> OnBeginingDragEvent;
     public event Action<CargoItemSlot> OnEndingDragEvent;
     public event Action<CargoItemSlot> OnDragEvent;
@@ -21,8 +21,8 @@ public class Cargo : MonoBehaviour
         {
             itemSlots[i].slotId = i;
 
-            itemSlots[i].OnRightClickEvent += OnRightClickEvent;
-            itemSlots[i].OnLeftClickEvent += OnLeftClickEvent;
+            //itemSlots[i].OnRightClickEvent += OnRightClickEvent;
+            //itemSlots[i].OnLeftClickEvent += OnLeftClickEvent;
             itemSlots[i].OnBeginingDragEvent += OnBeginingDragEvent;
             itemSlots[i].OnEndingDragEvent += OnEndingDragEvent;
             itemSlots[i].OnDragEvent += OnDragEvent;
@@ -35,6 +35,11 @@ public class Cargo : MonoBehaviour
         if(itemsParent != null)
         {
             itemSlots = itemsParent.GetComponentsInChildren<CargoItemSlot>();
+        }
+
+        for (int i = 0; i < itemSlots.Length; i++)
+        {
+            itemSlots[i].slotId = i;
         }
 
         refreshUI();

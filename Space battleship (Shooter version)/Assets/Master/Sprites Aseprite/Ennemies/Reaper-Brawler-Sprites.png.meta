@@ -1,0 +1,646 @@
+fileFormatVersion: 2
+guid: 025fb8318837ab347bf8a3ea3f339b2c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7161037618704105090
+    second: Reaper-Brawler-Sprites_0
+  - first:
+      213: 887588869118989642
+    second: Reaper-Brawler-Sprites_1
+  - first:
+      213: -5687258852891530829
+    second: Reaper-Brawler-Sprites_2
+  - first:
+      213: -5324361162650371878
+    second: Reaper-Brawler-Sprites_3
+  - first:
+      213: 5624835386217119914
+    second: Reaper-Brawler-Sprites_4
+  - first:
+      213: -6979494273035567448
+    second: Reaper-Brawler-Sprites_5
+  - first:
+      213: 5280727189700903086
+    second: Reaper-Brawler-Sprites_6
+  - first:
+      213: 3166831007420283966
+    second: Reaper-Brawler-Sprites_7
+  - first:
+      213: 4394381132790501484
+    second: Reaper-Brawler-Sprites_8
+  - first:
+      213: 2393576318444540116
+    second: Reaper-Brawler-Sprites_9
+  - first:
+      213: -8700634587538168212
+    second: Reaper-Brawler-Sprites_10
+  - first:
+      213: 6125815725457026912
+    second: Reaper-Brawler-Sprites_11
+  - first:
+      213: -8337916949452945498
+    second: Reaper-Brawler-Sprites_12
+  - first:
+      213: 8481585435189738286
+    second: Reaper-Brawler-Sprites_13
+  - first:
+      213: -6810826956935426889
+    second: Reaper-Brawler-Sprites_14
+  - first:
+      213: 1211855171394697690
+    second: Reaper-Brawler-Sprites_15
+  - first:
+      213: -3836390625976486654
+    second: Reaper-Brawler-Sprites_16
+  - first:
+      213: 6597721855032760457
+    second: Reaper-Brawler-Sprites_17
+  - first:
+      213: 1897933475163153518
+    second: Reaper-Brawler-Sprites_18
+  - first:
+      213: 7671180183147630774
+    second: Reaper-Brawler-Sprites_19
+  - first:
+      213: -1229631368982027520
+    second: Reaper-Brawler-Sprites_20
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 718
+        width: 66
+        height: 65
+      alignment: 9
+      pivot: {x: 0.469697, y: 0.4923077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e71cee10a32ee9c90800000000000000
+      internalID: -7161037618704105090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 652
+        width: 66
+        height: 65
+      alignment: 9
+      pivot: {x: 0.469697, y: 0.4923077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a459d62bf59515c00800000000000000
+      internalID: 887588869118989642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_2
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 586
+        width: 66
+        height: 65
+      alignment: 9
+      pivot: {x: 0.469697, y: 0.4923077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b964b7a43cc211b0800000000000000
+      internalID: -5687258852891530829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_3
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 520
+        width: 66
+        height: 65
+      alignment: 9
+      pivot: {x: 0.469697, y: 0.4923077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad8b6547bb11c16b0800000000000000
+      internalID: -5324361162650371878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_4
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 454
+        width: 66
+        height: 65
+      alignment: 9
+      pivot: {x: 0.469697, y: 0.4923077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa0c48b6bfd6f0e40800000000000000
+      internalID: 5624835386217119914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_5
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 388
+        width: 66
+        height: 65
+      alignment: 9
+      pivot: {x: 0.469697, y: 0.4923077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ae77d700fad32f90800000000000000
+      internalID: -6979494273035567448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_6
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 322
+        width: 66
+        height: 65
+      alignment: 9
+      pivot: {x: 0.469697, y: 0.4923077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea08ed98669e84940800000000000000
+      internalID: 5280727189700903086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_7
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 256
+        width: 66
+        height: 65
+      alignment: 9
+      pivot: {x: 0.469697, y: 0.4923077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c7afcc508d2fb20800000000000000
+      internalID: 3166831007420283966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_8
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 190
+        width: 66
+        height: 65
+      alignment: 9
+      pivot: {x: 0.469697, y: 0.4923077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6018ab9b5afbfc30800000000000000
+      internalID: 4394381132790501484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_9
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 124
+        width: 66
+        height: 65
+      alignment: 9
+      pivot: {x: 0.469697, y: 0.4923077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d09cabdaf0b73120800000000000000
+      internalID: 2393576318444540116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_10
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 49
+        width: 66
+        height: 65
+      alignment: 9
+      pivot: {x: 0.469697, y: 0.4923077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c666f49c0f2214780800000000000000
+      internalID: -8700634587538168212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_11
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 738
+        width: 32
+        height: 25
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06f2e5342f4430550800000000000000
+      internalID: 6125815725457026912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_12
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 672
+        width: 32
+        height: 25
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a7062de5b4c94c80800000000000000
+      internalID: -8337916949452945498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_13
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 606
+        width: 32
+        height: 25
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2b7c941405a4b570800000000000000
+      internalID: 8481585435189738286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_14
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 540
+        width: 32
+        height: 25
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bc853dc7f41b71a0800000000000000
+      internalID: -6810826956935426889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_15
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 474
+        width: 32
+        height: 25
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad973329bdf51d010800000000000000
+      internalID: 1211855171394697690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_16
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 408
+        width: 32
+        height: 25
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 205780f3d0762cac0800000000000000
+      internalID: -3836390625976486654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_17
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 342
+        width: 32
+        height: 25
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9881f082211df8b50800000000000000
+      internalID: 6597721855032760457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_18
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 276
+        width: 32
+        height: 25
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e642c62a070d65a10800000000000000
+      internalID: 1897933475163153518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_19
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 210
+        width: 32
+        height: 25
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b0d780abb1857a60800000000000000
+      internalID: 7671180183147630774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Brawler-Sprites_20
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 144
+        width: 32
+        height: 25
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0032627e8c87feee0800000000000000
+      internalID: -1229631368982027520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -5,5 +5,5 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
     [Header("Associated objects :")]
-    public ShopEvent actualShopEvent;
+    public TurretScheme[] turretSchemesToSell;
 }

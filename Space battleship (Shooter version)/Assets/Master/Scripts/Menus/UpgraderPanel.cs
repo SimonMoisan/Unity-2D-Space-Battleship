@@ -2,12 +2,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum upgradableStats { Damage, Health, NbrShots, Firerate, Cooldown, Speed, Precision, Ammunition}
+public enum upgradableStats { Damage, Health, NbrShots, Firerate, Cooldown, Speed, Deviation, Ammunition}
 
 public class UpgraderPanel : MonoBehaviour
 {
-    [Header("Associated objects :")]
+    /*[Header("Associated objects :")]
     public Cargo cargo;
+    public PlayerStats playerStats;
     [ReadOnly] public UpgraderSlot upgradeSlot;
     [Space]
     [Header("Values to display :")]
@@ -31,6 +32,7 @@ public class UpgraderPanel : MonoBehaviour
     private void OnValidate()
     {
         upgradeSlot = GetComponentInChildren<UpgraderSlot>();
+        playerStats = FindObjectOfType<PlayerStats>();
     }
 
     private void Start()
@@ -56,77 +58,127 @@ public class UpgraderPanel : MonoBehaviour
     //Upgrade functions
     public void changeStat(string statToModify, int grade) //-1 : downgrade, 1 : upgrade
     {
-       
         if (upgradeSlot.CargoItem != null)
         {
             TurretDescritpion turretD = (upgradeSlot.CargoItem as TurretDescritpion);
             switch (statToModify)
             {
                 case "Damage" :
-                    if(turretD.upgradeRateIndexes[0] < turretD.valuesDamage.Length -1 && turretD.upgradeRateIndexes[0] > 0)
+                    //Check if the player have enought scrap to upgrad
+                    if (grade == 1 && turretD.upgradeRateIndexes[0] < turretD.valuesDamage.values.Length - 1 && playerStats.scrapsStored >= turretD.valuesDamage.scrapPrice[turretD.upgradeRateIndexes[0]]) //Upgrade
                     {
                         turretD.upgradeRateIndexes[0] += 1 * grade;
-                        turretD.actualDamage = turretD.valuesDamage[turretD.upgradeRateIndexes[0]];
-                        damageValue.text = "" + turretD.actualDamage;
+                        turretD.actualDamage = turretD.valuesDamage.values[turretD.upgradeRateIndexes[0]];
+                        playerStats.scrapsStored -= turretD.valuesDamage.scrapPrice[turretD.upgradeRateIndexes[0]];
                     }
+                    else if (grade == -1 && turretD.upgradeRateIndexes[0] > 0)//Downgrade
+                    {
+                        turretD.upgradeRateIndexes[0] += 1 * grade;
+                        turretD.actualDamage = turretD.valuesDamage.values[turretD.upgradeRateIndexes[0]];
+                        playerStats.scrapsStored += turretD.valuesDamage.scrapPrice[turretD.upgradeRateIndexes[0]];
+                    }
+                    
+                    damageValue.text = "" + turretD.actualDamage;
                     break;
                 case "Health":
-                    if (turretD.upgradeRateIndexes[1] < turretD.valuesHealth.Length - 1 && turretD.upgradeRateIndexes[1] > 0)
+                    if (grade == 1 && turretD.upgradeRateIndexes[1] < turretD.valuesHealth.values.Length - 1 && playerStats.scrapsStored >= turretD.valuesHealth.scrapPrice[turretD.upgradeRateIndexes[1]]) //Upgrade
                     {
                         turretD.upgradeRateIndexes[1] += 1 * grade;
-                        turretD.actualHealth = turretD.valuesHealth[turretD.upgradeRateIndexes[1]];
-                        healthValue.text = "" + turretD.actualHealth;
+                        turretD.actualHealth = turretD.valuesHealth.values[turretD.upgradeRateIndexes[1]];
+                        playerStats.scrapsStored -= turretD.valuesHealth.scrapPrice[turretD.upgradeRateIndexes[1]];
+                    }
+                    else if (grade == -1 && turretD.upgradeRateIndexes[0] > 0)//Downgrade
+                    {
+                        turretD.upgradeRateIndexes[1] += 1 * grade;
+                        turretD.actualHealth = turretD.valuesHealth.values[turretD.upgradeRateIndexes[1]];
+                        playerStats.scrapsStored += turretD.valuesHealth.scrapPrice[turretD.upgradeRateIndexes[1]];
                     }
                     break;
                 case "NbrSalves" :
-                    if (turretD.upgradeRateIndexes[2] < turretD.valuesDamage.Length - 1 && turretD.upgradeRateIndexes[2] > 0)
+                    if (grade == 1 && turretD.upgradeRateIndexes[2] < turretD.valuesNbrOfSalve.values.Length - 1 && playerStats.scrapsStored >= turretD.valuesNbrOfSalve.scrapPrice[turretD.upgradeRateIndexes[2]]) //Upgrade
                     {
                         turretD.upgradeRateIndexes[2] += 1 * grade;
-                        turretD.actualNbrOfSalve = turretD.valuesNbrOfSalve[turretD.upgradeRateIndexes[2]];
-                        shotBySalveValue.text = "" + turretD.actualNbrOfSalve;
+                        turretD.actualNbrOfSalve = turretD.valuesNbrOfSalve.values[turretD.upgradeRateIndexes[2]];
+                        playerStats.scrapsStored -= turretD.valuesNbrOfSalve.scrapPrice[turretD.upgradeRateIndexes[2]];
+                    }
+                    else if (grade == -1 && turretD.upgradeRateIndexes[2] > 0)//Downgrade
+                    {
+                        turretD.upgradeRateIndexes[2] += 1 * grade;
+                        turretD.actualNbrOfSalve = turretD.valuesNbrOfSalve.values[turretD.upgradeRateIndexes[2]];
+                        playerStats.scrapsStored += turretD.valuesNbrOfSalve.scrapPrice[turretD.upgradeRateIndexes[2]];
                     }
                     break;
                 case "Ammunition":
-                    if (turretD.upgradeRateIndexes[3] < turretD.valuesDamage.Length - 1 && turretD.upgradeRateIndexes[3] > 0)
+                    if (grade == 1 && turretD.upgradeRateIndexes[3] < turretD.valuesAmmo.values.Length - 1 && playerStats.scrapsStored >= turretD.valuesAmmo.scrapPrice[turretD.upgradeRateIndexes[3]]) //Upgrade
                     {
                         turretD.upgradeRateIndexes[3] += 1 * grade;
-                        turretD.actualAmmo = turretD.valuesAmmo[turretD.upgradeRateIndexes[3]];
-                        ammoValue.text = "" + turretD.actualAmmo;
+                        turretD.actualAmmo = turretD.valuesAmmo.values[turretD.upgradeRateIndexes[3]];
+                        playerStats.scrapsStored -= turretD.valuesAmmo.scrapPrice[turretD.upgradeRateIndexes[3]];
+                    }
+                    else if (grade == -1 && turretD.upgradeRateIndexes[3] > 0)//Downgrade
+                    {
+                        turretD.upgradeRateIndexes[3] += 1 * grade;
+                        turretD.actualAmmo = turretD.valuesAmmo.values[turretD.upgradeRateIndexes[3]];
+                        playerStats.scrapsStored += turretD.valuesAmmo.scrapPrice[turretD.upgradeRateIndexes[3]];
                     }
                     break;
                 case "Firerate":
-                    if (turretD.upgradeRateIndexes[4] < turretD.valuesDamage.Length - 1 && turretD.upgradeRateIndexes[4] > 0)
+                    if (grade == 1 && turretD.upgradeRateIndexes[4] < turretD.valuesFirerate.values.Length - 1 && playerStats.scrapsStored >= turretD.valuesFirerate.scrapPrice[turretD.upgradeRateIndexes[4]]) //Upgrade
                     {
                         turretD.upgradeRateIndexes[4] += 1 * grade;
-                        turretD.actualFirerate = turretD.valuesFirerate[turretD.upgradeRateIndexes[4]];
-                        firerateValue.text = "" + turretD.actualFirerate;
+                        turretD.actualFirerate = turretD.valuesFirerate.values[turretD.upgradeRateIndexes[4]];
+                        playerStats.scrapsStored -= turretD.valuesFirerate.scrapPrice[turretD.upgradeRateIndexes[4]];
+                    }
+                    else if (grade == -1 && turretD.upgradeRateIndexes[4] > 0)//Downgrade
+                    {
+                        turretD.upgradeRateIndexes[4] += 1 * grade;
+                        turretD.actualFirerate = turretD.valuesFirerate.values[turretD.upgradeRateIndexes[4]];
+                        playerStats.scrapsStored += turretD.valuesFirerate.scrapPrice[turretD.upgradeRateIndexes[4]];
                     }
                     break;
                 case "Cooldown":
-                    if (turretD.upgradeRateIndexes[5] < turretD.valuesDamage.Length - 1 && turretD.upgradeRateIndexes[5] > 0)
+                    if (grade == 1 && turretD.upgradeRateIndexes[5] < turretD.valuesCooldown.values.Length - 1 && playerStats.scrapsStored >= turretD.valuesCooldown.scrapPrice[turretD.upgradeRateIndexes[5]]) //Upgrade
                     {
                         turretD.upgradeRateIndexes[5] += 1 * grade;
-                        turretD.actualCooldown = turretD.valuesCooldown[turretD.upgradeRateIndexes[5]];
-                        cooldownValue.text = "" + turretD.actualCooldown;
+                        turretD.actualCooldown = turretD.valuesCooldown.values[turretD.upgradeRateIndexes[5]];
+                        playerStats.scrapsStored -= turretD.valuesCooldown.scrapPrice[turretD.upgradeRateIndexes[5]];
+                    }
+                    else if (grade == -1 && turretD.upgradeRateIndexes[5] > 0)//Downgrade
+                    {
+                        turretD.upgradeRateIndexes[5] += 1 * grade;
+                        turretD.actualCooldown = turretD.valuesCooldown.values[turretD.upgradeRateIndexes[5]];
+                        playerStats.scrapsStored += turretD.valuesCooldown.scrapPrice[turretD.upgradeRateIndexes[5]];
                     }
                     break;
                 case "Speed":
-                    if (turretD.upgradeRateIndexes[6] < turretD.valuesDamage.Length - 1 && turretD.upgradeRateIndexes[6] > 0)
+                    if (grade == 1 && turretD.upgradeRateIndexes[6] < turretD.valuesSpeed.values.Length - 1 && playerStats.scrapsStored >= turretD.valuesSpeed.scrapPrice[turretD.upgradeRateIndexes[6]]) //Upgrade
                     {
                         turretD.upgradeRateIndexes[6] += 1 * grade;
-                        turretD.actualSpeed = turretD.valuesSpeed[turretD.upgradeRateIndexes[6]];
-                        speedValue.text = "" + turretD.actualSpeed;
+                        turretD.actualSpeed = turretD.valuesSpeed.values[turretD.upgradeRateIndexes[6]];
+                        playerStats.scrapsStored -= turretD.valuesSpeed.scrapPrice[turretD.upgradeRateIndexes[6]];
+                    }
+                    else if (grade == -1 && turretD.upgradeRateIndexes[6] > 0)//Downgrade
+                    {
+                        turretD.upgradeRateIndexes[6] += 1 * grade;
+                        turretD.actualSpeed = turretD.valuesSpeed.values[turretD.upgradeRateIndexes[6]];
+                        playerStats.scrapsStored += turretD.valuesSpeed.scrapPrice[turretD.upgradeRateIndexes[6]];
                     }
                     break;
-                case "Precision":
-                    if (turretD.upgradeRateIndexes[7] < turretD.valuesDamage.Length - 1 && turretD.upgradeRateIndexes[7] > 0)
+                case "Deviation":
+                    if (grade == 1 && turretD.upgradeRateIndexes[7] < turretD.valuesDeviation.values.Length - 1 && playerStats.scrapsStored >= turretD.valuesDeviation.scrapPrice[turretD.upgradeRateIndexes[7]]) //Upgrade
                     {
                         turretD.upgradeRateIndexes[7] += 1 * grade;
-                        turretD.actualPrecision = turretD.valuesPrecision[turretD.upgradeRateIndexes[7]];
-                        speedValue.text = "" + turretD.actualSpeed;
+                        turretD.actualDeviation = turretD.valuesDeviation.values[turretD.upgradeRateIndexes[7]];
+                        playerStats.scrapsStored -= turretD.valuesDeviation.scrapPrice[turretD.upgradeRateIndexes[7]];
+                    }
+                    else if (grade == -1 && turretD.upgradeRateIndexes[7] > 0)//Downgrade
+                    {
+                        turretD.upgradeRateIndexes[0] += 1 * grade;
+                        turretD.actualDeviation = turretD.valuesDeviation.values[turretD.upgradeRateIndexes[7]];
+                        playerStats.scrapsStored += turretD.valuesDeviation.scrapPrice[turretD.upgradeRateIndexes[7]];
                     }
                     break;
             }
         }
-    }
+    }*/
 }

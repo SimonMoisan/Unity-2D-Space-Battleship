@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Frontal Canon Artillery Turret
+  m_EditorClassIdentifier: Assembly-CSharp::TurretDescritpion
+  ItemName: Frontal Canon Artillery Turret
+  cargoIcone: {fileID: 0}
+  arsenalIcon: {fileID: 0}
+  turretType: 0
+  turretSize: 2
+  projectileType: 0
+  modifierPrimaryType: 0
+  modifierSecondaryType: 0
+  maxTier: 3
+  turretTiersArray: []
+  cargoId: 0
+  arsenalId: 0
+  slotName: 0
+  turretPrefab: {fileID: 0}
+  priceToUnlock: 0
+  actualDamage: 200
+  actualHealth: 0
+  actualShotsPerSalve: 1
+  actualNbrOfSalve: 2
+  actualAmmo: 0
+  actualFirerate: 0
+  actualCooldown: 60
+  actualSpeed: 1000
+  actualDeviation: 0
+  actualTier: 1
+  actualUpgradePriceScraps: 250
+  actualUpgradePriceEnergyCore: 2
+  schemeOrigin: {fileID: 11400000, guid: 584c1daa7bbeae549a63e9dc6285091b, type: 2}

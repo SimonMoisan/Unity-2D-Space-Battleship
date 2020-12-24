@@ -1,0 +1,646 @@
+fileFormatVersion: 2
+guid: f8719f427459cb74d92fb6416e5fe436
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6398722350806146876
+    second: Reaper-Scout-Sprites_0
+  - first:
+      213: 3574287622819062859
+    second: Reaper-Scout-Sprites_1
+  - first:
+      213: -4759530319159772125
+    second: Reaper-Scout-Sprites_2
+  - first:
+      213: 3021436549761100654
+    second: Reaper-Scout-Sprites_3
+  - first:
+      213: 6499745760187146926
+    second: Reaper-Scout-Sprites_4
+  - first:
+      213: -1202034539466265683
+    second: Reaper-Scout-Sprites_5
+  - first:
+      213: -4338404874550057397
+    second: Reaper-Scout-Sprites_6
+  - first:
+      213: -7670522094228924538
+    second: Reaper-Scout-Sprites_7
+  - first:
+      213: -7068085169744306086
+    second: Reaper-Scout-Sprites_8
+  - first:
+      213: -588196491659070888
+    second: Reaper-Scout-Sprites_9
+  - first:
+      213: 369575030056287488
+    second: Reaper-Scout-Sprites_10
+  - first:
+      213: -2025805436342588170
+    second: Reaper-Scout-Sprites_11
+  - first:
+      213: 6725895757766817408
+    second: Reaper-Scout-Sprites_12
+  - first:
+      213: 2357142278723091382
+    second: Reaper-Scout-Sprites_13
+  - first:
+      213: -4234605169776015959
+    second: Reaper-Scout-Sprites_14
+  - first:
+      213: 4575422872586256364
+    second: Reaper-Scout-Sprites_15
+  - first:
+      213: -3120891375335765548
+    second: Reaper-Scout-Sprites_16
+  - first:
+      213: 3359175289580459998
+    second: Reaper-Scout-Sprites_17
+  - first:
+      213: -3509934810850807363
+    second: Reaper-Scout-Sprites_18
+  - first:
+      213: -409612752879092064
+    second: Reaper-Scout-Sprites_19
+  - first:
+      213: 8099237096470453902
+    second: Reaper-Scout-Sprites_20
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 547
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f17208314dcc850800000000000000
+      internalID: 6398722350806146876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_1
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 508
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b44a433d7ab6a9130800000000000000
+      internalID: 3574287622819062859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_2
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 468
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32cb7cc4460c2fdb0800000000000000
+      internalID: -4759530319159772125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_3
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 428
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b64e3a88c4ee920800000000000000
+      internalID: 3021436549761100654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_4
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 387
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea26e4ee45cb33a50800000000000000
+      internalID: 6499745760187146926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_5
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 347
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dabec5b74f3815fe0800000000000000
+      internalID: -1202034539466265683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_6
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 306
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b46ee90a0c3eac3c0800000000000000
+      internalID: -4338404874550057397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_7
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 264
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68713b3abc4dc8590800000000000000
+      internalID: -7670522094228924538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_8
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 222
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a502f278cfd19ed90800000000000000
+      internalID: -7068085169744306086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_9
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 181
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 852b780486e46d7f0800000000000000
+      internalID: -588196491659070888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_10
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 133
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00dfb50288ef02500800000000000000
+      internalID: 369575030056287488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_11
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 554
+        width: 24
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fcaeb650b4e2e3e0800000000000000
+      internalID: -2025805436342588170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_12
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 515
+        width: 24
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0867ffd6e8e275d50800000000000000
+      internalID: 6725895757766817408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_13
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 475
+        width: 24
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb3850f96046b020800000000000000
+      internalID: 2357142278723091382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_14
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 435
+        width: 24
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a5c773b809ab35c0800000000000000
+      internalID: -4234605169776015959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_15
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 394
+        width: 24
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef73b96cda2f7f30800000000000000
+      internalID: 4575422872586256364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_16
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 354
+        width: 24
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d9088e44dd50b4d0800000000000000
+      internalID: -3120891375335765548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_17
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 313
+        width: 24
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed796b1d0203e9e20800000000000000
+      internalID: 3359175289580459998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_18
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 271
+        width: 24
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1b57ec2e43a4fc0800000000000000
+      internalID: -3509934810850807363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_19
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 229
+        width: 24
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aefb291f53c05af0800000000000000
+      internalID: -409612752879092064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_20
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 188
+        width: 24
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8e99c64a35466070800000000000000
+      internalID: 8099237096470453902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

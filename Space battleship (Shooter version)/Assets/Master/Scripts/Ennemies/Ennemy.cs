@@ -7,106 +7,58 @@ using UnityEngine.UI;
 public class Ennemy : MonoBehaviour
 {
     [Header("Ennemy stats : ")]
-    //Attributs d'un ennemy
     public float MaxHullPoints;
     public float MaxPlatePoints;
     public float MaxShieldPoints;
     [ReadOnly] public float hullPoints;
     [ReadOnly] public float platePoints;
     [ReadOnly] public float shieldPoints;
-
-    public int scrapValue;  //Scrap given when destroyed
-    public float uwChargeValue; //Charge given to the ultimate weapon when destroyed
+    [Space]
+    public int dangerIndicator;
     public bool isDestroyed;
     public bool isMoving;
-
+    public float moveSpeed;
+    [Header("Reaward when killed")]
+    public int minScrapValue;  
+    public int maxScrapValue;
+    public int chancePercToDropEnergyCore; //percentage to drop an energyCore
+    public float overdriveCharge; //Charge given to the ultimate weapon when destroyed
+    [Space]
     [Header("Attack management : ")]
     public int nbrSimAttack; //Number attack launch simultaneously
     public EnnemyAttack[] attacks;
     public int[] attackPaterns; //Indicate which attack belong to which coolDownUnits ([1,1,2] : two first attacks belong to the first cooldownUnit))
     public LinkedList<EnnemyAttack>[] coolDownUnits;
-
+    [Space]
     [Header("Associated objects : ")]
-    //Associated objects
-    public WaveConfig waveConfig;
-    public EnnemySquad squad;
     public Animator animator;
-    public CapsuleCollider2D collider;
+    public CapsuleCollider2D col;
     public EnnemySpawner ennemySpawner;
-
-    //Movement parameters
-    [ReadOnly] public Transform[] waypoints;
-    public float moveSpeed;
-    [ReadOnly] int waypointIndex = 0;
-
-    //Image
+    public EnnemySquad squad;
+    public GameObject reactor;
+    [Space]
     public Image hullBar;
     public Image shieldBar;
 
-    // Start is called before the first frame update
-    void Awake()
+    protected void Awake()
     {
-        collider = GetComponent<CapsuleCollider2D>();
+        col = GetComponent<CapsuleCollider2D>();
         animator = GetComponent<Animator>();
         ennemySpawner = FindObjectOfType<EnnemySpawner>(); //Send to the ennemy spawn that he has been destroyed
 
-        //Initiate attack management
-        attacks = GetComponentsInChildren<EnnemyAttack>();
-        coolDownUnits = new LinkedList<EnnemyAttack>[nbrSimAttack];
-        for (int i = 0; i < coolDownUnits.Length; i++)
-        {
-            coolDownUnits[i] = new LinkedList<EnnemyAttack>();
-        }
-
-        //Enqueue every attacks
-        for (int i = 0; i < attacks.Length; i++)
-        {
-            enqueuAttack(attacks[i]);
-        }
-        
         hullPoints = MaxHullPoints;
         shieldPoints = MaxShieldPoints;
         platePoints = MaxPlatePoints;
 
         isMoving = true;
         squad = GetComponentInParent<EnnemySquad>();
-
-        //Move on its own if an ennemy doesn't have a squad
-        if (squad == null)
-        {
-            waypoints = waveConfig.GetWaypoints();
-            transform.position = waypoints[waypointIndex].transform.position;
-        }
-
-        //Can't have less than one attack
-        if(nbrSimAttack <= 0)
-        {
-            nbrSimAttack = 1;
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        for (int i = 0; i < attacks.Length; i++)
-        {
-            attacks[i].Targeter();
-        }
-
-        AttackManagement();
-
-        //Move on its own if an ennemy doesn't have a squad
-        if (squad == null && isMoving)
-        {
-            MoveCible();
-        }
     }
 
     protected void enqueuAttack(EnnemyAttack attack)
     {
         for (int i = 0; i < attacks.Length; i++)
         {
-            if(attack == attacks[i])
+            if (attack == attacks[i])
             {
                 int coolDownUnitIndex = attackPaterns[i]; //Identify to which cooldownUnit this attack belongs to
                 coolDownUnits[coolDownUnitIndex].AddFirst(attack);
@@ -128,17 +80,22 @@ public class Ennemy : MonoBehaviour
         {
             hullPoints -= damageTaken;
         }
+
         if (hullPoints <= 0)
         {
-            if(!isDestroyed) //To avoid multiple destructions
+            if (!isDestroyed) //To avoid multiple destructions
             {
                 StartCoroutine(destruction(true));
             }
         }
+        else
+        {
+            animator.Play("Damaged");
+        }
 
         //Update bars
         hullBar.fillAmount = hullPoints / MaxHullPoints;
-        if(shieldBar != null && MaxShieldPoints > 0) shieldBar.fillAmount = shieldPoints / MaxShieldPoints;
+        if (shieldBar != null && MaxShieldPoints > 0) shieldBar.fillAmount = shieldPoints / MaxShieldPoints;
     }
 
     //Function used to manage attacks
@@ -147,7 +104,7 @@ public class Ennemy : MonoBehaviour
         //Fire attacks ready to fire
         for (int i = 0; i < attacks.Length; i++)
         {
-            if(attacks[i].isReadyToFire && attacks[i].playerDetector.target != null && !attacks[i].isFiring)
+            if (attacks[i].isReadyToFire && attacks[i].playerDetector.target != null && !attacks[i].isFiring)
             {
                 attacks[i].Fire();
                 //Add the cooldownmanager to a random queue
@@ -155,7 +112,7 @@ public class Ennemy : MonoBehaviour
 
                 for (int j = 0; j < coolDownUnits.Length; j++)
                 {
-                    if(coolDownUnits[j].Last != null && attacks[i] == coolDownUnits[j].Last.Value)
+                    if (coolDownUnits[j].Last != null && attacks[i] == coolDownUnits[j].Last.Value)
                     {
                         coolDownUnits[j].RemoveLast();
                     }
@@ -166,63 +123,56 @@ public class Ennemy : MonoBehaviour
         //Active cooldows in queues
         for (int i = 0; i < coolDownUnits.Length; i++)
         {
-            if(coolDownUnits[i].Last != null)
+            if (coolDownUnits[i].Last != null)
             {
                 coolDownUnits[i].Last.Value.CoolDownManager();
             }
         }
     }
 
-    protected void MoveCible()
-    {
-        if (waypointIndex <= waypoints.Length - 1)
-        {
-            var targetPosition = waypoints[waypointIndex].transform.position;
-            var movementThisFrame = moveSpeed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, movementThisFrame);
-            if (transform.position == targetPosition)
-            {
-                waypointIndex++;
-            }
-        }
-        else
-        {
-            //Destroyed at the end of waypoints
-            if (waveConfig.dieAtEnd)
-            {
-                ennemySpawner.EnnemyDestroyed();
-                Destroy(gameObject);
-            }
-        }
-    }
-
     public IEnumerator destruction(bool destroyedByPlayer)
     {
+        if(reactor != null)
+        {
+            reactor.SetActive(false);
+        }
+
         //Disable collision with other projectiles
-        collider.enabled = false;
+        col.enabled = false;
 
         //Say to the ennemyspawner it was destroyed
         ennemySpawner.EnnemyDestroyed();
         isDestroyed = true;
 
-        //Give scrap and uwCharge to the player as reward
-        if(destroyedByPlayer)
-        {
-            Battleship battleship = FindObjectOfType<Battleship>();
-            battleship.chargeUW(uwChargeValue);
-
-            ennemySpawner.scrapsToWin += scrapValue;
-        }
-        
         if(squad != null)
         {
             StartCoroutine(squad.imDestroyed());
         }
 
-        animator.SetBool("isDead", true);
+        //Give scrap and uwCharge to the player as reward
+        if (destroyedByPlayer)
+        {
+            Battleship battleship = FindObjectOfType<Battleship>();
+            battleship.chargeOverdrive(overdriveCharge);
+
+            //Reward
+            int scrapValue = Random.Range(minScrapValue, maxScrapValue);
+            int energyCoreValue = 0;
+
+            int energyCoreDropChance = Random.Range(0, 100);
+            if(energyCoreDropChance <= chancePercToDropEnergyCore)
+            {
+                energyCoreValue = 1;
+            }
+            
+            ennemySpawner.scrapsToWin += scrapValue;
+            ennemySpawner.energyCoreToWin += energyCoreValue; 
+        }
+
+        //animator.SetBool("isDead", true);
+        animator.Play("Explosion");
+
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
 }
-
-

@@ -6,16 +6,5 @@ public class Viseur : MonoBehaviour
 {
     //Associated object
     public Turret turret;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    public bool isLocked;
 }

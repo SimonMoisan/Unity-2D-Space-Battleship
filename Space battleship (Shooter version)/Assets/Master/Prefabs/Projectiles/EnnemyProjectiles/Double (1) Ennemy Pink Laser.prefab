@@ -48,7 +48,7 @@ MonoBehaviour:
   ennemyProjectiles:
   - {fileID: 6153305805300041556}
   - {fileID: 3745264760808411682}
-  nbrProjectile: 0
+  nbrProjectile: 2
   nbrProjectileDestroyed: 0
 --- !u!1001 &197817853215874592
 PrefabInstance:
@@ -60,7 +60,7 @@ PrefabInstance:
     - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
         type: 3}
@@ -157,7 +157,7 @@ PrefabInstance:
     - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
         type: 3}

@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Laser Beam Turret
+  m_EditorClassIdentifier: Assembly-CSharp::TurretDescritpion
+  ItemName: Laser Beam
+  cargoIcone: {fileID: -3371096867239492777, guid: 17c1eeade0747e246ad261e48bfe0196,
+    type: 3}
+  arsenalIcon: {fileID: -3371096867239492777, guid: 17c1eeade0747e246ad261e48bfe0196,
+    type: 3}
+  turretType: 0
+  turretSize: 0
+  projectileType: 2
+  modifierPrimaryType: 0
+  modifierSecondaryType: 0
+  maxTier: 0
+  turretTiersArray: []
+  startingDamage: 50
+  startingHealth: 0
+  startingShotsPerSalve: 1
+  startingNbrOfSalve: 1
+  startingAmmo: 0
+  startingFirerate: 0
+  startingCooldown: 8
+  startingSpeed: 0
+  startingDeviation: 0
+  cargoId: 4
+  arsenalId: -1
+  slotName: 1
+  turretPrefab: {fileID: 7711804710909962681, guid: 471056c0a52abf046956d7306771d854,
+    type: 3}
+  priceToUnlock: 3
+  level: 0
+  actualDamage: 50
+  actualHealth: 0
+  actualShotsPerSalve: 1
+  actualNbrOfSalve: 1
+  actualAmmo: 0
+  actualFirerate: 0
+  actualCooldown: 8
+  actualSpeed: 0
+  actualDeviation: 0
+  actualTier: 0
+  actualUpgradePriceScraps: 0
+  actualUpgradePriceEnergyCore: 0
+  schemeOrigin: {fileID: 11400000, guid: 2b4e01e44065de542807e2bf64f29ae3, type: 2}

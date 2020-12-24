@@ -1,0 +1,345 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3544657312594927205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6502722005382280567}
+  - component: {fileID: 3544657312594927210}
+  m_Layer: 0
+  m_Name: Triple Dispersed Ennemy Pink Laser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6502722005382280567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544657312594927205}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6153305805300041553}
+  - {fileID: 3745264760808411687}
+  - {fileID: 7828763200075210888}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3544657312594927210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544657312594927205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1afd58171acb27499f58d4c6b803935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ennemyProjectiles:
+  - {fileID: 6153305805300041556}
+  - {fileID: 3745264760808411682}
+  - {fileID: 7828763200075210893}
+  nbrProjectile: 3
+  nbrProjectileDestroyed: 0
+--- !u!1001 &197817853215874592
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6502722005382280567}
+    m_Modifications:
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.258819
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9659259
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503219, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503220, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: ennemy
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503223, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_Name
+      value: Ennemy Pink Laser
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 614ed464c565177469b499d7990725d0, type: 3}
+--- !u!4 &6153305805300041553 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 197817853215874592}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6153305805300041556 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6330413239543503220, guid: 614ed464c565177469b499d7990725d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 197817853215874592}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b98d002a7ba70742b75f168a31a405a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &4287286020984650233
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6502722005382280567}
+    m_Modifications:
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503219, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503220, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: ennemy
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503223, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_Name
+      value: Ennemy Pink Laser (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 614ed464c565177469b499d7990725d0, type: 3}
+--- !u!4 &7828763200075210888 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 4287286020984650233}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7828763200075210893 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6330413239543503220, guid: 614ed464c565177469b499d7990725d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 4287286020984650233}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b98d002a7ba70742b75f168a31a405a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &7215891651505261398
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6502722005382280567}
+    m_Modifications:
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.2588191
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9659258
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503219, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503220, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: ennemy
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503223, guid: 614ed464c565177469b499d7990725d0,
+        type: 3}
+      propertyPath: m_Name
+      value: Ennemy Pink Laser (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 614ed464c565177469b499d7990725d0, type: 3}
+--- !u!4 &3745264760808411687 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6330413239543503217, guid: 614ed464c565177469b499d7990725d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 7215891651505261398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3745264760808411682 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6330413239543503220, guid: 614ed464c565177469b499d7990725d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 7215891651505261398}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b98d002a7ba70742b75f168a31a405a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

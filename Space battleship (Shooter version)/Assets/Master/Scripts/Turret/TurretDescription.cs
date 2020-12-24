@@ -21,50 +21,67 @@ public class TurretDescritpion : TurretScheme
     [Space]
     //Turret stats
     [Header("Turret actual stats :")]
-    public int actualDamage;
-    public int actualHealth;
+    public int priceToUnlock;
+    public float actualDamage;
+    public float actualHealth;
     public int actualShotsPerSalve;
     public int actualNbrOfSalve;
     public int actualAmmo;          //if 0, no ammunitions and no reload
     public float actualFirerate;
     public float actualCooldown;
-    public int actualSpeed;
-    public int actualPrecision;
+    public float actualSpeed;
+    public float actualDeviation;
     [Space]
     //Turret upgrade rates
+    public int actualTier;
+    public int actualUpgradePriceScraps;
+    public int actualUpgradePriceEnergyCore;
     [Header("Associated objects :")]
     private Battleship battleship;
     public TurretScheme schemeOrigin;
 
     private void OnValidate()
     {
-        /*
+        applySchemeCarac(1);
+    }
+
+    public void applySchemeCarac(int tier)
+    {
         //Turret Scheme caracteritics
         turretType = schemeOrigin.turretType;
         turretSize = schemeOrigin.turretSize;
         projectileType = schemeOrigin.projectileType;
         modifierPrimaryType = schemeOrigin.modifierPrimaryType;
         modifierSecondaryType = schemeOrigin.modifierSecondaryType;
-        //Turret upgrades stats values
-        upgradeRateIndexes = schemeOrigin.upgradeRateIndexes; //0: Damage, 1: Health, 2: NbrOfSalve, 3: Ammo, 4: Firerate, 5: Cooldown, 6: Speed, 7: Precision 
-        valuesDamage = schemeOrigin.valuesDamage;
-        valuesHealth = schemeOrigin.valuesHealth;
-        valuesNbrOfSalve = schemeOrigin.valuesNbrOfSalve;
-        valuesAmmo = schemeOrigin.valuesAmmo;
-        valuesFirerate = schemeOrigin.valuesFirerate;
-        valuesCooldown = schemeOrigin.valuesCooldown;
-        valuesSpeed = schemeOrigin.valuesSpeed;
-        valuesPrecision = schemeOrigin.valuesPrecision;
-        //Turret starting stats
-        startingDamage = schemeOrigin.startingDamage;
-        startingHealth = schemeOrigin.startingHealth;
-        startingShotsPerSalve = schemeOrigin.startingShotsPerSalve;
-        startingNbrOfSalve = schemeOrigin.startingNbrOfSalve;
-        startingAmmo = schemeOrigin.startingAmmo;
-        startingFirerate = schemeOrigin.startingAmmo;
-        startingCooldown = schemeOrigin.startingCooldown;
-        startingSpeed = schemeOrigin.startingSpeed;
-        startingPrecision = schemeOrigin.startingPrecision;*/
+
+        actualTier = tier;
+        maxTier = schemeOrigin.maxTier;
+
+        //Set price to upgrade to next tier
+        if(tier < schemeOrigin.maxTier)
+        {
+            actualUpgradePriceScraps = schemeOrigin.turretTiersArray[tier].scrapPrice;
+            actualUpgradePriceEnergyCore = schemeOrigin.turretTiersArray[tier].energyCorePrice; ;
+        }
+        else //Can't be upgrade anymore
+        {
+            actualUpgradePriceScraps = -1;
+            actualUpgradePriceEnergyCore = -1;
+        }
+
+        //Set turretDescription carac according to its origin scheme and its tier
+        if(tier <= schemeOrigin.maxTier && tier <= schemeOrigin.turretTiersArray.Length)
+        {
+            actualDamage = schemeOrigin.turretTiersArray[tier-1].upgradedDamageValue;
+            actualHealth = schemeOrigin.turretTiersArray[tier-1].upgradedHealthValue;
+            actualShotsPerSalve = schemeOrigin.turretTiersArray[tier-1].upgradedShotPerSalveValue;
+            actualNbrOfSalve = schemeOrigin.turretTiersArray[tier-1].upgradedNbrOfSalveValue;
+            actualAmmo = schemeOrigin.turretTiersArray[tier-1].upgradedAmmoValue;
+            actualFirerate = schemeOrigin.turretTiersArray[tier-1].upgradedFirerateValue;
+            actualCooldown = schemeOrigin.turretTiersArray[tier-1].upgradedCooldownValue;
+            actualSpeed = schemeOrigin.turretTiersArray[tier-1].upgradedSpeedValue;
+            actualDeviation = schemeOrigin.turretTiersArray[tier-1].upgradedDeviationValue;
+        }
     }
 
     //Function used to equip turret to battleship object
