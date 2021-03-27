@@ -26,6 +26,12 @@ TextureImporter:
   - first:
       213: -2460216441145036849
     second: Station-Menu-Sprites_11
+  - first:
+      213: -5997136514951115709
+    second: Station-Menu-Sprites_12
+  - first:
+      213: 3419624907776852647
+    second: Station-Menu-Sprites_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -396,6 +402,48 @@ TextureImporter:
       bones: []
       spriteID: fcf69fa7e2e8bddd0800000000000000
       internalID: -2460216441145036849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station-Menu-Sprites_12
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 111
+        width: 64
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c80d42d14e5cca0800000000000000
+      internalID: -5997136514951115709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station-Menu-Sprites_13
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 28
+        width: 256
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a20e155cb2f47f20800000000000000
+      internalID: 3419624907776852647
       vertices: []
       indices: 
       edges: []

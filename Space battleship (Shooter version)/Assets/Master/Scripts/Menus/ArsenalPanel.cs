@@ -51,10 +51,10 @@ public class ArsenalPanel : MonoBehaviour
             //Manage hidders for turret and cargo slot
             startingCargoTurrets[i].isUsed = true;
             startingCargoTurrets[i].manageHidders();
-            (startingCargoTurrets[i].CargoItem as TurretDescritpion).cargoId = i;
+            (startingCargoTurrets[i].CargoItem as TurretDescription).cargoId = i;
 
             //Display price for next upgrade
-            turretSlots[i].updateUpgradePrice((startingCargoTurrets[i].CargoItem as TurretDescritpion).actualUpgradePriceScraps, (startingCargoTurrets[i].CargoItem as TurretDescritpion).actualUpgradePriceEnergyCore);
+            turretSlots[i].updateUpgradePrice((startingCargoTurrets[i].CargoItem as TurretDescription).actualUpgradePriceScraps, (startingCargoTurrets[i].CargoItem as TurretDescription).actualUpgradePriceEnergyCore);
         }
 
         for (; i < turretSlots.Length; i++)
@@ -68,16 +68,16 @@ public class ArsenalPanel : MonoBehaviour
 
         for (int j = 0; j < startingCargoTurrets.Length; j++)
         {
-            if (startingCargoTurrets[j].CargoItem is TurretDescritpion)
+            if (startingCargoTurrets[j].CargoItem is TurretDescription)
             {
-                (startingCargoTurrets[j].CargoItem as TurretDescritpion).slotName = SlotName.Cargo;
-                (startingCargoTurrets[j].CargoItem as TurretDescritpion).arsenalId = -1;
+                (startingCargoTurrets[j].CargoItem as TurretDescription).slotName = SlotName.Cargo;
+                (startingCargoTurrets[j].CargoItem as TurretDescription).arsenalId = -1;
             }
         }
     }
 
     //Add turret to a slot of the arsenal panel, return the id of the slot or -1 if arsenalPanel is full
-    public int addTurret(TurretDescritpion turret)
+    public int addTurret(TurretDescription turret)
     {
         for (int i = 0; i < turretSlots.Length; i++)
         {
@@ -91,7 +91,7 @@ public class ArsenalPanel : MonoBehaviour
         return -1;
     }
 
-    public bool removeTurret(TurretDescritpion turret)
+    public bool removeTurret(TurretDescription turret)
     {
         for (int i = 0; i < turretSlots.Length; i++)
         {

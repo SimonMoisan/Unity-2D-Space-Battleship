@@ -22,7 +22,7 @@ TagManager:
   - Ennemy
   - Sector
   - Player
-  - 
+  - CameraCollider
   - 
   - 
   - 
@@ -79,4 +79,7 @@ TagManager:
     locked: 0
   - name: SectorLink
     uniqueID: 787962975
+    locked: 0
+  - name: Mouse
+    uniqueID: 879506759
     locked: 0

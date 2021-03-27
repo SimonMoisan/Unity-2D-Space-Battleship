@@ -24,7 +24,7 @@ public class EnnemyBeam : MonoBehaviour
         ennemyAttack = GetComponentInParent<EnnemyAttack>();
         beamDuration = ennemyAttack.beamDuration;
 
-        damage = ennemyAttack.damage;
+        damage = ennemyAttack.globalDamage;
         startBeamDuration = beamDuration;
         beamLine.enabled = false;
     }

@@ -2,14 +2,22 @@
 using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
+using Pathfinding;
 
 public class StandardEnnemy : Ennemy
 {
     [Header("Associated objects : ")]
     public WaveConfig waveConfig;
-    //Movement parameters
     [ReadOnly] public Transform[] waypoints;
     [ReadOnly] protected int waypointIndex = 0;
+    public AIDestinationSetter destinationSetter;
+    public AIPath aIPath;
+
+    private void OnValidate()
+    {
+        destinationSetter = GetComponent<AIDestinationSetter>();
+        aIPath = GetComponent<AIPath>();
+    }
 
     protected new void Awake()
     {
@@ -35,8 +43,9 @@ public class StandardEnnemy : Ennemy
         //Move on its own if an ennemy doesn't have a squad
         if (squad == null)
         {
-            waypoints = waveConfig.GetWaypoints();
+            //waypoints = waveConfig.GetWaypoints();
             transform.position = waypoints[waypointIndex].transform.position;
+            destinationSetter.target = waypoints[waypointIndex].transform;
         }
 
         //Can't have less than one attack
@@ -67,12 +76,13 @@ public class StandardEnnemy : Ennemy
     {
         if (waypointIndex <= waypoints.Length - 1)
         {
-            var targetPosition = waypoints[waypointIndex].transform.position;
+            /*var targetPosition = waypoints[waypointIndex].transform.position;
             var movementThisFrame = moveSpeed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, movementThisFrame);
-            if (transform.position == targetPosition)
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, movementThisFrame);*/
+            if (aIPath.reachedEndOfPath)
             {
                 waypointIndex++;
+                destinationSetter.target = waypoints[waypointIndex].transform;
             }
         }
         else

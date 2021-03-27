@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
+using Pathfinding;
 using System.Collections.Generic;
-using UnityEngine;
+using Pathfinding.Util;
 
 public class EnnemySquad : MonoBehaviour
 {
@@ -8,22 +10,22 @@ public class EnnemySquad : MonoBehaviour
     public int dangerIndicator;
     public int ennemyAlive;
     public WaveConfig waveConfig;
+    public string wavePathName;
     public bool isDestroyed;
 
     //Configuration parameters
     public Transform[] waypoints;
     public float moveSpeed = 2f;
-    int waypointIndex = 0;
+    public int waypointIndex;
+    public float distance;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        waypoints = waveConfig.GetWaypoints();
-        transform.position = waypoints[waypointIndex].transform.position;
-    }
+    public AIDestinationSetter destinationSetter;
+    public AIPath aIPath;
 
     private void OnValidate()
     {
+        waypointIndex = 1;
+
         dangerIndicator = 0;
         ennemies = GetComponentsInChildren<Ennemy>();
         ennemyAlive = ennemies.Length;
@@ -31,6 +33,17 @@ public class EnnemySquad : MonoBehaviour
         {
             dangerIndicator += ennemies[i].dangerIndicator;
         }
+
+        destinationSetter = GetComponent<AIDestinationSetter>();
+        aIPath = GetComponent<AIPath>();
+    }
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        destinationSetter.target = waypoints[waypointIndex].transform;
+        //initiateWayPathBehavior();
     }
 
     private void Update()
@@ -51,26 +64,27 @@ public class EnnemySquad : MonoBehaviour
 
     private void MoveCible()
     {
-        if (waypointIndex <= waypoints.Length - 1)
+        distance = Vector2.Distance(transform.position, waypoints[waypointIndex].position);
+
+        if (distance < 1)
         {
-            var targetPosition = waypoints[waypointIndex].transform.position;
-            var movementThisFrame = moveSpeed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, movementThisFrame);
-            if (transform.position == targetPosition)
+            waypointIndex++;
+
+            if (waypointIndex < waypoints.Length)
             {
-                waypointIndex++;
+                destinationSetter.target = waypoints[waypointIndex].transform;
             }
-        }
-        else
-        {
-            if (waveConfig.dieAtEnd)
+            else
             {
-                EnnemySpawner ennemySpawner = FindObjectOfType<EnnemySpawner>(); //Send to the ennemy spawn that he has been destroyed
-                for (int i = 0; i < ennemyAlive; i++)
+                if (waveConfig.dieAtEnd)
                 {
-                    ennemySpawner.EnnemyDestroyed();
+                    EnnemySpawner ennemySpawner = FindObjectOfType<EnnemySpawner>(); //Send to the ennemy spawn that he has been destroyed
+                    for (int i = 0; i < ennemyAlive; i++)
+                    {
+                        ennemySpawner.EnnemyDestroyed();
+                    }
+                    Destroy();
                 }
-                Destroy();
             }
         }
     }

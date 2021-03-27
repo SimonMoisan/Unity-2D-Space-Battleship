@@ -35,105 +35,41 @@ public class Projectile : MonoBehaviour
     public float delayBeforeDecceleration;
     public float deccelerationRate;
     public float deccelerationSpeed;
-    private float currenteDecceleration;
+    public float currenteDecceleration;
 
     [Header("Projectile accelerable")]
     public bool isAccelerating;
     public float delayBeforeAcceleration;
     public float accelerationRate;
     public float accelerationSpeed;
-    private float currenteAcceleration;
+    public float currenteAcceleration;
 
     [Header("Associated objects")]
     public Animator animator;
-    public Rigidbody2D rb2D;
     public CapsuleCollider2D col;
     public Salve salve;
 
     //Coroutines
-    IEnumerator accDecCoroutine;
+    public IEnumerator accDecCoroutine;
 
-    void Start()
+    public void Start()
     {
-        salve = GetComponentInParent<Salve>();
         animator = gameObject.GetComponent<Animator>();
-        rb2D = GetComponent<Rigidbody2D>();
         col = GetComponent<CapsuleCollider2D>();
+        salve = GetComponentInParent<Salve>();
 
         if (isAccelerating && !isDeccelerating)
         {
             accDecCoroutine = Acceleration();
             StartCoroutine(accDecCoroutine);
         }
-        if(isDeccelerating && !isAccelerating)
+        if (isDeccelerating && !isAccelerating)
         {
             accDecCoroutine = Decceleration();
             StartCoroutine(accDecCoroutine);
         }
-    }
 
-    private void Update()
-    {
-        if(willFade)
-        {
-            if(timeBeforeFadding <= 0)
-            {
-                StartCoroutine(Destruction());
-            }
-            else
-            {
-                timeBeforeFadding -= Time.deltaTime;
-            }
-        }
-    }
-
-    private void dealDamages(Ennemy ennemyGO)
-    {
-        if (ennemyGO != null)
-        {
-            switch(damageType)
-            {
-                case DamageType.Ion:
-                    if (ennemyGO.shieldPoints > 0)
-                    {
-                        float finalDamage = damage * 2;
-                        ennemyGO.TakingDamage(finalDamage);
-                    }
-                    else
-                    {
-                        ennemyGO.TakingDamage(damage);
-                    }
-                    break;
-
-                case DamageType.Kinetic:
-                    if (ennemyGO.shieldPoints > 0)
-                    {
-                        float finalDamage = damage * 0.4f;
-                        ennemyGO.TakingDamage(finalDamage);
-                    }
-                    else
-                    {
-                        ennemyGO.TakingDamage(damage);
-                    }
-                    break;
-
-                case DamageType.Laser:
-                    if (ennemyGO.shieldPoints > 0)
-                    {
-                        float finalDamage = damage * 0.6f;
-                        ennemyGO.TakingDamage(finalDamage);
-                    }
-                    else
-                    {
-                        ennemyGO.TakingDamage(damage);
-                    }
-                    break;
-
-                case DamageType.Explosive:
-                    ennemyGO.TakingDamage(damage);
-                    break;
-            } 
-        }
+        //Destroy(gameObject, 15);
     }
 
     private void absorbProjectile()
@@ -141,46 +77,7 @@ public class Projectile : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collider) 
-    {
-        if (collider.tag.Equals("Ennemy") && damage > 0)
-        {
-            Ennemy ennemyGO = collider.GetComponent<Ennemy>();
-            dealDamages(ennemyGO);
-
-            StartCoroutine(Destruction());
-        }
-        else if (collider.name.Equals("BulletDestroyer"))
-        {
-            StartCoroutine(Destruction());
-        }
-        else if(collider.tag.Equals("EnnemyProjectile") && isDestroyable)
-        {
-            EnnemyProjectile ennemyProjectileGO = collider.GetComponent<EnnemyProjectile>();
-            health -= ennemyProjectileGO.damage;
-
-            if (health <= 0)
-            {
-                StartCoroutine(Destruction());
-            }
-        }
-    }
-
-    IEnumerator Destruction()
-    {
-        bulletSpeed = 0;
-        rb2D.isKinematic = false;
-        rb2D.WakeUp();
-        col.enabled = false;
-        rb2D.velocity = Vector2.zero;
-        rb2D.angularVelocity = 0f;
-        animator.SetBool("BeingDestroyed", true);
-        yield return new WaitForSeconds(0.4f);
-        salve.ImDestroyed();
-        Destroy(gameObject);
-    }
-
-    IEnumerator Acceleration()
+    public IEnumerator Acceleration()
     {
         while(true)
         {
@@ -198,7 +95,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    IEnumerator Decceleration()
+    public IEnumerator Decceleration()
     {
         bulletSpeed = 0;
         while (true)
@@ -207,16 +104,31 @@ public class Projectile : MonoBehaviour
 
             bulletSpeed -= currenteDecceleration;
 
-            if(rb2D.velocity.x >= 0 || rb2D.velocity.y >= 0)
+            /*if(rb2D.velocity.x >= 0 || rb2D.velocity.y >= 0)
             {
                 GetComponent<Rigidbody2D>().AddForce(transform.up * bulletSpeed);
             }
             else
             {
                 rb2D.velocity = Vector2.zero;
-            }
+            }*/
 
             yield return new WaitForSeconds(deccelerationRate);
         }
+    }
+
+    public void destroy()
+    {
+        gameObject.SetActive(false);
+    }
+
+    private void OnEnable()
+    {
+        Invoke("destroy", 5f);
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke();
     }
 }

@@ -45,8 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectiles:
-  - {fileID: 6984261747691522276}
-  damage: 20
+  - {fileID: 132166965670628889}
+  globalDamage: 0
+  globalHealth: 0
+  globalbulletSpeed: 0
 --- !u!1001 &3200544727398054141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58,6 +60,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mini Ion
+      objectReference: {fileID: 0}
+    - target: {fileID: 526658932768053748, guid: e40beba4c35d82545b7f365695e3bb20,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 526658932768053748, guid: e40beba4c35d82545b7f365695e3bb20,
         type: 3}
@@ -76,6 +83,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 526658932768053748, guid: e40beba4c35d82545b7f365695e3bb20,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 526658932768053748, guid: e40beba4c35d82545b7f365695e3bb20,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -87,16 +99,6 @@ PrefabInstance:
     - target: {fileID: 526658932768053748, guid: e40beba4c35d82545b7f365695e3bb20,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 526658932768053748, guid: e40beba4c35d82545b7f365695e3bb20,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 526658932768053748, guid: e40beba4c35d82545b7f365695e3bb20,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 526658932768053748, guid: e40beba4c35d82545b7f365695e3bb20,
@@ -122,15 +124,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3200544727398054141}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6984261747691522276 stripped
+--- !u!114 &132166965670628889 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5514529610979602457, guid: e40beba4c35d82545b7f365695e3bb20,
+  m_CorrespondingSourceObject: {fileID: 3296374752135460580, guid: e40beba4c35d82545b7f365695e3bb20,
     type: 3}
   m_PrefabInstance: {fileID: 3200544727398054141}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c36ecac286db4a4c91123eaaadb71c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 31c3c615b6e1ab9408690cae1665b67f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

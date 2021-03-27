@@ -52,7 +52,7 @@ public class Cargo : MonoBehaviour
         for (; i < startingItems.Count && i < itemSlots.Length; i++)
         {
             itemSlots[i].CargoItem = startingItems[i];
-            (startingItems[i] as TurretDescritpion).cargoId = i;
+            (startingItems[i] as TurretDescription).cargoId = i;
         }
 
         for (; i < itemSlots.Length; i++)
@@ -62,10 +62,10 @@ public class Cargo : MonoBehaviour
 
         for (int j = 0; j < startingItems.Count; j++)
         {
-            if(startingItems[j] is TurretDescritpion)
+            if(startingItems[j] is TurretDescription)
             {
-                (startingItems[j] as TurretDescritpion).slotName = SlotName.Cargo;
-                (startingItems[j] as TurretDescritpion).arsenalId = -1;
+                (startingItems[j] as TurretDescription).slotName = SlotName.Cargo;
+                (startingItems[j] as TurretDescription).arsenalId = -1;
             }
         }
     }
@@ -77,9 +77,9 @@ public class Cargo : MonoBehaviour
             if(itemSlots[i].CargoItem == null)
             {
                 itemSlots[i].CargoItem = item;
-                if(itemSlots[i].CargoItem is TurretDescritpion)
+                if(itemSlots[i].CargoItem is TurretDescription)
                 {
-                    (itemSlots[i].CargoItem as TurretDescritpion).slotName = SlotName.Cargo;
+                    (itemSlots[i].CargoItem as TurretDescription).slotName = SlotName.Cargo;
                 }
 
                 return true;

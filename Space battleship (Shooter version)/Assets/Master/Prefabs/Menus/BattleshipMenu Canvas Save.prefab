@@ -2201,7 +2201,7 @@ GameObject:
   - component: {fileID: 2640925177444452772}
   - component: {fileID: 4485455909081119759}
   m_Layer: 0
-  m_Name: Turret slot 1
+  m_Name: Cargo slot 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6508,7 +6508,7 @@ GameObject:
   - component: {fileID: 5382919178323550819}
   - component: {fileID: 4907955367608372250}
   m_Layer: 0
-  m_Name: Turret slot 2
+  m_Name: Cargo slot 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8063,7 +8063,7 @@ GameObject:
   - component: {fileID: 5261579035961143271}
   - component: {fileID: 8618973564682427409}
   m_Layer: 0
-  m_Name: Turret slot 3
+  m_Name: Cargo slot 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

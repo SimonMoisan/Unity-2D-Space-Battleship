@@ -20,6 +20,45 @@ TextureImporter:
   - first:
       213: 5662218109482312185
     second: HUD-Battlezone-Sprites_5
+  - first:
+      213: -9209077386454048239
+    second: HUD-Battlezone-Sprites_6
+  - first:
+      213: -8232528973828374097
+    second: HUD-Battlezone-Sprites_7
+  - first:
+      213: -8520750576714253139
+    second: HUD-Battlezone-Sprites_8
+  - first:
+      213: -660009483447323322
+    second: HUD-Battlezone-Sprites_9
+  - first:
+      213: -1719378505059381723
+    second: HUD-Battlezone-Sprites_10
+  - first:
+      213: 500406453455097259
+    second: HUD-Battlezone-Sprites_11
+  - first:
+      213: 1099612011521429453
+    second: HUD-Battlezone-Sprites_12
+  - first:
+      213: 3436280298953930278
+    second: HUD-Battlezone-Sprites_13
+  - first:
+      213: 8895235739046437989
+    second: HUD-Battlezone-Sprites_14
+  - first:
+      213: 8168247330952400672
+    second: HUD-Battlezone-Sprites_15
+  - first:
+      213: 9006882252605783089
+    second: HUD-Battlezone-Sprites_16
+  - first:
+      213: -4141627609858150506
+    second: HUD-Battlezone-Sprites_17
+  - first:
+      213: -1873889535555092359
+    second: HUD-Battlezone-Sprites_18
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,10 +151,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 684
-        width: 652
+        width: 385
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -131,12 +170,12 @@ TextureImporter:
       name: HUD-Battlezone-Sprites_1
       rect:
         serializedVersion: 2
-        x: 727
-        y: 688
-        width: 79
+        x: 690
+        y: 690
+        width: 82
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -157,7 +196,7 @@ TextureImporter:
         width: 203
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,12 +212,12 @@ TextureImporter:
       name: HUD-Battlezone-Sprites_3
       rect:
         serializedVersion: 2
-        x: 2
-        y: 578
-        width: 380
+        x: 3
+        y: 579
+        width: 369
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,12 +233,12 @@ TextureImporter:
       name: HUD-Battlezone-Sprites_4
       rect:
         serializedVersion: 2
-        x: 2
-        y: 565
-        width: 366
+        x: 3
+        y: 566
+        width: 362
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,7 +259,7 @@ TextureImporter:
         width: 190
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -228,6 +267,279 @@ TextureImporter:
       bones: []
       spriteID: 9f12a70fe5d349e40800000000000000
       internalID: 5662218109482312185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD-Battlezone-Sprites_6
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 684
+        width: 100
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 112e257a8e8c23080800000000000000
+      internalID: -9209077386454048239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD-Battlezone-Sprites_7
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 671
+        width: 73
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa149df148e20cd80800000000000000
+      internalID: -8232528973828374097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD-Battlezone-Sprites_8
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 710
+        width: 21
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dacfd3fce7630c980800000000000000
+      internalID: -8520750576714253139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD-Battlezone-Sprites_9
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 698
+        width: 21
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 645bbb62fdc27d6f0800000000000000
+      internalID: -660009483447323322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD-Battlezone-Sprites_10
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 687
+        width: 21
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e4e7bfb5a8328e0800000000000000
+      internalID: -1719378505059381723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD-Battlezone-Sprites_11
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 676
+        width: 21
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bad0185a40dc1f600800000000000000
+      internalID: 500406453455097259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD-Battlezone-Sprites_12
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 662
+        width: 21
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcfcc796c4b924f00800000000000000
+      internalID: 1099612011521429453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD-Battlezone-Sprites_13
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 651
+        width: 21
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62672d7c9be10bf20800000000000000
+      internalID: 3436280298953930278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD-Battlezone-Sprites_14
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 640
+        width: 21
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 564e83396c9327b70800000000000000
+      internalID: 8895235739046437989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD-Battlezone-Sprites_15
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 628
+        width: 81
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02f43f69ba17b5170800000000000000
+      internalID: 8168247330952400672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD-Battlezone-Sprites_16
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 684
+        width: 349
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13c765030bfdefc70800000000000000
+      internalID: 9006882252605783089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD-Battlezone-Sprites_17
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 656
+        width: 309
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f6472d1abf586c0800000000000000
+      internalID: -4141627609858150506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD-Battlezone-Sprites_18
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 642
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 970caec456b9ef5e0800000000000000
+      internalID: -1873889535555092359
       vertices: []
       indices: 
       edges: []

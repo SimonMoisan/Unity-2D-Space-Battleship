@@ -17,8 +17,15 @@ public class TurretSlot : CargoItemSlot
 
         if(_item != null)
         {
-            updateUpgradePrice((_item as TurretDescritpion).actualUpgradePriceScraps, (_item as TurretDescritpion).actualUpgradePriceEnergyCore);
+            updateUpgradePrice((_item as TurretDescription).actualUpgradePriceScraps, (_item as TurretDescription).actualUpgradePriceEnergyCore);
         }
+
+        turretImage.SetNativeSize();
+    }
+
+    public void Start()
+    {
+        turretImage.SetNativeSize();
     }
 
     public void updateUpgradePrice(int newScrapPrice, int newEnergyCorePrice)
@@ -44,23 +51,23 @@ public class TurretSlot : CargoItemSlot
     {
         PlayerStats playerStats = FindObjectOfType<PlayerStats>();
 
-        Debug.Log((_item as TurretDescritpion).actualTier < (_item as TurretDescritpion).maxTier);
+        Debug.Log((_item as TurretDescription).actualTier < (_item as TurretDescription).maxTier);
 
-        if((_item as TurretDescritpion) != null && 
-            (_item as TurretDescritpion).actualTier < (_item as TurretDescritpion).maxTier &&
-            playerStats.scrapsStored >= (_item as TurretDescritpion).actualUpgradePriceScraps && 
-            playerStats.energyCoreStored >= (_item as TurretDescritpion).actualUpgradePriceEnergyCore)
+        if((_item as TurretDescription) != null && 
+            (_item as TurretDescription).actualTier < (_item as TurretDescription).maxTier &&
+            playerStats.scrapsStored >= (_item as TurretDescription).actualUpgradePriceScraps && 
+            playerStats.energyCoreStored >= (_item as TurretDescription).actualUpgradePriceEnergyCore)
         {
             Debug.Log("Turret upgraded");
 
             //Paiement
-            playerStats.updateScrapStoredValue(playerStats.scrapsStored - (_item as TurretDescritpion).actualUpgradePriceScraps);
-            playerStats.updateEnergyCoreStoredValue(playerStats.energyCoreStored - (_item as TurretDescritpion).actualUpgradePriceEnergyCore);
+            playerStats.updateScrapStoredValue(playerStats.scrapsStored - (_item as TurretDescription).actualUpgradePriceScraps);
+            playerStats.updateEnergyCoreStoredValue(playerStats.energyCoreStored - (_item as TurretDescription).actualUpgradePriceEnergyCore);
 
             //Update turret description in turret slot
-            int newTier = (_item as TurretDescritpion).actualTier + 1;
-            (_item as TurretDescritpion).actualTier++;
-            (_item as TurretDescritpion).applySchemeCarac(newTier);
+            int newTier = (_item as TurretDescription).actualTier + 1;
+            (_item as TurretDescription).actualTier++;
+            (_item as TurretDescription).applySchemeCarac(newTier);
             updateItemInformationDisplay();
 
             //Apply update in cargo slot
@@ -70,13 +77,13 @@ public class TurretSlot : CargoItemSlot
 
             //Apply update on the turret itself
             Battleship battleship = FindObjectOfType<Battleship>();
-            battleship.standardTurrets[slotId].descritpion = _item as TurretDescritpion;
-            battleship.standardTurrets[slotId].updateTurretStats();
+            battleship.standardRotationTurrets[slotId].descritpion = _item as TurretDescription;
+            battleship.standardRotationTurrets[slotId].updateTurretStats();
 
             //Update price for the next upgrade
-            if ((_item as TurretDescritpion).actualTier < (_item as TurretDescritpion).maxTier)
+            if ((_item as TurretDescription).actualTier < (_item as TurretDescription).maxTier)
             {
-                updateUpgradePrice((_item as TurretDescritpion).actualUpgradePriceScraps, (_item as TurretDescritpion).actualUpgradePriceEnergyCore);
+                updateUpgradePrice((_item as TurretDescription).actualUpgradePriceScraps, (_item as TurretDescription).actualUpgradePriceEnergyCore);
             }
             else
             {

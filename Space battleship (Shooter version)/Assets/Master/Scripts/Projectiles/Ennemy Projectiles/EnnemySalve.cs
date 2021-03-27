@@ -14,6 +14,11 @@ public class EnnemySalve : MonoBehaviour
         nbrProjectile = ennemyProjectiles.Length;
     }
 
+    private void Start()
+    {
+        Destroy(gameObject, 15);
+    }
+
     private void Update()
     {
         for (int i = 0; i < ennemyProjectiles.Length; i++)

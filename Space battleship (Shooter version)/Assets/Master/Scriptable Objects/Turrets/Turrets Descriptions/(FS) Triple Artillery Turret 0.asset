@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bcac4643208ae142944bcdaefbba33b, type: 3}
+  m_Name: (FS) Triple Artillery Turret 0
+  m_EditorClassIdentifier: Assembly-CSharp::TurretDescritpion
+  ItemName: Triple Artillery Turret
+  cargoIcone: {fileID: 8028083350656156414, guid: 3bd54632e5b0d574a8f487aa1eb81ea4,
+    type: 3}
+  arsenalIcon: {fileID: 8028083350656156414, guid: 3bd54632e5b0d574a8f487aa1eb81ea4,
+    type: 3}
+  turretType: 0
+  turretSize: 0
+  turretAim: 1
+  projectileType: 0
+  modifierPrimaryType: 0
+  modifierSecondaryType: 0
+  maxTier: 3
+  turretTiersArray: []
+  cargoId: 0
+  arsenalId: -1
+  slotName: 1
+  turretPrefab: {fileID: -8232013385591796803, guid: e97518f39de77ec40b66d0aa5acbd8fa,
+    type: 3}
+  priceToUnlock: 1
+  actualDamage: 200
+  actualHealth: 0
+  actualShotsPerSalve: 3
+  actualNbrOfSalve: 1
+  actualAmmo: 0
+  actualFirerate: 0.1
+  actualCooldown: 5
+  actualSpeed: 1000
+  actualDeviation: 0
+  actualTier: 1
+  actualUpgradePriceScraps: 50
+  actualUpgradePriceEnergyCore: 0
+  schemeOrigin: {fileID: 11400000, guid: 9b60703f90b48644d86601e67f1114af, type: 2}

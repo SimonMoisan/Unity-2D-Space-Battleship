@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TripleBasicMissilesTurret : Turret
 {
-    //Configuration parameters
+    /*//Configuration parameters
     [SerializeField] public Transform[] targets;            //tableau de cible lu par le viseur
     [SerializeField] public int numberOfTarget = 0;
     [SerializeField] public bool viseurIsActive = false;    //indique si le viseur laser est affiché ou non
@@ -27,12 +27,12 @@ public class TripleBasicMissilesTurret : Turret
     // Update is called once per frame
     void Update()
     {
-        /*if (isActive) //quand la tourelle est active et que l'autofire est désactivé
+        if (isActive) //quand la tourelle est active et que l'autofire est désactivé
         {
             FollowMouse();
             viseurLaser.RotateViseur(angleMouse);
             FireMissile();
-        }*/
+        }
     }
 
     //Fonction qui permet de tirer des missiles et d'afficher le viseur laser

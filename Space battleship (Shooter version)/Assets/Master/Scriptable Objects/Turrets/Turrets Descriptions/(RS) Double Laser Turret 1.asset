@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bcac4643208ae142944bcdaefbba33b, type: 3}
+  m_Name: (RS) Double Laser Turret 1
+  m_EditorClassIdentifier: Assembly-CSharp::TurretDescritpion
+  ItemName: Double Laser
+  cargoIcone: {fileID: -4273134929416887563, guid: ada1cf55dad6cb6458aca28a52bfaa1f,
+    type: 3}
+  turretType: 0
+  turretSize: 0
+  turretAim: 0
+  projectileType: 2
+  modifierPrimaryType: 0
+  modifierSecondaryType: 0
+  maxTier: 3
+  turretTiersArray: []
+  cargoId: 1
+  arsenalId: -1
+  slotName: 1
+  turretPrefab: {fileID: 3163612099213979201, guid: 1e49f4af50432b24c97f557c6466f427,
+    type: 3}
+  priceToUnlock: 1
+  actualDamage: 20
+  actualHealth: 0
+  actualShotsPerSalve: 2
+  actualNbrOfSalve: 10
+  actualAmmo: 0
+  actualFirerate: 0.2
+  actualCooldown: 5
+  actualSpeed: 500
+  actualDeviation: 0
+  actualTier: 1
+  actualUpgradePriceScraps: 50
+  actualUpgradePriceEnergyCore: 0
+  schemeOrigin: {fileID: 11400000, guid: e65cae30d987e8743bfb21e8017a7c65, type: 2}

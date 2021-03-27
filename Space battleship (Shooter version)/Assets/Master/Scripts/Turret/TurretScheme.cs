@@ -27,6 +27,7 @@ public class TurretScheme : CargoItem
     [Header("Turret Scheme caracteritics :")]
     public TurretType turretType;
     public TurretSize turretSize;
+    public TurretAim turretAim;
     public ProjectileType projectileType;
     public ModifierPrimaryType modifierPrimaryType;
     public ModifierSecondaryType modifierSecondaryType;

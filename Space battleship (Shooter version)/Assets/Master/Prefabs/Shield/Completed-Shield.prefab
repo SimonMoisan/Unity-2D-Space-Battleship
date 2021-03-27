@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4463363928946669668}
   - component: {fileID: 4647343191341173350}
   - component: {fileID: 8516520963180662629}
+  - component: {fileID: 6801782722174949933}
   m_Layer: 10
   m_Name: Completed-Shield
   m_TagString: Player
@@ -28,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4724592676981436575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.01, y: 0, z: -2}
-  m_LocalScale: {x: 3.267102, y: 2.612009, z: 2.104}
+  m_LocalPosition: {x: -0.202, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -49,6 +50,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -70,10 +72,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -592639539
+  m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2c6267747ce85bf42ab15a4f4cc5400f, type: 3}
+  m_Sprite: {fileID: -6874581727159927393, guid: d3c44433b70bb5441a2ddb361fb8ff8b,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +104,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.29, y: 3.5}
+    oldSize: {x: 9.828125, y: 5.46875}
     newSize: {x: 6.29, y: 3.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -122,10 +125,17 @@ PolygonCollider2D:
       - {x: 0.07031012, y: 1.7474021}
       - {x: -0.1656626, y: 1.7420138}
       - {x: -0.16126612, y: 1.7427243}
-      - {x: -0.16295259, y: 1.7401824}
-      - {x: -0.16511734, y: 1.7443808}
-      - {x: -0.14933418, y: 0.9238498}
-      - {x: -0.16657713, y: -0.06132594}
+      - {x: -0.90124756, y: 1.6820561}
+      - {x: -1.7629533, y: 1.4488573}
+      - {x: -2.5532866, y: 1.0296365}
+      - {x: -3.0063286, y: 0.55521405}
+      - {x: -3.1539812, y: 0.14927134}
+      - {x: -3.101381, y: -0.3564851}
+      - {x: -2.5842571, y: -1.0029751}
+      - {x: -1.9334501, y: -1.3967202}
+      - {x: -1.1854445, y: -1.6212218}
+      - {x: -0.5196424, y: -1.7360313}
+      - {x: -0.32745874, y: -1.741674}
       - {x: -0.16329046, y: -1.7357886}
       - {x: -0.15562344, y: -1.7502072}
       - {x: -0.16600588, y: -1.741214}
@@ -153,15 +163,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad94d5a761a91764d8c0bae0557d10ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualTier: 0
   shieldPoints: 1000
   maxShieldPoints: 1000
   shieldGenerationRate: 50
   cooldown: 5
   cooldownTimer: 0
   shieldGenerationActive: 0
-  col: {fileID: 0}
+  shieldTiers:
+  - tier: 0
+    energyCorePrice: 0
+    updatedMaxShield: 1000
+  - tier: 1
+    energyCorePrice: 5
+    updatedMaxShield: 1100
+  - tier: 2
+    energyCorePrice: 10
+    updatedMaxShield: 1200
+  - tier: 3
+    energyCorePrice: 20
+    updatedMaxShield: 1350
+  - tier: 4
+    energyCorePrice: 50
+    updatedMaxShield: 1500
+  col: {fileID: 4463363928946669668}
   battleship: {fileID: 0}
-  animator: {fileID: 0}
+  animator: {fileID: 8516520963180662629}
+  playerStats: {fileID: 0}
 --- !u!95 &8516520963180662629
 Animator:
   serializedVersion: 3
@@ -181,3 +209,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &6801782722174949933
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724592676981436575}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

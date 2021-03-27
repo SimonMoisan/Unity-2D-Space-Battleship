@@ -7,7 +7,7 @@ using Ink.Runtime;
 
 public class StoryReader : MonoBehaviour
 {
-    public TextAsset inkJSONAsset;
+    public EventStep actualEventStep;
     public Story story;
 
     public Text mainText;
@@ -19,6 +19,13 @@ public class StoryReader : MonoBehaviour
 
     public static event Action<Story> OnCreateStory;
 
+    public static StoryReader current;
+
+    private void OnValidate()
+    {
+        current = this;
+    }
+
     private void Awake()
     {
         //StartStory();
@@ -29,13 +36,16 @@ public class StoryReader : MonoBehaviour
     {
         nextStepButton.SetActive(false);
 
-        story = new Story(inkJSONAsset.text);
+        story = new Story((actualEventStep as ContextualEventStep).storyJson.text);
         if (OnCreateStory != null) OnCreateStory(story);
         RefreshView();
     }
 
     void RefreshView()
     {
+        //Remove report button
+        MenuManagerScript.current.openReportWindowButton.SetActive(false);
+
         // Remove all the UI on screen
         RemoveButtons();
 
@@ -73,7 +83,65 @@ public class StoryReader : MonoBehaviour
     void OnClickChoiceButton(Choice choice)
     {
         story.ChooseChoiceIndex(choice.index);
+
         RefreshView();
+
+        if (actualEventStep as ContextualEventStep != null && (int) story.variablesState["choiceId"] >= 0)
+        {
+            ContextualStepChoice actualContextualStepChoice = (actualEventStep as ContextualEventStep).contextualStepChoices[(int) story.variablesState["choiceId"]];
+
+            if (actualContextualStepChoice != null && actualContextualStepChoice.nextStepTransition > -1)
+            {
+                GameManagerScript.current.playNextStepEvent(actualContextualStepChoice.nextStepTransition);
+            }
+
+            //Apply changes according to this choice
+            if(actualContextualStepChoice.hullMod != 0)
+            {
+                Battleship.current.hullPoints += actualContextualStepChoice.hullMod;
+                PlayerStats.current.updateHullIndicators();
+            }
+            if(actualContextualStepChoice.scrapMod != 0)
+            {
+                PlayerStats.current.updateScrapStoredValue(actualContextualStepChoice.scrapMod);
+            }
+            if (actualContextualStepChoice.energyCoreMod != 0)
+            {
+                PlayerStats.current.updateEnergyCoreStoredValue(actualContextualStepChoice.energyCoreMod);
+            }
+
+            //Prepare report windown
+            if(actualContextualStepChoice.hullMod != 0 || actualContextualStepChoice.scrapMod != 0 || actualContextualStepChoice.energyCoreMod != 0)
+            {
+                MenuManagerScript.current.openReportWindowButton.SetActive(true);
+                if(actualContextualStepChoice.scrapMod > 0)
+                {
+                    MenuManagerScript.current.gainScrapValue.text = "+ " + (int) actualContextualStepChoice.scrapMod;
+                }
+                else
+                {
+                    MenuManagerScript.current.loseScrapValue.text = "- " + (int) actualContextualStepChoice.scrapMod;
+                }
+
+                if (actualContextualStepChoice.energyCoreMod > 0)
+                {
+                    MenuManagerScript.current.gainEnergyCoreValue.text = "+ " + (int) actualContextualStepChoice.energyCoreMod;
+                }
+                else
+                {
+                    MenuManagerScript.current.loseEnergyCoreValue.text = "- " + (int) actualContextualStepChoice.energyCoreMod;
+                }
+
+                if (actualContextualStepChoice.hullMod > 0)
+                {
+                    MenuManagerScript.current.gainHullValue.text = "+ " + (int) actualContextualStepChoice.hullMod;
+                }
+                else
+                {
+                    MenuManagerScript.current.loseHullValue.text = "- " + (int) actualContextualStepChoice.hullMod;
+                }
+            }
+        }
     }
 
     // Creates a textbox showing the the line of text

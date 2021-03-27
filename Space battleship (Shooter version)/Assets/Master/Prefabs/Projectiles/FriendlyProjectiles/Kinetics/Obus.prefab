@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 4253668984798282849}
   - component: {fileID: 4253668984798282850}
   - component: {fileID: -9030072079999648474}
-  - component: {fileID: 4253668984798282863}
-  - component: {fileID: 4831171707279117516}
+  - component: {fileID: 7813814949210462570}
   - component: {fileID: 6500824660129035438}
   m_Layer: 0
   m_Name: Obus
@@ -50,6 +49,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -105,28 +105,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!50 &4253668984798282863
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4253668984798282851}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &4831171707279117516
+--- !u!114 &7813814949210462570
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,7 +114,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4253668984798282851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c36ecac286db4a4c91123eaaadb71c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 31c3c615b6e1ab9408690cae1665b67f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 1000
@@ -143,7 +122,7 @@ MonoBehaviour:
   damageType: 1
   damage: 200
   isDestroyable: 0
-  health: 1
+  health: 0
   canExplode: 1
   explosionRadius: 40
   canScatter: 0
@@ -153,13 +132,14 @@ MonoBehaviour:
   delayBeforeDecceleration: 0
   deccelerationRate: 0
   deccelerationSpeed: 0
+  currenteDecceleration: 0
   isAccelerating: 0
   delayBeforeAcceleration: 0
   accelerationRate: 0
   accelerationSpeed: 0
-  animator: {fileID: 0}
-  rb2D: {fileID: 4253668984798282863}
-  col: {fileID: 0}
+  currenteAcceleration: 0
+  animator: {fileID: -9030072079999648474}
+  col: {fileID: 6500824660129035438}
   salve: {fileID: 0}
 --- !u!70 &6500824660129035438
 CapsuleCollider2D:

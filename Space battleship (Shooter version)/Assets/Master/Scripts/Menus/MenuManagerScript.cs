@@ -32,6 +32,16 @@ public class MenuManagerScript : MonoBehaviour
     public GameObject battlezoneCanvas;
     public GameObject informationWindowEndBattle;
     public Canvas contextualCanvas;
+    public MeshRenderer backgroundMesh;
+    //Report window
+    public GameObject reportWindow;
+    public GameObject openReportWindowButton;
+    public Text gainScrapValue;
+    public Text gainEnergyCoreValue;
+    public Text gainHullValue;
+    public Text loseScrapValue;
+    public Text loseEnergyCoreValue;
+    public Text loseHullValue;
     [Header("Battle report :")]
     public Text scrapRewardValue;
     public Text energyCoreRewardValue;
@@ -40,13 +50,12 @@ public class MenuManagerScript : MonoBehaviour
 
     //Sprites to display
     public GameObject battleshipSprite;
+
+    public static MenuManagerScript current;
     
     private void Awake()
     {
         //Setup events :
-        //Left click
-        //cargo.OnLeftClickEvent += cargoLeftClick;
-        //arsenalPanel.OnLeftClickEvent += arsenalLeftClick;
         //Begin drag
         cargo.OnBeginingDragEvent += beginDrag;
         arsenalPanel.OnBeginingDragEvent += beginDrag;
@@ -64,6 +73,8 @@ public class MenuManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void OnValidate()
     {
+        current = this;
+
         playerStats = FindObjectOfType<PlayerStats>();
         battleship = FindObjectOfType<Battleship>();
         gameManager = FindObjectOfType<GameManagerScript>();
@@ -99,21 +110,21 @@ public class MenuManagerScript : MonoBehaviour
 
     public void cargoLeftClick(CargoItemSlot cargoItemSlot)
     {
-        if (cargoItemSlot.CargoItem is TurretDescritpion)
+        if (cargoItemSlot.CargoItem is TurretDescription)
         {
-            equipTurretToArsenal((TurretDescritpion)cargoItemSlot.CargoItem);
+            equipTurretToArsenal((TurretDescription)cargoItemSlot.CargoItem);
         }
     }
 
     public void arsenalLeftClick(CargoItemSlot cargoItemSlot)
     {
-        if (cargoItemSlot.CargoItem is TurretDescritpion)
+        if (cargoItemSlot.CargoItem is TurretDescription)
         {
-            unequipTurret((TurretDescritpion)cargoItemSlot.CargoItem, cargoItemSlot.slotId);
+            unequipTurret((TurretDescription)cargoItemSlot.CargoItem, cargoItemSlot.slotId);
         }
     }
 
-    public void equipTurretToArsenal(TurretDescritpion turret)
+    public void equipTurretToArsenal(TurretDescription turret)
     {
         if (cargo.removeItem(turret))
         {
@@ -130,7 +141,7 @@ public class MenuManagerScript : MonoBehaviour
         }
     }
 
-    public void unequipTurret(TurretDescritpion turret, int slotId)
+    public void unequipTurret(TurretDescription turret, int slotId)
     {
         if (!cargo.isFull() && arsenalPanel.removeTurret(turret))
         {
@@ -169,8 +180,8 @@ public class MenuManagerScript : MonoBehaviour
     {
         if(draggedSlot != null)
         {
-            TurretDescritpion dragItem = draggedSlot.CargoItem as TurretDescritpion;    //item dragged by the player
-            TurretDescritpion dropItem = dropCargoItemSlot.CargoItem as TurretDescritpion;   //item present or not in the cargoItemSlot
+            TurretDescription dragItem = draggedSlot.CargoItem as TurretDescription;    //item dragged by the player
+            TurretDescription dropItem = dropCargoItemSlot.CargoItem as TurretDescription;   //item present or not in the cargoItemSlot
 
             int slotIdDraggedItem = -1;
 
@@ -191,12 +202,10 @@ public class MenuManagerScript : MonoBehaviour
             //Case 1 : drop item in empty arsenal slot (OK)
             if (dropCargoItemSlot is TurretSlot && dragItem != null && dropItem == null)
             {
-                Debug.Log("Case 1");
-                if (dragItem is TurretDescritpion) //if dragged is a turret
+                if (dragItem is TurretDescription) //if dragged is a turret
                 {
                     if ((draggedSlot as TurretSlot) != null) //if dragged item come from arsenal (OK)
                     {
-                        Debug.Log("Case 1.1");
                         //Switch turrets
                         dragItem.unequipTurret(this, draggedSlot.slotId);
                         dragItem.equipTurret(this, dropCargoItemSlot.slotId); //equip dragTurret in arsenal slot 
@@ -219,7 +228,6 @@ public class MenuManagerScript : MonoBehaviour
                     }
                     else //if dragged item come from cargo 
                     {
-                        Debug.Log("Case 1.2");
                         dragItem.equipTurret(this, dropCargoItemSlot.slotId);
 
                         //Switch hidders
@@ -240,14 +248,12 @@ public class MenuManagerScript : MonoBehaviour
             }
 
             //Case 2 : drop item in occupied arsenal slot (OK)
-            if (dropCargoItemSlot is TurretSlot && dragItem != null && dropItem != null)
+            if (dropCargoItemSlot is TurretSlot && dragItem != null && dropItem != null && draggedSlot != dropCargoItemSlot)
             {
-                Debug.Log("Case 2");
-                if (dragItem is TurretDescritpion) //if dragged is a turret
+                if (dragItem is TurretDescription) //if dragged is a turret
                 {
                     if ((draggedSlot as TurretSlot) != null) //if dragged item come from arsenal (OK)
                     {
-                        Debug.Log("Case 2.1");
                         dragItem.unequipTurret(this, draggedSlot.slotId);
                         dropItem.unequipTurret(this, dropCargoItemSlot.slotId);
 
@@ -265,7 +271,6 @@ public class MenuManagerScript : MonoBehaviour
                     }
                     else if(!draggedSlot.isUsed) //if dragged item come from cargo and its not an already used turret (OK)
                     {
-                        Debug.Log("Case 2.2");
                         dropItem.unequipTurret(this, dropCargoItemSlot.slotId); //unequip turret in arsenal slot
                         dragItem.equipTurret(this, dropCargoItemSlot.slotId); //equip dragTurret in arsenal slot
 
@@ -332,7 +337,7 @@ public class MenuManagerScript : MonoBehaviour
             if (!(dropCargoItemSlot is TurretSlot) && dragItem != null && dropItem != null)
             {
                 Debug.Log("Case 4");
-                if (dragItem is TurretDescritpion && (draggedSlot as TurretSlot) != null) //if dragged is a turret
+                if (dragItem is TurretDescription && (draggedSlot as TurretSlot) != null) //if dragged is a turret
                 {
                     if ((draggedSlot as TurretSlot).cargoId == dropCargoItemSlot.slotId && dropCargoItemSlot.isUsed) //if cargo slot is the origin slot of the dragged item, then the turret become empty
                     {
@@ -419,6 +424,8 @@ public class MenuManagerScript : MonoBehaviour
     public void closeInformationPanel()
     {
         GameManagerScript.current.restObjectsStates();
+        GameManagerScript.current.StartCoroutine(GameManagerScript.current.fadeBattlezoneToStarmap());
+        AudioManager.current.StartCoroutine(AudioManager.current.musicSwitch(MusicType.Starmap));
 
         EnnemySpawner ennemySpawner = FindObjectOfType<EnnemySpawner>();
 
@@ -496,6 +503,8 @@ public class MenuManagerScript : MonoBehaviour
     public void starmapToBattleZone()
     {
         battlezoneCanvas.SetActive(true);
+        PlayerStats.current.initializeRotationTurretsIndicators();
+        StartCoroutine(PlayerStats.current.initialiseTurretSets());
         starmapCanvas.SetActive(false);
     }
 
@@ -503,5 +512,21 @@ public class MenuManagerScript : MonoBehaviour
     {
         battlezoneCanvas.SetActive(false);
         starmapCanvas.SetActive(true);
+    }
+
+    public void openReportWindow()
+    {
+        reportWindow.SetActive(true);
+    }
+
+    public void closeReportWindow()
+    {
+        reportWindow.SetActive(false);
+        gainScrapValue.text = "+ 0";
+        gainEnergyCoreValue.text = "+ 0";
+        gainHullValue.text = "+ 0";
+        loseScrapValue.text = "- 0";
+        loseEnergyCoreValue.text = "- 0";
+        loseHullValue.text = "- 0";
     }
 }

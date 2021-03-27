@@ -20,6 +20,10 @@ MonoBehaviour:
   - compileAutomatically: 0
     inkAsset: {fileID: 102900000, guid: b3b2835aa91892440912ae84e560d20c, type: 3}
     jsonAssetDirectory: {fileID: 0}
-    jsonAsset: {fileID: 4900000, guid: e244f5ba071c6764aa79ac3896fc437f, type: 3}
+    jsonAsset: {fileID: 4900000, guid: ee06f68dd3d51234b9406e43ad542ae8, type: 3}
+  - compileAutomatically: 0
+    inkAsset: {fileID: 102900000, guid: ddbc26e13523bae4e8968be58fb90040, type: 3}
+    jsonAssetDirectory: {fileID: 0}
+    jsonAsset: {fileID: 4900000, guid: 25deb611f5404334fbb447ebcf921efe, type: 3}
   pendingCompilationStack: []
   compilationStack: []

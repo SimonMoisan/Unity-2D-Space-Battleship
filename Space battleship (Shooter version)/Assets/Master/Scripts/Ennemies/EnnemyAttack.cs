@@ -11,8 +11,9 @@ public class EnnemyAttack : MonoBehaviour
     [Header("Attack stats")]
     public TargetingType targetingType;           //Targeting type of the attack : Normal, Static
     public AttackType attackType;
-    public float damage;
-    public float bulletSpeed;           //vitesse des projectiles tirés par l'ennemi
+    public float globalDamage;
+    public float globalHealth;
+    public float globalBulletSpeed;           //vitesse des projectiles tirés par l'ennemi
     public float fireRate;              //cadence de tir de l'ennemi
     public int nbrShots;                //nombre de tir par rafale
     private float angleViseur;           //angle de visé par rapport à la cible
@@ -40,6 +41,8 @@ public class EnnemyAttack : MonoBehaviour
     public Ennemy ennemy;
     public GameObject bulletPrefab;
     public PlayerDetector playerDetector;
+    public ProjectilePool pooler;
+    public SoundEffectsGenerator soundEffectsGenerator;
     
 
     //Coroutines
@@ -51,10 +54,20 @@ public class EnnemyAttack : MonoBehaviour
         cooldownTimer = cooldown;
         ennemy = GetComponentInParent<Ennemy>();
         playerDetector = GetComponentInChildren<PlayerDetector>();
+        soundEffectsGenerator = GetComponentInChildren<SoundEffectsGenerator>();
 
-        if(isTurretBeam && beam != null)
+        //Find pooler
+        for (int i = 0; i < GameManagerScript.current.poolers.Length; i++)
         {
-            beam.damage = damage;
+            if (GameManagerScript.current.poolers[i].salvePrefab == bulletPrefab.GetComponent<Salve>())
+            {
+                pooler = GameManagerScript.current.poolers[i];
+            }
+        }
+
+        if (isTurretBeam && beam != null)
+        {
+            beam.damage = globalDamage;
         }
     }
 
@@ -144,37 +157,68 @@ public class EnnemyAttack : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         // rate of fire in weapons is in rounds per minute (RPM), therefore we should calculate how much time passes before firing a new round in the same burst.
 
-        if (targetingType == TargetingType.circle)
+        //Looping sound effect
+        if (soundEffectsGenerator.isLooping)
         {
-            for (int i = 0; i < nbrShots; i++)
-            {
-                Vector3 bulletPosition = new Vector3(transform.position.x, transform.position.y, 1);
-                GameObject bullet = Instantiate
-                    (bulletPrefab,
-                    bulletPosition,
-                    Quaternion.Euler(new Vector3(0, 0, angleViseur + 90 + Random.Range(-precisionFactor, precisionFactor))));
+            soundEffectsGenerator.playDefaultSoundEffect();
+        }
 
-                yield return new WaitForSeconds(fireRate); // wait till the next round
-            }
-        }
-        else if (targetingType == TargetingType.front)
+        for (int i = 0; i < nbrShots; i++)
         {
-            for (int i = 0; i < nbrShots; i++)
+            //Mono sound effect
+            if (soundEffectsGenerator.isLooping)
             {
-                Vector3 bulletPosition = new Vector3(transform.position.x, transform.position.y, 1);
-                GameObject bullet = Instantiate
-                    (bulletPrefab,
-                    bulletPosition,
-                    Quaternion.Euler(new Vector3(0, 0, -90 + Random.Range(-precisionFactor, precisionFactor))));
-
-                yield return new WaitForSeconds(fireRate); // wait till the next round
+                soundEffectsGenerator.playDefaultSoundEffect();
             }
+
+            //Calculate angle
+            float angle = 0;
+            if (targetingType == TargetingType.circle)
+            {
+                angle = angleViseur + 90 + Random.Range(-precisionFactor, precisionFactor);
+            }
+            else if(targetingType == TargetingType.front)
+            {
+                angle = -90 + Random.Range(-precisionFactor, precisionFactor);
+            }
+
+            //Calculate position
+            Vector3 bulletPosition = new Vector3(transform.position.x, transform.position.y, 1);
+
+            //Generate salve object
+            Salve salve = new Salve();
+            salve = pooler.getSalve();
+            salve.transform.position = bulletPosition;
+            salve.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            salve.gameObject.SetActive(true);
+            for (int j = 0; j < salve.projectiles.Length; j++)
+            {
+                salve.projectiles[j].transform.localPosition = salve.projectilesInitialPosition[j];
+                salve.projectiles[j].transform.localRotation = salve.projectilesInitialRotation[j];
+                salve.projectiles[j].gameObject.SetActive(true);
+                salve.projectiles[j].col.enabled = true;
+            }
+
+            //Initiate object stats
+            salve.globalDamage = globalDamage;
+            salve.globalHealth = globalHealth;
+            salve.globalBulletSpeed = globalBulletSpeed;
+            for (int j = 0; j < salve.projectiles.Length; j++)
+            {
+                salve.projectiles[j].damage = globalDamage;
+                salve.projectiles[j].health = globalHealth;
+                salve.projectiles[j].bulletSpeed = globalBulletSpeed;
+            }
+
+            yield return new WaitForSeconds(fireRate); // wait till the next round
         }
-        else
+
+        //Stop looping sound effect
+        if (soundEffectsGenerator.isLooping)
         {
-            Debug.Log("Attack type invalid");
+            soundEffectsGenerator.stopSoundEffect();
         }
-        
+
         ennemy.isMoving = true;
         isFiring = false;
         cooldownTimer = cooldown;

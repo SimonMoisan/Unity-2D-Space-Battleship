@@ -3,6 +3,7 @@ using Unity.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class Ennemy : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class Ennemy : MonoBehaviour
     public EnnemySpawner ennemySpawner;
     public EnnemySquad squad;
     public GameObject reactor;
+    public NavMeshAgent agent;
     [Space]
     public Image hullBar;
     public Image shieldBar;
@@ -52,6 +54,7 @@ public class Ennemy : MonoBehaviour
 
         isMoving = true;
         squad = GetComponentInParent<EnnemySquad>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     protected void enqueuAttack(EnnemyAttack attack)

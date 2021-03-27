@@ -71,6 +71,8 @@ public class CargoItemSlot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
         {
             manageHidders();
         }
+
+        turretImage.SetNativeSize();
     }
 
     public void updateItemInformationDisplay()
@@ -117,7 +119,7 @@ public class CargoItemSlot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
         {
             if (this is TurretSlot)
             {
-                turretImage.sprite = _item.arsenalIcon;
+                turretImage.sprite = _item.cargoIcone;
             }
             else
             {
@@ -131,13 +133,13 @@ public class CargoItemSlot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
                 turretImage.SetNativeSize();
                 turretName.text = _item.ItemName;
 
-                if ((_item as TurretDescritpion).actualDamage > 0)
+                if ((_item as TurretDescription).actualDamage > 0)
                 {
                     healthText.enabled = false;
                     damageText.enabled = true;
                     healthValue.enabled = false;
                     damageValue.enabled = true;
-                    damageValue.text = "" + (_item as TurretDescritpion).actualDamage;
+                    damageValue.text = "" + (_item as TurretDescription).actualDamage;
                 }
                 else
                 {
@@ -145,22 +147,22 @@ public class CargoItemSlot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
                     damageText.enabled = false;
                     healthValue.enabled = true;
                     damageValue.enabled = false;
-                    healthValue.text = "" + (_item as TurretDescritpion).actualHealth;
+                    healthValue.text = "" + (_item as TurretDescription).actualHealth;
                 }
 
-                shotBySalveValue.text = "" + (_item as TurretDescritpion).actualShotsPerSalve + " x " + (_item as TurretDescritpion).actualNbrOfSalve;
-                cooldownValue.text = "" + (_item as TurretDescritpion).actualCooldown;
+                shotBySalveValue.text = "" + (_item as TurretDescription).actualShotsPerSalve + " x " + (_item as TurretDescription).actualNbrOfSalve;
+                cooldownValue.text = "" + (_item as TurretDescription).actualCooldown;
 
                 //Define deviation
-                if ((_item as TurretDescritpion).actualDeviation <= 0)
+                if ((_item as TurretDescription).actualDeviation <= 0)
                 {
                     deviationValue.text = "None";
                 }
-                else if ((_item as TurretDescritpion).actualDeviation > 0 && (_item as TurretDescritpion).actualDeviation <= 10)
+                else if ((_item as TurretDescription).actualDeviation > 0 && (_item as TurretDescription).actualDeviation <= 10)
                 {
                     deviationValue.text = "Low";
                 }
-                else if ((_item as TurretDescritpion).actualDeviation > 10 && (_item as TurretDescritpion).actualDeviation <= 15)
+                else if ((_item as TurretDescription).actualDeviation > 10 && (_item as TurretDescription).actualDeviation <= 15)
                 {
                     deviationValue.text = "Med";
                 }
@@ -170,11 +172,11 @@ public class CargoItemSlot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
                 }
 
                 //Define speed
-                if ((_item as TurretDescritpion).actualSpeed > 0 && (_item as TurretDescritpion).actualSpeed <= 200)
+                if ((_item as TurretDescription).actualSpeed > 0 && (_item as TurretDescription).actualSpeed <= 200)
                 {
                     speedValue.text = "Slow";
                 }
-                else if ((_item as TurretDescritpion).actualSpeed > 200 && (_item as TurretDescritpion).actualSpeed <= 500)
+                else if ((_item as TurretDescription).actualSpeed > 200 && (_item as TurretDescription).actualSpeed <= 500)
                 {
                     speedValue.text = "Med";
                 }
@@ -186,7 +188,7 @@ public class CargoItemSlot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
                 //Define price
                 if (energyCoreToUnlockValue != null)
                 {
-                    energyCoreToUnlockValue.text = "x " + (_item as TurretDescritpion).priceToUnlock;
+                    energyCoreToUnlockValue.text = "x " + (_item as TurretDescription).priceToUnlock;
                 }
 
                 //Define turret type image
@@ -194,7 +196,7 @@ public class CargoItemSlot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
                 {
                     turretTypeImage.enabled = true;
 
-                    switch ((_item as TurretDescritpion).projectileType)
+                    switch ((_item as TurretDescription).projectileType)
                     {
                         case ProjectileType.Kinetic:
                             turretTypeImage.sprite = turretTypeSprites[0];
@@ -220,7 +222,7 @@ public class CargoItemSlot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
                 //Update level
                 if (turretLevelValue != null)
                 {
-                    turretLevelValue.text = "" + (_item as TurretDescritpion).actualTier;
+                    turretLevelValue.text = "" + (_item as TurretDescription).actualTier;
                 }
             }
         }

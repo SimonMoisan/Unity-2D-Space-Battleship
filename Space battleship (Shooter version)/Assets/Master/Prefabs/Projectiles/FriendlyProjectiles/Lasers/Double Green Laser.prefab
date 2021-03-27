@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectiles:
-  - {fileID: 3614885898585628627}
-  - {fileID: 2586868628920409833}
+  - {fileID: 7880534768488999424}
+  - {fileID: 8976105353943067450}
   globalDamage: 0
   globalHealth: 0
   globalbulletSpeed: 0
@@ -62,6 +62,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Green Laser 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 526658932768053748, guid: 656bd7cd905748347aa779020372c547,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 526658932768053748, guid: 656bd7cd905748347aa779020372c547,
         type: 3}
@@ -80,6 +85,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 526658932768053748, guid: 656bd7cd905748347aa779020372c547,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 526658932768053748, guid: 656bd7cd905748347aa779020372c547,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -92,16 +102,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 526658932768053748, guid: 656bd7cd905748347aa779020372c547,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 526658932768053748, guid: 656bd7cd905748347aa779020372c547,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 526658932768053748, guid: 656bd7cd905748347aa779020372c547,
         type: 3}
@@ -131,16 +131,16 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8025955741291048688}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2586868628920409833 stripped
+--- !u!114 &8976105353943067450 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5514529610979602457, guid: 656bd7cd905748347aa779020372c547,
+  m_CorrespondingSourceObject: {fileID: 1436758757335549386, guid: 656bd7cd905748347aa779020372c547,
     type: 3}
   m_PrefabInstance: {fileID: 8025955741291048688}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c36ecac286db4a4c91123eaaadb71c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 31c3c615b6e1ab9408690cae1665b67f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &9128001378672455626
@@ -154,6 +154,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Green Laser 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 526658932768053748, guid: 656bd7cd905748347aa779020372c547,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 526658932768053748, guid: 656bd7cd905748347aa779020372c547,
         type: 3}
@@ -172,6 +177,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 526658932768053748, guid: 656bd7cd905748347aa779020372c547,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 526658932768053748, guid: 656bd7cd905748347aa779020372c547,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -183,16 +193,6 @@ PrefabInstance:
     - target: {fileID: 526658932768053748, guid: 656bd7cd905748347aa779020372c547,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 526658932768053748, guid: 656bd7cd905748347aa779020372c547,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 526658932768053748, guid: 656bd7cd905748347aa779020372c547,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 526658932768053748, guid: 656bd7cd905748347aa779020372c547,
@@ -223,15 +223,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 9128001378672455626}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3614885898585628627 stripped
+--- !u!114 &7880534768488999424 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5514529610979602457, guid: 656bd7cd905748347aa779020372c547,
+  m_CorrespondingSourceObject: {fileID: 1436758757335549386, guid: 656bd7cd905748347aa779020372c547,
     type: 3}
   m_PrefabInstance: {fileID: 9128001378672455626}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c36ecac286db4a4c91123eaaadb71c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 31c3c615b6e1ab9408690cae1665b67f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

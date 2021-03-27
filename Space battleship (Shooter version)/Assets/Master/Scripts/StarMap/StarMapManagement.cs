@@ -39,10 +39,12 @@ public class StarMapManagement : MonoBehaviour
     [Header("Prefabs")]
     public Sector sectorPrefab;
     public SectorLink linkPrefab;
-    //public EventGenerator eventGenerator;
+
+    public static StarMapManagement current;
 
     private void OnValidate()
     {
+        current = this;
         //eventGenerator = FindObjectOfType<EventGenerator>();
     }
 
@@ -179,12 +181,13 @@ public class StarMapManagement : MonoBehaviour
             //ContextualEvent
             case 1:
                 break;
-            //ShopEvent
+            //Station event
             case 2:
                 if(actualNbrStation < maxNbrStation)
                 {
                     sector.sectorEvent = stationEvents[actualNbrStation];
                     actualNbrStation++;
+                    sector.containStation = true;
 
                     sector.stationIndicator.enabled = true;
                 }

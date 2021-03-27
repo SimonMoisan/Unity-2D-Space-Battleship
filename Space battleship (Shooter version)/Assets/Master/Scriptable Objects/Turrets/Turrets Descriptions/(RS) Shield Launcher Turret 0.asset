@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bcac4643208ae142944bcdaefbba33b, type: 3}
+  m_Name: (RS) Shield Launcher Turret 0
+  m_EditorClassIdentifier: Assembly-CSharp::TurretDescritpion
+  ItemName: Shield Launch
+  cargoIcone: {fileID: 7997641132678262270, guid: fc786c145cae59441ad282d5794e6c9a,
+    type: 3}
+  arsenalIcon: {fileID: 7997641132678262270, guid: fc786c145cae59441ad282d5794e6c9a,
+    type: 3}
+  turretType: 0
+  turretSize: 0
+  turretAim: 0
+  projectileType: 0
+  modifierPrimaryType: 0
+  modifierSecondaryType: 0
+  maxTier: 3
+  turretTiersArray: []
+  cargoId: 3
+  arsenalId: -1
+  slotName: 1
+  turretPrefab: {fileID: -6896819051012550642, guid: 3c948904c9ab2494d94471b21d19daed,
+    type: 3}
+  priceToUnlock: 2
+  actualDamage: 0
+  actualHealth: 200
+  actualShotsPerSalve: 1
+  actualNbrOfSalve: 1
+  actualAmmo: 0
+  actualFirerate: 0
+  actualCooldown: 6
+  actualSpeed: 100
+  actualDeviation: 0
+  actualTier: 1
+  actualUpgradePriceScraps: 150
+  actualUpgradePriceEnergyCore: 1
+  schemeOrigin: {fileID: 11400000, guid: 2501deb1a881fa74c8bb447244ca8ea4, type: 2}

@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 6330413239543503216}
   - component: {fileID: 8541458841813673239}
   - component: {fileID: 6330413239543503220}
-  - component: {fileID: -8374664892506505022}
-  - component: {fileID: 874201205600140999}
+  - component: {fileID: 6449119191857494317}
   m_Layer: 0
   m_Name: Ennemy Simple Bullet
   m_TagString: EnnemyProjectile
@@ -50,6 +49,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -118,40 +118,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 300
-  damage: 15
+  maxSpeed: 0
   damageType: 1
-  animator: {fileID: 8541458841813673239}
-  rb2D: {fileID: -8374664892506505022}
-  col: {fileID: 874201205600140999}
-  ennemySalve: {fileID: 0}
+  damage: 15
   isDestroyable: 0
   health: 0
   canExplode: 0
   explosionRadius: 0
   canScatter: 0
---- !u!50 &-8374664892506505022
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6330413239543503223}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 2
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!58 &874201205600140999
-CircleCollider2D:
+  willFade: 0
+  timeBeforeFadding: 0
+  isDeccelerating: 0
+  delayBeforeDecceleration: 0
+  deccelerationRate: 0
+  deccelerationSpeed: 0
+  currenteDecceleration: 0
+  isAccelerating: 0
+  delayBeforeAcceleration: 0
+  accelerationRate: 0
+  accelerationSpeed: 0
+  currenteAcceleration: 0
+  animator: {fileID: 8541458841813673239}
+  col: {fileID: 6449119191857494317}
+  ennemySalve: {fileID: 0}
+--- !u!70 &6449119191857494317
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -163,6 +154,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0, y: -0.07891387}
-  serializedVersion: 2
-  m_Radius: 0.06952363
+  m_Offset: {x: 0.000000007450581, y: 0}
+  m_Size: {x: 0.12963171, y: 0.296875}
+  m_Direction: 0

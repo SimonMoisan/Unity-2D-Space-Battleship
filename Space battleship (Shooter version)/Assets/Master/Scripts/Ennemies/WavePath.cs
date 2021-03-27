@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
+using Pathfinding;
 using System.Collections.Generic;
-using UnityEngine;
+using Pathfinding.Util;
 
 public class WavePath : MonoBehaviour
 {
-    public Transform[] points;
     public bool dieAtEnd;
+    public Vector2[] points;
 }

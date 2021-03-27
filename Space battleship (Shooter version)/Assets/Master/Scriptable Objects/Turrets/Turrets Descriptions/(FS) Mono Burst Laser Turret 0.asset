@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bcac4643208ae142944bcdaefbba33b, type: 3}
+  m_Name: (FS) Mono Burst Laser Turret 0
+  m_EditorClassIdentifier: Assembly-CSharp::TurretDescritpion
+  ItemName: Mono Burst Laser
+  cargoIcone: {fileID: -6929843343804456351, guid: 98b1848c2d8a05f4fa80ec1ecd9259b8,
+    type: 3}
+  arsenalIcon: {fileID: -6929843343804456351, guid: 98b1848c2d8a05f4fa80ec1ecd9259b8,
+    type: 3}
+  turretType: 0
+  turretSize: 0
+  turretAim: 1
+  projectileType: 2
+  modifierPrimaryType: 0
+  modifierSecondaryType: 0
+  maxTier: 3
+  turretTiersArray: []
+  cargoId: 0
+  arsenalId: -1
+  slotName: 1
+  turretPrefab: {fileID: -8232013385591796803, guid: e97518f39de77ec40b66d0aa5acbd8fa,
+    type: 3}
+  priceToUnlock: 1
+  actualDamage: 20
+  actualHealth: 0
+  actualShotsPerSalve: 1
+  actualNbrOfSalve: 5
+  actualAmmo: 0
+  actualFirerate: 0.1
+  actualCooldown: 5
+  actualSpeed: 800
+  actualDeviation: 0
+  actualTier: 1
+  actualUpgradePriceScraps: 50
+  actualUpgradePriceEnergyCore: 0
+  schemeOrigin: {fileID: 11400000, guid: 581469a3351b8e24b9c727927c3ffd1f, type: 2}

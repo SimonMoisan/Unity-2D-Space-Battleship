@@ -1,15 +1,18 @@
 ﻿using Unity.Collections;
 using UnityEngine;
+using System;
 
 public enum TurretType { Offensive, Defensive, Support }
-public enum TurretSize { Standard, Heavy, Frontal }
+public enum TurretSize { Standard, Heavy }
+public enum TurretAim { Rotate, Frontal }
 public enum ProjectileType { Kinetic, Missile, Laser, Plasma, Ion, Shield }
 public enum ModifierPrimaryType { Direct, Homming, Cluster, Dispersion, Beam }
 public enum ModifierSecondaryType { None, Dispersion, Absorption, Bouncing, Chainer, ShieldPiercing, PlatePiercing, Piercing }
 
 public enum SlotName { None, Cargo, Arsenal }
 
-public class TurretDescritpion : TurretScheme
+[CreateAssetMenu]
+public class TurretDescription : TurretScheme
 {
     [Header("When in cargo : ")]
     [ReadOnly] public int cargoId;      //-1 when not in cargo
@@ -17,7 +20,7 @@ public class TurretDescritpion : TurretScheme
     [Header("When in arsenal : ")]
     [ReadOnly] public int arsenalId;      //-1 when unequipped
     [ReadOnly] public SlotName slotName;  //Name of the slot where the turretDescription object is actually located, default : None
-    public Turret turretPrefab;
+    public RotationTurret turretPrefab;
     [Space]
     //Turret stats
     [Header("Turret actual stats :")]
@@ -95,15 +98,31 @@ public class TurretDescritpion : TurretScheme
 
         //Instantiate turret GO and its position
         Quaternion turretOrientation = new Quaternion(0, 0, -90, 0);
-        Turret turretGO = Instantiate(turretPrefab, battleship.turretPositions[id], false);
-        turretGO.transform.parent = battleship.turretPositions[id];
+        RotationTurret turretGO = Instantiate(turretPrefab, battleship.rotationStandardTurretPositions[id], false);
+        turretGO.transform.parent = battleship.rotationStandardTurretPositions[id];
 
         //Initiate turret
         turretGO.idTurret = arsenalId;
-        turretGO.viseur = battleship.viseurs[arsenalId];
+        turretGO.turretButtonId = turretGO.idTurret % 4;
+        if (turretGO.GetComponent<RotationTurret>() != null)
+        {
+            turretGO.GetComponent<RotationTurret>().viseur = battleship.viseurs[arsenalId];
+        }
 
         //Initiate turret in battlsehip object
-        battleship.standardTurrets[id] = turretGO;
+        if(turretGO.GetComponent<RotationTurret>() != null)
+        {
+            battleship.standardRotationTurrets[id] = turretGO.GetComponent<RotationTurret>();
+        }
+        else if(turretGO.GetComponent<FrontalTurret>() != null)
+        {
+            battleship.standardFrontalTurrets[id] = turretGO.GetComponent<FrontalTurret>();
+        }
+
+        //Set image turret hud
+        PlayerStats.current.turretsImages[arsenalId].sprite = cargoIcone;
+        PlayerStats.current.turretsImages[arsenalId].rectTransform.localScale = new Vector3(0.8f, 0.8f, 1);
+        PlayerStats.current.turretsImages[arsenalId].SetNativeSize();
     }
 
     //Function used to unequip turret from battleship object
@@ -116,9 +135,9 @@ public class TurretDescritpion : TurretScheme
         battleship = FindObjectOfType<Battleship>();
 
         //Find the turret gameObject in battleship's arsenal and delete it
-        if (battleship.standardTurrets[id] != null)
+        if (battleship.standardRotationTurrets[id] != null)
         {
-            GameObject turetGO = battleship.standardTurrets[id].gameObject;
+            GameObject turetGO = battleship.standardRotationTurrets[id].gameObject;
             Destroy(turetGO);
         }
     }

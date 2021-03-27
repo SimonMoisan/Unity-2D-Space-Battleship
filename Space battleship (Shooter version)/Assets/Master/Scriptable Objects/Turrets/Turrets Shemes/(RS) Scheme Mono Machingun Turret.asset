@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6bd71817be2b10429fcff4c11a3d9de, type: 3}
+  m_Name: (RS) Scheme Mono Machingun Turret
+  m_EditorClassIdentifier: 
+  ItemName: Mono Machingun
+  cargoIcone: {fileID: -1548623570468164784, guid: fb0533414f0c35f4facfd7933cf7cced,
+    type: 3}
+  turretType: 0
+  turretSize: 0
+  turretAim: 0
+  projectileType: 0
+  modifierPrimaryType: 0
+  modifierSecondaryType: 0
+  maxTier: 3
+  turretTiersArray:
+  - upgradeTier: 1
+    scrapPrice: 0
+    energyCorePrice: 0
+    upgradedDamageValue: 10
+    upgradedHealthValue: 0
+    upgradedShotPerSalveValue: 1
+    upgradedNbrOfSalveValue: 30
+    upgradedAmmoValue: 0
+    upgradedFirerateValue: 0.01
+    upgradedCooldownValue: 4
+    upgradedSpeedValue: 400
+    upgradedDeviationValue: 10
+  - upgradeTier: 2
+    scrapPrice: 100
+    energyCorePrice: 0
+    upgradedDamageValue: 15
+    upgradedHealthValue: 0
+    upgradedShotPerSalveValue: 1
+    upgradedNbrOfSalveValue: 30
+    upgradedAmmoValue: 0
+    upgradedFirerateValue: 0.01
+    upgradedCooldownValue: 5
+    upgradedSpeedValue: 450
+    upgradedDeviationValue: 8
+  - upgradeTier: 3
+    scrapPrice: 150
+    energyCorePrice: 0
+    upgradedDamageValue: 15
+    upgradedHealthValue: 0
+    upgradedShotPerSalveValue: 1
+    upgradedNbrOfSalveValue: 40
+    upgradedAmmoValue: 0
+    upgradedFirerateValue: 0.01
+    upgradedCooldownValue: 5
+    upgradedSpeedValue: 450
+    upgradedDeviationValue: 8

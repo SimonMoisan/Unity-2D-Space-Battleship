@@ -34,6 +34,10 @@ public class EnnemySpawner : MonoBehaviour
     [ReadOnly] public StarMapManagement starMapManager;
     [ReadOnly] public PlayerStats playerStats;
 
+    //Waypoints paths
+    [Header("Waypaths")]
+    public Transform[] wavePaths;
+
     //Timers
     [Header("Timers")]
     [ReadOnly] public float timerEndSector;
@@ -231,9 +235,12 @@ public class EnnemySpawner : MonoBehaviour
         {
             for (int j = 0; j < waveConfig.ennemiesNumberToSpawn[i]; j++)
             {
-                GameObject go = Instantiate(waveConfig.ennemyPrefabs[i], waveConfig.GetWaypoints()[0].transform.position, Quaternion.identity);
+                Transform[] waypoints = waveConfig.getWaypoints();
+                GameObject go = Instantiate(waveConfig.ennemyPrefabs[i], waveConfig.getWaypoints()[0].position, Quaternion.identity);
+
                 if(go.GetComponent<EnnemySquad>() != null)
                 {
+                    go.GetComponent<EnnemySquad>().waypoints = waypoints;
                     ennemySpawned += go.GetComponent<EnnemySquad>().ennemies.Length;
                 }
                 else if(go.GetComponent<Ennemy>() != null)

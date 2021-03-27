@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Text.RegularExpressions;
 
 [CreateAssetMenu(menuName = "Ennemy Wave Config")]
 public class WaveConfig : ScriptableObject
@@ -12,7 +13,7 @@ public class WaveConfig : ScriptableObject
     [Header("Wave parameters :")]
     public float spawnRate;
     public float spawnRadomFactor;
-    public WavePath[] wavePath;
+    public string[] wavePathNames;
     public bool dieAtEnd; //Indicate if ennemies died when rush end of the waypath
     public bool pathReversed; //Indicate if the path is inversed or not
 
@@ -30,14 +31,33 @@ public class WaveConfig : ScriptableObject
                 dangerIndicator += ennemyPrefabs[i].GetComponent<EnnemySquad>().dangerIndicator * ennemiesNumberToSpawn[i];
             }
         }
+
+        totalNbrEnnemy = 0;
+        for (int i = 0; i < ennemyPrefabs.Length; i++)
+        {
+            if (ennemyPrefabs[i].GetComponent<Ennemy>() != null)
+            {
+                totalNbrEnnemy += ennemiesNumberToSpawn[i];
+            }
+            else if (ennemyPrefabs[i].GetComponent<EnnemySquad>() != null)
+            {
+                totalNbrEnnemy += ennemyPrefabs[i].GetComponent<EnnemySquad>().ennemies.Length * ennemiesNumberToSpawn[i];
+            }
+        }
     }
 
-    public Transform[] GetWaypoints()
+    public Transform[] getWaypoints()
     {
-        int randomWavepath = Random.Range(0, wavePath.Length - 1);
-        Transform[] waveWayPoints = wavePath[randomWavepath].points;
+        int randomWavepath = Random.Range(0, wavePathNames.Length - 1);
+        Transform wavepathSelected = EnnemySpawner.current.wavePaths[randomWavepath];
 
-        if (wavePath[randomWavepath].dieAtEnd)
+        Transform[] waypoints = new Transform[wavepathSelected.childCount];
+        for (int i = 0; i < waypoints.Length; i++)
+        {
+            waypoints[i] = wavepathSelected.GetChild(i);
+        }
+
+        if (Regex.IsMatch(wavepathSelected.name, "End", RegexOptions.IgnoreCase))
         {
             dieAtEnd = true;
         }
@@ -48,10 +68,10 @@ public class WaveConfig : ScriptableObject
 
         if (pathReversed)
         {
-            System.Array.Reverse(waveWayPoints);
+            System.Array.Reverse(waypoints);
         }
 
-        return waveWayPoints;
+        return waypoints;
     }
 
 }

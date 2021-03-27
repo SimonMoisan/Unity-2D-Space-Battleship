@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 413852729187612347}
   - component: {fileID: 413852729187612346}
-  - component: {fileID: 413852729187612345}
   - component: {fileID: 2660838066138794717}
-  - component: {fileID: 5653941857419222870}
+  - component: {fileID: 6869735123028407844}
   - component: {fileID: 7468033398421287408}
   m_Layer: 0
   m_Name: Red Laser
@@ -50,6 +49,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -86,27 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &413852729187612345
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413852729187612349}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!95 &2660838066138794717
 Animator:
   serializedVersion: 3
@@ -126,7 +105,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5653941857419222870
+--- !u!114 &6869735123028407844
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,7 +114,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 413852729187612349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c36ecac286db4a4c91123eaaadb71c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 31c3c615b6e1ab9408690cae1665b67f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 600
@@ -153,12 +132,13 @@ MonoBehaviour:
   delayBeforeDecceleration: 0
   deccelerationRate: 0
   deccelerationSpeed: 0
+  currenteDecceleration: 0
   isAccelerating: 0
   delayBeforeAcceleration: 0
   accelerationRate: 0
   accelerationSpeed: 0
+  currenteAcceleration: 0
   animator: {fileID: 2660838066138794717}
-  rb2D: {fileID: 413852729187612345}
   col: {fileID: 7468033398421287408}
   salve: {fileID: 0}
 --- !u!70 &7468033398421287408

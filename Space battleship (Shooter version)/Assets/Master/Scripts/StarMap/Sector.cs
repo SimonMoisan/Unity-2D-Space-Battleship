@@ -27,8 +27,11 @@ public class Sector : MonoBehaviour
     public SpriteRenderer dangerIndicator;
     public SpriteRenderer stationIndicator;
 
+    [Header("Station")]
+    public bool containStation;
+    public bool stationUnlocked;
+
     [Header("Associated objects :")]
-    //Associated objects
     public MenuManagerScript menuManager;
     public GameManagerScript gameManager;
     public EnnemySpawner ennemySpawner;
@@ -57,7 +60,16 @@ public class Sector : MonoBehaviour
         {
             menuManager.enterStationButton.SetActive(false); //Reset before starting event
 
-            gameManager.playNextStepEvent(); //Play first step event
+            if(stationUnlocked)
+            {
+                menuManager.enterStationButton.SetActive(true);
+            }
+            else
+            {
+                menuManager.enterStationButton.SetActive(false);
+            }
+
+            gameManager.playNextStepEvent(0); //Play first step event
         }
         else
         {
@@ -68,14 +80,14 @@ public class Sector : MonoBehaviour
                     //Change sprite of the next sector
                     if (!sectorIsExplored) //if the next sector is unexplored
                     {
-                        SwitchSprite(SectorStatus.UnexploredPlayer);
+                        switchSprite(SectorStatus.UnexploredPlayer);
                         gameManager.sectorPlayer = this;
                         playerIsPresent = true;
                         linkedSectors[i].playerIsPresent = false;
                     }
                     else //The next sector is already explored
                     {
-                        SwitchSprite(SectorStatus.ExploredPlayer);
+                        switchSprite(SectorStatus.ExploredPlayer);
                         gameManager.sectorPlayer = this;
                         playerIsPresent = true;
                         linkedSectors[i].playerIsPresent = false;
@@ -84,11 +96,11 @@ public class Sector : MonoBehaviour
                     //Change sprite of previous sector
                     if(linkedSectors[i].sectorIsExplored)
                     {
-                        linkedSectors[i].SwitchSprite(SectorStatus.Explored);
+                        linkedSectors[i].switchSprite(SectorStatus.Explored);
                     }
                     else
                     {
-                        linkedSectors[i].SwitchSprite(SectorStatus.Unexplored);
+                        linkedSectors[i].switchSprite(SectorStatus.Unexplored);
                     }
                 }
             }
@@ -167,7 +179,7 @@ public class Sector : MonoBehaviour
     }
 
     //Function used to switch sprite of a sector, 0 : explored, 1 : explored player, 2 : unexplored, 3 : unexplored player
-    public void SwitchSprite(SectorStatus newSectorStatus)
+    public void switchSprite(SectorStatus newSectorStatus)
     {
         int index = 0;
 

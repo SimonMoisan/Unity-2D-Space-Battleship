@@ -6,10 +6,12 @@ using UnityEngine;
 public class StarmapEvent : ScriptableObject
 {
     public int actualEventStepIndex;
+    public bool eventIsComplete;
     public EventStep[] eventSteps;
 
     private void OnValidate()
     {
+        eventIsComplete = false;
         actualEventStepIndex = 0;
     }
 }

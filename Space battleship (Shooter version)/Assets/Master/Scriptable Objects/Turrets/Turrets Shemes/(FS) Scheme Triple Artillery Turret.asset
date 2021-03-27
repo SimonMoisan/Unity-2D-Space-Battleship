@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6bd71817be2b10429fcff4c11a3d9de, type: 3}
+  m_Name: (FS) Scheme Triple Artillery Turret
+  m_EditorClassIdentifier: 
+  ItemName: Triple Artillery Turret
+  cargoIcone: {fileID: -6929843343804456351, guid: 98b1848c2d8a05f4fa80ec1ecd9259b8,
+    type: 3}
+  arsenalIcon: {fileID: -6929843343804456351, guid: 98b1848c2d8a05f4fa80ec1ecd9259b8,
+    type: 3}
+  turretType: 0
+  turretSize: 0
+  turretAim: 1
+  projectileType: 0
+  modifierPrimaryType: 0
+  modifierSecondaryType: 0
+  maxTier: 3
+  turretTiersArray:
+  - upgradeTier: 1
+    scrapPrice: 0
+    energyCorePrice: 0
+    upgradedDamageValue: 200
+    upgradedHealthValue: 0
+    upgradedShotPerSalveValue: 3
+    upgradedNbrOfSalveValue: 1
+    upgradedAmmoValue: 0
+    upgradedFirerateValue: 0.1
+    upgradedCooldownValue: 5
+    upgradedSpeedValue: 1000
+    upgradedDeviationValue: 0
+  - upgradeTier: 2
+    scrapPrice: 50
+    energyCorePrice: 0
+    upgradedDamageValue: 200
+    upgradedHealthValue: 0
+    upgradedShotPerSalveValue: 3
+    upgradedNbrOfSalveValue: 1
+    upgradedAmmoValue: 0
+    upgradedFirerateValue: 0.1
+    upgradedCooldownValue: 5
+    upgradedSpeedValue: 1000
+    upgradedDeviationValue: 0
+  - upgradeTier: 3
+    scrapPrice: 100
+    energyCorePrice: 1
+    upgradedDamageValue: 200
+    upgradedHealthValue: 0
+    upgradedShotPerSalveValue: 3
+    upgradedNbrOfSalveValue: 1
+    upgradedAmmoValue: 0
+    upgradedFirerateValue: 0.1
+    upgradedCooldownValue: 5
+    upgradedSpeedValue: 1000
+    upgradedDeviationValue: 0

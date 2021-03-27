@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ennemyPrefabs:
   - {fileID: 1803379164828038579, guid: a99e24dff76d81849b04e82fda93d939, type: 3}
-  ennemiesNumberToSpawn: 01000000
-  totalNbrEnnemy: 6
-  dangerIndicator: 24
-  spawnRate: 0.1
-  spawnRadomFactor: 0.1
-  wavePath:
-  - {fileID: 987898578948312246, guid: fd1e4bfbba63f734390d3807adbfc045, type: 3}
+  ennemiesNumberToSpawn: 03000000
+  totalNbrEnnemy: 18
+  dangerIndicator: 72
+  spawnRate: 3
+  spawnRadomFactor: 1
+  wavePathNames:
+  - End WavePath (1)
   dieAtEnd: 1
   pathReversed: 0
