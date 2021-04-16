@@ -6,6 +6,7 @@ using System;
 [CreateAssetMenu]
 public class TurretScheme : CargoItem
 {
+    public int overdriveCost;
     [Serializable]
     public class TurretTier
     {

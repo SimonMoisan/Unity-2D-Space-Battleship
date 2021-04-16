@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Laser Beam
   cargoIcone: {fileID: 0}
-  arsenalIcon: {fileID: 0}
+  overdriveCost: 40
   turretType: 0
   turretSize: 0
   turretAim: 0

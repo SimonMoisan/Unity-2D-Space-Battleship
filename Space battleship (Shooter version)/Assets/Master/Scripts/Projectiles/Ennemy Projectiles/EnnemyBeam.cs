@@ -66,11 +66,11 @@ public class EnnemyBeam : MonoBehaviour
     {
         if(shieldToDamage != null)
         {
-            shieldToDamage.TakingDamages(damage);
+            shieldToDamage.takingDamages(damage);
         }
         else if(battleshipToDamage != null)
         {
-            battleshipToDamage.TakingDamages(damage);
+            battleshipToDamage.takingDamages(damage);
         }
     }
 }

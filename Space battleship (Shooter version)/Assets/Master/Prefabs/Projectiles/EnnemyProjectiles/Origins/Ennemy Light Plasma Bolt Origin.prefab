@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6330413239543503220}
   - component: {fileID: 1502902164735464869}
   m_Layer: 0
-  m_Name: Ennemy Pink Laser
+  m_Name: Ennemy Light Plasma Bolt Origin
   m_TagString: EnnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 2193405
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 809011060975275894, guid: 62b85d71496c1d641a8d798b77b07296, type: 3}
+  m_Sprite: {fileID: -6758283278558717910, guid: 9f04bdc9c32e9b1478b65a74a5a9dc13,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -95,7 +96,7 @@ Animator:
   m_GameObject: {fileID: 6330413239543503223}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6271042a2b72c2849bf483549128fab0, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -118,7 +119,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 400
   maxSpeed: 0
-  damageType: 0
+  damageType: 3
+  projectileSize: 0
   damage: 20
   isDestroyable: 0
   health: 0
@@ -139,7 +141,7 @@ MonoBehaviour:
   currenteAcceleration: 0
   animator: {fileID: 8541458841813673239}
   col: {fileID: 1502902164735464869}
-  ennemySalve: {fileID: 0}
+  salve: {fileID: 0}
 --- !u!70 &1502902164735464869
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -153,6 +155,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.09}
-  m_Size: {x: 0.13391127, y: 0.17016476}
+  m_Offset: {x: 0.0018893778, y: -0.017732158}
+  m_Size: {x: 0.18303522, y: 0.21930572}
   m_Direction: 0

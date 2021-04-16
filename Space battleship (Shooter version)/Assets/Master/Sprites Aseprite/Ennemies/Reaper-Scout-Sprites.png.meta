@@ -191,10 +191,10 @@ TextureImporter:
       name: Reaper-Scout-Sprites_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 547
-        width: 37
-        height: 37
+        x: 23
+        y: 541
+        width: 41
+        height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,10 +212,10 @@ TextureImporter:
       name: Reaper-Scout-Sprites_1
       rect:
         serializedVersion: 2
-        x: 14
-        y: 508
-        width: 37
-        height: 37
+        x: 23
+        y: 478
+        width: 41
+        height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,10 +233,10 @@ TextureImporter:
       name: Reaper-Scout-Sprites_2
       rect:
         serializedVersion: 2
-        x: 14
-        y: 468
-        width: 37
-        height: 37
+        x: 23
+        y: 414
+        width: 41
+        height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,10 +254,10 @@ TextureImporter:
       name: Reaper-Scout-Sprites_3
       rect:
         serializedVersion: 2
-        x: 14
-        y: 428
-        width: 37
-        height: 37
+        x: 23
+        y: 350
+        width: 41
+        height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,10 +275,10 @@ TextureImporter:
       name: Reaper-Scout-Sprites_4
       rect:
         serializedVersion: 2
-        x: 14
-        y: 387
-        width: 37
-        height: 37
+        x: 23
+        y: 286
+        width: 41
+        height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,10 +296,10 @@ TextureImporter:
       name: Reaper-Scout-Sprites_5
       rect:
         serializedVersion: 2
-        x: 14
-        y: 347
-        width: 37
-        height: 37
+        x: 23
+        y: 222
+        width: 41
+        height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,10 +317,10 @@ TextureImporter:
       name: Reaper-Scout-Sprites_6
       rect:
         serializedVersion: 2
-        x: 14
-        y: 306
-        width: 37
-        height: 37
+        x: 248
+        y: 536
+        width: 8
+        height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,94 +335,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reaper-Scout-Sprites_7
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 264
-        width: 37
-        height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 68713b3abc4dc8590800000000000000
-      internalID: -7670522094228924538
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reaper-Scout-Sprites_8
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 222
-        width: 37
-        height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a502f278cfd19ed90800000000000000
-      internalID: -7068085169744306086
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reaper-Scout-Sprites_9
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 181
-        width: 37
-        height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 852b780486e46d7f0800000000000000
-      internalID: -588196491659070888
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reaper-Scout-Sprites_10
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 133
-        width: 37
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00dfb50288ef02500800000000000000
-      internalID: 369575030056287488
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Reaper-Scout-Sprites_11
       rect:
         serializedVersion: 2
-        x: 51
+        x: 128
         y: 554
         width: 24
         height: 19
@@ -443,8 +359,8 @@ TextureImporter:
       name: Reaper-Scout-Sprites_12
       rect:
         serializedVersion: 2
-        x: 51
-        y: 515
+        x: 128
+        y: 516
         width: 24
         height: 19
       alignment: 4
@@ -464,8 +380,8 @@ TextureImporter:
       name: Reaper-Scout-Sprites_13
       rect:
         serializedVersion: 2
-        x: 51
-        y: 475
+        x: 128
+        y: 476
         width: 24
         height: 19
       alignment: 4
@@ -485,8 +401,8 @@ TextureImporter:
       name: Reaper-Scout-Sprites_14
       rect:
         serializedVersion: 2
-        x: 51
-        y: 435
+        x: 128
+        y: 437
         width: 24
         height: 19
       alignment: 4
@@ -506,8 +422,8 @@ TextureImporter:
       name: Reaper-Scout-Sprites_15
       rect:
         serializedVersion: 2
-        x: 51
-        y: 394
+        x: 128
+        y: 395
         width: 24
         height: 19
       alignment: 4
@@ -527,8 +443,8 @@ TextureImporter:
       name: Reaper-Scout-Sprites_16
       rect:
         serializedVersion: 2
-        x: 51
-        y: 354
+        x: 128
+        y: 355
         width: 24
         height: 19
       alignment: 4
@@ -548,8 +464,8 @@ TextureImporter:
       name: Reaper-Scout-Sprites_17
       rect:
         serializedVersion: 2
-        x: 51
-        y: 313
+        x: 128
+        y: 314
         width: 24
         height: 19
       alignment: 4
@@ -569,8 +485,8 @@ TextureImporter:
       name: Reaper-Scout-Sprites_18
       rect:
         serializedVersion: 2
-        x: 51
-        y: 271
+        x: 128
+        y: 272
         width: 24
         height: 19
       alignment: 4
@@ -590,8 +506,8 @@ TextureImporter:
       name: Reaper-Scout-Sprites_19
       rect:
         serializedVersion: 2
-        x: 51
-        y: 229
+        x: 128
+        y: 230
         width: 24
         height: 19
       alignment: 4
@@ -611,8 +527,8 @@ TextureImporter:
       name: Reaper-Scout-Sprites_20
       rect:
         serializedVersion: 2
-        x: 51
-        y: 188
+        x: 128
+        y: 189
         width: 24
         height: 19
       alignment: 4
@@ -624,6 +540,27 @@ TextureImporter:
       bones: []
       spriteID: e8e99c64a35466070800000000000000
       internalID: 8099237096470453902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper-Scout-Sprites_7
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 158
+        width: 41
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68713b3abc4dc8590800000000000000
+      internalID: -7670522094228924538
       vertices: []
       indices: 
       edges: []

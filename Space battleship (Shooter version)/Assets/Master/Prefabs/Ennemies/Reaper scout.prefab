@@ -37,7 +37,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9040059402064605439}
-  - {fileID: 6760183218024392066}
+  - {fileID: 9153294599031273266}
   - {fileID: 7176500985032801116}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -171,14 +171,18 @@ MonoBehaviour:
   dangerIndicator: 4
   isDestroyed: 0
   isMoving: 0
-  moveSpeed: 1
+  actualSpeed: 0
+  passiveMoveSpeed: 2
+  arrivalSpeed: 4
   minScrapValue: 4
   maxScrapValue: 10
   chancePercToDropEnergyCore: 1
   overdriveCharge: 0.5
   nbrSimAttack: 1
   attacks:
-  - {fileID: 3240078155578524410}
+  - {fileID: 0}
+  ennemyFrontalTurrets: []
+  ennemyRotationTurrets: []
   attackPaterns: 00000000
   animator: {fileID: 0}
   col: {fileID: 0}
@@ -188,10 +192,10 @@ MonoBehaviour:
   agent: {fileID: 0}
   hullBar: {fileID: 3707293872429854525}
   shieldBar: {fileID: 0}
-  waveConfig: {fileID: 0}
-  waypoints: []
   destinationSetter: {fileID: 2120126778746474018}
   aIPath: {fileID: 2719578824508462628}
+  waveConfig: {fileID: 0}
+  waypoints: []
 --- !u!114 &8292526630764466925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,7 +322,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6193517913020421491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.258, y: -0.041, z: 0}
+  m_LocalPosition: {x: 0.2741, y: -0.0122, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2519677343480930746}
@@ -485,12 +489,12 @@ PrefabInstance:
     - target: {fileID: 2773439875107716335, guid: 037a01ea1c95eff4b82ca8f6ee747739,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.084
+      value: 0.123
       objectReference: {fileID: 0}
     - target: {fileID: 2773439875107716335, guid: 037a01ea1c95eff4b82ca8f6ee747739,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.134
+      value: -0.189
       objectReference: {fileID: 0}
     - target: {fileID: 2773439875107716335, guid: 037a01ea1c95eff4b82ca8f6ee747739,
         type: 3}
@@ -552,117 +556,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &8109382157785343467
+--- !u!1001 &5935082659423958875
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 2519677343480930746}
     m_Modifications:
-    - target: {fileID: 2242165132669691661, guid: fb9f0eab23da482468bf309c2f00ee0a,
-        type: 3}
-      propertyPath: ennemy
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3268116665174917225, guid: fb9f0eab23da482468bf309c2f00ee0a,
+    - target: {fileID: 3268116665174917225, guid: 28da5058c8769af459336bc4f715ed8f,
         type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3268116665174917225, guid: fb9f0eab23da482468bf309c2f00ee0a,
+    - target: {fileID: 3268116665174917225, guid: 28da5058c8769af459336bc4f715ed8f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.42
+      value: -0.35
       objectReference: {fileID: 0}
-    - target: {fileID: 3268116665174917225, guid: fb9f0eab23da482468bf309c2f00ee0a,
+    - target: {fileID: 3268116665174917225, guid: 28da5058c8769af459336bc4f715ed8f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.07
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 3268116665174917225, guid: fb9f0eab23da482468bf309c2f00ee0a,
+    - target: {fileID: 3268116665174917225, guid: 28da5058c8769af459336bc4f715ed8f,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3268116665174917225, guid: fb9f0eab23da482468bf309c2f00ee0a,
+    - target: {fileID: 3268116665174917225, guid: 28da5058c8769af459336bc4f715ed8f,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3268116665174917225, guid: fb9f0eab23da482468bf309c2f00ee0a,
+    - target: {fileID: 3268116665174917225, guid: 28da5058c8769af459336bc4f715ed8f,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3268116665174917225, guid: fb9f0eab23da482468bf309c2f00ee0a,
+    - target: {fileID: 3268116665174917225, guid: 28da5058c8769af459336bc4f715ed8f,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3268116665174917225, guid: fb9f0eab23da482468bf309c2f00ee0a,
+    - target: {fileID: 3268116665174917225, guid: 28da5058c8769af459336bc4f715ed8f,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3268116665174917225, guid: fb9f0eab23da482468bf309c2f00ee0a,
+    - target: {fileID: 3268116665174917225, guid: 28da5058c8769af459336bc4f715ed8f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3268116665174917225, guid: fb9f0eab23da482468bf309c2f00ee0a,
+    - target: {fileID: 3268116665174917225, guid: 28da5058c8769af459336bc4f715ed8f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3268116665174917225, guid: fb9f0eab23da482468bf309c2f00ee0a,
+    - target: {fileID: 3268116665174917225, guid: 28da5058c8769af459336bc4f715ed8f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5450762504948282499, guid: fb9f0eab23da482468bf309c2f00ee0a,
+    - target: {fileID: 5450762504948282499, guid: 28da5058c8769af459336bc4f715ed8f,
         type: 3}
       propertyPath: m_Name
-      value: Mono x1 Pink Laser Attack 1
+      value: Double Quick Light Pink Laser Turret
       objectReference: {fileID: 0}
-    - target: {fileID: 6664555527414834961, guid: fb9f0eab23da482468bf309c2f00ee0a,
-        type: 3}
-      propertyPath: ennemy
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6664555527414834961, guid: fb9f0eab23da482468bf309c2f00ee0a,
-        type: 3}
-      propertyPath: playerDetector
-      value: 
-      objectReference: {fileID: 8041059849483879142}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fb9f0eab23da482468bf309c2f00ee0a, type: 3}
---- !u!4 &6760183218024392066 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 28da5058c8769af459336bc4f715ed8f, type: 3}
+--- !u!4 &9153294599031273266 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 3268116665174917225, guid: fb9f0eab23da482468bf309c2f00ee0a,
+  m_CorrespondingSourceObject: {fileID: 3268116665174917225, guid: 28da5058c8769af459336bc4f715ed8f,
     type: 3}
-  m_PrefabInstance: {fileID: 8109382157785343467}
+  m_PrefabInstance: {fileID: 5935082659423958875}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3240078155578524410 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6664555527414834961, guid: fb9f0eab23da482468bf309c2f00ee0a,
-    type: 3}
-  m_PrefabInstance: {fileID: 8109382157785343467}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cad58a583e7c3d4c9cc59cd2b2ebc06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8041059849483879142 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2242165132669691661, guid: fb9f0eab23da482468bf309c2f00ee0a,
-    type: 3}
-  m_PrefabInstance: {fileID: 8109382157785343467}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6a353b0bf13ba54fa63671551c5b0eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

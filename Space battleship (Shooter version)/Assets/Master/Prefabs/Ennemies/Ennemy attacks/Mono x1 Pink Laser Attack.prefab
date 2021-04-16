@@ -68,6 +68,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3544657312594927205, guid: db6b4c45992e37046bb2670fcec1dbfe,
     type: 3}
   playerDetector: {fileID: 0}
+  pooler: {fileID: 0}
   soundEffectsGenerator: {fileID: 0}
 --- !u!1001 &4156617322121036434
 PrefabInstance:
@@ -85,7 +86,7 @@ PrefabInstance:
         type: 3}
       propertyPath: audioClips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 652d06926dc48934f897d0ad781f4a12, type: 3}
+      objectReference: {fileID: 8300000, guid: 2540d1fdd8bb6c94d91494272d276ef4, type: 3}
     - target: {fileID: 1046223152050831698, guid: 1e7ae51b0c607714ab8d870f1f40469f,
         type: 3}
       propertyPath: m_RootOrder
@@ -140,6 +141,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2029192422063744153, guid: 1e7ae51b0c607714ab8d870f1f40469f,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8504359198267033653, guid: 1e7ae51b0c607714ab8d870f1f40469f,
         type: 3}

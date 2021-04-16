@@ -12,6 +12,8 @@ public class ArsenalPanel : MonoBehaviour
     public event Action<CargoItemSlot> OnDragEvent;
     public event Action<CargoItemSlot> OnDropEvent;
 
+    public static ArsenalPanel current;
+
     private void Start()
     {
         for (int i = 0; i < turretSlots.Length; i++)
@@ -28,6 +30,8 @@ public class ArsenalPanel : MonoBehaviour
 
     private void OnValidate()
     {
+        current = this;
+
         turretSlots = GetComponentsInChildren<TurretSlot>();
 
         refreshUI();

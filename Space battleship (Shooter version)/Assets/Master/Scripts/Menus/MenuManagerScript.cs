@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,12 +17,17 @@ public class MenuManagerScript : MonoBehaviour
     private CargoItemSlot draggedSlot;
     private Battleship battleship;
     [Space]
+    [Header("Base canvas :")]
+    public GameObject pauseMenuWindow;
+    private float previousTimeFactor;
+    [Space]
     [Header("Station Menu :")]
     public int actualRepairStationAmount;
     public int actualRepairStationPrice;
     public GameObject stationMenuCanvas; //This menu can be open in the starmap to change turrets of the battleship
     public GameObject startMapCanvas;
     public GameObject helpWindowStationMenu;
+    public GameObject warningWindowStationMenu;
     public GameObject enterStationButton;
     [Space]
     public GameObject shieldUpgrader;
@@ -68,6 +74,12 @@ public class MenuManagerScript : MonoBehaviour
         //Drop
         cargo.OnDropEvent += drop;
         arsenalPanel.OnDropEvent += drop;
+
+        //Initiate menus animations
+        stationMenuCanvas.SetActive(true);
+        stationMenuCanvas.GetComponent<Animator>().Play("Close");
+        //stationMenuCanvas.GetComponent<Animator>().Play("Close-Help");
+        //stationMenuCanvas.GetComponent<Animator>().Play("Close-Warning");
     }
 
     // Start is called before the first frame update
@@ -81,6 +93,14 @@ public class MenuManagerScript : MonoBehaviour
 
         updateShieldUpgradePrice();
         updateRepairPriceIndicator();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            openPauseMenu();
+        }
     }
 
     /*private void equipTurretToUpgrader(CargoItemSlot cargoItemSlot)
@@ -173,6 +193,7 @@ public class MenuManagerScript : MonoBehaviour
 
     private void drag(CargoItemSlot cargoItemSlot)
     {
+        Debug.Log(Input.mousePosition);
         dragableImage.transform.position = Input.mousePosition;
     }
 
@@ -336,13 +357,10 @@ public class MenuManagerScript : MonoBehaviour
             //Case 4 : drop item in occupied cargo slot (Ok)
             if (!(dropCargoItemSlot is TurretSlot) && dragItem != null && dropItem != null)
             {
-                Debug.Log("Case 4");
                 if (dragItem is TurretDescription && (draggedSlot as TurretSlot) != null) //if dragged is a turret
                 {
                     if ((draggedSlot as TurretSlot).cargoId == dropCargoItemSlot.slotId && dropCargoItemSlot.isUsed) //if cargo slot is the origin slot of the dragged item, then the turret become empty
                     {
-                        Debug.Log("Case 4.1");
-
                         dragItem.unequipTurret(this, draggedSlot.slotId); //unequip drag Turret from arsenal slot
 
                         //Switch hidder
@@ -361,8 +379,6 @@ public class MenuManagerScript : MonoBehaviour
                     }
                     else if(!dropCargoItemSlot.isUsed)
                     {
-                        Debug.Log("Case 4.2");
-
                         dragItem.unequipTurret(this, draggedSlot.slotId); //unequip drag Turret from arsenal slot
                         dropItem.equipTurret(this, draggedSlot.slotId); //equip drop Turret from cargo in arsenal slot
 
@@ -407,6 +423,25 @@ public class MenuManagerScript : MonoBehaviour
         }
     }
 
+    public void openPauseMenu()
+    {
+        pauseMenuWindow.SetActive(true);
+        previousTimeFactor = Time.timeScale;
+        Time.timeScale = 0;
+        VolumeEffectManager.current.activateVolumeEffect(1, false);
+
+        PlayerStats.current.isPlaying = false;
+    }
+
+    public void clonePauseMenu()
+    {
+        pauseMenuWindow.SetActive(false);
+        Time.timeScale = previousTimeFactor;
+        VolumeEffectManager.current.deactivateVolumeEffect(1);
+
+        PlayerStats.current.isPlaying = true;
+    }
+
     public void closeBattleshipMenu()
     {
         sectorClickable = true;
@@ -438,23 +473,42 @@ public class MenuManagerScript : MonoBehaviour
 
     public void openHelpWindowStationMenu()
     {
-        helpWindowStationMenu.SetActive(true);
+        stationMenuCanvas.GetComponent<Animator>().Play("Open-Help");
+        //helpWindowStationMenu.SetActive(true);
     }
 
     public void closeHelpWindowStationMenu()
     {
+        stationMenuCanvas.GetComponent<Animator>().Play("Close-Help");
+        //helpWindowStationMenu.SetActive(false);
+    }
 
-        helpWindowStationMenu.SetActive(false);
+    public void closeWarningWindowStationMenu()
+    {
+        stationMenuCanvas.GetComponent<Animator>().Play("Close-Warning");
+        //warningWindowStationMenu.SetActive(false);
     }
 
     public void openStationMenu()
     {
-        stationMenuCanvas.SetActive(true);
+        stationMenuCanvas.GetComponent<Animator>().Play("Open");
+        //stationMenuCanvas.SetActive(true);
     }
 
     public void closeStationMenu()
     {
-        stationMenuCanvas.SetActive(false);
+        for (int i = 0; i < ArsenalPanel.current.turretSlots.Length; i++)
+        {
+            if(ArsenalPanel.current.turretSlots[i].CargoItem == null)
+            {
+                stationMenuCanvas.GetComponent<Animator>().Play("Open-Warning");
+                //warningWindowStationMenu.SetActive(true);
+                return;
+            }
+        }
+
+        stationMenuCanvas.GetComponent<Animator>().Play("Close");
+        //stationMenuCanvas.SetActive(false);
     }
 
     public void upgradeShieldButton()
@@ -498,20 +552,6 @@ public class MenuManagerScript : MonoBehaviour
     public void updateRepairPriceIndicator()
     {
         repairHullIndicator.text = "x " + actualRepairStationPrice;
-    }
-
-    public void starmapToBattleZone()
-    {
-        battlezoneCanvas.SetActive(true);
-        PlayerStats.current.initializeRotationTurretsIndicators();
-        StartCoroutine(PlayerStats.current.initialiseTurretSets());
-        starmapCanvas.SetActive(false);
-    }
-
-    public void battlezoneToStarmap()
-    {
-        battlezoneCanvas.SetActive(false);
-        starmapCanvas.SetActive(true);
     }
 
     public void openReportWindow()

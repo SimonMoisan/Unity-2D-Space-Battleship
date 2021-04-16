@@ -10,6 +10,7 @@ public class RotationTurret : Turret
     [HideInInspector] public float angleViseur;             //angle de visé de la tourelle par rapport à son viseur
     public bool lockMode = false;                           //indique si la tourelle est en mode vérouillage ou 
     public Viseur viseur;
+    public bool turretOverdriveActivated;
 
     private void OnValidate()
     {
@@ -22,27 +23,50 @@ public class RotationTurret : Turret
         if (PlayerStats.current.isPlaying)
         {
             CoolDownManager();
-            //fire();
         }
 
-        if (isFiring && PlayerStats.current.turretActualySelected == this)
+        if (isFiring)
         {
             SetViseurLocation();
         }
-        else if (viseur != null && isFiring && !viseur.isLocked)
+        if (lockMode)
         {
-            viseur.isLocked = true;
-            viseur.GetComponent<Animator>().Play("Locked");
+            FollowViseur();
         }
     }
 
     public void fire()
     {
+        //Overdrive boost stats
+        if(turretOverdriveActivated)
+        {
+            cooldownTimer = 0; //Reset cooldown
+
+            switch (descritpion.projectileType)
+            {
+                case ProjectileType.Laser:
+                    bulletSpeed *= 1.5f;
+                    break;
+                case ProjectileType.Kinetic:
+                    nbrBullet *= 2;
+                    break;
+                case ProjectileType.Ion:
+                    bulletSpeed *= 2f;
+                    break;
+                case ProjectileType.Plasma:
+                    break;
+                case ProjectileType.Shield:
+                    bulletHealth *= 2;
+                    break;
+                case ProjectileType.Missile:
+                    break;
+            }
+        }
+        
         if ((maxAmmo > 0 && actualAmmo > 0) || (maxAmmo == 0 && cooldownTimer == 0))
         {
             //Rotation turret
-            int key = idTurret + 1;
-            if (descritpion.turretSize == TurretSize.Standard /*&& Input.GetKeyDown(key.ToString())*/ && !isFiring) //on lance le burst de tir
+            if (descritpion.turretSize == TurretSize.Standard && !isFiring) //on lance le burst de tir
             {
                 isFiring = true;
                 SetViseurLocation();
@@ -58,16 +82,7 @@ public class RotationTurret : Turret
                 {
                     manualFiringCoroutine = StartCoroutine(BurstFire());
                 }
-
-                PlayerStats.current.turretActualySelected = this;
-                lockMode = true;
             }
-        }
-
-        //Lockmode management
-        if (isFiring && lockMode)
-        {
-            FollowViseur();
         }
     }
 
@@ -96,7 +111,7 @@ public class RotationTurret : Turret
             float angle = angleViseur - 90 + Random.Range(-deviationFactor, deviationFactor);
 
             //Change turret angle
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angleViseur - 90));
 
             //Set bullet position and turret rotation according to its angle
             Vector3 bulletPosition = new Vector3(transform.position.x, transform.position.y, 0);
@@ -159,8 +174,34 @@ public class RotationTurret : Turret
             viseur.isLocked = false;
         }
 
+        lockMode = false;
         isFiring = false;
-    }
+
+        //Overdrive reverse boost stats
+        if (turretOverdriveActivated)
+        {
+            switch (descritpion.projectileType)
+            {
+                case ProjectileType.Laser:
+                    bulletSpeed /= 1.5f;
+                    break;
+                case ProjectileType.Kinetic:
+                    nbrBullet /= 2;
+                    break;
+                case ProjectileType.Ion:
+                    bulletSpeed /= 2f;
+                    break;
+                case ProjectileType.Plasma:
+                    break;
+                case ProjectileType.Shield:
+                    bulletHealth /= 2;
+                    break;
+                case ProjectileType.Missile:
+                    break;
+            }
+            turretOverdriveActivated = false;
+        }
+    }   
 
     //Fonction qui permet à la tourelle active de suivre la sourie
     public void FollowMouse()
@@ -185,7 +226,10 @@ public class RotationTurret : Turret
 
         if (viseur != null)
         {
-            viseur.transform.position = viseurPos;
+            if(!lockMode)
+            {
+                viseur.transform.position = viseurPos;
+            }
 
             FollowViseur();
         }

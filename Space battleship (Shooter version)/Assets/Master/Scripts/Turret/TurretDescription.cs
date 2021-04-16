@@ -85,6 +85,8 @@ public class TurretDescription : TurretScheme
             actualSpeed = schemeOrigin.turretTiersArray[tier-1].upgradedSpeedValue;
             actualDeviation = schemeOrigin.turretTiersArray[tier-1].upgradedDeviationValue;
         }
+
+        overdriveCost = schemeOrigin.overdriveCost;
     }
 
     //Function used to equip turret to battleship object

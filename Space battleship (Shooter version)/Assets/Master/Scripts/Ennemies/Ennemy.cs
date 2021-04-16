@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
+using Pathfinding;
 
 public class Ennemy : MonoBehaviour
 {
-    [Header("Ennemy stats : ")]
+    [Header("Health stats : ")]
     public float MaxHullPoints;
     public float MaxPlatePoints;
     public float MaxShieldPoints;
@@ -17,17 +18,21 @@ public class Ennemy : MonoBehaviour
     [Space]
     public int dangerIndicator;
     public bool isDestroyed;
+    [Header("Movement stats")]
     public bool isMoving;
-    public float moveSpeed;
-    [Header("Reaward when killed")]
+    public float actualSpeed;
+    public float passiveMoveSpeed;
+    public float arrivalSpeed;
+    [Header("Reaward")]
     public int minScrapValue;  
     public int maxScrapValue;
     public int chancePercToDropEnergyCore; //percentage to drop an energyCore
     public float overdriveCharge; //Charge given to the ultimate weapon when destroyed
-    [Space]
     [Header("Attack management : ")]
     public int nbrSimAttack; //Number attack launch simultaneously
     public EnnemyAttack[] attacks;
+    public EnnemyFrontalTurret[] ennemyFrontalTurrets;
+    public EnnemyRotationTurret[] ennemyRotationTurrets;
     public int[] attackPaterns; //Indicate which attack belong to which coolDownUnits ([1,1,2] : two first attacks belong to the first cooldownUnit))
     public LinkedList<EnnemyAttack>[] coolDownUnits;
     [Space]
@@ -41,6 +46,15 @@ public class Ennemy : MonoBehaviour
     [Space]
     public Image hullBar;
     public Image shieldBar;
+    [Space]
+    public AIDestinationSetter destinationSetter;
+    public AIPath aIPath;
+
+    private void OnValidate()
+    {
+        destinationSetter = GetComponent<AIDestinationSetter>();
+        aIPath = GetComponent<AIPath>();
+    }
 
     protected void Awake()
     {

@@ -194,23 +194,42 @@ public class GameManagerScript : MonoBehaviour
 
     public IEnumerator fadeStarmapToBattlezone()
     {
+        PlayerStats.current.initializeRotationTurretsIndicators();
+        StartCoroutine(PlayerStats.current.initialiseTurretSets());
+
+        MenuManagerScript.current.starmapCanvas.GetComponent<Animator>().Play("Close");
+        yield return new WaitForSeconds(0.2f);
+        MenuManagerScript.current.starmapCanvas.SetActive(false);
+
         crossfaderAnimator.Play("Crossfade-Anim-Appear");
         yield return new WaitForSeconds(1.2f);
         crossfaderAnimator.Play("Crossfade-Anim-Disappear");
         battleZoneCamera.enabled = true;
         starmapCamera.enabled = false;
-        MenuManagerScript.current.starmapToBattleZone();
+
+        MenuManagerScript.current.battlezoneCanvas.SetActive(true);
+        MenuManagerScript.current.battlezoneCanvas.GetComponent<Animator>().Play("Open");
+        yield return new WaitForSeconds(0.2f);
+
         isInBattlezone = true;
     }
 
     public IEnumerator fadeBattlezoneToStarmap()
     {
+        MenuManagerScript.current.battlezoneCanvas.GetComponent<Animator>().Play("Close");
+        yield return new WaitForSeconds(0.2f);
+        MenuManagerScript.current.battlezoneCanvas.SetActive(false);
+
         crossfaderAnimator.Play("Crossfade-Anim-Appear");
         yield return new WaitForSeconds(1.2f);
         crossfaderAnimator.Play("Crossfade-Anim-Disappear");
         battleZoneCamera.enabled = false;
         starmapCamera.enabled = true;
-        MenuManagerScript.current.battlezoneToStarmap();
+
+        MenuManagerScript.current.starmapCanvas.SetActive(true);
+        MenuManagerScript.current.starmapCanvas.GetComponent<Animator>().Play("Open");
+        yield return new WaitForSeconds(0.2f);
+
         isInBattlezone = false;
     }
 }

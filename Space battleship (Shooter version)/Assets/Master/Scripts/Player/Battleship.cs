@@ -1,7 +1,7 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public enum xDirection { None, Left, Right }
 public enum yDirection { None, Up, Down }
@@ -21,6 +21,9 @@ public class Battleship : MonoBehaviour
     [ReadOnly] public bool uwIsRunning = false;
     public float actualOverdrive;
     public float maxOverdrive;
+    public bool overdriveIsActive;
+    public bool overdriveEndEffectActivated;
+    public OverdriveEffect overdriveEffect;
     [Space]
     [Header("Movement parameters :")]
     //Parameters used for movement
@@ -60,6 +63,9 @@ public class Battleship : MonoBehaviour
     public int nextIndexRotationHeavyTurretsSet;
     public int nbrStandardRotationTurretSets;
     public int nbrHeavyRotationTurretSets;
+    public bool alternativeFire;
+    public bool turretsSelectedFiring;
+    public List<RotationTurret> turretSelectedToFire;
     [Header("Frontal turrets : ")]
     public FrontalTurret[] standardFrontalTurrets;      //Spinal turrets are special turrets with unique effects
     public FrontalTurret[] heavyFrontalTurrets;      //Spinal turrets are special turrets with unique effects
@@ -128,6 +134,8 @@ public class Battleship : MonoBehaviour
 
     private void Awake()
     {
+        turretSelectedToFire = new List<RotationTurret>();
+
         //Initialize frontal turrets cumulative cooldowns
         float cumulativeCooldown = 0;
         int actualMaxId = -1;
@@ -152,27 +160,25 @@ public class Battleship : MonoBehaviour
     void Update()
     {
         StaticAnimation();
-        inputMovementManagement();
         if (playerStats.isPlaying)
         {
-            
+            inputMovementManagement();
             UWdeployer();
+            rotationTurretsFireManagement();
+            frontalTurretsFireManagement();
+            overdriveManagement();
         }
         
         Vector3 shipPos = new Vector3(transform.position.x, transform.position.y, 2);
         shipPos.y = Mathf.Clamp(shipPos.y, minY, maxY);
         transform.position = shipPos;
-
-        rotationTurretsFireManagement();
-        frontalTurretsFireManagement();
     }
 
     private void FixedUpdate()
     {
-        movementBattleship();
         if (playerStats.isPlaying)
         {
-            
+            movementBattleship();
         }
     }
 
@@ -182,6 +188,7 @@ public class Battleship : MonoBehaviour
         {
             equipNextTurretSet();
         }
+
 
         if (setTypeActive == SetTypeActive.Standard)
         {
@@ -193,7 +200,37 @@ public class Battleship : MonoBehaviour
                 if ((turretToCheck.maxAmmo > 0 && turretToCheck.actualAmmo > 0) || (turretToCheck.maxAmmo == 0 && turretToCheck.cooldownTimer == 0)
                     && Input.GetKeyDown(key.ToString()) && turretToCheck.idTurret >= 4 * indexRotationStandardTurretsSet && turretToCheck.idTurret < (indexRotationStandardTurretsSet + 1) * 4)
                 {
-                    turretToCheck.GetComponent<RotationTurret>().fire();
+                    if(alternativeFire)
+                    {
+                        if(!turretSelectedToFire.Contains(turretToCheck)) //Turret is not inside the list
+                        {
+                            if (overdriveIsActive && actualOverdrive >= turretToCheck.GetComponent<Turret>().descritpion.overdriveCost)
+                            {
+                                actualOverdrive -= turretToCheck.GetComponent<Turret>().descritpion.overdriveCost;
+                                turretToCheck.GetComponent<RotationTurret>().turretOverdriveActivated = true;
+                                turretSelectedToFire.Add(turretToCheck.GetComponent<RotationTurret>());
+                                lockFiringRotationTurrets();
+                            }
+                            else
+                            {
+                                turretSelectedToFire.Add(turretToCheck.GetComponent<RotationTurret>());
+                                lockFiringRotationTurrets();
+                            }
+                        }
+                        else //Turret is inside the list, then remove it
+                        {
+                            if (turretToCheck.GetComponent<RotationTurret>().turretOverdriveActivated)
+                            {
+                                actualOverdrive += turretToCheck.GetComponent<Turret>().descritpion.overdriveCost;
+                                turretToCheck.GetComponent<RotationTurret>().turretOverdriveActivated = false;
+                            }
+                            turretSelectedToFire.Remove(turretToCheck.GetComponent<RotationTurret>());
+                        }
+                    }
+                    else
+                    {
+                        turretToCheck.GetComponent<RotationTurret>().fire();
+                    }
                 }
             }
         }
@@ -207,11 +244,58 @@ public class Battleship : MonoBehaviour
                 if ((turretToCheck.maxAmmo > 0 && turretToCheck.actualAmmo > 0) || (turretToCheck.maxAmmo == 0 && turretToCheck.cooldownTimer == 0)
                     && Input.GetKeyDown(key.ToString()) && turretToCheck.idTurret >= 4 * indexRotationHeavyTurretsSet && turretToCheck.idTurret < (indexRotationHeavyTurretsSet + 1) * 4)
                 {
-                    turretToCheck.GetComponent<RotationTurret>().fire();
+                    if (alternativeFire)
+                    {
+                        turretSelectedToFire.Add(turretToCheck.GetComponent<RotationTurret>());
+                        lockFiringRotationTurrets();
+                    }
+                    else
+                    {
+                        turretToCheck.GetComponent<RotationTurret>().fire();
+                    }
                 }
             }
         }
-        
+
+        //Alternative fire
+        if(alternativeFire && Input.GetMouseButtonDown(0) && turretSelectedToFire != null && turretSelectedToFire.Count > 0)
+        {
+            for (int i = 0; i < turretSelectedToFire.Count; i++)
+            {
+                turretSelectedToFire[i].fire();
+            }
+            turretSelectedToFire.Clear();
+        }
+    }
+
+    private void lockFiringRotationTurrets()
+    {
+        List<RotationTurret> result = new List<RotationTurret>();
+        for (int i = 0; i < standardRotationTurrets.Length; i++)
+        {
+            if (standardRotationTurrets[i].isFiring)
+            {
+                result.Add(standardRotationTurrets[i]);
+            }
+        }
+        for (int i = 0; i < heavyRotationTurrets.Length; i++)
+        {
+            if (heavyRotationTurrets[i].isFiring)
+            {
+                result.Add(heavyRotationTurrets[i]);
+            }
+        }
+
+        if (result.Count > 0)
+        {
+            for (int i = 0; i < result.Count; i++)
+            {
+                Debug.Log(result[i]);
+                result[i].lockMode = true;
+                result[i].viseur.isLocked = true;
+                result[i].viseur.GetComponent<Animator>().Play("Locked");
+            }
+        }
     }
 
     private void equipNextTurretSet()
@@ -275,30 +359,112 @@ public class Battleship : MonoBehaviour
     //Function when the player wants to use the UW device
     public void UWdeployer()
     {
-        if (Input.GetKeyDown("u") && !uwIsRunning)
+        if (Input.GetKeyDown("u") && !uwIsRunning && actualOverdrive == maxOverdrive)
         {
             StartCoroutine(UWdeployment());
         }
     }
 
+    public void overdriveManagement()
+    {
+        //Input for continuous overdrive effect
+        if(overdriveEffect.overdriveExecType == OverdriveExecType.ContinuousUse && actualOverdrive > 0 && Input.GetKeyDown("space") && !overdriveIsActive)
+        {
+            overdriveIsActive = true;
+        }
+        else if(overdriveEffect.overdriveExecType == OverdriveExecType.ContinuousUse && Input.GetKeyDown("space") && overdriveIsActive)
+        {
+            overdriveIsActive = false;
+        }
+
+        //Input for single overdrive effect
+        if (overdriveEffect.overdriveExecType == OverdriveExecType.SingleUse && actualOverdrive == maxOverdrive && Input.GetKeyDown("space") && !overdriveIsActive)
+        {
+            overdriveIsActive = true;
+            overdriveEffect.overdriveExecution();
+        }
+
+
+        //Continuous Effect
+        if (overdriveEffect.overdriveExecType == OverdriveExecType.ContinuousUse && overdriveIsActive && actualOverdrive > 0)
+        {
+            overdriveEffect.overdriveExecution();
+            actualOverdrive -= Time.deltaTime * overdriveEffect.overdriveCost;
+            playerStats.updateOverdriveIndicator();
+            overdriveEndEffectActivated = false;
+        }
+        else if(overdriveEffect.overdriveExecType == OverdriveExecType.ContinuousUse && (actualOverdrive == 0 || !overdriveEndEffectActivated))
+        {
+            overdriveEffect.overdriveEndEffect();
+            overdriveEndEffectActivated = true;
+        }
+    }
+
     //Fonction qui gère les dégats subis par le vaisseau
-    public void TakingDamages(float damageInput)
+    public void takingDamages(EnnemyProjectile ennemyProjectile)
     {
         //Add shield regeneration cooldown if the battleship taken damages
         hasTakenDamagesRecently = true;
         shield.cooldownTimer += 0.5f;
 
+        float finalDamage = ennemyProjectile.damage;
+
         if (platePoints > 0 && shield.shieldPoints <= 0)
         {
-            platePoints -= damageInput;
+            //Calculate damages taken
+            switch (ennemyProjectile.damageType)
+            {
+                case DamageType.Kinetic:
+                    finalDamage *= 1.3f;
+                    break;
+                case DamageType.Laser:
+                    finalDamage *= 1f;
+                    break;
+                case DamageType.Plasma:
+                    finalDamage *= 1.1f;
+                    break;
+                case DamageType.Ion:
+                    finalDamage *= 0.5f;
+                    break;
+                case DamageType.Explosive:
+                    finalDamage *= 1.5f;
+                    break;
+            }
+
+            platePoints -= finalDamage;
         }
         else if(platePoints <= 0 && shield.shieldPoints <= 0)
         {
-            hullPoints -= damageInput;
+            //Calculate damages taken
+            switch (ennemyProjectile.damageType)
+            {
+                case DamageType.Kinetic:
+                    finalDamage *= 1f;
+                    break;
+                case DamageType.Laser:
+                    finalDamage *= 1f;
+                    break;
+                case DamageType.Plasma:
+                    finalDamage *= 1.3f;
+                    break;
+                case DamageType.Ion:
+                    finalDamage *= 0.5f;
+                    break;
+                case DamageType.Explosive:
+                    finalDamage *= 1f;
+                    break;
+            }
+
+            hullPoints -= finalDamage;
             playerStats.updateHullIndicators();
 
             animator.Play("Damaged");
         }
+    }
+
+    public void takingDamages(float damageInput)
+    {
+        Debug.LogWarning("Beam damages not implemented");
     }
 
     public void repairHull(int healAmount)
@@ -374,6 +540,16 @@ public class Battleship : MonoBehaviour
         else
         {
             rb2.velocity = new Vector2(rb2.velocity.x * 0.9f, rb2.velocity.y);
+        }
+
+        //Manage overshield depanding on ship movement
+        if (rb2.velocity.x < 0.09 && rb2.velocity.x > -0.09 && rb2.velocity.y < 0.09 && rb2.velocity.y > -0.09)
+        {
+            shield.activateOvershield();
+        }
+        else
+        {
+            shield.deactivateOvershield();
         }
 
         //Reset x position
@@ -457,7 +633,7 @@ public class Battleship : MonoBehaviour
     {
         if (collision.tag.Equals("EnnemyProjectile"))
         {
-            TakingDamages(collision.GetComponent<EnnemyProjectile>().damage);
+            takingDamages(collision.GetComponent<EnnemyProjectile>());
         }
     }
 

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
-using Pathfinding;
 
 public class StandardEnnemy : Ennemy
 {
@@ -10,14 +9,6 @@ public class StandardEnnemy : Ennemy
     public WaveConfig waveConfig;
     [ReadOnly] public Transform[] waypoints;
     [ReadOnly] protected int waypointIndex = 0;
-    public AIDestinationSetter destinationSetter;
-    public AIPath aIPath;
-
-    private void OnValidate()
-    {
-        destinationSetter = GetComponent<AIDestinationSetter>();
-        aIPath = GetComponent<AIPath>();
-    }
 
     protected new void Awake()
     {
@@ -76,9 +67,6 @@ public class StandardEnnemy : Ennemy
     {
         if (waypointIndex <= waypoints.Length - 1)
         {
-            /*var targetPosition = waypoints[waypointIndex].transform.position;
-            var movementThisFrame = moveSpeed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, movementThisFrame);*/
             if (aIPath.reachedEndOfPath)
             {
                 waypointIndex++;

@@ -149,11 +149,6 @@ public class EnnemyAttack : MonoBehaviour
 
     public IEnumerator BurstFire()
     {
-        if (stopMovement)
-        {
-            ennemy.isMoving = false;
-        }
-
         yield return new WaitForSeconds(0.1f);
         // rate of fire in weapons is in rounds per minute (RPM), therefore we should calculate how much time passes before firing a new round in the same burst.
 
@@ -166,7 +161,7 @@ public class EnnemyAttack : MonoBehaviour
         for (int i = 0; i < nbrShots; i++)
         {
             //Mono sound effect
-            if (soundEffectsGenerator.isLooping)
+            if (!soundEffectsGenerator.isLooping)
             {
                 soundEffectsGenerator.playDefaultSoundEffect();
             }
@@ -222,10 +217,5 @@ public class EnnemyAttack : MonoBehaviour
         ennemy.isMoving = true;
         isFiring = false;
         cooldownTimer = cooldown;
-    }
-
-    private void dispersionShot()
-    {
-
     }
 }

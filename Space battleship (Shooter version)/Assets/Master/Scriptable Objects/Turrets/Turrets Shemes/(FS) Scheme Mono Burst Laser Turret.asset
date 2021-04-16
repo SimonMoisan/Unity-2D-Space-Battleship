@@ -15,8 +15,7 @@ MonoBehaviour:
   ItemName: Mono Burst Laser Turret
   cargoIcone: {fileID: -6929843343804456351, guid: 98b1848c2d8a05f4fa80ec1ecd9259b8,
     type: 3}
-  arsenalIcon: {fileID: -6929843343804456351, guid: 98b1848c2d8a05f4fa80ec1ecd9259b8,
-    type: 3}
+  overdriveCost: 0
   turretType: 0
   turretSize: 0
   turretAim: 1

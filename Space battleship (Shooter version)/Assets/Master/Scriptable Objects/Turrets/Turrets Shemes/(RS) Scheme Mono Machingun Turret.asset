@@ -15,6 +15,7 @@ MonoBehaviour:
   ItemName: Mono Machingun
   cargoIcone: {fileID: -1548623570468164784, guid: fb0533414f0c35f4facfd7933cf7cced,
     type: 3}
+  overdriveCost: 25
   turretType: 0
   turretSize: 0
   turretAim: 0

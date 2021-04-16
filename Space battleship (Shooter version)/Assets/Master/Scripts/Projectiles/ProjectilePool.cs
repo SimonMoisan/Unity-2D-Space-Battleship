@@ -7,11 +7,24 @@ public class ProjectilePool : MonoBehaviour
     public Salve salvePrefab;
     private List<Salve> salveList;
     private bool notEnoughtProjectiles = true;
+    public int initialNbrOfProjectile;
+
+    private void OnValidate()
+    {
+        if(salvePrefab != null)
+        {
+            gameObject.name = "Projectile Pool " + salvePrefab.name;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         salveList = new List<Salve>();
+        if(initialNbrOfProjectile > 0)
+        {
+            initializePool(initialNbrOfProjectile);
+        }
     }
 
     public void initializePool(int numberOfProjectile)

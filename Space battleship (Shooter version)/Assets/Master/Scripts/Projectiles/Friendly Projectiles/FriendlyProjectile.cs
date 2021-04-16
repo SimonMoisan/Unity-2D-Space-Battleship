@@ -103,10 +103,23 @@ public class FriendlyProjectile : Projectile
     {
         bulletSpeed = 0;
         col.enabled = false;
-        animator.SetBool("BeingDestroyed", true);
-        yield return new WaitForSeconds(0.4f);
+
+        if (animator.runtimeAnimatorController != null)
+        {
+            animator.SetBool("BeingDestroyed", true);
+            yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(1).length);
+        }
+        if (impactParticleSystem != null)
+        {
+            GetComponent<SpriteRenderer>().enabled = false;
+            impactParticleSystem.Play();
+            Debug.Log(impactParticleSystem.main.duration);
+            yield return new WaitForSeconds(impactParticleSystem.main.duration);
+            GetComponent<SpriteRenderer>().enabled = true;
+        }
+
+        yield return new WaitForSeconds(0.5f);
         salve.ImDestroyed();
         destroy();
-        //Destroy(gameObject);
     }
 }

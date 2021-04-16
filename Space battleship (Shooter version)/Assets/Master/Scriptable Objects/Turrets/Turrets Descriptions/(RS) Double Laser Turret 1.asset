@@ -15,6 +15,7 @@ MonoBehaviour:
   ItemName: Double Laser
   cargoIcone: {fileID: -4273134929416887563, guid: ada1cf55dad6cb6458aca28a52bfaa1f,
     type: 3}
+  overdriveCost: 20
   turretType: 0
   turretSize: 0
   turretAim: 0
@@ -38,6 +39,7 @@ MonoBehaviour:
   actualCooldown: 5
   actualSpeed: 500
   actualDeviation: 0
+  overdriveCost: 20
   actualTier: 1
   actualUpgradePriceScraps: 50
   actualUpgradePriceEnergyCore: 0

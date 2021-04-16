@@ -23,6 +23,7 @@ public class Shield : MonoBehaviour
     public float cooldown;                //time to wait between two burst
     public float cooldownTimer;
     public bool shieldGenerationActive;
+    public bool overshieldActive;
     [Space]
     public ShieldTier[] shieldTiers;
     [Space]
@@ -31,6 +32,7 @@ public class Shield : MonoBehaviour
     public Battleship battleship;
     public Animator animator;
     public PlayerStats playerStats;
+    public SpriteRenderer overshieldImage;
 
     // Start is called before the first frame update
     void OnValidate()
@@ -63,13 +65,41 @@ public class Shield : MonoBehaviour
     }
 
     //Function used to manage damages taken by the shield
-    public void TakingDamages(float damageInput)
+    public void takingDamages(EnnemyProjectile ennemyProjectile)
     {
         if (shieldPoints > 0)
         {
             animator.Play("Damaged");
 
-            shieldPoints -= damageInput;
+            float finalDamage = ennemyProjectile.damage;
+
+            //Calculate damages taken
+            switch(ennemyProjectile.damageType)
+            {
+                case DamageType.Kinetic:
+                    finalDamage *= 0.7f;
+                    break;
+                case DamageType.Laser:
+                    finalDamage *= 0.8f;
+                    break;
+                case DamageType.Plasma:
+                    finalDamage *= 0.9f;
+                    break;
+                case DamageType.Ion:
+                    finalDamage *= 3f;
+                    break;
+                case DamageType.Explosive:
+                    finalDamage *= 1f;
+                    break;
+            }
+
+            if(overshieldActive && ennemyProjectile.damageType != DamageType.Ion && ennemyProjectile.projectileSize == ProjectileSize.Light) //Reduce damages of small projectiles (execpt ions)
+            {
+                finalDamage *= 0.5f;
+            }
+
+            //Apply damages
+            shieldPoints -= finalDamage;
             playerStats.updateShieldIndicators();
 
             //Activate shield regeneration cooldown
@@ -91,6 +121,11 @@ public class Shield : MonoBehaviour
         }
     }
 
+    public void takingDamages(float beamDamage)
+    {
+        Debug.LogWarning("Beam damages not implemented");
+    }
+
     //Fonction qui gère le cooldown minimum entre deux rafales
     public void CoolDownManager()
     {
@@ -106,6 +141,18 @@ public class Shield : MonoBehaviour
         }
     }
 
+    public void activateOvershield()
+    {
+        overshieldImage.enabled = true;
+        overshieldActive = true;
+    }
+
+    public void deactivateOvershield()
+    {
+        overshieldImage.enabled = false;
+        overshieldActive = false;
+    }
+
     public void ShieldRegeneration()
     {
         if(shieldGenerationActive && shieldPoints < maxShieldPoints && !battleship.hasTakenDamagesRecently)
@@ -119,7 +166,7 @@ public class Shield : MonoBehaviour
     {
         if (collision.tag.Equals("EnnemyProjectile"))
         {
-            TakingDamages(collision.GetComponent<EnnemyProjectile>().damage);
+            takingDamages(collision.GetComponent<EnnemyProjectile>());
         }
     }
 

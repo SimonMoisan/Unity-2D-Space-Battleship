@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Collections;
 
-public enum DamageType { Laser, Kinetic, Ion, Explosive }
+public enum DamageType { Laser, Kinetic, Ion, Plasma, Explosive }
+public enum ProjectileSize { Light, Medium, Heavy }
 
 public class Projectile : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Projectile : MonoBehaviour
     [ReadOnly] public float bulletSpeed;
     [ReadOnly] public float maxSpeed;
     public DamageType damageType;
+    public ProjectileSize projectileSize;
     public float damage;
 
     //Projectile can be destroyed by ennemy projectile (case of shields)
@@ -46,6 +48,7 @@ public class Projectile : MonoBehaviour
 
     [Header("Associated objects")]
     public Animator animator;
+    public ParticleSystem impactParticleSystem;
     public CapsuleCollider2D col;
     public Salve salve;
 

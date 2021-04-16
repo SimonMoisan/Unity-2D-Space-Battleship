@@ -15,6 +15,7 @@ MonoBehaviour:
   ItemName: Ion
   cargoIcone: {fileID: -5160057280171279093, guid: f838d24ba4b9d144fb46796118a5de31,
     type: 3}
+  overdriveCost: 20
   turretType: 0
   turretSize: 0
   turretAim: 0

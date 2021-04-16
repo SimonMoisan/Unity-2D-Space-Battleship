@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,6 @@ public class PlayerStats : MonoBehaviour
     public bool isPlaying;
     public int scrapsStored;
     public int energyCoreStored;
-    public Turret turretActualySelected;
 
     [Header("Player related main objetcts : ")]
     public Shield shield;
@@ -18,9 +18,10 @@ public class PlayerStats : MonoBehaviour
     public Image[] shieldBars;
     public Text[] hullIndicators;
     public Text[] shieldIndicators;
-    public Image overdriveIndicator;
+    public Image overdriveGauge;
+    public Text overdriveIndicator;
     [Space]
-    public Image[] hudTurretGauges;
+    public Image[] rotationTurretGauges;
     public Image[] standardTurretSetIndicators;
     public Image[] heavyTurretSetIndicators;
     public Sprite noSetSprite;
@@ -29,6 +30,7 @@ public class PlayerStats : MonoBehaviour
     public GameObject[] turretSets;
     public GameObject actualTurretSet;
     public Image[] turretsImages;
+    public Image[] frontalTurretsGauges;
     [Space]
     public Text[] scrapTextIndicators;
     public Text[] energyCoreTextIndicators;
@@ -45,8 +47,6 @@ public class PlayerStats : MonoBehaviour
         updateHullIndicators();
         updateShieldIndicators();
         updateOverdriveIndicator();
-
-        turretActualySelected = null;
     }
 
     private void Awake()
@@ -62,10 +62,17 @@ public class PlayerStats : MonoBehaviour
     {
         for (int i = 0; i < Battleship.current.standardRotationTurrets.Length; i++)
         {
-            if(Battleship.current.standardRotationTurrets[i] != null && hudTurretGauges[i] != null)
+            rotationTurretGauges[i].fillAmount = Battleship.current.standardRotationTurrets[i].GetCooldownFactor();
+        }
+
+        int chainId = -1;
+        for (int i = 0; i < Battleship.current.allFrontalTurrets.Length; i++)
+        {
+            if (Battleship.current.allFrontalTurrets[i].idTurret != chainId)
             {
-                hudTurretGauges[i].fillAmount = Battleship.current.standardRotationTurrets[i].GetCooldownFactor();
+                chainId = Battleship.current.allFrontalTurrets[i].idTurret;
             }
+            frontalTurretsGauges[chainId].fillAmount = Battleship.current.allFrontalTurrets[i].GetCooldownFactor();
         }
     }
 
@@ -202,6 +209,7 @@ public class PlayerStats : MonoBehaviour
 
     public void updateOverdriveIndicator()
     {
-        overdriveIndicator.fillAmount = Battleship.current.actualOverdrive / Battleship.current.maxOverdrive;
+        overdriveGauge.fillAmount = Battleship.current.actualOverdrive / Battleship.current.maxOverdrive;
+        overdriveIndicator.text = Battleship.current.actualOverdrive.ToString("F0") + "/" + Battleship.current.maxOverdrive.ToString("F0");
     }
 }

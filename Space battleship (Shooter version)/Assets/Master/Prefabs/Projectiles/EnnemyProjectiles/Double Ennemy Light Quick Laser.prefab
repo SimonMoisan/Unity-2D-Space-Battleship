@@ -1,0 +1,234 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3544657312594927205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6502722005382280567}
+  - component: {fileID: 799145881984595568}
+  m_Layer: 0
+  m_Name: Double Ennemy Light Quick Laser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6502722005382280567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544657312594927205}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4910483877290964407}
+  - {fileID: 9198985357548716105}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &799145881984595568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544657312594927205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ff20e0959c1ccd448caf8eef557a7be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectiles:
+  - {fileID: 4910483877290964402}
+  - {fileID: 9198985357548716108}
+  projectilesInitialPosition:
+  - {x: 0.035, y: 0}
+  - {x: -0.035, y: 0}
+  projectilesInitialRotation:
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  globalDamage: 0
+  globalHealth: 0
+  globalBulletSpeed: 0
+  nbrProjectile: 1
+--- !u!1001 &1441062119790243014
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6502722005382280567}
+    m_Modifications:
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503223, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_Name
+      value: Ennemy Light Quick Laser Origin
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d8d954bea93cdeb4cb1dedebccf338bf, type: 3}
+--- !u!4 &4910483877290964407 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1441062119790243014}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4910483877290964402 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6330413239543503220, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1441062119790243014}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b98d002a7ba70742b75f168a31a405a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &2914806686384232760
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6502722005382280567}
+    m_Modifications:
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330413239543503223, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+        type: 3}
+      propertyPath: m_Name
+      value: Ennemy Light Quick Laser Origin (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d8d954bea93cdeb4cb1dedebccf338bf, type: 3}
+--- !u!4 &9198985357548716105 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6330413239543503217, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2914806686384232760}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9198985357548716108 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6330413239543503220, guid: d8d954bea93cdeb4cb1dedebccf338bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2914806686384232760}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b98d002a7ba70742b75f168a31a405a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

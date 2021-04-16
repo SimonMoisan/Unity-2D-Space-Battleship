@@ -15,6 +15,7 @@ MonoBehaviour:
   ItemName: Laser Turret
   cargoIcone: {fileID: -4273134929416887563, guid: ada1cf55dad6cb6458aca28a52bfaa1f,
     type: 3}
+  overdriveCost: 20
   turretType: 0
   turretSize: 0
   turretAim: 0

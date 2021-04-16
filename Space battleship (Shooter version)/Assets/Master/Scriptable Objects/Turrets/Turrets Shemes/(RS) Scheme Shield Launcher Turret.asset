@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Shield Launcher
   cargoIcone: {fileID: 0}
-  arsenalIcon: {fileID: 0}
+  overdriveCost: 30
   turretType: 0
   turretSize: 0
   turretAim: 0
